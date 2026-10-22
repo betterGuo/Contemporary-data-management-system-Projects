@@ -18,7 +18,9 @@
 
 需要生成新的逐例记录时可执行`scripts/run_tests.py`；它写入`docs/evidence/stage1/`，注意保留既有历史结果。测试夹具仅创建和清理`survey_project1_test_`前缀的随机隔离库，不写主库；测试账户和输入为虚构数据。
 
-T80–T84属于独立新环境、材料核对、恢复及浏览器验收，不计入200项，也不修改机器结果中的uncoveredCases。10月20日[新环境复现](evidence/stage1/reproduction.json)真实结果为197项；本次没有重新进行新环境或浏览器验收。原始浏览器、专项、人工只读核对和本地版本历史仅本机留存，公开材料不提供这些文件或归档。
+2026-10-22 22:23（北京时间），从远端P1新克隆，使用Python 3.12.6全新虚拟环境和独立MongoDB 8.0.34，按README的uv替代方式安装锁定依赖，完整200项通过、1项第三方弃用提醒，13.10秒。重复初始化和种子保持数据；自定义MongoDB端口且未设置TEST_MONGODB_URI时，修订后的复现脚本通过。随后真实Uvicorn HTTP检查31项通过，覆盖四题型、跳转、整数拒绝、提交、幂等、统计、权限和关闭；AI浏览器操作确认登录、4份种子问卷及统计基准均值60。见[复现记录](evidence/stage1/reproduction.json)。临时服务器、容器、卷及脚本临时库和环境已清理。
+
+T80–T84属于独立新环境、材料核对、恢复及浏览器验收，不计入200项，也不修改机器结果中的uncoveredCases。31项HTTP检查与浏览器观察不与pytest相加；本次没有复核旧人工19/110来源差异。10月20日197项新环境记录保留在此前P1提交中。原始浏览器、专项、人工只读核对和本地版本历史仅本机留存，公开材料不提供这些文件或归档。
 
 [人工验收记录](manual-acceptance.md)区分使用者反馈与数据核对：注册登录及创建刷新确认正常，首次必答和年龄题型配置有偏差；修正版实际1份年龄110、均值110，使用者反馈平均19，来源差异未解决。未逐项确认的负向输入不追加人工通过结论，人工反馈不计入自动测试数量。
 
@@ -125,7 +127,7 @@ T80–T84属于独立新环境、材料核对、恢复及浏览器验收，不�
 | T77 | P-F：新增第五份后重新请求统计 | 第五份有效提交后重查统计 | 自动更新，无需手工刷新计数器 | 通过；本行预期对应的实际断言均满足（5个执行实例） | 最新完整测试记录<br>`tests/integration/test_statistics_and_versions.py::test_four_response_statistics_match_hand_calculation_and_pages_are_complete`<br>`tests/integration/test_statistics_and_versions.py::test_numeric_average_uses_same_members_as_question_count_and_page_when_new_response_arrives`<br>`tests/integration/test_statistics_and_versions.py::test_statistics_freeze_response_members_before_totals_then_include_new_submission_on_next_request` |
 | T78 | P-F：B读取A整卷/单题/填空 | 非作者读取统计或填空内容 | 不允许 | 通过；本行预期对应的实际断言均满足（1个执行实例） | 最新完整测试记录<br>`tests/integration/test_auth_and_surveys.py::test_owner_isolation_for_all_management_routes` |
 | T79 | P-F：预览/无效提交/重试后对照成功计数 | 预览完成、无效提交、幂等重试后查统计 | 均不增加成功答卷总数 | 通过；本行预期对应的实际断言均满足（1个执行实例） | 最新完整测试记录<br>`tests/integration/test_statistics_and_versions.py::test_empty_stats_skips_optional_blanks_and_zero_are_counted_correctly` |
-| T80 | P-G：按README在新环境逐命令复现 | 按 README 在新虚拟环境启动 | 初始化、启动、测试、演示步骤可执行 | 通过（独立新环境脚本）Python3.12.6；锁依赖、seed幂等、health/页面/静态/登录及统计通过；新venv再次运行完整197项通过，临时环境/库已移除 | [历史新环境记录](evidence/stage1/reproduction.json)；`scripts/reproduce_stage1.py` |
+| T80 | P-G：按README在新环境逐命令复现 | 按 README 在新虚拟环境启动 | 初始化、启动、测试、演示步骤可执行 | 通过（10月22日远端新克隆及独立新环境脚本）Python3.12.6、MongoDB8.0.34；锁依赖、重复初始化/seed、health/页面/静态/登录及统计通过；新venv完整200项通过，独立HTTP31项和浏览器基准通过，临时资源已清理 | [新环境记录](evidence/stage1/reproduction.json)；`scripts/reproduce_stage1.py` |
 | T81 | P-G：抽查三条真实AI记录与产物/测试 | 抽查三条 AI 日志和对应代码 | 提示词、修改、测试、提交可对应 | 通过（静态抽查）AI-003/004/008及本轮AI-011/012/013与真实提示、产物、改动及通过证据对应，未编造模型或个人贡献 | [AI日志](ai-log.md)及对应源码/测试；历史静态抽查明细仅本机留存 |
 | T82 | P-G：逐项核对代码/文档/用例/完整报告 | 按原文四类提交内容检查 | 无缺失，描述与实现一致 | 通过（静态交付核对）代码/schema/配置、技术文档、测试、九项完整报告均齐备 | [四类材料入口](../README.md)、[实验报告](report.md)；历史静态核对明细仅本机留存 |
 | T83 | P-G：BSON恢复独立库并复核计数与统计 | 第一阶段代码及 BSON 备份恢复到独立库 | 核心流程和统计可复现 | 通过（真实mongodump/mongorestore）7用户/6问卷/29答卷/1迁移；BSON、数量、索引、验证器匹配；恢复后原账号登录及统计通过 | [历史恢复及扩展结果](evidence/stage1/recheck-extension.json)；原账号登录、归档及恢复明细仅本机留存 |

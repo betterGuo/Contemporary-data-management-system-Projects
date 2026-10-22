@@ -1,7 +1,6 @@
 # MongoDB 数据库设计
 
-> 第一阶段复核修订文档，stage1-v1.0.1，2026-10-20。修订代码基线65aa339；本轮主环境197项与全新环境197项均通过。原stage1-v1.0/a74cf92、原183项结果和原BSON保留；证据结论仅限实际检查。
-
+> 第一阶段正式文档。2026-10-22完整测试为200项通过、0失败、0跳过；复测方法、历史结果及证据范围见[测试说明](tests.md)和[关键验证证据](evidence/README.md)。
 
 ## 为什么这样设计
 
@@ -21,7 +20,7 @@
 
 ## 集合及字段契约
 
-下表是最终计划中的设计契约，实际validator/索引与运行已对照app/database.py、baseline-verification.json及本机恢复manifest。日期为 UTC BSON date，内部引用用 ObjectId，外部 JSON ID 用字符串。
+下表是当前实现的字段契约，实际validator/索引与运行已对照app/database.py、baseline-verification.json及本机恢复manifest。日期为 UTC BSON date，内部引用用 ObjectId，外部 JSON ID 用字符串。
 
 ### users
 

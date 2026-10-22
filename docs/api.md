@@ -1,7 +1,6 @@
 # API 契约
 
-> 第一阶段复核修订文档，stage1-v1.0.1，2026-10-20。修订代码基线65aa339；本轮主环境197项与全新环境197项均通过。原stage1-v1.0/a74cf92、原183项结果和原BSON保留；证据结论仅限实际检查。
-
+> 第一阶段正式文档。2026-10-22完整测试为200项通过、0失败、0跳过；复测方法、历史结果及证据范围见[测试说明](tests.md)和[关键验证证据](evidence/README.md)。
 
 本文已静态对照 app/api/*.py、app/schemas/requests.py、app/main.py、response_service.py 和 statistics_service.py；具体请求运行结果已在tests.md与test-results.json对照。交互文档入口 /docs，机器接口描述 /openapi.json。JSON中ObjectId用字符串、日期用带时区ISO8601、数字答案用十进制字符串。
 

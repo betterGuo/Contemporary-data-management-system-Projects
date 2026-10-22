@@ -12,6 +12,9 @@ import tempfile
 import uuid
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
+from app.config import Settings
 
 CHECK = r'''
 import json, platform
@@ -59,6 +62,9 @@ def reproduce(output):
     private = ROOT / "artifacts" / "private"
     private.mkdir(parents=True, exist_ok=True)
     env = os.environ.copy()
+    # Pytest reads TEST_MONGODB_URI rather than the application's .env. Keep
+    # both verification phases on the configured server unless overridden.
+    env.setdefault("TEST_MONGODB_URI", Settings().mongodb_uri)
     env["MONGODB_DB"] = "survey_project1_test_reproduce_" + uuid.uuid4().hex
     with tempfile.TemporaryDirectory(prefix="reproduce-", dir=private) as directory:
         venv = Path(directory) / "venv"
