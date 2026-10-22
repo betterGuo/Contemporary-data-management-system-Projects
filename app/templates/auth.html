@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}{% if page == 'register' %}创建账号{% else %}登录{% endif %} · 问卷工坊{% endblock %}
+{% block main_attrs %}class="auth-layout"{% endblock %}
+{% block content %}
+<section class="auth-story" aria-label="欢迎使用问卷工坊">
+  <div class="eyebrow">SURVEY WORKSHOP</div><h1>从一个问题，<br>开始一份发现。</h1><p>创建、分享与了解。用清晰的问题，<br>收集真实的想法。</p>
+  <div class="story-card" aria-hidden="true"><div class="story-card-label">一份好问卷，从清楚的问题开始</div><div class="story-card-title">你更喜欢在哪里学习？</div><div class="story-option"><span></span>图书馆</div><div class="story-option selected"><span></span>安静的自习室 <b>✓</b></div><div class="story-option"><span></span>宿舍</div><div class="story-foot">单选题 <span>01 / 学习体验</span></div></div>
+</section>
+<section class="auth-panel card">
+  <div class="eyebrow">欢迎来到问卷工坊</div><h2>{% if page == 'register' %}创建你的账号{% else %}欢迎回来{% endif %}</h2><p class="muted">{% if page == 'register' %}准备好记录想法、发现答案。{% else %}登录后管理问卷，或继续完成填写。{% endif %}</p>
+  <div class="alert alert-error" id="auth-error" role="alert" hidden></div>
+  <form id="auth-form">
+    <label class="field"><span>用户名</span><input name="username" id="username" autocomplete="username" required maxlength="80" placeholder="请输入用户名"></label>
+    <label class="field"><span>密码</span><div class="password-wrap"><input type="password" name="password" id="password" autocomplete="{% if page == 'register' %}new-password{% else %}current-password{% endif %}" required {% if page == 'register' %}minlength="8"{% endif %} maxlength="128" placeholder="{% if page == 'register' %}至少 8 个字符{% else %}请输入密码{% endif %}"><button class="password-toggle" type="button" id="toggle-password" aria-label="显示密码">显示</button></div>{% if page == 'register' %}<small>建议使用至少 8 位的字母、数字组合。</small>{% endif %}</label>
+    {% if page == 'register' %}<label class="field"><span>确认密码</span><input type="password" id="confirm-password" autocomplete="new-password" required placeholder="请再次输入密码"></label>{% endif %}
+    <button class="btn btn-primary btn-block" type="submit" id="auth-submit">{% if page == 'register' %}创建账号{% else %}登录{% endif %}<span aria-hidden="true"> →</span></button>
+  </form>
+  <p class="auth-switch">{% if page == 'register' %}已有账号？<a id="auth-switch" href="/login">前往登录</a>{% else %}还没有账号？<a id="auth-switch" href="/register">创建账号</a>{% endif %}</p>
+</section>
+{% endblock %}
+{% block scripts %}<script type="module" src="/static/auth.js"></script>{% endblock %}

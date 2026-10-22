@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}问卷统计 · 问卷工坊{% endblock %}
+{% block content %}
+<div class="breadcrumb"><a href="/dashboard">我的问卷</a><span>/</span><a id="statistics-editor-link">问卷管理</a><span>/</span><span>统计分析</span></div>
+<section class="page-heading"><div><p class="eyebrow">每一份回答，都在这里汇聚</p><h1 id="statistics-title">问卷统计</h1><p class="muted">统计由已提交答卷实时生成。</p></div><button class="btn" id="refresh-statistics">↻ 刷新统计</button></section>
+<div class="alert alert-error" id="statistics-error" role="alert" hidden></div>
+<div id="statistics-app"><div class="loading-state">正在汇总回答…</div></div>
+{% endblock %}
+{% block scripts %}<script type="module" src="/static/statistics.js"></script>{% endblock %}

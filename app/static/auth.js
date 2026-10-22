@@ -1,0 +1,6 @@
+import {$,api,busy,showError,safeNext,toast} from './common.js';
+const register=document.body.dataset.page==='register';
+const next=safeNext();
+$('#auth-switch').href=`/${register?'login':'register'}?next=${encodeURIComponent(next)}`;
+$('#toggle-password').addEventListener('click',()=>{const input=$('#password');const visible=input.type==='password';input.type=visible?'text':'password';$('#toggle-password').textContent=visible?'隐藏':'显示';$('#toggle-password').setAttribute('aria-label',visible?'隐藏密码':'显示密码');});
+$('#auth-form').addEventListener('submit',async event=>{event.preventDefault();showError($('#auth-error'),null);const username=$('#username').value.trim();const password=$('#password').value;if(register&&password!==$('#confirm-password').value){showError($('#auth-error'),'两次输入的密码不一致，请重新确认。');$('#confirm-password').focus();return;}try{await busy($('#auth-submit'),async()=>{await api(`/api/auth/${register?'register':'login'}`,{method:'POST',body:{username,password},redirect:false});if(register){toast('账号已创建，正在登录…','success');await api('/api/auth/login',{method:'POST',body:{username,password},redirect:false});}location.assign(next);},register?'正在创建账号…':'正在登录…');}catch(error){showError($('#auth-error'),error);}});

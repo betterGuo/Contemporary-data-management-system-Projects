@@ -1,0 +1,343 @@
+{
+  "status": "passed",
+  "checks": [
+    "four-sample counts",
+    "zero-included decimal average",
+    "all text contents",
+    "distinct respondents versus submissions",
+    "partial unique index",
+    "owner_recent query plan"
+  ],
+  "statistics": {
+    "surveyId": "6ad707abb81ded364c246b7e",
+    "title": "学习体验 · 统计验收基准",
+    "definitionVersion": 1,
+    "submissionCount": 4,
+    "respondentCount": 4,
+    "questions": [
+      {
+        "questionId": "stage",
+        "title": "你的学习阶段",
+        "type": "single",
+        "answerCount": 4,
+        "respondentCount": 4,
+        "unansweredCount": 0,
+        "totalValues": 4,
+        "page": 1,
+        "pageSize": 20,
+        "average": null,
+        "values": [],
+        "options": [
+          {
+            "id": "A",
+            "label": "本科生",
+            "count": 3,
+            "respondentCount": 3
+          },
+          {
+            "id": "B",
+            "label": "研究生",
+            "count": 1,
+            "respondentCount": 1
+          }
+        ]
+      },
+      {
+        "questionId": "places",
+        "title": "你常用的学习场所",
+        "type": "multiple",
+        "answerCount": 4,
+        "respondentCount": 4,
+        "unansweredCount": 0,
+        "totalValues": 4,
+        "page": 1,
+        "pageSize": 20,
+        "average": null,
+        "values": [],
+        "options": [
+          {
+            "id": "X",
+            "label": "图书馆",
+            "count": 2,
+            "respondentCount": 2
+          },
+          {
+            "id": "Y",
+            "label": "自习室",
+            "count": 4,
+            "respondentCount": 4
+          },
+          {
+            "id": "Z",
+            "label": "宿舍",
+            "count": 2,
+            "respondentCount": 2
+          }
+        ]
+      },
+      {
+        "questionId": "age",
+        "title": "年龄",
+        "type": "number",
+        "answerCount": 4,
+        "respondentCount": 4,
+        "unansweredCount": 0,
+        "totalValues": 4,
+        "page": 1,
+        "pageSize": 20,
+        "average": "60",
+        "values": [
+          {
+            "submittedAt": "2026-10-20T06:18:19.887000+00:00",
+            "responseId": "6ad707abb81ded364c246b7f",
+            "value": "0"
+          },
+          {
+            "submittedAt": "2026-10-20T06:18:19.891000+00:00",
+            "responseId": "6ad707abb81ded364c246b80",
+            "value": "40"
+          },
+          {
+            "submittedAt": "2026-10-20T06:18:19.896000+00:00",
+            "responseId": "6ad707abb81ded364c246b81",
+            "value": "80"
+          },
+          {
+            "submittedAt": "2026-10-20T06:18:19.900000+00:00",
+            "responseId": "6ad707abb81ded364c246b82",
+            "value": "120"
+          }
+        ]
+      },
+      {
+        "questionId": "comment",
+        "title": "一句学习建议",
+        "type": "text",
+        "answerCount": 4,
+        "respondentCount": 4,
+        "unansweredCount": 0,
+        "totalValues": 4,
+        "page": 1,
+        "pageSize": 20,
+        "average": null,
+        "values": [
+          {
+            "submittedAt": "2026-10-20T06:18:19.887000+00:00",
+            "responseId": "6ad707abb81ded364c246b7f",
+            "value": "甲"
+          },
+          {
+            "submittedAt": "2026-10-20T06:18:19.891000+00:00",
+            "responseId": "6ad707abb81ded364c246b80",
+            "value": "乙"
+          },
+          {
+            "submittedAt": "2026-10-20T06:18:19.896000+00:00",
+            "responseId": "6ad707abb81ded364c246b81",
+            "value": "丙"
+          },
+          {
+            "submittedAt": "2026-10-20T06:18:19.900000+00:00",
+            "responseId": "6ad707abb81ded364c246b82",
+            "value": "丁"
+          }
+        ]
+      }
+    ]
+  },
+  "multipleStatistics": {
+    "surveyId": "6ad707abb81ded364c246b85",
+    "title": "同人多次填写与人数统计",
+    "definitionVersion": 1,
+    "submissionCount": 2,
+    "respondentCount": 1,
+    "questions": [
+      {
+        "questionId": "answer",
+        "title": "今天选择的学习方式",
+        "type": "single",
+        "answerCount": 2,
+        "respondentCount": 1,
+        "unansweredCount": 0,
+        "totalValues": 2,
+        "page": 1,
+        "pageSize": 20,
+        "average": null,
+        "values": [],
+        "options": [
+          {
+            "id": "A",
+            "label": "独立学习",
+            "count": 1,
+            "respondentCount": 1
+          },
+          {
+            "id": "B",
+            "label": "小组讨论",
+            "count": 1,
+            "respondentCount": 1
+          }
+        ]
+      }
+    ]
+  },
+  "explain": {
+    "explainVersion": "1",
+    "queryPlanner": {
+      "namespace": "survey_project1.surveys",
+      "parsedQuery": {
+        "ownerId": {
+          "$eq": "6ad707abb81ded364c246b78"
+        }
+      },
+      "indexFilterSet": false,
+      "queryHash": "E699B7C2",
+      "planCacheShapeHash": "E699B7C2",
+      "planCacheKey": "B26DD588",
+      "optimizationTimeMillis": 0,
+      "maxIndexedOrSolutionsReached": false,
+      "maxIndexedAndSolutionsReached": false,
+      "maxScansToExplodeReached": false,
+      "prunedSimilarIndexes": false,
+      "winningPlan": {
+        "isCached": false,
+        "stage": "FETCH",
+        "inputStage": {
+          "stage": "IXSCAN",
+          "keyPattern": {
+            "ownerId": 1,
+            "createdAt": -1,
+            "_id": -1
+          },
+          "indexName": "owner_recent",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "ownerId": [],
+            "createdAt": [],
+            "_id": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "ownerId": [
+              "[ObjectId('6ad707abb81ded364c246b78'), ObjectId('6ad707abb81ded364c246b78')]"
+            ],
+            "createdAt": [
+              "[MaxKey, MinKey]"
+            ],
+            "_id": [
+              "[MaxKey, MinKey]"
+            ]
+          }
+        }
+      },
+      "rejectedPlans": []
+    },
+    "executionStats": {
+      "executionSuccess": true,
+      "nReturned": 6,
+      "executionTimeMillis": 0,
+      "totalKeysExamined": 6,
+      "totalDocsExamined": 6,
+      "executionStages": {
+        "isCached": false,
+        "stage": "FETCH",
+        "nReturned": 6,
+        "executionTimeMillisEstimate": 0,
+        "works": 7,
+        "advanced": 6,
+        "needTime": 0,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "docsExamined": 6,
+        "alreadyHasObj": 0,
+        "inputStage": {
+          "stage": "IXSCAN",
+          "nReturned": 6,
+          "executionTimeMillisEstimate": 0,
+          "works": 7,
+          "advanced": 6,
+          "needTime": 0,
+          "needYield": 0,
+          "saveState": 0,
+          "restoreState": 0,
+          "isEOF": 1,
+          "keyPattern": {
+            "ownerId": 1,
+            "createdAt": -1,
+            "_id": -1
+          },
+          "indexName": "owner_recent",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "ownerId": [],
+            "createdAt": [],
+            "_id": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "ownerId": [
+              "[ObjectId('6ad707abb81ded364c246b78'), ObjectId('6ad707abb81ded364c246b78')]"
+            ],
+            "createdAt": [
+              "[MaxKey, MinKey]"
+            ],
+            "_id": [
+              "[MaxKey, MinKey]"
+            ]
+          },
+          "keysExamined": 6,
+          "seeks": 1,
+          "dupsTested": 0,
+          "dupsDropped": 0
+        }
+      },
+      "allPlansExecution": []
+    },
+    "queryShapeHash": "62FB6C41267C2AC3ECA5DFB22835C7255E3EDF3D970A53BE2614099DBBEBD2F9",
+    "command": {
+      "find": "surveys",
+      "filter": {
+        "ownerId": "6ad707abb81ded364c246b78"
+      },
+      "sort": {
+        "createdAt": -1,
+        "_id": -1
+      },
+      "$db": "survey_project1"
+    },
+    "serverInfo": {
+      "host": "4b479c507025",
+      "port": 27017,
+      "version": "8.0.32",
+      "gitVersion": "f9eb55a7cc900f33a722a5b32a0fdbf54385c749"
+    },
+    "serverParameters": {
+      "internalQueryFacetBufferSizeBytes": 104857600,
+      "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+      "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+      "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+      "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+      "internalQueryProhibitBlockingMergeOnMongoS": 0,
+      "internalQueryMaxAddToSetBytes": 104857600,
+      "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+      "internalQueryFrameworkControl": "trySbeRestricted",
+      "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+    },
+    "ok": 1.0
+  },
+  "collections": {
+    "users": 7,
+    "surveys": 6,
+    "responses": 29
+  }
+}

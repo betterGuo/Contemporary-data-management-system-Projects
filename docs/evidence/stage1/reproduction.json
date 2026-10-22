@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "pythonVersion": "3.12.6",
+  "seedIdempotent": true,
+  "baselineVerified": "passed",
+  "collections": {
+    "users": 6,
+    "surveys": 4,
+    "responses": 6
+  },
+  "checks": [
+    "new locked virtual environment",
+    "MongoDB schema initialization",
+    "idempotent fictional demo seed",
+    "hand-calculated statistics",
+    "application lifespan and health",
+    "HTML and static assets",
+    "login and authenticated statistics API"
+  ],
+  "temporaryDatabaseRemoved": true,
+  "cleanEnvironmentTests": {
+    "status": "passed",
+    "passed": 197,
+    "exitCode": 0
+  },
+  "executedAt": "2026-10-20T14:19:38.171002+00:00",
+  "lockedDependencyCheck": "passed",
+  "temporaryVenvRemoved": true
+}

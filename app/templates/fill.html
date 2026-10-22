@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}{% if page == 'preview' %}预览填写{% else %}填写问卷{% endif %} · 问卷工坊{% endblock %}
+{% block main_attrs %}class="fill-container"{% endblock %}
+{% block content %}
+{% if page == 'preview' %}<div class="preview-bar"><span>预览模式 · 不会保存正式答卷</span><a href="/surveys/{{ survey_id }}/edit">返回编辑 →</a></div>{% endif %}
+<div class="alert alert-error" id="fill-error" role="alert" hidden></div>
+<div id="fill-app"><div class="loading-state">正在打开问卷…</div></div>
+{% endblock %}
+{% block scripts %}<script type="module" src="/static/fill.js"></script>{% endblock %}

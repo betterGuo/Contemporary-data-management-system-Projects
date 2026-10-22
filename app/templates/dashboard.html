@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}我的问卷 · 问卷工坊{% endblock %}
+{% block content %}
+<section class="page-heading"><div><p class="eyebrow">工作空间</p><h1>我的问卷</h1><p class="muted">把想知道的写下来，让回答带来新的视角。</p></div><button class="btn btn-primary" id="create-open"><span aria-hidden="true">＋</span> 创建问卷</button></section>
+<section class="dashboard-banner"><div><span class="banner-icon" aria-hidden="true">✦</span><h2>一个问题，更多可能。</h2><p>从创建问卷开始，设置问题与跳转，发布后即可分享。</p></div><div class="banner-decoration" aria-hidden="true"><span></span><span></span><span></span></div></section>
+<div class="section-heading"><div class="section-title">全部问卷 <span class="count-pill" id="survey-count">—</span></div><span class="muted small" id="list-summary">正在加载</span></div>
+<div class="alert alert-error" id="dashboard-error" role="alert" hidden></div>
+<section id="survey-list" class="survey-grid" aria-label="问卷列表"><div class="card skeleton" aria-label="正在加载问卷"></div><div class="card skeleton"></div><div class="card skeleton"></div></section>
+<nav class="pagination" id="list-pagination" aria-label="列表分页" hidden></nav>
+<dialog id="create-dialog" class="modal"><form id="create-form"><div class="modal-heading"><h2>创建一份新问卷</h2><button type="button" class="icon-btn" id="create-cancel" aria-label="关闭">×</button></div><p class="muted">先起一个名字，所有设置都可以在草稿中修改。</p><div id="create-error" class="alert alert-error" role="alert" hidden></div><label class="field"><span>问卷标题 <b class="required">*</b></span><input id="create-title" required maxlength="200" placeholder="例如：校园学习体验调查"></label><label class="field"><span>问卷说明</span><textarea id="create-description" rows="3" maxlength="2000" placeholder="告诉填写者这份问卷的目的……"></textarea></label><div class="modal-actions"><button type="button" class="btn" id="create-cancel-bottom">取消</button><button type="submit" class="btn btn-primary" id="create-submit">创建并开始编辑 →</button></div></form></dialog>
+{% endblock %}
+{% block scripts %}<script type="module" src="/static/dashboard.js"></script>{% endblock %}

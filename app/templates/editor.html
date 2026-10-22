@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}编辑问卷 · 问卷工坊{% endblock %}
+{% block main_attrs %}class="editor-container"{% endblock %}
+{% block content %}
+<div id="editor-loading" class="loading-state">正在读取问卷…</div>
+<div class="alert alert-error" id="editor-error" role="alert" hidden></div>
+<div id="editor-app" hidden>
+<div class="editor-top"><div class="breadcrumb"><a href="/dashboard">我的问卷</a><span aria-hidden="true">/</span><span id="editor-name">问卷编辑</span></div><div class="actions"><span id="editor-status" class="badge">草稿</span><a class="btn btn-small" id="statistics-link">查看统计</a><button class="btn btn-small" id="preview-button">预览填写 ↗</button></div></div>
+<div class="editor-grid"><aside class="editor-sidebar"><div class="sidebar-title">问卷结构 <span id="question-count" class="count-pill">0</span></div><button type="button" class="outline-item" id="settings-tab"><span class="outline-number">⚙</span><span>基本设置<small>标题 · 填写策略</small></span></button><div class="sidebar-divider"></div><div id="question-outline"></div><div class="add-question" id="add-question"><label for="new-question-type">添加题目</label><select id="new-question-type"><option value="single">单选题</option><option value="multiple">多选题</option><option value="text">文本填空</option><option value="number">数字填空</option></select><button class="btn btn-primary btn-block" id="add-question-button">＋ 添加题目</button></div></aside><section class="editor-content"><div id="editor-panel"></div></section></div>
+<div class="editor-savebar"><div><span class="save-dot" id="save-dot"></span><span id="save-status">所有修改已保存</span></div><div class="actions"><button class="btn" id="save-survey">保存草稿</button><button class="btn btn-primary" id="publish-survey">发布问卷 →</button><button class="btn btn-danger" id="close-survey" hidden>关闭问卷</button></div></div>
+</div>
+<dialog class="modal" id="publish-dialog"><div class="modal-heading"><h2>准备好发布了吗？</h2><button class="icon-btn" data-close-dialog="publish-dialog" aria-label="关闭">×</button></div><p>发布后，题目、选项、规则和填写策略将固定。你仍可以随时关闭问卷。</p><div class="alert alert-info">请先使用「预览填写」检查跳转和校验，再发布给填写者。</div><div class="modal-actions"><button class="btn" data-close-dialog="publish-dialog">再检查一下</button><button class="btn btn-primary" id="confirm-publish">确认发布</button></div></dialog>
+<dialog class="modal" id="close-dialog"><div class="modal-heading"><h2>关闭这份问卷？</h2><button class="icon-btn" data-close-dialog="close-dialog" aria-label="关闭">×</button></div><p>关闭后将停止接收新的填写，已有答卷和统计会保留。第一阶段暂不支持重新开放。</p><div class="modal-actions"><button class="btn" data-close-dialog="close-dialog">取消</button><button class="btn btn-danger" id="confirm-close">确认关闭</button></div></dialog>
+{% endblock %}
+{% block scripts %}<script type="module" src="/static/editor.js"></script>{% endblock %}
