@@ -1,0 +1,10 @@
+{
+  "dryRun": false,
+  "definitions": 8,
+  "instances": 25,
+  "wouldBind": 25,
+  "bound": 25,
+  "completedDefinitions": 8,
+  "responseDocumentsModified": 0,
+  "historyCoverage": "existing definitions at migration plus subsequently recorded usage"
+}

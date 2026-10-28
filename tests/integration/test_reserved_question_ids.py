@@ -24,5 +24,8 @@ def test_unaddressable_question_ids_fail_before_storage_without_changing_draft(
                  "X-CSRF-Token": owner.client.cookies.get("csrf_token", "")},
     )
     assert response.status_code == 422, response.text
-    assert response.json()["error"]["code"] == "INVALID_DEFINITION"
+    # Invalid UTF-8 is now rejected by the shared request model before the
+    # question domain runs. Other reserved/routing IDs keep their domain code.
+    expected = {"INVALID_DEFINITION", "INVALID_REQUEST"} if question_id == "\ud800" else {"INVALID_DEFINITION"}
+    assert response.json()["error"]["code"] in expected
     assert list(real_db.surveys.find({})) == before

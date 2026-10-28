@@ -1,0 +1,73 @@
+{
+  "status": "failed",
+  "startedAt": "2026-10-26T15:13:51.820Z",
+  "database": "survey_project1_recheck_363f82",
+  "baseUrl": "http://127.0.0.1:8001",
+  "methods": "Actual create/edit/save UI; intercept only delays the real outbound write, never modifies its payload. Stored state is verified through API GET.",
+  "cases": [
+    {
+      "endpoint": "working-content",
+      "questionId": "6adf6e31bf215d7a4a3efbd1",
+      "submittedTitle": "请求中的标题 mvpecvou",
+      "attemptedLateTitle": "保存期间继续输入 mvpecvou",
+      "editableProperty": true,
+      "inert": true,
+      "pointerBlocked": true,
+      "edited": false,
+      "uiTitleAfterSave": "请求中的标题 mvpecvou",
+      "storedTitle": "请求中的标题 mvpecvou",
+      "lostLateInput": false,
+      "status": "passed"
+    },
+    {
+      "endpoint": "versions",
+      "questionId": "6adf6e33bf215d7a4a3efbd5",
+      "submittedTitle": "请求中的标题 mvpecxdp",
+      "attemptedLateTitle": "保存期间继续输入 mvpecxdp",
+      "editableProperty": true,
+      "inert": true,
+      "pointerBlocked": true,
+      "edited": false,
+      "uiTitleAfterSave": "请求中的标题 mvpecxdp",
+      "storedTitle": "请求中的标题 mvpecxdp",
+      "lostLateInput": false,
+      "status": "passed"
+    },
+    {
+      "endpoint": "create",
+      "questionId": "6adf6e36bf215d7a4a3efbde",
+      "submittedTitle": "创建请求中的标题 mvpecz12",
+      "attemptedLateTitle": "创建期间新增文字 mvpecz12",
+      "editableProperty": true,
+      "inert": true,
+      "pointerBlocked": true,
+      "edited": false,
+      "dialogStayedOpen": true,
+      "uiTitleAfterSave": "创建请求中的标题 mvpecz12",
+      "storedTitle": "创建请求中的标题 mvpecz12",
+      "lostLateInput": false,
+      "status": "passed"
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "httpErrors": [
+    {
+      "url": "http://127.0.0.1:8001/api/auth/me",
+      "status": 401
+    }
+  ],
+  "screenshots": [
+    "working-content-request-paused.png",
+    "working-content-after-success.png",
+    "versions-request-paused.png",
+    "versions-after-success.png",
+    "create-request-paused.png",
+    "create-after-success.png",
+    "failure.png"
+  ],
+  "error": "Error: Please use browser.newContext()\n    at _BrowserContext.newPage (/Users/guoyuhang/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/lib/coreBundle.js:62018:17)\n    at /Users/guoyuhang/Desktop/26年秋季学期/当代数据管理系统/project1/scripts/browser_stage2_save_race.cjs:42:179\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:502:9)",
+  "completedAt": "2026-10-26T15:13:59.552Z"
+}

@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "originalDocumentsVerified": {
+    "users": 9,
+    "responses": 33,
+    "surveys": 8,
+    "survey_versions": 0
+  },
+  "originalDefinitionsStatisticsVerified": 8,
+  "responseBsonPreserved": true,
+  "legacyInstancesAndContentPreserved": true,
+  "originalAccountBsonPreserved": true,
+  "note": "Source and target are read only; additional stage-two records are allowed."
+}

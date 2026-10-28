@@ -1,0 +1,19 @@
+name: survey-stage2
+services:
+  mongo:
+    image: mongo:8.0.32
+    container_name: survey-stage2-mongo
+    command: ["mongod", "--replSet", "survey-rs", "--port", "27018", "--bind_ip_all"]
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:27018:27018"
+    volumes:
+      - stage2-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--port", "27018", "--quiet", "--eval", "quit(db.adminCommand({ping:1}).ok ? 0 : 1)"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+volumes:
+  stage2-data:
+    name: survey-project1-stage2-data

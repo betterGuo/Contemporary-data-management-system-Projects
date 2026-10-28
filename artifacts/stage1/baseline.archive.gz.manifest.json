@@ -1,0 +1,283 @@
+{
+  "sourceDatabase": "survey_project1",
+  "archive": "baseline.archive.gz",
+  "archiveSha256": "87a683db98a51be11d0c11de57bb978c78493e9388dab78b6781a9dce12d036f",
+  "collections": {
+    "users": {
+      "count": 7,
+      "bsonSha256": "7f1323394ef7cdeb304bc82f9d2531d556ba1df6193a3b306d33d992968c1031",
+      "indexes": [
+        {
+          "v": 2,
+          "key": {
+            "_id": 1
+          },
+          "name": "_id_"
+        },
+        {
+          "v": 2,
+          "key": {
+            "usernameNormalized": 1
+          },
+          "name": "username_unique",
+          "unique": true
+        }
+      ],
+      "options": {
+        "validator": {
+          "$jsonSchema": {
+            "bsonType": "object",
+            "required": [
+              "username",
+              "usernameNormalized",
+              "passwordHash",
+              "createdAt",
+              "schemaVersion"
+            ],
+            "properties": {
+              "username": {
+                "bsonType": "string"
+              },
+              "usernameNormalized": {
+                "bsonType": "string"
+              },
+              "passwordHash": {
+                "bsonType": "string"
+              },
+              "createdAt": {
+                "bsonType": "date"
+              },
+              "schemaVersion": {
+                "bsonType": "int"
+              }
+            }
+          }
+        },
+        "validationLevel": "strict",
+        "validationAction": "error"
+      }
+    },
+    "surveys": {
+      "count": 6,
+      "bsonSha256": "dafe7dd73edb1e5aca11160e63ffd3959d70b47b15a33b3a859fe9da2da949e7",
+      "indexes": [
+        {
+          "v": 2,
+          "key": {
+            "_id": 1
+          },
+          "name": "_id_"
+        },
+        {
+          "v": 2,
+          "key": {
+            "ownerId": 1,
+            "createdAt": -1,
+            "_id": -1
+          },
+          "name": "owner_recent"
+        },
+        {
+          "v": 2,
+          "key": {
+            "publicId": 1
+          },
+          "name": "public_id_unique",
+          "unique": true
+        }
+      ],
+      "options": {
+        "validator": {
+          "$jsonSchema": {
+            "bsonType": "object",
+            "required": [
+              "ownerId",
+              "publicId",
+              "title",
+              "status",
+              "questions",
+              "revision",
+              "definitionVersion",
+              "schemaVersion"
+            ],
+            "properties": {
+              "ownerId": {
+                "bsonType": "objectId"
+              },
+              "publicId": {
+                "bsonType": "string"
+              },
+              "title": {
+                "bsonType": "string"
+              },
+              "status": {
+                "enum": [
+                  "draft",
+                  "published",
+                  "closed"
+                ]
+              },
+              "questions": {
+                "bsonType": "array"
+              },
+              "revision": {
+                "bsonType": "int"
+              },
+              "definitionVersion": {
+                "bsonType": "int"
+              },
+              "schemaVersion": {
+                "bsonType": "int"
+              },
+              "closesAt": {
+                "bsonType": [
+                  "date",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "validationLevel": "strict",
+        "validationAction": "error"
+      }
+    },
+    "responses": {
+      "count": 29,
+      "bsonSha256": "2a8d981cdd3cb4ac16fd5395ca13195174dbfe0fb9e394e229e8ceba4a724ffa",
+      "indexes": [
+        {
+          "v": 2,
+          "key": {
+            "_id": 1
+          },
+          "name": "_id_"
+        },
+        {
+          "v": 2,
+          "key": {
+            "surveyId": 1,
+            "respondentKey": 1
+          },
+          "name": "single_response_per_user",
+          "unique": true,
+          "partialFilterExpression": {
+            "repeatMode": "single"
+          }
+        },
+        {
+          "v": 2,
+          "key": {
+            "surveyId": 1,
+            "respondentKey": 1,
+            "submissionKey": 1
+          },
+          "name": "submission_idempotency",
+          "unique": true
+        },
+        {
+          "v": 2,
+          "key": {
+            "surveyId": 1,
+            "submittedAt": 1,
+            "_id": 1
+          },
+          "name": "survey_responses"
+        }
+      ],
+      "options": {
+        "validator": {
+          "$jsonSchema": {
+            "bsonType": "object",
+            "required": [
+              "surveyId",
+              "surveyDefinitionVersion",
+              "respondentKey",
+              "repeatMode",
+              "submissionKey",
+              "payloadHash",
+              "visitedQuestionIds",
+              "answers",
+              "submittedAt",
+              "admittedAt",
+              "schemaVersion"
+            ],
+            "properties": {
+              "surveyId": {
+                "bsonType": "objectId"
+              },
+              "surveyDefinitionVersion": {
+                "bsonType": "int"
+              },
+              "respondentKey": {
+                "bsonType": "string"
+              },
+              "repeatMode": {
+                "enum": [
+                  "single",
+                  "multiple"
+                ]
+              },
+              "submissionKey": {
+                "bsonType": "string"
+              },
+              "payloadHash": {
+                "bsonType": "string"
+              },
+              "answers": {
+                "bsonType": "array"
+              },
+              "visitedQuestionIds": {
+                "bsonType": "array"
+              },
+              "submittedAt": {
+                "bsonType": "date"
+              },
+              "admittedAt": {
+                "bsonType": "date"
+              },
+              "schemaVersion": {
+                "bsonType": "int"
+              }
+            }
+          }
+        },
+        "validationLevel": "strict",
+        "validationAction": "error"
+      }
+    },
+    "schema_migrations": {
+      "count": 1,
+      "bsonSha256": "398cb5519959887f27bc68bd4c7744c75836752e981b8970997d3d91f9c7bf89",
+      "indexes": [
+        {
+          "v": 2,
+          "key": {
+            "_id": 1
+          },
+          "name": "_id_"
+        }
+      ],
+      "options": {}
+    }
+  },
+  "sessionsExcluded": true,
+  "restoreVerified": true,
+  "restoredBaseline": {
+    "status": "passed",
+    "checks": [
+      "four-sample counts",
+      "zero-included decimal average",
+      "all text contents",
+      "distinct respondents versus submissions",
+      "partial unique index",
+      "owner_recent query plan"
+    ]
+  },
+  "restoredApplication": {
+    "health": "passed",
+    "existingAccountLogin": "passed",
+    "ownSurveyList": "passed"
+  },
+  "restoreDatabasePrefix": "survey_project1_test_restore_"
+}

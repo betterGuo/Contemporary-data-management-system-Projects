@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "checkedAt": "2026-10-20T14:28:58.937248+00:00",
+  "applicationVersion": "1.0.1",
+  "projectVersion": "1.0.1",
+  "healthVersion": "1.0.1",
+  "openApiVersion": "1.0.1",
+  "businessSchemaVersionUnchanged": 1,
+  "method": "Version metadata synchronization and live health/OpenAPI smoke check; no business behavior changed."
+}

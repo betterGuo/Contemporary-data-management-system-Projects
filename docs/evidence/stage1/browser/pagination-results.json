@@ -1,0 +1,18 @@
+{
+  "checks": [
+    "错误密码保持登录页并给出提示",
+    "选项增删、题目上移/下移/删除通过",
+    "发布后添加与编辑控件冻结",
+    "页面完成21次独立正式提交",
+    "整卷/单题范围切换和填空20+1分页通过",
+    "作者关闭后填写页正确显示停止接收"
+  ],
+  "surveyId": "6ad708ee76296ade1e15a0e3",
+  "publicId": "dLG8SJiwH9ri8orU",
+  "pagination": {
+    "firstPageRows": 20,
+    "secondPageRows": 1,
+    "lastValue": "第 21 条虚构分页验收记录"
+  },
+  "errors": []
+}

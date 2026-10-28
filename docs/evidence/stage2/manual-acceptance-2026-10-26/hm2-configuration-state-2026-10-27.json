@@ -1,0 +1,16 @@
+{
+  "clientDate": "2026-10-27",
+  "source": "user supplied screenshot",
+  "originalFilename": "截屏2026-10-27 00.18.09.png",
+  "preservedScreenshot": "hm2-configuration-state-2026-10-27.png",
+  "sha256": "ba28572ca806b7f357c11db4005f3c9b0c6b51f90faeabe4b3546c6236fba7f8",
+  "observed": {
+    "url": "http://127.0.0.1:8000/surveys/6adf783d0dc4b0dea638677f/edit",
+    "questionCount": 0,
+    "allowMultipleSubmissionsChecked": false,
+    "saveStatus": "所有修改已保存",
+    "title": "第二阶段手测_1026_基础流程"
+  },
+  "interpretation": "Screenshot and read-only database agree on the current empty draft. It does not establish whether four questions were configured earlier or why they are absent. Configuration persistence remains unverified; guide a one-question save/refresh check.",
+  "businessWritesByAi": 0
+}

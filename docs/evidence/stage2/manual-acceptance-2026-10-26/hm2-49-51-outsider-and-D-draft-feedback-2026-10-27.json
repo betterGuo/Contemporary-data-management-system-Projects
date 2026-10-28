@@ -1,0 +1,114 @@
+{
+  "clientDate": "2026-10-27",
+  "userFeedback": "第三账号仍然无法访问，接收者已成功选入1道v1题目，问卷D仍是草稿，继续测试。",
+  "operator": "user acting as three accounts",
+  "checks": {
+    "outsiderOrdinaryDistinct": true,
+    "outsiderNoActiveGrant": true,
+    "peerStillGranted": true,
+    "questionStillPrivate": true,
+    "DOwnedByPeer": true,
+    "DIsDraft": true,
+    "DOneQuestionOneReference": true,
+    "DUsesOriginalV1": true,
+    "DSnapshotMatches": true,
+    "DNoFormalResponse": true,
+    "ownerOtherCountOne": true,
+    "ownerDetailsExcludeD": true,
+    "peerOwnDetailsIncludeD": true,
+    "peerNoOtherCount": true,
+    "versionsUnchanged": true
+  },
+  "allMatch": true,
+  "outsider": {
+    "id": "6ae0c1640dc4b0dea63867ab",
+    "username": "accept2_outsider_1026",
+    "administrator": false
+  },
+  "peer": {
+    "id": "6ae0be0c0dc4b0dea63867a7",
+    "username": "accept2_peer_1026"
+  },
+  "D": {
+    "id": "6ae0c1b90dc4b0dea63867ae",
+    "publicId": "N77-VUQPnDm3ebMd",
+    "title": "第二阶段手测_1026_共享问卷D",
+    "description": "用于验证共享题选用与权限隔离",
+    "status": "draft",
+    "revision": 2,
+    "definitionVersion": 1,
+    "ownerId": "6ae0be0c0dc4b0dea63867a7",
+    "questions": [
+      {
+        "id": "b1695147-2568-4156-be90-a4ea2877f910",
+        "type": "number",
+        "title": "第二阶段手测_1026_学习时长(小时）",
+        "required": true,
+        "options": [],
+        "validation": {
+          "minValue": "0",
+          "maxValue": "24",
+          "integerOnly": true
+        },
+        "jumpRules": []
+      }
+    ],
+    "questionRefs": [
+      {
+        "instanceId": "b1695147-2568-4156-be90-a4ea2877f910",
+        "questionId": "6ae0680b0dc4b0dea6386792",
+        "questionVersionId": "6ae0696e0dc4b0dea6386795",
+        "rootQuestionId": "6ae0680b0dc4b0dea6386792",
+        "contentHash": "1ba7ba4d052872a0d7a8538a1bfa8ada80cd0e0c5525fe95fef436a0c83f03e8"
+      }
+    ]
+  },
+  "ownerUsage": {
+    "surveys": [
+      {
+        "id": "6ae0b5550dc4b0dea638679f",
+        "title": "第二阶段手测_1026_版本问卷C",
+        "status": "published",
+        "responseCount": 1,
+        "currentInstances": [
+          "91f814a2-b65c-401b-a315-7bea810e78af"
+        ]
+      },
+      {
+        "id": "6ae06ae50dc4b0dea6386798",
+        "title": "第二阶段手测_1026_复用问卷B",
+        "status": "published",
+        "responseCount": 1,
+        "currentInstances": [
+          "3dba067f-3d66-4159-993f-c24d262661ab"
+        ]
+      }
+    ],
+    "scope": "question",
+    "visibleQuestionCount": 1,
+    "coverage": "自第一阶段迁移登记起可追溯的累计使用；移除实例不减少历史数。",
+    "canSeeOtherCount": true,
+    "otherSurveyCount": 1,
+    "deletedOtherSurveyCount": 0,
+    "otherCountScope": "仅当前有维护权限的题目；同源可见不等于拥有派生题维护权限。"
+  },
+  "peerUsage": {
+    "surveys": [
+      {
+        "id": "6ae0c1b90dc4b0dea63867ae",
+        "title": "第二阶段手测_1026_共享问卷D",
+        "status": "draft",
+        "responseCount": 0,
+        "currentInstances": [
+          "b1695147-2568-4156-be90-a4ea2877f910"
+        ]
+      }
+    ],
+    "scope": "question",
+    "visibleQuestionCount": 1,
+    "coverage": "自第一阶段迁移登记起可追溯的累计使用；移除实例不减少历史数。",
+    "canSeeOtherCount": false
+  },
+  "evidenceScope": "User explicitly confirms outsider denial, peer selection and draft state. Database verifies grant isolation, ownership, exact v1 snapshot. Usage permission results are AI read-only service checks, not user-observed page results yet.",
+  "businessWritesByAi": 0
+}

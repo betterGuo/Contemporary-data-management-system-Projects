@@ -1,0 +1,121 @@
+{
+  "clientDate": "2026-10-27",
+  "userMessage": "Questionnaire B basic-settings screenshot only",
+  "checks": {
+    "BIsDraft": true,
+    "twoInstances": true,
+    "twoReferences": true,
+    "bothBindingsAndSnapshotsCorrect": true,
+    "ageInstanceDifferentFromA": true,
+    "distinctBInstances": true,
+    "BNoFormalResponses": true,
+    "AResponsesUnchanged": true,
+    "learningV1BsonUnchanged": true,
+    "currentUsageRowsTwo": true
+  },
+  "allMatch": true,
+  "surveyB": {
+    "id": "6ae06ae50dc4b0dea6386798",
+    "publicId": "MtsRZYJl5Ocs6yeL",
+    "title": "第二阶段手测_1026_复用问卷B",
+    "description": "用于验证题库版本复用与跨问卷统计",
+    "status": "draft",
+    "revision": 3,
+    "definitionVersion": 1,
+    "allowMultipleSubmissions": false,
+    "questions": [
+      {
+        "id": "63c584b7-aee2-4ed6-8880-f85cf7181551",
+        "type": "number",
+        "title": "你的年龄是",
+        "required": true,
+        "options": [],
+        "validation": {
+          "minValue": "0",
+          "maxValue": "120",
+          "integerOnly": true
+        },
+        "jumpRules": []
+      },
+      {
+        "id": "3dba067f-3d66-4159-993f-c24d262661ab",
+        "type": "number",
+        "title": "第二阶段手测_1026_学习时长(小时）",
+        "required": true,
+        "options": [],
+        "validation": {
+          "minValue": "0",
+          "maxValue": "24",
+          "integerOnly": true
+        },
+        "jumpRules": []
+      }
+    ],
+    "questionRefs": [
+      {
+        "instanceId": "63c584b7-aee2-4ed6-8880-f85cf7181551",
+        "questionId": "6ae0617e0dc4b0dea638678c",
+        "questionVersionId": "6ae0617e0dc4b0dea638678d",
+        "rootQuestionId": "6ae0617e0dc4b0dea638678c",
+        "contentHash": "cc5d2a6cf7485bd3d1fed80ef28d82c527c660f703845b173926ebb29dca3e50"
+      },
+      {
+        "instanceId": "3dba067f-3d66-4159-993f-c24d262661ab",
+        "questionId": "6ae0680b0dc4b0dea6386792",
+        "questionVersionId": "6ae0696e0dc4b0dea6386795",
+        "rootQuestionId": "6ae0680b0dc4b0dea6386792",
+        "contentHash": "1ba7ba4d052872a0d7a8538a1bfa8ada80cd0e0c5525fe95fef436a0c83f03e8"
+      }
+    ]
+  },
+  "bindingDetails": [
+    {
+      "position": 1,
+      "instanceId": "63c584b7-aee2-4ed6-8880-f85cf7181551",
+      "expectedQuestionId": "6ae0617e0dc4b0dea638678c",
+      "expectedVersionId": "6ae0617e0dc4b0dea638678d",
+      "sourceMatches": true,
+      "versionNumberOne": true,
+      "snapshotMatches": true,
+      "content": {
+        "type": "number",
+        "title": "你的年龄是",
+        "required": true,
+        "options": [],
+        "validation": {
+          "minValue": "0",
+          "maxValue": "120",
+          "integerOnly": true
+        }
+      }
+    },
+    {
+      "position": 2,
+      "instanceId": "3dba067f-3d66-4159-993f-c24d262661ab",
+      "expectedQuestionId": "6ae0680b0dc4b0dea6386792",
+      "expectedVersionId": "6ae0696e0dc4b0dea6386795",
+      "sourceMatches": true,
+      "versionNumberOne": true,
+      "snapshotMatches": true,
+      "content": {
+        "type": "number",
+        "title": "第二阶段手测_1026_学习时长(小时）",
+        "required": true,
+        "options": [],
+        "validation": {
+          "minValue": "0",
+          "maxValue": "24",
+          "integerOnly": true
+        }
+      }
+    }
+  ],
+  "evidenceScope": "Screenshot proves B title/description and two numeric entries in the outline. Database independently verifies exact v1 identity, snapshots and usage. Source-detail read-only UI and browser refresh action were not separately shown.",
+  "businessWritesByAi": 0,
+  "screenshot": {
+    "path": "hm2-24-26-questionnaire-B-draft-2026-10-27.png",
+    "sha256": "2ac08460edd738a8d184a614b4c4378d319bf42098bc61ebedfebaa87e420f22",
+    "observedQuestionCount": 2,
+    "observedTitle": "第二阶段手测_1026_复用问卷B"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "scope": "question",
+      "status": 200,
+      "requestUrl": "http://127.0.0.1:8001/api/library-questions/6adf61d64e9cb72a9ec7a450/usage?scope=question"
+    },
+    {
+      "scope": "root",
+      "status": 200,
+      "requestUrl": "http://127.0.0.1:8001/api/library-questions/6adf61d64e9cb72a9ec7a450/usage?scope=root"
+    },
+    {
+      "scope": "version",
+      "status": 200,
+      "requestUrl": "http://127.0.0.1:8001/api/library-questions/6adf61d64e9cb72a9ec7a450/usage?scope=version&versionId=6adf61e34e9cb72a9ec7a466"
+    }
+  ],
+  "pageErrors": [],
+  "note": "Read-only UI selector verification on preview; no questionnaire or answer writes."
+}

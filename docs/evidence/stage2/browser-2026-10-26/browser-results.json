@@ -1,0 +1,44 @@
+{
+  "startedAt": "2026-10-26T14:17:29.280Z",
+  "baseUrl": "http://127.0.0.1:8001",
+  "scope": "Isolated survey_project1_stage2_preview only; no original or final database access.",
+  "fixturePreparation": [
+    {
+      "method": "Real registration UI",
+      "users": [
+        "qa_owner_mvpccd6o",
+        "qa_receiver_mvpccd6o"
+      ],
+      "database": "preview only"
+    }
+  ],
+  "uiSteps": [
+    {
+      "label": "Existing account sees migrated question library",
+      "status": "passed"
+    },
+    {
+      "label": "Create persistent number draft through form",
+      "status": "passed"
+    },
+    {
+      "label": "Explicitly create immutable v1",
+      "status": "passed"
+    }
+  ],
+  "screenshots": [
+    "01-migrated-library.png",
+    "02-persistent-draft.png",
+    "03-formal-v1.png",
+    "failure.png"
+  ],
+  "pageErrors": [],
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "status": "failed",
+  "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(bookmark.body.questions.some(q=>q.id===qid&&q.bookmarkTags.includes('年龄')))\n\n    at /Users/guoyuhang/Desktop/26年秋季学期/当代数据管理系统/project1/scripts/browser_stage2.cjs:42:356\n    at async step (/Users/guoyuhang/Desktop/26年秋季学期/当代数据管理系统/project1/scripts/browser_stage2.cjs:17:33)\n    at async /Users/guoyuhang/Desktop/26年秋季学期/当代数据管理系统/project1/scripts/browser_stage2.cjs:42:3",
+  "completedAt": "2026-10-26T14:17:34.130Z"
+}

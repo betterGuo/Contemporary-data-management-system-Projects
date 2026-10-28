@@ -1,0 +1,130 @@
+{
+  "clientDate": "2026-10-27",
+  "userFeedback": "多选和文本的无效输入都被拦截了，也成功完成预览了，继续测试。",
+  "operator": "user",
+  "cases": {
+    "HM2-12a": {
+      "status": "passed",
+      "evidenceSource": "explicit user feedback"
+    },
+    "HM2-12b": {
+      "status": "passed",
+      "evidenceSource": "explicit user feedback"
+    },
+    "HM2-12c": {
+      "status": "passed",
+      "evidenceSource": "explicit user feedback"
+    },
+    "HM2-13a": {
+      "status": "passed",
+      "evidenceSource": "explicit user feedback"
+    },
+    "HM2-13b": {
+      "status": "passed",
+      "evidenceSource": "explicit user feedback"
+    },
+    "HM2-13c": {
+      "status": "passed",
+      "evidenceSource": "explicit user feedback"
+    },
+    "HM2-14 preview completion": {
+      "status": "passed",
+      "evidenceSource": "explicit user feedback"
+    }
+  },
+  "readOnlyChecks": {
+    "surveyStillDraft": true,
+    "definitionUnchanged": true,
+    "formalResponseCount": 0,
+    "noFormalResponseFromPreview": true
+  },
+  "survey": {
+    "id": "6adf783d0dc4b0dea638677f",
+    "publicId": "ngstsxAN_bzl2H5I",
+    "title": "第二阶段手测_1026_基础流程",
+    "status": "draft",
+    "revision": 6,
+    "definitionVersion": 1,
+    "allowMultipleSubmissions": true,
+    "allowAnonymous": false,
+    "questions": [
+      {
+        "id": "64b60d1b-6c40-4cb1-8e59-e0737a1355a1",
+        "type": "single",
+        "title": "请选择填写方式",
+        "required": true,
+        "options": [
+          {
+            "id": "d68c2db9-b8be-4f41-9fbd-2505d079a860",
+            "label": "完整填写"
+          },
+          {
+            "id": "f5d1f062-cb3f-473e-93be-ee4526c80c1e",
+            "label": "直接填写年龄"
+          }
+        ],
+        "validation": {},
+        "jumpRules": [
+          {
+            "id": "e6c49f82-8cbb-4e8c-adf0-2554c3b18504",
+            "operator": "eq",
+            "value": "f5d1f062-cb3f-473e-93be-ee4526c80c1e",
+            "targetQuestionId": "6e1b44be-ec4c-4cde-aa23-042fe305b618"
+          }
+        ]
+      },
+      {
+        "id": "6d4e7a3f-0dcd-498c-8ce1-e024ed045ae1",
+        "type": "multiple",
+        "title": "你希望改进哪些方面",
+        "required": true,
+        "options": [
+          {
+            "id": "9cd47526-b891-4cb9-8a4b-1ea82ee34697",
+            "label": "课程内容"
+          },
+          {
+            "id": "bf74dc30-d3d3-4d09-903a-7df880d019f7",
+            "label": "课程互动"
+          },
+          {
+            "id": "362d523f-90d6-4053-84bc-8ba27db37990",
+            "label": "作业反馈"
+          }
+        ],
+        "validation": {
+          "minSelections": 2,
+          "maxSelections": 2
+        },
+        "jumpRules": []
+      },
+      {
+        "id": "a17f0136-ab39-4f00-a7f1-1df1aaf77372",
+        "type": "text",
+        "title": "请填写你的建议",
+        "required": true,
+        "options": [],
+        "validation": {
+          "minLength": 2,
+          "maxLength": 6
+        },
+        "jumpRules": []
+      },
+      {
+        "id": "6e1b44be-ec4c-4cde-aa23-042fe305b618",
+        "type": "number",
+        "title": "你的年龄是",
+        "required": true,
+        "options": [],
+        "validation": {
+          "minValue": "0",
+          "maxValue": "120",
+          "integerOnly": true
+        },
+        "jumpRules": []
+      }
+    ]
+  },
+  "evidenceScope": "User explicitly confirms invalid multiple/text input rejection and full-path preview completion. Earlier review screenshot proves four displayed answers. Database verifies saved definition and absence of formal responses only.",
+  "businessWritesByAi": 0
+}

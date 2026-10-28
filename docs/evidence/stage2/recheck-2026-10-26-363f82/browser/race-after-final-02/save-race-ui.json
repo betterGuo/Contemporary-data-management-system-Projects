@@ -1,0 +1,97 @@
+{
+  "status": "passed",
+  "startedAt": "2026-10-26T15:15:21.289Z",
+  "database": "survey_project1_recheck_363f82",
+  "baseUrl": "http://127.0.0.1:8001",
+  "methods": "Actual create/edit/save UI; intercept only delays the real outbound write, never modifies its payload. Stored state is verified through API GET.",
+  "cases": [
+    {
+      "endpoint": "working-content",
+      "questionId": "6adf6e8bbf215d7a4a3efc07",
+      "submittedTitle": "请求中的标题 mvpeet59",
+      "attemptedLateTitle": "保存期间继续输入 mvpeet59",
+      "editableProperty": true,
+      "inert": true,
+      "pointerBlocked": true,
+      "edited": false,
+      "uiTitleAfterSave": "请求中的标题 mvpeet59",
+      "storedTitle": "请求中的标题 mvpeet59",
+      "lostLateInput": false,
+      "status": "passed"
+    },
+    {
+      "endpoint": "versions",
+      "questionId": "6adf6e8dbf215d7a4a3efc12",
+      "submittedTitle": "请求中的标题 mvpeeuv2",
+      "attemptedLateTitle": "保存期间继续输入 mvpeeuv2",
+      "editableProperty": true,
+      "inert": true,
+      "pointerBlocked": true,
+      "edited": false,
+      "uiTitleAfterSave": "请求中的标题 mvpeeuv2",
+      "storedTitle": "请求中的标题 mvpeeuv2",
+      "lostLateInput": false,
+      "status": "passed"
+    },
+    {
+      "endpoint": "create",
+      "questionId": "6adf6e90bf215d7a4a3efc1a",
+      "submittedTitle": "创建请求中的标题 mvpeewkr",
+      "attemptedLateTitle": "创建期间新增文字 mvpeewkr",
+      "editableProperty": true,
+      "inert": true,
+      "pointerBlocked": true,
+      "edited": false,
+      "dialogStayedOpen": true,
+      "uiTitleAfterSave": "创建请求中的标题 mvpeewkr",
+      "storedTitle": "创建请求中的标题 mvpeewkr",
+      "lostLateInput": false,
+      "status": "passed"
+    },
+    {
+      "endpoint": "actual-revision-conflict",
+      "questionId": "6adf6e91bf215d7a4a3efc20",
+      "httpStatus": 409,
+      "code": "REVISION_CONFLICT",
+      "inputPreserved": true,
+      "formUnlocked": true,
+      "status": "passed"
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 409 (Conflict)"
+  ],
+  "httpErrors": [
+    {
+      "url": "http://127.0.0.1:8001/api/auth/me",
+      "status": 401
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/library-questions/6adf6e91bf215d7a4a3efc20/working-content",
+      "status": 409
+    }
+  ],
+  "screenshots": [
+    "working-content-request-paused.png",
+    "working-content-after-success.png",
+    "versions-request-paused.png",
+    "versions-after-success.png",
+    "create-request-paused.png",
+    "create-after-success.png",
+    "failure-preserves-local-input.png"
+  ],
+  "expectedHttpErrors": [
+    {
+      "url": "http://127.0.0.1:8001/api/auth/me",
+      "status": 401
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/library-questions/6adf6e91bf215d7a4a3efc20/working-content",
+      "status": 409
+    }
+  ],
+  "unexpectedHttpErrors": [],
+  "completedAt": "2026-10-26T15:15:30.446Z"
+}

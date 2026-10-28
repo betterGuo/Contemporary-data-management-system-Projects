@@ -1,0 +1,188 @@
+{
+  "status": "passed",
+  "startedAt": "2026-10-26T15:17:05.192Z",
+  "baseUrl": "http://127.0.0.1:8001",
+  "database": "survey_project1_recheck_363f82",
+  "coreReport": "/Users/guoyuhang/Desktop/26年秋季学期/当代数据管理系统/project1/docs/evidence/stage2/recheck-2026-10-26-363f82/browser/core-final-01/browser-results.json",
+  "methods": "Fixtures and positive mutations use actual visible UI. API GETs verify stored state; two explicitly labeled negative POST probes verify public-maintenance authorization.",
+  "steps": [
+    {
+      "label": "Administrator creates public draft and immutable v1 through UI",
+      "status": "passed"
+    },
+    {
+      "label": "Ordinary user sees public content without maintenance controls",
+      "status": "passed"
+    },
+    {
+      "label": "Ordinary public-create attempt through UI is rejected with 403",
+      "status": "passed"
+    },
+    {
+      "label": "Direct ordinary public-edit/version negative probes are rejected",
+      "status": "passed"
+    },
+    {
+      "label": "Ordinary user selects public v1 into a published survey",
+      "status": "passed"
+    },
+    {
+      "label": "Administrator publishes public v2 while existing public v1 snapshot stays fixed",
+      "status": "passed"
+    },
+    {
+      "label": "Draft explicit v1-to-v2 upgrade preserves instance identity and old published snapshots",
+      "status": "passed"
+    },
+    {
+      "label": "Personal tag rename uses both real prompts and filter UI",
+      "status": "passed"
+    },
+    {
+      "label": "Batch snapshot copy and explicit personal-copy replacement keep recipient instance identity",
+      "status": "passed"
+    },
+    {
+      "label": "Auto-bookmarked null version can change personal tags after v1 and archive",
+      "status": "passed"
+    },
+    {
+      "label": "Public archive removes new selection and preserves published questionnaire snapshot",
+      "status": "passed"
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "httpErrors": [
+    {
+      "url": "http://127.0.0.1:8001/api/auth/me",
+      "status": 401,
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/auth/me",
+      "status": 401,
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/auth/me",
+      "status": 401,
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/library-questions",
+      "status": 403,
+      "method": "POST"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/library-questions/6adf6ef5bf215d7a4a3efc4b/working-content",
+      "status": 403,
+      "method": "POST"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/library-questions/6adf6ef5bf215d7a4a3efc4b/versions",
+      "status": 403,
+      "method": "POST"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/library-questions/6adf6ef5bf215d7a4a3efc4b/versions",
+      "status": 404,
+      "method": "GET"
+    }
+  ],
+  "expectedDenials": [
+    {
+      "status": 403,
+      "method": "POST",
+      "path": "/api/library-questions",
+      "reason": "UI negative test: ordinary public create"
+    },
+    {
+      "status": 403,
+      "method": "POST",
+      "path": "/api/library-questions/6adf6ef5bf215d7a4a3efc4b/working-content",
+      "reason": "Explicit API negative authorization probe; no fixture mutation"
+    },
+    {
+      "status": 403,
+      "method": "POST",
+      "path": "/api/library-questions/6adf6ef5bf215d7a4a3efc4b/versions",
+      "reason": "Explicit API negative authorization probe; no fixture mutation"
+    },
+    {
+      "status": 404,
+      "method": "GET",
+      "path": "/api/library-questions/6adf6ef5bf215d7a4a3efc4b/versions",
+      "reason": "Archived public source; questionnaire snapshot remains readable"
+    }
+  ],
+  "screenshots": [
+    "01-admin-public-v1.png",
+    "02-public-ordinary-readonly.png",
+    "03-public-create-rejected.png",
+    "04-admin-public-v2.png",
+    "05-explicit-draft-upgrade.png",
+    "06-personal-tag-rename.png",
+    "07-batch-copy-and-replace.png",
+    "08-archived-auto-bookmark-tags.png",
+    "08-public-archive-snapshot.png"
+  ],
+  "fixtures": {
+    "publicQuestionId": "6adf6ef5bf215d7a4a3efc4b",
+    "publicVersionIds": [
+      "6adf6ef5bf215d7a4a3efc4e",
+      "6adf6ef9bf215d7a4a3efc53"
+    ],
+    "publicSurveyId": "6adf6ef6bf215d7a4a3efc51",
+    "upgradeSurveyId": "6adf6ef9bf215d7a4a3efc56",
+    "upgradeInstanceId": "93f4c429-ddeb-4720-85f8-25e85b2511b3"
+  },
+  "expectedHttpErrors": [
+    {
+      "url": "http://127.0.0.1:8001/api/auth/me",
+      "status": 401,
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/auth/me",
+      "status": 401,
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/auth/me",
+      "status": 401,
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/library-questions",
+      "status": 403,
+      "method": "POST"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/library-questions/6adf6ef5bf215d7a4a3efc4b/working-content",
+      "status": 403,
+      "method": "POST"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/library-questions/6adf6ef5bf215d7a4a3efc4b/versions",
+      "status": 403,
+      "method": "POST"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/library-questions/6adf6ef5bf215d7a4a3efc4b/versions",
+      "status": 404,
+      "method": "GET"
+    }
+  ],
+  "unexpectedHttpErrors": [],
+  "unexpectedConsoleErrors": [],
+  "completedAt": "2026-10-26T15:17:20.303Z"
+}

@@ -1,0 +1,320 @@
+{
+  "recordDate": "2026-10-22",
+  "method": "AI read-only source review; corrected draft created through application survey_service.create/patch, without publishing or submitting",
+  "userFeedback": "我首先忘记勾选没题必做了，然后q4的只允许整数按钮没找到，核对统计中也没找到平均年龄显示在哪里",
+  "sourceSurvey": {
+    "title": "第一阶段提交验收-20261022",
+    "status": "published",
+    "revision": 3,
+    "questions": [
+      {
+        "id": "0d268a19-86ca-489a-bb1d-6f77eaa15d66",
+        "type": "single",
+        "title": "选择填写方式",
+        "required": false,
+        "options": [
+          {
+            "id": "693d8a5c-30fe-404d-aa93-dad4f8741433",
+            "label": "完整填写"
+          },
+          {
+            "id": "a47743ca-b360-4481-b655-174c91f1ff73",
+            "label": "直接填写年龄"
+          }
+        ],
+        "validation": {},
+        "jumpRules": [
+          {
+            "id": "660224b1-0b78-4ee7-b7e6-166874db6e35",
+            "operator": "eq",
+            "value": "a47743ca-b360-4481-b655-174c91f1ff73",
+            "targetQuestionId": "06e8e490-b7c0-44c0-b988-9cda4c45192a"
+          }
+        ]
+      },
+      {
+        "id": "a96e7700-6fd7-4973-8c4f-2de3e25fb84c",
+        "type": "multiple",
+        "title": "选择喜欢的水果",
+        "required": false,
+        "options": [
+          {
+            "id": "36d1ca05-0f28-436d-8ae4-9679d8ce97f9",
+            "label": "香蕉"
+          },
+          {
+            "id": "1f6dfbac-39c6-4cb6-9220-fd56726bef22",
+            "label": "苹果"
+          },
+          {
+            "id": "6f63771f-33bf-4033-b489-39fa35e86afb",
+            "label": "西瓜"
+          }
+        ],
+        "validation": {
+          "minSelections": 2,
+          "maxSelections": 2
+        },
+        "jumpRules": []
+      },
+      {
+        "id": "88bc8c80-0134-4bd3-b75d-145c08173665",
+        "type": "text",
+        "title": "写一句测试意见",
+        "required": false,
+        "options": [],
+        "validation": {
+          "minLength": 2,
+          "maxLength": 5
+        },
+        "jumpRules": []
+      },
+      {
+        "id": "06e8e490-b7c0-44c0-b988-9cda4c45192a",
+        "type": "text",
+        "title": "年龄",
+        "required": false,
+        "options": [],
+        "validation": {
+          "minLength": 0,
+          "maxLength": 120
+        },
+        "jumpRules": []
+      }
+    ],
+    "allowMultipleSubmissions": true,
+    "publicId": "P-dbxTDDIBbD5Dzu"
+  },
+  "sourceSurveyId": "6ad9e1187c4b0ea9d9a3c5f3",
+  "sourceStatistics": {
+    "surveyId": "6ad9e1187c4b0ea9d9a3c5f3",
+    "title": "第一阶段提交验收-20261022",
+    "definitionVersion": 1,
+    "submissionCount": 3,
+    "respondentCount": 1,
+    "questions": [
+      {
+        "questionId": "0d268a19-86ca-489a-bb1d-6f77eaa15d66",
+        "title": "选择填写方式",
+        "type": "single",
+        "answerCount": 3,
+        "respondentCount": 1,
+        "unansweredCount": 0,
+        "totalValues": 3,
+        "page": 1,
+        "pageSize": 20,
+        "average": null,
+        "values": [],
+        "options": [
+          {
+            "id": "693d8a5c-30fe-404d-aa93-dad4f8741433",
+            "label": "完整填写",
+            "count": 2,
+            "respondentCount": 1
+          },
+          {
+            "id": "a47743ca-b360-4481-b655-174c91f1ff73",
+            "label": "直接填写年龄",
+            "count": 1,
+            "respondentCount": 1
+          }
+        ]
+      },
+      {
+        "questionId": "a96e7700-6fd7-4973-8c4f-2de3e25fb84c",
+        "title": "选择喜欢的水果",
+        "type": "multiple",
+        "answerCount": 2,
+        "respondentCount": 1,
+        "unansweredCount": 1,
+        "totalValues": 2,
+        "page": 1,
+        "pageSize": 20,
+        "average": null,
+        "values": [],
+        "options": [
+          {
+            "id": "36d1ca05-0f28-436d-8ae4-9679d8ce97f9",
+            "label": "香蕉",
+            "count": 1,
+            "respondentCount": 1
+          },
+          {
+            "id": "1f6dfbac-39c6-4cb6-9220-fd56726bef22",
+            "label": "苹果",
+            "count": 2,
+            "respondentCount": 1
+          },
+          {
+            "id": "6f63771f-33bf-4033-b489-39fa35e86afb",
+            "label": "西瓜",
+            "count": 1,
+            "respondentCount": 1
+          }
+        ]
+      },
+      {
+        "questionId": "88bc8c80-0134-4bd3-b75d-145c08173665",
+        "title": "写一句测试意见",
+        "type": "text",
+        "answerCount": 2,
+        "respondentCount": 1,
+        "unansweredCount": 1,
+        "totalValues": 2,
+        "page": 1,
+        "pageSize": 20,
+        "average": null,
+        "values": [
+          {
+            "submittedAt": "2026-10-22T10:27:37.798000+00:00",
+            "responseId": "6ad9e5197c4b0ea9d9a3c5f5",
+            "value": "666"
+          },
+          {
+            "submittedAt": "2026-10-22T10:28:24.358000+00:00",
+            "responseId": "6ad9e5487c4b0ea9d9a3c5f6",
+            "value": "8888"
+          }
+        ]
+      },
+      {
+        "questionId": "06e8e490-b7c0-44c0-b988-9cda4c45192a",
+        "title": "年龄",
+        "type": "text",
+        "answerCount": 3,
+        "respondentCount": 1,
+        "unansweredCount": 0,
+        "totalValues": 3,
+        "page": 1,
+        "pageSize": 20,
+        "average": null,
+        "values": [
+          {
+            "submittedAt": "2026-10-22T10:27:37.798000+00:00",
+            "responseId": "6ad9e5197c4b0ea9d9a3c5f5",
+            "value": "99.1"
+          },
+          {
+            "submittedAt": "2026-10-22T10:28:24.358000+00:00",
+            "responseId": "6ad9e5487c4b0ea9d9a3c5f6",
+            "value": "9.9"
+          },
+          {
+            "submittedAt": "2026-10-22T10:30:33.957000+00:00",
+            "responseId": "6ad9e5c97c4b0ea9d9a3c5f7",
+            "value": "99"
+          }
+        ]
+      }
+    ]
+  },
+  "sourceSurveyBsonSha256": "0e3f1dcdb1e5597f81f361a4dca2adbfbbe99e1fd95607d6df448bd524732355",
+  "sourceResponsesBsonSha256": {
+    "6ad9e5197c4b0ea9d9a3c5f5": "63e6742128602cf2c6fd048d34bbb1f50b1f55166c16261eed47cea48e6ee600",
+    "6ad9e5487c4b0ea9d9a3c5f6": "46de3f4cd7fcd4de4648fa14f520da887fb33ec07a7813285bd11aafdc87cc08",
+    "6ad9e5c97c4b0ea9d9a3c5f7": "e50af11ce857cf9e674e9b7c4638146b3eb1b4106c40f8345d5cd764ca0ccce8"
+  },
+  "sourceSurveyAndAllResponsesUnchanged": true,
+  "correctedDraft": {
+    "publicId": "Sg-oNPSw0Anl1X-e",
+    "title": "第一阶段提交验收-20261022-修正版",
+    "description": "人工验收修正草稿：四题均必答，年龄为数字填空；原验收卷及其答卷保留。",
+    "allowAnonymous": false,
+    "allowMultipleSubmissions": true,
+    "status": "draft",
+    "closesAt": null,
+    "revision": 2,
+    "definitionVersion": 1,
+    "questions": [
+      {
+        "id": "0d268a19-86ca-489a-bb1d-6f77eaa15d66",
+        "type": "single",
+        "title": "选择填写方式",
+        "required": true,
+        "options": [
+          {
+            "id": "693d8a5c-30fe-404d-aa93-dad4f8741433",
+            "label": "完整填写"
+          },
+          {
+            "id": "a47743ca-b360-4481-b655-174c91f1ff73",
+            "label": "直接填写年龄"
+          }
+        ],
+        "validation": {},
+        "jumpRules": [
+          {
+            "id": "660224b1-0b78-4ee7-b7e6-166874db6e35",
+            "operator": "eq",
+            "value": "a47743ca-b360-4481-b655-174c91f1ff73",
+            "targetQuestionId": "06e8e490-b7c0-44c0-b988-9cda4c45192a"
+          }
+        ]
+      },
+      {
+        "id": "a96e7700-6fd7-4973-8c4f-2de3e25fb84c",
+        "type": "multiple",
+        "title": "选择喜欢的水果",
+        "required": true,
+        "options": [
+          {
+            "id": "36d1ca05-0f28-436d-8ae4-9679d8ce97f9",
+            "label": "香蕉"
+          },
+          {
+            "id": "1f6dfbac-39c6-4cb6-9220-fd56726bef22",
+            "label": "苹果"
+          },
+          {
+            "id": "6f63771f-33bf-4033-b489-39fa35e86afb",
+            "label": "西瓜"
+          }
+        ],
+        "validation": {
+          "minSelections": 2,
+          "maxSelections": 2
+        },
+        "jumpRules": []
+      },
+      {
+        "id": "88bc8c80-0134-4bd3-b75d-145c08173665",
+        "type": "text",
+        "title": "写一句测试意见",
+        "required": true,
+        "options": [],
+        "validation": {
+          "minLength": 2,
+          "maxLength": 5
+        },
+        "jumpRules": []
+      },
+      {
+        "id": "06e8e490-b7c0-44c0-b988-9cda4c45192a",
+        "type": "number",
+        "title": "年龄",
+        "required": true,
+        "options": [],
+        "validation": {
+          "minValue": "0",
+          "maxValue": "120",
+          "integerOnly": true
+        },
+        "jumpRules": []
+      }
+    ],
+    "createdAt": "2026-10-22T11:08:05.372000+00:00",
+    "updatedAt": "2026-10-22T11:08:05.373000+00:00",
+    "publishedAt": null,
+    "closedAt": null,
+    "id": "6ad9ee9526858a1e0ce1a370",
+    "effectiveStatus": "draft"
+  },
+  "correctedDraftCreated": true,
+  "correctedDraftResponseCount": 0,
+  "correctedManualTestsStatus": "pending_user_execution",
+  "businessCountsAfterPreparation": {
+    "users": 9,
+    "surveys": 8,
+    "responses": 32
+  }
+}

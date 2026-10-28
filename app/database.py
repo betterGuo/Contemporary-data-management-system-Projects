@@ -81,3 +81,5 @@ def initialize_database(db):
     db.responses.create_index([("surveyId", 1), ("respondentKey", 1), ("submissionKey", 1)], unique=True, name="submission_idempotency")
     db.responses.create_index([("surveyId", 1), ("respondentKey", 1)], unique=True, partialFilterExpression={"repeatMode": "single"}, name="single_response_per_user")
     db.schema_migrations.update_one({"_id": "001_initial"}, {"$setOnInsert": {"appliedAt": utcnow(), "description": "Four business collections, validators and indexes"}}, upsert=True)
+    from app.library_database import initialize_library
+    initialize_library(db)

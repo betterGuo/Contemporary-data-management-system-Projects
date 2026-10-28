@@ -1,0 +1,37 @@
+{
+  "case": "T84",
+  "method": "真实浏览器 GET API 展示夹具拦截：仅替换响应展示数据；预览文本上限在夹具中设为2000以容纳完整探针。不修改数据库，不新增正式答卷。",
+  "surveyId": "6ad7082776296ade1e15a0db",
+  "payloads": {
+    "title": "<script>window.__xssProbe=1</script>",
+    "description": "<img src=x onerror=\"window.__xssProbe=2\">",
+    "textAnswer": "<script>window.__xssProbe=1</script>\n<img src=x onerror=\"window.__xssProbe=2\">"
+  },
+  "checks": [
+    {
+      "stage": "编辑器标题、说明原样显示",
+      "probe": "undefined",
+      "injectedElements": 0
+    },
+    {
+      "stage": "填写介绍标题、说明文本显示",
+      "probe": "undefined",
+      "injectedElements": 0
+    },
+    {
+      "stage": "填写复核脚本与图片标签答案文本显示",
+      "probe": "undefined",
+      "injectedElements": 0
+    },
+    {
+      "stage": "统计标题、选项和文本答案文本显示",
+      "probe": "undefined",
+      "injectedElements": 0
+    }
+  ],
+  "errors": [],
+  "injectedAssetRequests": 0,
+  "databaseWrites": 0,
+  "formalResponsesCreated": 0,
+  "result": "PASS"
+}

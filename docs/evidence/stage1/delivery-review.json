@@ -1,0 +1,643 @@
+{
+  "reviewedOn": "2026-10-20T22:29:39.307863+08:00",
+  "timezone": "Asia/Shanghai",
+  "reviewer": "Codex同会话文档协作代理",
+  "sourceBaseline": "65aa339",
+  "foundationCommit": "0333abb",
+  "finalVersionRef": "stage1-v1.0.1",
+  "method": "只读真实代码/AI日志/运行证据并静态检查交付文件；本记录不是pytest运行，不改写原始coveredCases/uncoveredCases",
+  "status": "passed",
+  "T81": {
+    "method": "静态抽查六条真实AI记录，其中三条为本轮实际协作提示原文；代码、修改、真实passed结果和独立证据分别对应，不是pytest运行",
+    "actual": [
+      {
+        "logId": "AI-003",
+        "topic": "版本读取与运算符扩展",
+        "method": "读取真实AI日志条目，逐个核实源码入口，并在本次test-results.json匹配outcome=passed的真实nodeid；不凭pytest标记存在判通过",
+        "paths": [
+          "app/services/definition_service.py",
+          "app/services/rule_operators.py",
+          "docs/ai-log.md",
+          "docs/evidence/stage1/test-results.json"
+        ],
+        "actual": {
+          "sourceChecks": [
+            {
+              "path": "app/services/definition_service.py",
+              "checkedTokens": [
+                "def load_definition",
+                "survey_versions"
+              ],
+              "matchingLineNumbers": {
+                "def load_definition": 4,
+                "survey_versions": 9
+              },
+              "status": "passed"
+            },
+            {
+              "path": "app/services/rule_operators.py",
+              "checkedTokens": [
+                "def register_rule_operator",
+                "RULE_OPERATORS"
+              ],
+              "matchingLineNumbers": {
+                "def register_rule_operator": 21,
+                "RULE_OPERATORS": 18
+              },
+              "status": "passed"
+            }
+          ],
+          "passedNodes": [
+            "tests/unit/test_paths.py::test_registration_can_add_operator_without_changing_traversal",
+            "tests/integration/test_statistics_and_versions.py::test_explicit_versions_historical_replay_and_retired_version_new_submission"
+          ],
+          "sourceBaseline": "65aa339"
+        },
+        "status": "passed"
+      },
+      {
+        "logId": "AI-004",
+        "topic": "正数量/字数下限不可被非必答绕过",
+        "method": "读取真实AI日志条目，逐个核实源码入口，并在本次test-results.json匹配outcome=passed的真实nodeid；不凭pytest标记存在判通过",
+        "paths": [
+          "app/services/question_types.py",
+          "docs/ai-log.md",
+          "docs/evidence/stage1/test-results.json"
+        ],
+        "actual": {
+          "sourceChecks": [
+            {
+              "path": "app/services/question_types.py",
+              "checkedTokens": [
+                "minimum = max(config[\"minSelections\"]",
+                "minimum = max(config[\"minLength\"]"
+              ],
+              "matchingLineNumbers": {
+                "minimum = max(config[\"minSelections\"]": 181,
+                "minimum = max(config[\"minLength\"]": 194
+              },
+              "status": "passed"
+            }
+          ],
+          "passedNodes": [
+            "tests/unit/test_questions.py::test_multiple_limits_also_apply_when_required_is_false[validation0-None]",
+            "tests/unit/test_questions.py::test_multiple_limits_also_apply_when_required_is_false[validation1-value1]",
+            "tests/unit/test_questions.py::test_multiple_limits_also_apply_when_required_is_false[validation2-value2]",
+            "tests/unit/test_questions.py::test_multiple_limits_also_apply_when_required_is_false[validation3-value3]",
+            "tests/unit/test_questions.py::test_multiple_limits_also_apply_when_required_is_false[validation4-value4]",
+            "tests/unit/test_questions.py::test_multiple_limits_also_apply_when_required_is_false[validation5-value5]",
+            "tests/unit/test_questions.py::test_multiple_limits_also_apply_when_required_is_false[validation6-value6]",
+            "tests/unit/test_questions.py::test_multiple_limits_also_apply_when_required_is_false[validation7-a]",
+            "tests/unit/test_questions.py::test_multiple_limits_also_apply_when_required_is_false[validation8-value8]",
+            "tests/unit/test_questions.py::test_positive_text_minimum_cannot_be_disabled_by_required_false[None]",
+            "tests/unit/test_questions.py::test_positive_text_minimum_cannot_be_disabled_by_required_false[]",
+            "tests/unit/test_questions.py::test_positive_text_minimum_cannot_be_disabled_by_required_false[  ]",
+            "tests/unit/test_questions.py::test_positive_text_minimum_cannot_be_disabled_by_required_false[\\u7532]"
+          ],
+          "sourceBaseline": "65aa339"
+        },
+        "status": "passed"
+      },
+      {
+        "logId": "AI-008",
+        "topic": "极端均值与幂等路径边界实际修复",
+        "method": "读取真实AI日志条目，逐个核实源码入口，并在本次test-results.json匹配outcome=passed的真实nodeid；不凭pytest标记存在判通过",
+        "paths": [
+          "app/services/statistics_service.py",
+          "app/services/response_service.py",
+          "docs/ai-log.md",
+          "docs/evidence/stage1/test-results.json"
+        ],
+        "actual": {
+          "sourceChecks": [
+            {
+              "path": "app/services/statistics_service.py",
+              "checkedTokens": [
+                "def exact_numeric_average",
+                "ctx.prec = 12400",
+                "ctx.prec = 34"
+              ],
+              "matchingLineNumbers": {
+                "def exact_numeric_average": 22,
+                "ctx.prec = 12400": 38,
+                "ctx.prec = 34": 51
+              },
+              "status": "passed"
+            },
+            {
+              "path": "app/services/response_service.py",
+              "checkedTokens": [
+                "result = validate_answers_path",
+                "existing = repository.find_submission"
+              ],
+              "matchingLineNumbers": {
+                "result = validate_answers_path": 61,
+                "existing = repository.find_submission": 62
+              },
+              "status": "passed"
+            }
+          ],
+          "passedNodes": [
+            "tests/integration/test_statistics_and_versions.py::test_mean_of_two_maximum_decimal128_values_stays_finite",
+            "tests/integration/test_statistics_and_versions.py::test_average_retains_small_residual_after_large_positive_negative_cancellation",
+            "tests/integration/test_responses_and_concurrency.py::test_idempotent_retry_cannot_add_a_hidden_blank_answer"
+          ],
+          "sourceBaseline": "65aa339"
+        },
+        "status": "passed"
+      },
+      {
+        "logId": "AI-011",
+        "topic": "独立重新完整读取原DOCX并纠正证据粒度",
+        "paths": [
+          "大作业一第一阶段.docx",
+          "docs/ai-log.md",
+          "docs/recheck.md",
+          "docs/tests.md"
+        ],
+        "actual": {
+          "sourceChecks": [
+            {
+              "path": "docs/ai-log.md",
+              "checkedTokens": [
+                "### AI-011",
+                "本轮只读，不修改文档/代码/主库",
+                "T30原只有Python断言"
+              ],
+              "matchingLineNumbers": {
+                "### AI-011": 66,
+                "本轮只读，不修改文档/代码/主库": 68,
+                "T30原只有Python断言": 70
+              },
+              "status": "passed"
+            }
+          ],
+          "originalTaskGeneratedCode": false,
+          "subsequentEvidence": [
+            "docs/evidence/stage1/recheck-browser/unicode-browser-results.json",
+            "docs/evidence/stage1/recheck-extension.json"
+          ],
+          "unicodeRealBrowserCases": 19,
+          "allOriginalResponsesVerified": 29,
+          "sourceBaseline": "65aa339"
+        },
+        "method": "读取保存的真实协作提示（非用户原话），对照生成产物、实际修改、源码断言与真实证据。只读任务如实不声称生成代码，独立脚本与浏览器不冒充pytest。",
+        "status": "passed"
+      },
+      {
+        "logId": "AI-012",
+        "topic": "生成E01真实API/BSON测试，保留原纯函数测试",
+        "paths": [
+          "docs/ai-log.md",
+          "tests/integration/test_configuration_extension.py",
+          "tests/unit/test_paths.py",
+          "docs/evidence/stage1/test-results.json"
+        ],
+        "actual": {
+          "sourceChecks": [
+            {
+              "path": "docs/ai-log.md",
+              "checkedTokens": [
+                "### AI-012",
+                "专项执行1 passed in0.50s"
+              ],
+              "matchingLineNumbers": {
+                "### AI-012": 72,
+                "专项执行1 passed in0.50s": 76
+              },
+              "status": "passed"
+            },
+            {
+              "path": "tests/integration/test_configuration_extension.py",
+              "checkedTokens": [
+                "def test_api_configuration_changes_options_threshold_and_target_without_mutating_published_baseline",
+                "BSON.encode",
+                "/preview",
+                "/publish"
+              ],
+              "matchingLineNumbers": {
+                "def test_api_configuration_changes_options_threshold_and_target_without_mutating_published_baseline": 33,
+                "BSON.encode": 48,
+                "/preview": 77,
+                "/publish": 84
+              },
+              "status": "passed"
+            }
+          ],
+          "passedNodes": [
+            "tests/integration/test_configuration_extension.py::test_api_configuration_changes_options_threshold_and_target_without_mutating_published_baseline",
+            "tests/unit/test_paths.py::test_draft_configuration_changes_path_without_changing_engine_or_old_definition"
+          ],
+          "generatedFileModified": "新增完整隔离库测试；原纯函数测试保留；无样例专属业务feature",
+          "sourceBaseline": "65aa339"
+        },
+        "method": "读取保存的真实协作提示（非用户原话），对照生成产物、实际修改、源码断言与真实证据。只读任务如实不声称生成代码，独立脚本与浏览器不冒充pytest。",
+        "status": "passed"
+      },
+      {
+        "logId": "AI-013",
+        "topic": "真实浏览器/归档证据与10文档及快照一致更新",
+        "paths": [
+          "docs/ai-log.md",
+          "docs/recheck.md",
+          "scripts/browser_review.cjs",
+          "scripts/audit_stage1_extension.py",
+          "docs/evidence/stage1/recheck-extension.json",
+          "docs/evidence/stage1/recheck-extension-source-package.json"
+        ],
+        "actual": {
+          "sourceChecks": [
+            {
+              "path": "docs/ai-log.md",
+              "checkedTokens": [
+                "### AI-013",
+                "不是用户原话"
+              ],
+              "matchingLineNumbers": {
+                "### AI-013": 78,
+                "不是用户原话": 64
+              },
+              "status": "passed"
+            },
+            {
+              "path": "scripts/audit_stage1_extension.py",
+              "checkedTokens": [
+                "allOriginalResponsesVerified",
+                "original_response_ids"
+              ],
+              "matchingLineNumbers": {
+                "allOriginalResponsesVerified": 222,
+                "original_response_ids": 155
+              },
+              "status": "passed"
+            },
+            {
+              "path": "scripts/browser_review.cjs",
+              "checkedTokens": [
+                "unicode",
+                "statistics"
+              ],
+              "matchingLineNumbers": {
+                "unicode": 93,
+                "statistics": 148
+              },
+              "status": "passed"
+            }
+          ],
+          "documentsModified": [
+            "docs/requirements.md",
+            "docs/architecture.md",
+            "docs/database.md",
+            "docs/api.md",
+            "docs/rules.md",
+            "docs/tests.md",
+            "docs/ai-log.md",
+            "docs/decisions.md",
+            "docs/report.md",
+            "docs/demo.md",
+            "docs/recheck.md"
+          ],
+          "archiveAuditStatus": "passed",
+          "sourcePackageAuditStatus": "passed",
+          "allOriginalResponsesVerified": 29,
+          "newEnvironmentPassed": 197,
+          "sourceBaseline": "65aa339"
+        },
+        "method": "读取保存的真实协作提示（非用户原话），对照生成产物、实际修改、源码断言与真实证据。只读任务如实不声称生成代码，独立脚本与浏览器不冒充pytest。",
+        "status": "passed"
+      }
+    ],
+    "status": "passed"
+  },
+  "T82": {
+    "method": "逐项读取四类提交物，核对报告九项、R21/C20/T88/E4与主docs/stage1同名快照一致",
+    "actual": [
+      {
+        "category": "code_schema_configuration",
+        "method": "逐路径读取并检查非空；检查正文与已生成真实证据对应，而非仅有文件名",
+        "actual": [
+          {
+            "path": "app/main.py",
+            "bytes": 6366
+          },
+          {
+            "path": "app/database.py",
+            "bytes": 4390
+          },
+          {
+            "path": "app/config.py",
+            "bytes": 986
+          },
+          {
+            "path": "app/schemas/requests.py",
+            "bytes": 1173
+          },
+          {
+            "path": "scripts/init_db.py",
+            "bytes": 426
+          },
+          {
+            "path": ".env.example",
+            "bytes": 298
+          },
+          {
+            "path": "pyproject.toml",
+            "bytes": 619
+          },
+          {
+            "path": "requirements.lock",
+            "bytes": 1892
+          },
+          {
+            "path": "README.md",
+            "bytes": 11378
+          }
+        ],
+        "status": "passed"
+      },
+      {
+        "category": "technical_documents",
+        "method": "逐路径读取并检查非空；检查正文与已生成真实证据对应，而非仅有文件名",
+        "actual": [
+          {
+            "path": "docs/requirements.md",
+            "bytes": 9991
+          },
+          {
+            "path": "docs/architecture.md",
+            "bytes": 8271
+          },
+          {
+            "path": "docs/database.md",
+            "bytes": 12389
+          },
+          {
+            "path": "docs/api.md",
+            "bytes": 9274
+          },
+          {
+            "path": "docs/rules.md",
+            "bytes": 5987
+          },
+          {
+            "path": "docs/decisions.md",
+            "bytes": 8516
+          },
+          {
+            "path": "docs/recheck.md",
+            "bytes": 9039
+          }
+        ],
+        "status": "passed"
+      },
+      {
+        "category": "test_cases_steps_inputs_outputs_results",
+        "method": "逐路径读取并检查非空；检查正文与已生成真实证据对应，而非仅有文件名",
+        "actual": [
+          {
+            "path": "docs/tests.md",
+            "bytes": 55595
+          },
+          {
+            "path": "docs/evidence/stage1/test-results.json",
+            "bytes": 57405
+          },
+          {
+            "path": "docs/evidence/stage1/pytest.xml",
+            "bytes": 28195
+          },
+          {
+            "path": "docs/evidence/stage1/pytest-output.txt",
+            "bytes": 917
+          },
+          {
+            "path": "docs/evidence/stage1/reproduction.json",
+            "bytes": 721
+          },
+          {
+            "path": "artifacts/stage1/baseline.archive.gz.manifest.json",
+            "bytes": 6936
+          },
+          {
+            "path": "docs/evidence/stage1/browser/html-escaping-results.json",
+            "bytes": 1167
+          },
+          {
+            "path": "tests/integration/test_configuration_extension.py",
+            "bytes": 5763
+          },
+          {
+            "path": "tests/integration/test_review_boundaries.py",
+            "bytes": 9662
+          },
+          {
+            "path": "tests/integration/test_reserved_question_ids.py",
+            "bytes": 1256
+          },
+          {
+            "path": "docs/evidence/stage1/reproduction-pytest-output.txt",
+            "bytes": 878
+          },
+          {
+            "path": "docs/evidence/stage1/recheck-browser/unicode-browser-results.json",
+            "bytes": 7463
+          },
+          {
+            "path": "docs/evidence/stage1/recheck-browser/statistics-browser-results.json",
+            "bytes": 3790
+          },
+          {
+            "path": "docs/evidence/stage1/recheck-extension.json",
+            "bytes": 4317
+          },
+          {
+            "path": "docs/evidence/stage1/recheck-extension-source-package.json",
+            "bytes": 4280
+          }
+        ],
+        "status": "passed"
+      },
+      {
+        "category": "complete_report_and_ai",
+        "method": "逐路径读取并检查非空；检查正文与已生成真实证据对应，而非仅有文件名",
+        "actual": [
+          {
+            "path": "docs/report.md",
+            "bytes": 10501
+          },
+          {
+            "path": "docs/ai-log.md",
+            "bytes": 13654
+          },
+          {
+            "path": "docs/demo.md",
+            "bytes": 7290
+          }
+        ],
+        "status": "passed"
+      }
+    ],
+    "reportRequiredSections": 9,
+    "traceability": {
+      "R": 21,
+      "C": 20,
+      "T": 88,
+      "E": 4
+    },
+    "status": "passed",
+    "snapshotComparison": {
+      "files": 10,
+      "byteForByteEqual": true,
+      "centralRecheckDocument": "docs/recheck.md",
+      "status": "passed"
+    }
+  },
+  "externalEvidence": {
+    "T80": {
+      "path": "docs/evidence/stage1/reproduction.json",
+      "status": "passed",
+      "actual": {
+        "python": "3.12.6",
+        "seedIdempotent": true,
+        "cleanEnvironmentTests": {
+          "status": "passed",
+          "passed": 197,
+          "exitCode": 0
+        },
+        "lockedDependencyCheck": "passed",
+        "temporaryVenvRemoved": true,
+        "temporaryDatabaseRemoved": true
+      }
+    },
+    "T83": {
+      "path": "artifacts/stage1/baseline.archive.gz.manifest.json",
+      "status": "passed",
+      "actual": {
+        "restoreVerified": true,
+        "counts": {
+          "users": 7,
+          "surveys": 6,
+          "responses": 29,
+          "schema_migrations": 1
+        },
+        "restoredBaseline": "passed",
+        "restoredApplication": {
+          "health": "passed",
+          "existingAccountLogin": "passed",
+          "ownSurveyList": "passed"
+        },
+        "sessionsExcluded": true
+      }
+    },
+    "T84": {
+      "path": "docs/evidence/stage1/browser/html-escaping-results.json",
+      "method": "真实浏览器GET展示夹具，不写数据库、不新增正式答卷",
+      "status": "passed",
+      "actual": {
+        "probe": "undefined",
+        "injectedElements": 0,
+        "injectedAssetRequests": 0,
+        "databaseWrites": 0,
+        "errors": []
+      }
+    },
+    "T30": {
+      "path": "docs/evidence/stage1/recheck-browser/unicode-browser-results.json",
+      "status": "passed",
+      "actual": {
+        "realPythonOracleAndBrowserDomCases": 19,
+        "fixtureBoundary": "真实应用HTML/JS与Python函数，问卷GET为展示夹具；未写正式问卷/答卷"
+      }
+    },
+    "statisticsUi": {
+      "path": "docs/evidence/stage1/recheck-browser/statistics-browser-results.json",
+      "status": "passed",
+      "actual": {
+        "questionCardAnswerCounts": [
+          21,
+          22
+        ],
+        "latestQuestionAverage": "11.5",
+        "legitimateAllQuestionIdSupported": true,
+        "wholeSurveyUpdatedOnlyOnWholeRefresh": true,
+        "databaseWrites": 0
+      }
+    },
+    "sameArchiveExtensions": {
+      "paths": [
+        "docs/evidence/stage1/recheck-extension.json",
+        "docs/evidence/stage1/recheck-extension-source-package.json"
+      ],
+      "status": "passed",
+      "actual": {
+        "migrationModified": [
+          6,
+          0
+        ],
+        "allOriginalResponsesVerified": 29,
+        "v1SubmissionCount": 4,
+        "v2SubmissionCount": 1,
+        "runningProjectDatabaseAccessed": false,
+        "temporaryDatabasesRemoved": true,
+        "sourcePackageGitTagVerified": false,
+        "archiveSha256Verified": "87a683db98a51be11d0c11de57bb978c78493e9388dab78b6781a9dce12d036f"
+      }
+    },
+    "mainBusinessBaseline": {
+      "path": "docs/evidence/stage1/recheck-main-data.json",
+      "status": "passed",
+      "actual": {
+        "counts": {
+          "users": 7,
+          "surveys": 6,
+          "responses": 29,
+          "schema_migrations": 1
+        },
+        "businessBaselineUnchanged": true,
+        "sessionsExcluded": true
+      }
+    },
+    "releaseMetadata": {
+      "path": "docs/evidence/stage1/recheck-release-metadata.json",
+      "status": "passed",
+      "actual": {
+        "status": "passed",
+        "checkedAt": "2026-10-20T14:28:58.937248+00:00",
+        "applicationVersion": "1.0.1",
+        "projectVersion": "1.0.1",
+        "healthVersion": "1.0.1",
+        "openApiVersion": "1.0.1",
+        "businessSchemaVersionUnchanged": 1,
+        "method": "Version metadata synchronization and live health/OpenAPI smoke check; no business behavior changed."
+      }
+    }
+  },
+  "automaticTestEvidence": {
+    "path": "docs/evidence/stage1/test-results.json",
+    "summary": {
+      "passed": 197,
+      "failed": 0,
+      "skipped": 0
+    },
+    "uncoveredCasesUnchanged": [
+      "T80",
+      "T81",
+      "T82",
+      "T83",
+      "T84"
+    ],
+    "executedAt": "2026-10-20T14:17:48.513116+00:00"
+  },
+  "stillUnknown": [
+    "教师额外截止日期、格式与命名",
+    "正式第二阶段需求",
+    "未经用户亲自确认的个人独立设计或人工修改署名"
+  ],
+  "preservedOriginalVersion": {
+    "tag": "stage1-v1.0",
+    "commit": "a74cf92",
+    "originalPassedTests": 183,
+    "archiveSha256": "87a683db98a51be11d0c11de57bb978c78493e9388dab78b6781a9dce12d036f",
+    "originalArchiveOverwritten": false
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "clientDate": "2026-10-27",
+  "sourceEvidence": "hm2-21-23-explicit-v1-feedback-2026-10-27.json",
+  "plannedTitle": "第二阶段手测_1026_学习时长（小时）",
+  "actualTitle": "第二阶段手测_1026_学习时长(小时）",
+  "literalTitleMatchesPlan": false,
+  "variation": "Actual opening parenthesis is ASCII ( while planned opening parenthesis is full-width （. Actual closing parenthesis is full-width. Both actual work and v1 preserve the same user input.",
+  "functionalChecks": {
+    "sameQuestionIdentity": true,
+    "singleVersionOne": true,
+    "latestNumberOne": true,
+    "pointerMatches": true,
+    "reasonMatches": true,
+    "private": true,
+    "notPublishedUsed": true,
+    "actualWorkingSnapshotIdentical": true,
+    "contentTypeNumber": true,
+    "required": true,
+    "boundsAndIntegerUnchanged": true,
+    "noOptions": true
+  },
+  "functionalResult": "passed with actual input variation recorded",
+  "ordinarySaveIntermediateEvidence": "User collectively confirmed the instructed no-version state after ordinary save; final persisted state has one v1 and management revision3, no separate intermediate database snapshot.",
+  "dataModifiedByReview": false
+}

@@ -1,0 +1,83 @@
+{
+  "startedAt": "2026-10-22T12:56:35.929778+00:00",
+  "finishedAt": "2026-10-22T12:56:37.234889+00:00",
+  "scope": "Focused existing authentication and authorization tests; no implementation changes",
+  "databaseScope": "Generated survey_project1_test_<uuid> databases; main database not modified",
+  "targets": [
+    "tests/integration/test_auth_and_surveys.py::test_registration_normalization_password_hash_and_login",
+    "tests/integration/test_auth_and_surveys.py::test_anonymous_browser_cannot_manage_or_submit_even_anonymous_survey",
+    "tests/integration/test_auth_and_surveys.py::test_logout_deletes_session_and_old_cookie_no_longer_authenticates",
+    "tests/integration/test_auth_and_surveys.py::test_owner_isolation_for_all_management_routes",
+    "tests/integration/test_auth_and_surveys.py::test_csrf_origin_and_refresh_flow"
+  ],
+  "exitCode": 0,
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0
+  },
+  "sourceSha256": {
+    "app/services/auth_service.py": "6707973a31e15a66b82273e9536fc95f6e4d01bc2e7d5979b938c552d5de4d22",
+    "app/api/auth.py": "a2fed598637b7843b53c04f0c69c49e7fefab252edfc1852e2172bd46038c07e",
+    "app/api/dependencies.py": "3c5a683c8a5867d2fb173ff30b0752cbd985871036df2f2d39f4763cf44be8c7",
+    "app/api/surveys.py": "22c413648a7935f0f9dace1ea78ecee091fcc4d5cbc94131f79ff6af208b3123",
+    "app/api/statistics.py": "f44ac951defa97ad3c3fbf29fcc1a0d11fca8b1e3c43d01581c6009ba5819c18",
+    "app/repositories/surveys.py": "24983a344ac748f10791871243cc4eb905ecc0441415f4295d7b841053064fc2",
+    "app/services/survey_service.py": "0019f5ec7e9bce18f33b50848975f09ba24029edd805cf458a51778ffefc0ae2",
+    "tests/integration/test_auth_and_surveys.py": "ef69bfc68605b5d4ce63f4e85ab1c76d5e31a7b63ce2109edb2ccc4ef67be89b"
+  },
+  "results": [
+    {
+      "nodeid": "tests/integration/test_auth_and_surveys.py::test_registration_normalization_password_hash_and_login",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.141286,
+      "cases": [
+        "T01",
+        "T02",
+        "T03"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_auth_and_surveys.py::test_anonymous_browser_cannot_manage_or_submit_even_anonymous_survey",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.098587,
+      "cases": [
+        "T04",
+        "T56"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_auth_and_surveys.py::test_logout_deletes_session_and_old_cookie_no_longer_authenticates",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.135345,
+      "cases": [
+        "T06"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_auth_and_surveys.py::test_owner_isolation_for_all_management_routes",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.239236,
+      "cases": [
+        "T07",
+        "T08",
+        "T09",
+        "T78"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_auth_and_surveys.py::test_csrf_origin_and_refresh_flow",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.147296,
+      "cases": [
+        "T10",
+        "T87"
+      ]
+    }
+  ]
+}

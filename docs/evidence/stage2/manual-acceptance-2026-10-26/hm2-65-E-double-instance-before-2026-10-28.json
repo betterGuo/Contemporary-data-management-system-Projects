@@ -1,0 +1,97 @@
+{
+  "clientDate": "2026-10-28",
+  "verifiedAtUtc": "2026-10-27T16:17:46.811771+00:00",
+  "operator": "AI read-only double-instance E preflight; parent controls UI and may be publishing concurrently",
+  "businessWritesByThisInspection": 0,
+  "checks": {
+    "EOwnedByPeer": true,
+    "ETwoQuestionsTwoReferences": true,
+    "ETwoDistinctInstanceIds": true,
+    "ESameCopyQidAndV1": true,
+    "ERefInstanceIdsMatch": true,
+    "ESnapshotsExactlyCopyV1": true,
+    "EZeroFormalResponsesAtInspection": true,
+    "EStillDraftAtInspection": true,
+    "copyV1BsonUnchanged": true,
+    "protectedFingerprintsUnchanged": true
+  },
+  "allMatch": true,
+  "E": {
+    "_id": "6ae0ce570dc4b0dea63867b7",
+    "ownerId": "6ae0be0c0dc4b0dea63867a7",
+    "title": "第二阶段手测_1028_双实例问卷E",
+    "publicId": "MG01KlA_tcVbQvKa",
+    "status": "draft",
+    "revision": 3,
+    "definitionVersion": 1,
+    "questions": [
+      {
+        "id": "4680af53-8483-42a6-8d86-751ab585b8db",
+        "type": "number",
+        "title": "第二阶段手测_1026_学习时长(小时）",
+        "required": true,
+        "options": [],
+        "validation": {
+          "minValue": "0",
+          "maxValue": "24",
+          "integerOnly": true
+        },
+        "jumpRules": []
+      },
+      {
+        "id": "10b04622-5944-4739-883d-2edfdd9588c6",
+        "type": "number",
+        "title": "第二阶段手测_1026_学习时长(小时）",
+        "required": true,
+        "options": [],
+        "validation": {
+          "minValue": "0",
+          "maxValue": "24",
+          "integerOnly": true
+        },
+        "jumpRules": []
+      }
+    ],
+    "questionRefs": [
+      {
+        "instanceId": "4680af53-8483-42a6-8d86-751ab585b8db",
+        "questionId": "6ae0cc750dc4b0dea63867b2",
+        "questionVersionId": "6ae0cc750dc4b0dea63867b3",
+        "rootQuestionId": "6ae0680b0dc4b0dea6386792",
+        "contentHash": "1ba7ba4d052872a0d7a8538a1bfa8ada80cd0e0c5525fe95fef436a0c83f03e8"
+      },
+      {
+        "instanceId": "10b04622-5944-4739-883d-2edfdd9588c6",
+        "questionId": "6ae0cc750dc4b0dea63867b2",
+        "questionVersionId": "6ae0cc750dc4b0dea63867b3",
+        "rootQuestionId": "6ae0680b0dc4b0dea6386792",
+        "contentHash": "1ba7ba4d052872a0d7a8538a1bfa8ada80cd0e0c5525fe95fef436a0c83f03e8"
+      }
+    ],
+    "allowAnonymous": false,
+    "allowMultipleSubmissions": false
+  },
+  "EBsonSha256": "d8e41337bcae6dd0421689999e60f587956d0b6c670b5f33b6da7f40906b2652",
+  "EResponseCount": 0,
+  "EResponses": [],
+  "copyV1Id": "6ae0cc750dc4b0dea63867b3",
+  "copyV1BsonSha256": "9e7de26a1d291ee175f1e6d5d74742a4205dc44a766bb0ad22965347b60bd44a",
+  "protectedFingerprints": {
+    "question_versions": {
+      "6ae0696e0dc4b0dea6386795": "e0a43b51141889e5ad008ab122fd9d84a6bb3cc1d77991929e9febf07a68d329",
+      "6ae06f580dc4b0dea638679c": "68dfd1232f17e61b541675bfef3f22207f8d4396d0cdb1dcdf69d371d4ca1860",
+      "6ae0b9790dc4b0dea63867a4": "39f53eb82a765283640300746858c4fcbafaa720ba7e9f9801ce9a9b0717e451"
+    },
+    "surveys": {
+      "6ae06ae50dc4b0dea6386798": "91fdac1e184c8b2498a8c2087a5e14557e507c42d2dbb4f5af1e4e98ac730877",
+      "6ae0b5550dc4b0dea638679f": "663e1ee8f0b9a32688b17560442d0bbd5e9748fdb0cafca7d10a6e336e36fa65",
+      "6ae0c1b90dc4b0dea63867ae": "34edea9f76be758bee4c9a03e31e1550097320eb11cd33feeed37b9337c08b51"
+    },
+    "responses": {
+      "6ae06d070dc4b0dea638679b": "2960cf1ea760cd8800a6cc28a0ee15c676c190e05e9e8e2cc07eb52844b5c794",
+      "6ae0b7100dc4b0dea63867a2": "8d4f569cfbe35529bfcab044c7da830552c909ab6e2065f46bc8f58a5638c36a",
+      "6ae0c5b20dc4b0dea63867b0": "18fecb0915febf3a37b65dc778470c335c64eed684b8b22c0460cafb3c40569e"
+    }
+  },
+  "note": "Persisted state is reported as observed; draft/zero comparisons can be false if parent UI has already progressed. No state is fabricated."
+}

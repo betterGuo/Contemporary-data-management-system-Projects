@@ -1,0 +1,84 @@
+{
+  "status": "passed",
+  "version": "2.0.0",
+  "counts": {
+    "admin_audit": 1,
+    "operation_receipts": 4,
+    "question_bookmarks": 27,
+    "question_grants": 1,
+    "question_usage": 29,
+    "question_version_state": 27,
+    "question_versions": 27,
+    "questions": 27,
+    "responses": 36,
+    "schema_migrations": 2,
+    "surveys": 10,
+    "users": 12
+  },
+  "demoSeedIdempotent": true,
+  "demoStatistics": {
+    "questionId": "6adf63f4fe2ea037bcd08e55",
+    "versionId": "6adf63f4fe2ea037bcd08e56",
+    "versionNumber": 1,
+    "title": "公共示例：你的年龄（周岁）",
+    "type": "number",
+    "answerCount": 3,
+    "responseCount": 3,
+    "surveyCount": 2,
+    "average": "20",
+    "min": "0",
+    "max": "40",
+    "distinctValueCount": 3,
+    "options": [],
+    "distribution": [
+      {
+        "value": "0",
+        "count": 1
+      },
+      {
+        "value": "20",
+        "count": 1
+      },
+      {
+        "value": "40",
+        "count": 1
+      }
+    ],
+    "bySurvey": [
+      {
+        "surveyId": "6adf63f4fe2ea037bcd08e5d",
+        "title": "第二阶段示例 · 问卷甲",
+        "answerCount": 2,
+        "responseCount": 2,
+        "respondentCount": 2
+      },
+      {
+        "surveyId": "6adf63f4fe2ea037bcd08e60",
+        "title": "第二阶段示例 · 问卷乙",
+        "answerCount": 1,
+        "responseCount": 1,
+        "respondentCount": 1
+      }
+    ],
+    "scope": "my-surveys",
+    "respondentLabel": "本卷去重填写账号数",
+    "page": 1,
+    "pageSize": 20
+  },
+  "legacyPreservation": {
+    "status": "passed",
+    "originalDocumentsVerified": {
+      "users": 9,
+      "responses": 33,
+      "surveys": 8,
+      "survey_versions": 0
+    },
+    "originalDefinitionsStatisticsVerified": 8,
+    "responseBsonPreserved": true,
+    "legacyInstancesAndContentPreserved": true,
+    "originalAccountBsonPreserved": true,
+    "note": "Source and target are read only; additional stage-two records are allowed."
+  },
+  "hmacSecretAndVersionPreserved": true,
+  "sourceOriginalRetainedAt27017": true
+}

@@ -1,0 +1,41 @@
+{
+  "clientDate": "2026-10-27",
+  "verifiedAtUtc": "2026-10-27T15:55:20.943643+00:00",
+  "operator": "AI read-only inspection after browser revoke click timed out",
+  "businessWritesByThisInspection": 0,
+  "attemptOutcome": "Browser click/Return timed out; inspection reports persisted state only and does not prove confirmation-dialog completion.",
+  "grant": {
+    "_id": "6ae0bf6a126fe7014a2926a6",
+    "questionId": "6ae0680b0dc4b0dea6386792",
+    "granteeId": "6ae0be0c0dc4b0dea63867a7",
+    "active": true,
+    "revision": 1,
+    "updatedAt": "2026-10-27T15:12:42.065000+00:00"
+  },
+  "D": {
+    "_id": "6ae0c1b90dc4b0dea63867ae",
+    "ownerId": "6ae0be0c0dc4b0dea63867a7",
+    "status": "published",
+    "revision": 3,
+    "definitionVersion": 1
+  },
+  "DResponses": [
+    {
+      "id": "6ae0c5b20dc4b0dea63867b0",
+      "submittedAt": "2026-10-27T15:39:30.939000+00:00",
+      "answers": [
+        {
+          "questionId": "b1695147-2568-4156-be90-a4ea2877f910",
+          "type": "number",
+          "value": "6"
+        }
+      ],
+      "bsonSha256": "18fecb0915febf3a37b65dc778470c335c64eed684b8b22c0460cafb3c40569e"
+    }
+  ],
+  "checks": {
+    "grantStillActive": true,
+    "DStillPublished": true,
+    "DExactlyOneAnswer6": true
+  }
+}

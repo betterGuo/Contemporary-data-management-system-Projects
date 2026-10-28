@@ -1,0 +1,97 @@
+{
+  "status": "passed",
+  "startedAt": "2026-10-26T14:43:46.953Z",
+  "baseUrl": "http://127.0.0.1:8001",
+  "scope": "preview database only",
+  "username": "qa_owner_mvpch16b",
+  "methods": "Real UI login, create form, persistent draft save and formal version actions. No API writes used for fixtures.",
+  "cases": [
+    {
+      "kind": "single",
+      "status": "passed",
+      "questionId": "6adf67244e9cb72a9ec7a46b",
+      "versionId": "6adf67244e9cb72a9ec7a46e",
+      "versionNumber": 1,
+      "content": {
+        "type": "single",
+        "title": "三题型表单验收 single mvpda7kd",
+        "required": true,
+        "options": [
+          {
+            "id": "acab0f9e-04a5-4238-80c4-c9657074f511",
+            "label": "校园图书馆"
+          },
+          {
+            "id": "166577d9-aa4f-4a19-893b-fcb2e30c847d",
+            "label": "安静的自习室"
+          }
+        ],
+        "validation": {}
+      },
+      "optionIdsPreservedAcrossDraftAndVersion": true,
+      "note": "Created and saved through visible UI controls.",
+      "settledScreenshot": "forms-single-v1-settled.png"
+    },
+    {
+      "kind": "multiple",
+      "status": "passed",
+      "questionId": "6adf67254e9cb72a9ec7a471",
+      "versionId": "6adf67254e9cb72a9ec7a474",
+      "versionNumber": 1,
+      "content": {
+        "type": "multiple",
+        "title": "三题型表单验收 multiple mvpda8b8",
+        "required": true,
+        "options": [
+          {
+            "id": "9a813541-e4cf-4794-8b50-acbfc05621d5",
+            "label": "校园图书馆"
+          },
+          {
+            "id": "f9f109fd-91e3-4b0d-b468-5ccfff3f2e53",
+            "label": "安静的自习室"
+          },
+          {
+            "id": "89a51189-4292-4f8c-9d3d-2d29cecc5872",
+            "label": "宿舍"
+          }
+        ],
+        "validation": {
+          "minSelections": 1,
+          "maxSelections": 2
+        }
+      },
+      "optionIdsPreservedAcrossDraftAndVersion": true,
+      "note": "Created and saved through visible UI controls.",
+      "settledScreenshot": "forms-multiple-v1-settled.png"
+    },
+    {
+      "kind": "text",
+      "status": "passed",
+      "questionId": "6adf67264e9cb72a9ec7a477",
+      "versionId": "6adf67264e9cb72a9ec7a47a",
+      "versionNumber": 1,
+      "content": {
+        "type": "text",
+        "title": "三题型表单验收 text mvpda93y",
+        "required": false,
+        "options": [],
+        "validation": {
+          "minLength": 2,
+          "maxLength": 100
+        }
+      },
+      "optionIdsPreservedAcrossDraftAndVersion": null,
+      "note": "Created and saved through visible UI controls.",
+      "settledScreenshot": "forms-text-v1-settled.png"
+    }
+  ],
+  "pageErrors": [],
+  "screenshots": [
+    "forms-single-v1.png",
+    "forms-multiple-v1.png",
+    "forms-text-v1.png"
+  ],
+  "completedAt": "2026-10-26T14:43:50.521Z",
+  "visualReviewNote": "Additional read-only screenshots after list refresh settles; original screenshots retained."
+}

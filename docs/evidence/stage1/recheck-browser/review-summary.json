@@ -1,0 +1,133 @@
+{
+  "generatedAt": "2026-10-20T14:12:14.695Z",
+  "boundary": "Real browser, running app templates/static files, genuine Python oracle. Only survey/statistics GET data are display fixtures. Authentication can create one normal session; users/surveys/responses are unchanged.",
+  "databaseBefore": {
+    "database": "survey_project1",
+    "collections": {
+      "users": {
+        "count": 7,
+        "sha256": "7f1323394ef7cdeb304bc82f9d2531d556ba1df6193a3b306d33d992968c1031"
+      },
+      "surveys": {
+        "count": 6,
+        "sha256": "dafe7dd73edb1e5aca11160e63ffd3959d70b47b15a33b3a859fe9da2da949e7"
+      },
+      "responses": {
+        "count": 29,
+        "sha256": "2a8d981cdd3cb4ac16fd5395ca13195174dbfe0fb9e394e229e8ceba4a724ffa"
+      }
+    }
+  },
+  "unicodeCasesPassed": 19,
+  "result": "PASS",
+  "javascriptErrors": [],
+  "surveyOrResponseWriteRequests": [],
+  "fixtureRequests": [
+    {
+      "method": "GET",
+      "path": "/api/surveys/000000000000000000000030/preview"
+    },
+    {
+      "method": "GET",
+      "path": "/api/surveys/000000000000000000000030/preview"
+    },
+    {
+      "method": "GET",
+      "path": "/api/surveys/000000000000000000000030/preview"
+    },
+    {
+      "method": "GET",
+      "path": "/api/surveys/000000000000000000000030/preview"
+    },
+    {
+      "method": "GET",
+      "path": "/api/surveys/000000000000000000000030/preview"
+    },
+    {
+      "method": "GET",
+      "path": "/api/surveys/000000000000000000000030/preview"
+    },
+    {
+      "method": "GET",
+      "path": "/api/surveys/000000000000000000000030/preview"
+    },
+    {
+      "method": "GET",
+      "path": "/api/surveys/000000000000000000000030/preview"
+    },
+    {
+      "method": "GET",
+      "path": "/api/surveys/000000000000000000000030/preview"
+    },
+    {
+      "method": "GET",
+      "path": "/api/surveys/000000000000000000000030/preview"
+    },
+    {
+      "method": "GET",
+      "path": "/api/surveys/000000000000000000000030/preview"
+    },
+    {
+      "method": "GET",
+      "path": "/api/surveys/000000000000000000000030/preview"
+    },
+    {
+      "method": "GET",
+      "path": "/api/surveys/000000000000000000000030/preview"
+    },
+    {
+      "method": "GET",
+      "path": "/api/surveys/000000000000000000000030/preview"
+    },
+    {
+      "method": "GET",
+      "path": "/api/surveys/000000000000000000000030/preview"
+    },
+    {
+      "method": "GET",
+      "path": "/api/surveys/000000000000000000000030/preview"
+    },
+    {
+      "method": "GET",
+      "path": "/api/surveys/000000000000000000000030/preview"
+    },
+    {
+      "method": "GET",
+      "path": "/api/surveys/000000000000000000000030/preview"
+    },
+    {
+      "method": "GET",
+      "path": "/api/surveys/000000000000000000000030/preview"
+    },
+    {
+      "method": "GET",
+      "path": "/api/surveys/000000000000000000000030/statistics"
+    },
+    {
+      "method": "GET",
+      "path": "/api/surveys/000000000000000000000030/questions/all/statistics?page=2&pageSize=20"
+    },
+    {
+      "method": "GET",
+      "path": "/api/surveys/000000000000000000000030/statistics"
+    }
+  ],
+  "databaseAfter": {
+    "database": "survey_project1",
+    "collections": {
+      "users": {
+        "count": 7,
+        "sha256": "7f1323394ef7cdeb304bc82f9d2531d556ba1df6193a3b306d33d992968c1031"
+      },
+      "surveys": {
+        "count": 6,
+        "sha256": "dafe7dd73edb1e5aca11160e63ffd3959d70b47b15a33b3a859fe9da2da949e7"
+      },
+      "responses": {
+        "count": 29,
+        "sha256": "2a8d981cdd3cb4ac16fd5395ca13195174dbfe0fb9e394e229e8ceba4a724ffa"
+      }
+    }
+  },
+  "formalCollectionsUnchanged": true
+}

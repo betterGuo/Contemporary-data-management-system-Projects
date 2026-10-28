@@ -4,7 +4,7 @@ from pymongo import ReturnDocument
 from app.api.dependencies import db, now, require_user, require_write_user
 from app.schemas.requests import QuestionOrder, QuestionWrite, Revision, SurveyCreate, SurveyPatch
 from app.services import survey_service
-from app.services.storage_adapters import DomainError
+from app.services.storage_adapters import DomainError, MAX_PAGE
 from app.web_utils import survey_dto
 
 router = APIRouter(prefix="/api/surveys", tags=["问卷管理"])
@@ -20,7 +20,7 @@ def create(payload: SurveyCreate, request: Request, user=Depends(require_write_u
 
 
 @router.get("")
-def listing(request: Request, page: int = Query(1, ge=1), pageSize: int = Query(20, ge=1, le=100), user=Depends(require_user)):
+def listing(request: Request, page: int = Query(1, ge=1, le=MAX_PAGE), pageSize: int = Query(20, ge=1, le=100), user=Depends(require_user)):
     collection = db(request).surveys
     query = {"ownerId": user["_id"]}
     rows = collection.find(query).sort([("createdAt", -1), ("_id", -1)]).skip((page-1)*pageSize).limit(pageSize)

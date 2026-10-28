@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "health": {
+    "status": "ok",
+    "database": "connected",
+    "version": "2.0.0",
+    "transactionsAvailable": true
+  },
+  "oldAccountLogin": true,
+  "oldSurveyList": true,
+  "privateWorkingDraftNotShared": true,
+  "demoCrossSurveyAnswerCount": 3,
+  "demoCrossSurveyMean": "20",
+  "adminDoesNotGainOthersAnswerStatistics": true,
+  "usageScopes": {
+    "version": {
+      "surveys": 2,
+      "scope": "version"
+    },
+    "question": {
+      "surveys": 2,
+      "scope": "question"
+    },
+    "root": {
+      "surveys": 2,
+      "scope": "root"
+    }
+  },
+  "ordinaryReceiverHasNoMaintenanceCount": true,
+  "libraryPage": 200,
+  "writes": "login sessions only"
+}

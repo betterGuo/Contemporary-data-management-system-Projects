@@ -1,0 +1,166 @@
+{
+  "executedAt": "2026-10-26T15:19:35.569854+00:00",
+  "health": {
+    "status": "ok",
+    "database": "connected",
+    "version": "2.0.0",
+    "transactionsAvailable": true
+  },
+  "accounts": [
+    {
+      "username": "demo_owner",
+      "login": 200,
+      "pages": {
+        "/dashboard": 200,
+        "/library": 200
+      },
+      "lists": {
+        "/api/surveys": {
+          "status": 200,
+          "total": 6
+        },
+        "/api/library-questions?scope=mine": {
+          "status": 200,
+          "total": 17
+        },
+        "/api/library-questions?scope=shared": {
+          "status": 200,
+          "total": 0
+        },
+        "/api/library-questions?scope=public": {
+          "status": 200,
+          "total": 1
+        },
+        "/api/question-bookmarks": {
+          "status": 200,
+          "total": 17
+        }
+      },
+      "originalSurveyStatistics": [
+        {
+          "surveyId": "6ad708ee76296ade1e15a0e3",
+          "submissionCount": 21
+        },
+        {
+          "surveyId": "6ad7082776296ade1e15a0db",
+          "submissionCount": 2
+        },
+        {
+          "surveyId": "6ad707abb81ded364c246b85",
+          "submissionCount": 2
+        },
+        {
+          "surveyId": "6ad707abb81ded364c246b84",
+          "submissionCount": 0
+        },
+        {
+          "surveyId": "6ad707abb81ded364c246b83",
+          "submissionCount": 0
+        },
+        {
+          "surveyId": "6ad707abb81ded364c246b7e",
+          "submissionCount": 4
+        }
+      ]
+    },
+    {
+      "username": "stage2_owner",
+      "login": 200,
+      "pages": {
+        "/dashboard": 200,
+        "/library": 200
+      },
+      "lists": {
+        "/api/surveys": {
+          "status": 200,
+          "total": 2
+        },
+        "/api/library-questions?scope=mine": {
+          "status": 200,
+          "total": 1
+        },
+        "/api/library-questions?scope=shared": {
+          "status": 200,
+          "total": 0
+        },
+        "/api/library-questions?scope=public": {
+          "status": 200,
+          "total": 1
+        },
+        "/api/question-bookmarks": {
+          "status": 200,
+          "total": 1
+        }
+      },
+      "knownAgeSummary": {
+        "answerCount": 3,
+        "responseCount": 3,
+        "surveyCount": 2,
+        "average": "20"
+      }
+    },
+    {
+      "username": "stage2_peer",
+      "login": 200,
+      "pages": {
+        "/dashboard": 200,
+        "/library": 200
+      },
+      "lists": {
+        "/api/surveys": {
+          "status": 200,
+          "total": 0
+        },
+        "/api/library-questions?scope=mine": {
+          "status": 200,
+          "total": 0
+        },
+        "/api/library-questions?scope=shared": {
+          "status": 200,
+          "total": 1
+        },
+        "/api/library-questions?scope=public": {
+          "status": 200,
+          "total": 1
+        },
+        "/api/question-bookmarks": {
+          "status": 200,
+          "total": 0
+        }
+      }
+    },
+    {
+      "username": "stage2_admin",
+      "login": 200,
+      "pages": {
+        "/dashboard": 200,
+        "/library": 200
+      },
+      "lists": {
+        "/api/surveys": {
+          "status": 200,
+          "total": 0
+        },
+        "/api/library-questions?scope=mine": {
+          "status": 200,
+          "total": 1
+        },
+        "/api/library-questions?scope=shared": {
+          "status": 200,
+          "total": 0
+        },
+        "/api/library-questions?scope=public": {
+          "status": 200,
+          "total": 1
+        },
+        "/api/question-bookmarks": {
+          "status": 200,
+          "total": 1
+        }
+      },
+      "adminCannotReadOtherAnswers": true
+    }
+  ],
+  "businessRequests": "read-only; login sessions are excluded from the business manifest",
+  "servedLibraryScriptMatchesDisk": true
+}

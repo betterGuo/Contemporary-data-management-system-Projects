@@ -1,0 +1,16 @@
+{
+  "clientDate": "2026-10-28",
+  "operator": "AI application-service test",
+  "executionBoundary": "Native prompt was opened but tagDialog.accept timed out; tags were confirmed unsaved and the blocked browser tab was closed. Tags were then saved through existing bookmark service. Browser prompt input completion is not claimed.",
+  "user": "accept2_peer_1026",
+  "questionId": "6ae0cc750dc4b0dea63867b2",
+  "versionId": "6ae0cc750dc4b0dea63867b3",
+  "beforeTags": [],
+  "afterTags": [
+    "手测1028",
+    "派生题"
+  ],
+  "versionBsonUnchanged": true,
+  "ownerBookmarksUnchanged": true,
+  "businessOperationsByAi": 1
+}

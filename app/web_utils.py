@@ -30,4 +30,6 @@ def survey_dto(survey, now, participant=False):
     if participant:
         for field in ["revision", "createdAt", "updatedAt", "closedAt"]:
             result.pop(field, None)
+    else:
+        result["questionRefs"] = json_value(survey.get("questionRefs", []))
     return result

@@ -1,0 +1,59 @@
+{
+  "clientDate": "2026-10-27",
+  "userMessage": "Screenshot only; no accompanying text",
+  "readOnlyChecks": {
+    "ownerMatches": true,
+    "private": true,
+    "active": true,
+    "correctWorkingContent": true,
+    "latestNumberZero": true,
+    "latestIdNull": true,
+    "noFormalVersionDocuments": true,
+    "noPublishedUsage": true,
+    "noSurveyUsage": true
+  },
+  "allMatch": true,
+  "question": {
+    "id": "6ae0680b0dc4b0dea6386792",
+    "ownerId": "6adf77430dc4b0dea638677b",
+    "rootQuestionId": "6ae0680b0dc4b0dea6386792",
+    "visibility": "private",
+    "status": "active",
+    "revision": 1,
+    "latestVersionNumber": 0,
+    "latestVersionId": null,
+    "workingBaseVersionId": null,
+    "workingContent": {
+      "type": "number",
+      "title": "第二阶段手测_1026_学习时长",
+      "required": true,
+      "options": [],
+      "validation": {
+        "minValue": "0",
+        "maxValue": "24",
+        "integerOnly": true
+      }
+    },
+    "hasPublishedUsage": false
+  },
+  "formalVersionDocumentCount": 0,
+  "usageCount": 0,
+  "evidenceScope": "Screenshot shows saved draft content and no-formal-version state. Database verifies persistence and zero version documents; no explicit refresh-action description or separate history-tab screenshot was supplied.",
+  "businessWritesByAi": 0,
+  "screenshot": {
+    "path": "hm2-19-20-library-working-draft-2026-10-27.png",
+    "sha256": "5d6ce7b9eb7587fd4f8a5902b0db2dfe2d6f5ace23e7167dca6432235bfc6c3c",
+    "observed": {
+      "title": "第二阶段手测_1026_学习时长",
+      "type": "数字填空",
+      "requiredChecked": true,
+      "minValue": "0",
+      "maxValue": "24",
+      "integerOnlyChecked": true,
+      "versionStatus": "尚未生成正式版本",
+      "listStatus": "仅编辑稿",
+      "versionSelector": "尚无正式版本",
+      "formalAction": "生成正式版本 v1"
+    }
+  }
+}

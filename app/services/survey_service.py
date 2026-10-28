@@ -96,8 +96,20 @@ def patch(db, user_id, survey_id, data, now, max_bytes=512*1024):
             raise DomainError("INVALID_QUESTIONS", "题目必须为数组。", [])
         changes["questions"] = validate_definition([prepare_question(q) for q in data["questions"]], publishing=False)
     changes["updatedAt"] = now
-    if len(BSON.encode({**survey, **changes})) > max_bytes:
+    size_candidate = {key: value for key, value in {**survey, **changes}.items() if key != "questionRefs"}
+    if len(BSON.encode(size_candidate)) > max_bytes:
         raise DomainError("DEFINITION_TOO_LARGE", "问卷内容超过项目资源上限。", [])
+    if survey.get("questionRefs"):
+        from app.services import library_service, question_reference_service as bindings
+
+        def work(session):
+            fresh = bindings.own_survey(db, {"_id": user_id}, survey_id, session, revision=data["revision"], draft=True)
+            questions = changes.get("questions", fresh["questions"])
+            refs = bindings.preserve_references(db, fresh, questions, session)
+            extra = {key: value for key, value in changes.items() if key != "questions"}
+            return bindings.update_survey(db, fresh, questions, refs, now, session, max_bytes, extra)
+
+        return library_service.transaction(db, work)
     updated = repository.update_draft(db, survey["_id"], user_id, data["revision"], changes)
     if not updated:
         raise DomainError("REVISION_CONFLICT", "问卷状态或内容已变化，请重新加载。", [], status_code=409)
@@ -114,7 +126,15 @@ def publish(db, user_id, survey_id, revision, now):
         raise DomainError("MISSING_STATISTICS_HANDLER", "题型缺少统计处理器，不能发布。", [])
     if survey.get("closesAt") and survey["closesAt"] <= now:
         raise DomainError("INVALID_DEADLINE", "发布时截止时间必须晚于当前时间。", [{"field": "closesAt"}])
-    result = repository.update_draft(db, survey["_id"], user_id, revision, {"status": "published", "questions": questions, "publishedAt": now, "updatedAt": now})
-    if not result:
-        raise DomainError("REVISION_CONFLICT", "问卷状态已变化，请重新加载。", [], status_code=409)
-    return result
+    from app.services import library_service, question_reference_service as bindings
+
+    def work(session):
+        fresh = bindings.own_survey(db, {"_id": user_id}, survey_id, session, revision=revision, draft=True)
+        fresh["questions"] = questions
+        user = db.users.find_one({"_id": user_id}, session=session)
+        refs = bindings.register_definition(db, fresh, user, now, session)
+        bindings.mark_published(db, refs, now, session)
+        return bindings.update_survey(db, fresh, questions, refs, now, session,
+            extra={"status": "published", "publishedAt": now})
+
+    return library_service.transaction(db, work)

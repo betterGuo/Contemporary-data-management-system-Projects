@@ -1,0 +1,193 @@
+{
+  "source": "Real Python normalize_text and normalize_answer imports, executed by the project Python interpreter.",
+  "constraints": {
+    "type": "text",
+    "required": false,
+    "minLength": 2,
+    "maxLength": 2
+  },
+  "cases": [
+    {
+      "name": "NFD single e + combining acute",
+      "value": "é",
+      "normalized": "é",
+      "codePoints": 1,
+      "backendAccepted": false,
+      "backendError": {
+        "code": "INVALID_ANSWER",
+        "message": "请输入 2 至 2 个码点"
+      }
+    },
+    {
+      "name": "NFC single accented e",
+      "value": "é",
+      "normalized": "é",
+      "codePoints": 1,
+      "backendAccepted": false,
+      "backendError": {
+        "code": "INVALID_ANSWER",
+        "message": "请输入 2 至 2 个码点"
+      }
+    },
+    {
+      "name": "NFD pair normalizes to two code points",
+      "value": "éé",
+      "normalized": "éé",
+      "codePoints": 2,
+      "backendAnswer": "éé",
+      "backendAccepted": true
+    },
+    {
+      "name": "NFC pair is exactly two code points",
+      "value": "éé",
+      "normalized": "éé",
+      "codePoints": 2,
+      "backendAnswer": "éé",
+      "backendAccepted": true
+    },
+    {
+      "name": "NFD accented e and Chinese",
+      "value": "é中",
+      "normalized": "é中",
+      "codePoints": 2,
+      "backendAnswer": "é中",
+      "backendAccepted": true
+    },
+    {
+      "name": "Single emoji counts one code point",
+      "value": "😀",
+      "normalized": "😀",
+      "codePoints": 1,
+      "backendAccepted": false,
+      "backendError": {
+        "code": "INVALID_ANSWER",
+        "message": "请输入 2 至 2 个码点"
+      }
+    },
+    {
+      "name": "Two emoji count two code points",
+      "value": "😀😀",
+      "normalized": "😀😀",
+      "codePoints": 2,
+      "backendAnswer": "😀😀",
+      "backendAccepted": true
+    },
+    {
+      "name": "Emoji and Chinese count two",
+      "value": "😀中",
+      "normalized": "😀中",
+      "codePoints": 2,
+      "backendAnswer": "😀中",
+      "backendAccepted": true
+    },
+    {
+      "name": "Two Chinese characters meet both boundaries",
+      "value": "中文",
+      "normalized": "中文",
+      "codePoints": 2,
+      "backendAnswer": "中文",
+      "backendAccepted": true
+    },
+    {
+      "name": "One Chinese character is below minimum",
+      "value": "中",
+      "normalized": "中",
+      "codePoints": 1,
+      "backendAccepted": false,
+      "backendError": {
+        "code": "INVALID_ANSWER",
+        "message": "请输入 2 至 2 个码点"
+      }
+    },
+    {
+      "name": "Three Chinese characters exceed maximum",
+      "value": "中文字",
+      "normalized": "中文字",
+      "codePoints": 3,
+      "backendAccepted": false,
+      "backendError": {
+        "code": "INVALID_ANSWER",
+        "message": "请输入 2 至 2 个码点"
+      }
+    },
+    {
+      "name": "Leading and trailing Python Unicode whitespace",
+      "value": "\u001c\t中文　 \n",
+      "normalized": "中文",
+      "codePoints": 2,
+      "backendAnswer": "中文",
+      "backendAccepted": true
+    },
+    {
+      "name": "Only Unicode whitespace normalizes to empty",
+      "value": "\u001c　",
+      "normalized": "",
+      "codePoints": 0,
+      "backendAccepted": false,
+      "backendError": {
+        "code": "INVALID_ANSWER",
+        "message": "请输入 2 至 2 个码点"
+      }
+    },
+    {
+      "name": "FEFF is preserved, as in Python str.strip",
+      "value": "﻿中",
+      "normalized": "﻿中",
+      "codePoints": 2,
+      "backendAnswer": "﻿中",
+      "backendAccepted": true
+    },
+    {
+      "name": "Emoji family counts seven code points",
+      "value": "👨‍👩‍👧‍👦",
+      "normalized": "👨‍👩‍👧‍👦",
+      "codePoints": 7,
+      "backendAccepted": false,
+      "backendError": {
+        "code": "INVALID_ANSWER",
+        "message": "请输入 2 至 2 个码点"
+      }
+    },
+    {
+      "name": "Keycap counts three code points",
+      "value": "1️⃣",
+      "normalized": "1️⃣",
+      "codePoints": 3,
+      "backendAccepted": false,
+      "backendError": {
+        "code": "INVALID_ANSWER",
+        "message": "请输入 2 至 2 个码点"
+      }
+    },
+    {
+      "name": "NFD ring and Chinese normalize to two",
+      "value": "Å中",
+      "normalized": "Å中",
+      "codePoints": 2,
+      "backendAnswer": "Å中",
+      "backendAccepted": true
+    },
+    {
+      "name": "Empty optional input still violates positive minimum",
+      "value": "",
+      "normalized": "",
+      "codePoints": 0,
+      "backendAccepted": false,
+      "backendError": {
+        "code": "INVALID_ANSWER",
+        "message": "请输入 2 至 2 个码点"
+      }
+    },
+    {
+      "name": "Interior whitespace remains part of length",
+      "value": " 中 文　",
+      "normalized": "中 文",
+      "codePoints": 3,
+      "backendAccepted": false,
+      "backendError": {
+        "code": "INVALID_ANSWER",
+        "message": "请输入 2 至 2 个码点"
+      }
+    }
+  ]
+}

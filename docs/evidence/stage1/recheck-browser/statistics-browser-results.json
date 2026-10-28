@@ -1,0 +1,115 @@
+{
+  "case": "Statistics pagination complete-card refresh",
+  "result": "PASS",
+  "boundary": "GET display fixtures only: initial whole-survey snapshot has 21 submissions; updated question has 22 valid answers and one skipped answer, representing 23 latest submissions. No MongoDB content is inserted or updated.",
+  "assertions": [
+    "One page response refreshes question answer count, respondent count, unanswered count, average, values and total together.",
+    "A legitimate questionId=all selects exactly that question; the empty whole-survey sentinel returns both questions and retains latest data.",
+    "Whole-survey snapshot stays unchanged on question pagination and refreshes only after the whole-survey refresh button.",
+    "Both whole-survey and question update semantics are explained in the page."
+  ],
+  "before": {
+    "counts": "有效回答 21 份\n回答人数 11 人\n未答 / 跳过 0 份",
+    "average": "11",
+    "values": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20"
+    ],
+    "footer": "共 21 条有效回答。空答与被跳过的题目不计入本题有效回答及平均值；匿名答卷不展示账号标识。",
+    "page": "← 上一页\n第 1 / 2 页\n下一页 →",
+    "topMetrics": [
+      "21",
+      "11",
+      "2"
+    ],
+    "wholeSurveyNotice": "整卷更新于 2026/10/20 22:12:20。翻页会刷新对应题目；点击“刷新统计”更新整卷。",
+    "questionNotice": "本题更新于 2026/10/20 22:12:20"
+  },
+  "afterPage": {
+    "counts": "有效回答 22 份\n回答人数 12 人\n未答 / 跳过 1 份",
+    "average": "11.5",
+    "values": [
+      "21",
+      "22"
+    ],
+    "footer": "共 22 条有效回答。空答与被跳过的题目不计入本题有效回答及平均值；匿名答卷不展示账号标识。",
+    "page": "← 上一页\n第 2 / 2 页\n下一页 →",
+    "topMetrics": [
+      "21",
+      "11",
+      "2"
+    ],
+    "wholeSurveyNotice": "整卷更新于 2026/10/20 22:12:20。翻页会刷新对应题目；点击“刷新统计”更新整卷。",
+    "questionNotice": "本题更新于 2026/10/20 22:12:20"
+  },
+  "afterFilter": {
+    "counts": "有效回答 22 份\n回答人数 12 人\n未答 / 跳过 1 份",
+    "average": "11.5",
+    "values": [
+      "21",
+      "22"
+    ],
+    "footer": "共 22 条有效回答。空答与被跳过的题目不计入本题有效回答及平均值；匿名答卷不展示账号标识。",
+    "page": "← 上一页\n第 2 / 2 页\n下一页 →",
+    "topMetrics": [
+      "21",
+      "11",
+      "2"
+    ],
+    "wholeSurveyNotice": "整卷更新于 2026/10/20 22:12:20。翻页会刷新对应题目；点击“刷新统计”更新整卷。",
+    "questionNotice": "本题更新于 2026/10/20 22:12:20"
+  },
+  "afterWholeSurveyRefresh": {
+    "counts": "有效回答 22 份\n回答人数 12 人\n未答 / 跳过 1 份",
+    "average": "11.5",
+    "values": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20"
+    ],
+    "footer": "共 22 条有效回答。空答与被跳过的题目不计入本题有效回答及平均值；匿名答卷不展示账号标识。",
+    "page": "← 上一页\n第 1 / 2 页\n下一页 →",
+    "topMetrics": [
+      "23",
+      "13",
+      "2"
+    ],
+    "wholeSurveyNotice": "整卷更新于 2026/10/20 22:12:20。翻页会刷新对应题目；点击“刷新统计”更新整卷。",
+    "questionNotice": "本题更新于 2026/10/20 22:12:20"
+  }
+}

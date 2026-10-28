@@ -1,0 +1,247 @@
+{
+  "case": "T30",
+  "result": "PASS",
+  "count": 19,
+  "boundary": "Actual app preview HTML and static JavaScript; survey JSON is a GET display fixture. Python results come from real backend functions. No formal response submission.",
+  "cases": [
+    {
+      "name": "NFD single e + combining acute",
+      "value": "é",
+      "normalized": "é",
+      "codePoints": 1,
+      "backendAccepted": false,
+      "backendError": {
+        "code": "INVALID_ANSWER",
+        "message": "请输入 2 至 2 个码点"
+      },
+      "browserDisplayedCount": "1 字",
+      "browserAccepted": false,
+      "browserError": "请至少填写 2 个字，当前 1 字。"
+    },
+    {
+      "name": "NFC single accented e",
+      "value": "é",
+      "normalized": "é",
+      "codePoints": 1,
+      "backendAccepted": false,
+      "backendError": {
+        "code": "INVALID_ANSWER",
+        "message": "请输入 2 至 2 个码点"
+      },
+      "browserDisplayedCount": "1 字",
+      "browserAccepted": false,
+      "browserError": "请至少填写 2 个字，当前 1 字。"
+    },
+    {
+      "name": "NFD pair normalizes to two code points",
+      "value": "éé",
+      "normalized": "éé",
+      "codePoints": 2,
+      "backendAnswer": "éé",
+      "backendAccepted": true,
+      "browserDisplayedCount": "2 字",
+      "browserAccepted": true,
+      "browserNormalizedAnswer": "éé"
+    },
+    {
+      "name": "NFC pair is exactly two code points",
+      "value": "éé",
+      "normalized": "éé",
+      "codePoints": 2,
+      "backendAnswer": "éé",
+      "backendAccepted": true,
+      "browserDisplayedCount": "2 字",
+      "browserAccepted": true,
+      "browserNormalizedAnswer": "éé"
+    },
+    {
+      "name": "NFD accented e and Chinese",
+      "value": "é中",
+      "normalized": "é中",
+      "codePoints": 2,
+      "backendAnswer": "é中",
+      "backendAccepted": true,
+      "browserDisplayedCount": "2 字",
+      "browserAccepted": true,
+      "browserNormalizedAnswer": "é中"
+    },
+    {
+      "name": "Single emoji counts one code point",
+      "value": "😀",
+      "normalized": "😀",
+      "codePoints": 1,
+      "backendAccepted": false,
+      "backendError": {
+        "code": "INVALID_ANSWER",
+        "message": "请输入 2 至 2 个码点"
+      },
+      "browserDisplayedCount": "1 字",
+      "browserAccepted": false,
+      "browserError": "请至少填写 2 个字，当前 1 字。"
+    },
+    {
+      "name": "Two emoji count two code points",
+      "value": "😀😀",
+      "normalized": "😀😀",
+      "codePoints": 2,
+      "backendAnswer": "😀😀",
+      "backendAccepted": true,
+      "browserDisplayedCount": "2 字",
+      "browserAccepted": true,
+      "browserNormalizedAnswer": "😀😀"
+    },
+    {
+      "name": "Emoji and Chinese count two",
+      "value": "😀中",
+      "normalized": "😀中",
+      "codePoints": 2,
+      "backendAnswer": "😀中",
+      "backendAccepted": true,
+      "browserDisplayedCount": "2 字",
+      "browserAccepted": true,
+      "browserNormalizedAnswer": "😀中"
+    },
+    {
+      "name": "Two Chinese characters meet both boundaries",
+      "value": "中文",
+      "normalized": "中文",
+      "codePoints": 2,
+      "backendAnswer": "中文",
+      "backendAccepted": true,
+      "browserDisplayedCount": "2 字",
+      "browserAccepted": true,
+      "browserNormalizedAnswer": "中文"
+    },
+    {
+      "name": "One Chinese character is below minimum",
+      "value": "中",
+      "normalized": "中",
+      "codePoints": 1,
+      "backendAccepted": false,
+      "backendError": {
+        "code": "INVALID_ANSWER",
+        "message": "请输入 2 至 2 个码点"
+      },
+      "browserDisplayedCount": "1 字",
+      "browserAccepted": false,
+      "browserError": "请至少填写 2 个字，当前 1 字。"
+    },
+    {
+      "name": "Three Chinese characters exceed maximum",
+      "value": "中文字",
+      "normalized": "中文字",
+      "codePoints": 3,
+      "backendAccepted": false,
+      "backendError": {
+        "code": "INVALID_ANSWER",
+        "message": "请输入 2 至 2 个码点"
+      },
+      "browserDisplayedCount": "3 字",
+      "browserAccepted": false,
+      "browserError": "最多填写 2 个字，当前 3 字。"
+    },
+    {
+      "name": "Leading and trailing Python Unicode whitespace",
+      "value": "\u001c\t中文　 \n",
+      "normalized": "中文",
+      "codePoints": 2,
+      "backendAnswer": "中文",
+      "backendAccepted": true,
+      "browserDisplayedCount": "2 字",
+      "browserAccepted": true,
+      "browserNormalizedAnswer": "中文"
+    },
+    {
+      "name": "Only Unicode whitespace normalizes to empty",
+      "value": "\u001c　",
+      "normalized": "",
+      "codePoints": 0,
+      "backendAccepted": false,
+      "backendError": {
+        "code": "INVALID_ANSWER",
+        "message": "请输入 2 至 2 个码点"
+      },
+      "browserDisplayedCount": "0 字",
+      "browserAccepted": false,
+      "browserError": "请至少填写 2 个字。"
+    },
+    {
+      "name": "FEFF is preserved, as in Python str.strip",
+      "value": "﻿中",
+      "normalized": "﻿中",
+      "codePoints": 2,
+      "backendAnswer": "﻿中",
+      "backendAccepted": true,
+      "browserDisplayedCount": "2 字",
+      "browserAccepted": true,
+      "browserNormalizedAnswer": "﻿中"
+    },
+    {
+      "name": "Emoji family counts seven code points",
+      "value": "👨‍👩‍👧‍👦",
+      "normalized": "👨‍👩‍👧‍👦",
+      "codePoints": 7,
+      "backendAccepted": false,
+      "backendError": {
+        "code": "INVALID_ANSWER",
+        "message": "请输入 2 至 2 个码点"
+      },
+      "browserDisplayedCount": "7 字",
+      "browserAccepted": false,
+      "browserError": "最多填写 2 个字，当前 7 字。"
+    },
+    {
+      "name": "Keycap counts three code points",
+      "value": "1️⃣",
+      "normalized": "1️⃣",
+      "codePoints": 3,
+      "backendAccepted": false,
+      "backendError": {
+        "code": "INVALID_ANSWER",
+        "message": "请输入 2 至 2 个码点"
+      },
+      "browserDisplayedCount": "3 字",
+      "browserAccepted": false,
+      "browserError": "最多填写 2 个字，当前 3 字。"
+    },
+    {
+      "name": "NFD ring and Chinese normalize to two",
+      "value": "Å中",
+      "normalized": "Å中",
+      "codePoints": 2,
+      "backendAnswer": "Å中",
+      "backendAccepted": true,
+      "browserDisplayedCount": "2 字",
+      "browserAccepted": true,
+      "browserNormalizedAnswer": "Å中"
+    },
+    {
+      "name": "Empty optional input still violates positive minimum",
+      "value": "",
+      "normalized": "",
+      "codePoints": 0,
+      "backendAccepted": false,
+      "backendError": {
+        "code": "INVALID_ANSWER",
+        "message": "请输入 2 至 2 个码点"
+      },
+      "browserDisplayedCount": "0 字",
+      "browserAccepted": false,
+      "browserError": "请至少填写 2 个字。"
+    },
+    {
+      "name": "Interior whitespace remains part of length",
+      "value": " 中 文　",
+      "normalized": "中 文",
+      "codePoints": 3,
+      "backendAccepted": false,
+      "backendError": {
+        "code": "INVALID_ANSWER",
+        "message": "请输入 2 至 2 个码点"
+      },
+      "browserDisplayedCount": "3 字",
+      "browserAccepted": false,
+      "browserError": "最多填写 2 个字，当前 3 字。"
+    }
+  ]
+}

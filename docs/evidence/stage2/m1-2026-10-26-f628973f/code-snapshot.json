@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "fileCount": 162,
+  "restoredFromRecordedHead": [
+    "scripts/backup_project.py",
+    "scripts/run_tests.py"
+  ],
+  "privateConfigurationBackedUp": true,
+  "secretValuesExcludedFromEvidence": true,
+  "snapshotLocation": "artifacts/private/stage2/m1-2026-10-26-f628973f",
+  "purpose": "Local recovery baseline; not a submission package."
+}

@@ -1,0 +1,38 @@
+{
+  "status": "failed",
+  "startedAt": "2026-10-26T15:10:26.309Z",
+  "database": "survey_project1_recheck_363f82",
+  "baseUrl": "http://127.0.0.1:8001",
+  "methods": "Actual create/edit/save UI; intercept only delays the real outbound write, never modifies its payload. Stored state is verified through API GET.",
+  "cases": [
+    {
+      "endpoint": "working-content",
+      "questionId": "6adf6d6575c60f1373fd1d53",
+      "submittedTitle": "请求中的标题 mvpe8i9n",
+      "attemptedLateTitle": "保存期间继续输入 mvpe8i9n",
+      "editableDuringSave": true,
+      "uiTitleAfterSave": "请求中的标题 mvpe8i9n",
+      "storedTitle": "请求中的标题 mvpe8i9n",
+      "lostLateInput": true,
+      "status": "reproduced-input-loss"
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "httpErrors": [
+    {
+      "url": "http://127.0.0.1:8001/api/auth/me",
+      "status": 401
+    }
+  ],
+  "screenshots": [
+    "working-content-request-paused.png",
+    "working-content-after-success.png",
+    "versions-request-paused.png",
+    "failure.png"
+  ],
+  "error": "TypeError: Cannot read properties of null (reading 'content')\n    at /Users/guoyuhang/Desktop/26年秋季学期/当代数据管理系统/project1/scripts/browser_stage2_save_race.cjs:33:74",
+  "completedAt": "2026-10-26T15:10:31.427Z"
+}

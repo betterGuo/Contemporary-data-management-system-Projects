@@ -20,100 +20,10 @@
   "temporaryDatabaseRemoved": true,
   "cleanEnvironmentTests": {
     "status": "passed",
-    "passed": 200,
-    "exitCode": 0,
-    "pytestSummary": "200 passed, 1 warning in 13.10s"
+    "passed": 197,
+    "exitCode": 0
   },
-  "executedAt": "2026-10-22T14:23:24.651006+00:00",
+  "executedAt": "2026-10-20T14:19:38.171002+00:00",
   "lockedDependencyCheck": "passed",
-  "temporaryVenvRemoved": true,
-  "readmeVerification": {
-    "checkoutSource": "https://github.com/betterGuo/Contemporary-data-management-system-Projects.git",
-    "branch": "P1",
-    "checkoutBaseCommit": "eba11e6552da86f0d9de30fc4a7d5a16bcc6fb84",
-    "codeChangesBeforeVerification": [
-      "scripts/reproduce_stage1.py: inherit effective MONGODB_URI for pytest unless TEST_MONGODB_URI is explicitly set"
-    ],
-    "verificationScriptSha256": "9a17fac8d959d68e1c6f3aa500979f92057eb79fd7818190b1e0295013627e6b",
-    "mongoVersion": "8.0.34",
-    "isolatedMongoContainer": true,
-    "dependencyInstallation": "README uv alternative; locked requirements installed and checked",
-    "installationEnvironmentIssue": "Initial pip install failed because this host Python installation lacked CA certificates. The documented uv alternative succeeded; TLS verification was not disabled.",
-    "setupPreservesConfiguration": true,
-    "initializationAndSeedRepeatedWithoutDataChange": true,
-    "seedCounts": {
-      "users": 6,
-      "surveys": 4,
-      "responses": 6,
-      "schema_migrations": 1
-    },
-    "customMongoPortWithTestUriUnsetPassed": true,
-    "httpSmoke": {
-      "executedAt": "2026-10-22T14:28:38.961496+00:00",
-      "status": "passed",
-      "method": "Real Uvicorn HTTP requests against fresh clone and isolated MongoDB container",
-      "checkCount": 31,
-      "checks": [
-        "unauthenticated management rejected",
-        "demo_owner login",
-        "demo_student login",
-        "HTTP /health",
-        "HTTP /docs",
-        "HTTP /openapi.json",
-        "HTTP /dashboard",
-        "HTTP /static/app.css",
-        "HTTP /static/editor.js",
-        "HTTP /static/fill.js",
-        "HTTP /static/statistics.js",
-        "create survey",
-        "add single question",
-        "add multiple question",
-        "add number question",
-        "add text question",
-        "save configurable jump",
-        "editor page",
-        "publish survey",
-        "formal filling page",
-        "participant definition",
-        "integer validation before save",
-        "submit full path",
-        "idempotent retry",
-        "submit jumped path without skipped required answer",
-        "correct submission and respondent counts",
-        "mean and skipped-answer statistics",
-        "single-question statistics",
-        "owner-only statistics",
-        "close survey",
-        "closed survey rejects new submission"
-      ],
-      "syntheticNewSurveyStatistics": {
-        "submissions": 2,
-        "respondents": 1,
-        "numericInputs": [
-          "10",
-          "30"
-        ],
-        "average": "20",
-        "skippedRequiredAnswerAccepted": true
-      },
-      "existingUserManualFeedbackWasNotRechecked": true,
-      "harnessCorrection": "First attempt expected a questions array for single-question statistics. Corrected the verifier to the documented flat statistics object; no application code changed."
-    },
-    "browserObservation": {
-      "performedBy": "Codex browser automation",
-      "status": "passed",
-      "scope": [
-        "demo_owner login",
-        "dashboard lists 4 seeded surveys",
-        "statistics page shows 4 submissions and 4 respondents",
-        "single A=3/B=1; multiple X=2/Y=4/Z=2; numeric mean=60; text 甲乙丙丁"
-      ],
-      "originalUserManualFeedbackRechecked": false
-    },
-    "testServerStopped": true,
-    "testContainerRemoved": true,
-    "testVolumeRemoved": true,
-    "cleanupCompletedAt": "2026-10-22T14:29:37.180401+00:00",
-    "previous197TestEvidenceCommit": "eba11e6552da86f0d9de30fc4a7d5a16bcc6fb84"
-  }
+  "temporaryVenvRemoved": true
 }

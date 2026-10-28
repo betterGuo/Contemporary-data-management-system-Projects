@@ -1,0 +1,94 @@
+{
+  "clientDate": "2026-10-27",
+  "userMessage": "Screenshot only; no accompanying text",
+  "configurationChecks": {
+    "threeQuestions": true,
+    "textType": true,
+    "titleMatches": true,
+    "required": true,
+    "lengthTwoToSix": true,
+    "firstTwoQuestionsUnchanged": true,
+    "stillDraft": true,
+    "multipleSubmissionsEnabled": true
+  },
+  "configurationSaved": true,
+  "survey": {
+    "id": "6adf783d0dc4b0dea638677f",
+    "status": "draft",
+    "revision": 4,
+    "allowMultipleSubmissions": true,
+    "questions": [
+      {
+        "id": "64b60d1b-6c40-4cb1-8e59-e0737a1355a1",
+        "type": "single",
+        "title": "请选择填写方式",
+        "required": true,
+        "options": [
+          {
+            "id": "d68c2db9-b8be-4f41-9fbd-2505d079a860",
+            "label": "完整填写"
+          },
+          {
+            "id": "f5d1f062-cb3f-473e-93be-ee4526c80c1e",
+            "label": "直接填写年龄"
+          }
+        ],
+        "validation": {},
+        "jumpRules": []
+      },
+      {
+        "id": "6d4e7a3f-0dcd-498c-8ce1-e024ed045ae1",
+        "type": "multiple",
+        "title": "你希望改进哪些方面",
+        "required": true,
+        "options": [
+          {
+            "id": "9cd47526-b891-4cb9-8a4b-1ea82ee34697",
+            "label": "课程内容"
+          },
+          {
+            "id": "bf74dc30-d3d3-4d09-903a-7df880d019f7",
+            "label": "课程互动"
+          },
+          {
+            "id": "362d523f-90d6-4053-84bc-8ba27db37990",
+            "label": "作业反馈"
+          }
+        ],
+        "validation": {
+          "minSelections": 2,
+          "maxSelections": 2
+        },
+        "jumpRules": []
+      },
+      {
+        "id": "a17f0136-ab39-4f00-a7f1-1df1aaf77372",
+        "type": "text",
+        "title": "请填写你的建议",
+        "required": true,
+        "options": [],
+        "validation": {
+          "minLength": 2,
+          "maxLength": 6
+        },
+        "jumpRules": []
+      }
+    ],
+    "formalResponseCount": 0
+  },
+  "evidenceScope": "User screenshot shows text/required/2-6 and saved status; database verifies persistence. Actual rejection of short or long answers and four-question refresh remain pending.",
+  "businessWritesByAi": 0,
+  "screenshot": {
+    "path": "hm2-05c-text-config-2026-10-27.png",
+    "sha256": "f8ac3fe9c05bf441f7776f18a8d737cf3c8321df813fccaac266d46229590f26",
+    "observed": {
+      "questionCount": 3,
+      "type": "text",
+      "title": "请填写你的建议",
+      "requiredChecked": true,
+      "minLength": 2,
+      "maxLength": 6,
+      "saveStatus": "所有修改已保存"
+    }
+  }
+}

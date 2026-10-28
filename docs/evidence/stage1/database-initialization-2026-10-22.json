@@ -1,0 +1,95 @@
+{
+  "startedAt": "2026-10-22T12:49:52.784012+00:00",
+  "finishedAt": "2026-10-22T12:49:54.782200+00:00",
+  "scope": "Focused initialization safety verification, separate from the historical 197-test baseline",
+  "databaseScope": "Generated survey_project1_test_<uuid> databases; production database not initialized or modified",
+  "targets": [
+    "tests/integration/test_database_initialization.py",
+    "tests/integration/test_auth_and_surveys.py::test_database_validators_reject_invalid_bson_and_api_rejects_server_fields",
+    "tests/integration/test_responses_and_concurrency.py::test_actual_index_definitions_and_duplicate_inserts",
+    "tests/integration/test_responses_and_concurrency.py::test_fresh_application_reads_existing_users_definitions_sessions_and_responses",
+    "tests/integration/test_auth_and_surveys.py::test_expired_session_is_rejected_before_ttl_cleanup"
+  ],
+  "exitCode": 0,
+  "summary": {
+    "passed": 8,
+    "failed": 0,
+    "skipped": 0
+  },
+  "sourceSha256": {
+    "app/database.py": "48a882f6d3b8d9aa386fc629420c4bb103021069f8e0edfeeeb40c8e437d1024",
+    "scripts/init_db.py": "035fe550aa1a3310e723f46ff41ebe6d88f6a77522236597036e42c7202866fd",
+    "tests/integration/test_database_initialization.py": "b2b11a560c1b233161917cf2e74c2b2f0459e66dd60735ce282e1f4c01f360e8",
+    "docs/evidence/stage1/test-results.json": "e09f90a97b2a60d2481e6935724cfae682f47b9366a55a69d4a8199cd1225b59"
+  },
+  "results": [
+    {
+      "nodeid": "tests/integration/test_database_initialization.py::test_repeated_initialization_preserves_documents_and_metadata",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.331347,
+      "cases": []
+    },
+    {
+      "nodeid": "tests/integration/test_database_initialization.py::test_existing_duplicate_keys_fail_without_deleting_documents",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.058597,
+      "cases": []
+    },
+    {
+      "nodeid": "tests/integration/test_database_initialization.py::test_conflicting_index_fails_without_replacing_index_or_documents",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.039906,
+      "cases": []
+    },
+    {
+      "nodeid": "tests/integration/test_auth_and_surveys.py::test_database_validators_reject_invalid_bson_and_api_rejects_server_fields",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.146033,
+      "cases": [
+        "T38"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_responses_and_concurrency.py::test_actual_index_definitions_and_duplicate_inserts[False]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.223515,
+      "cases": [
+        "T64",
+        "T65"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_responses_and_concurrency.py::test_actual_index_definitions_and_duplicate_inserts[True]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.26154,
+      "cases": [
+        "T64",
+        "T65"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_responses_and_concurrency.py::test_fresh_application_reads_existing_users_definitions_sessions_and_responses",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.255937,
+      "cases": [
+        "T67"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_auth_and_surveys.py::test_expired_session_is_rejected_before_ttl_cleanup",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.122531,
+      "cases": [
+        "T05"
+      ]
+    }
+  ]
+}

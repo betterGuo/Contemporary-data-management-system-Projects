@@ -1,0 +1,126 @@
+{
+  "clientDate": "2026-10-28",
+  "reason": "Browser screenshot API returned JPEG bytes; filenames initially used .png. Extensions corrected to .jpg to match the actual format.",
+  "imageBytesUnchanged": true,
+  "pixelEditsPerformed": false,
+  "renames": [
+    {
+      "from": "hm2-58-D-snapshot-after-revoke-2026-10-28.png",
+      "to": "hm2-58-D-snapshot-after-revoke-2026-10-28.jpg",
+      "sha256": "3a9c704e2375ca11f0d8ab24073e7a5491b89d51c57adc6000c3a6a9b8ca3cbb"
+    },
+    {
+      "from": "hm2-58-D-statistics-after-revoke-2026-10-28.png",
+      "to": "hm2-58-D-statistics-after-revoke-2026-10-28.jpg",
+      "sha256": "1447e767cd77c2215c7abd405002237a79aa0de02c34cee8e02a54f9931d7f0f"
+    },
+    {
+      "from": "hm2-58-peer-source-denied-2026-10-28.png",
+      "to": "hm2-58-peer-source-denied-2026-10-28.jpg",
+      "sha256": "d76e18e6c6aa80654319498bc4de69ca2750338bc6b64071356705e88b646b99"
+    },
+    {
+      "from": "hm2-59-copy-created-after-revoke-2026-10-28.png",
+      "to": "hm2-59-copy-created-after-revoke-2026-10-28.jpg",
+      "sha256": "1fbbc8d24c84457527c765925d2f618ffd3afdf39db7a5a7a724aee62e7b9177"
+    },
+    {
+      "from": "hm2-60-copy-empty-summary-2026-10-28.png",
+      "to": "hm2-60-copy-empty-summary-2026-10-28.jpg",
+      "sha256": "fff3cd0f4f0e60606ac449e0555b20d022860ecda7e70aba87c1c2056d8d43d0"
+    },
+    {
+      "from": "hm2-60-original-owner-copy-denied-2026-10-28.png",
+      "to": "hm2-60-original-owner-copy-denied-2026-10-28.jpg",
+      "sha256": "08298693c1e23285cb71567b7ed99e0398acccaf1e06eb178de4295b2504e49d"
+    },
+    {
+      "from": "hm2-61-tag-filter-found-2026-10-28.png",
+      "to": "hm2-61-tag-filter-found-2026-10-28.jpg",
+      "sha256": "ffef188b8963ae88da157098a612833a71374d6767e441e56c33d840d13526b2"
+    },
+    {
+      "from": "hm2-62-new-tag-found-2026-10-28.png",
+      "to": "hm2-62-new-tag-found-2026-10-28.jpg",
+      "sha256": "63dc3ad7408761fb6d690ecc014bef963545d4fcb027b6fe979bbfddfde5db0a"
+    },
+    {
+      "from": "hm2-62-old-tag-empty-2026-10-28.png",
+      "to": "hm2-62-old-tag-empty-2026-10-28.jpg",
+      "sha256": "26fdca8e40b7e8a1919ec69e52825d471da0a1f98c1346b03652c31be9c1952f"
+    },
+    {
+      "from": "hm2-63-bookmark-removed-2026-10-28.png",
+      "to": "hm2-63-bookmark-removed-2026-10-28.jpg",
+      "sha256": "c8ed6ab8d82b06af7295e1bfbb995501baa02db6ef72c4c7281e0a10e0c177b7"
+    },
+    {
+      "from": "hm2-63-owned-question-preserved-2026-10-28.png",
+      "to": "hm2-63-owned-question-preserved-2026-10-28.jpg",
+      "sha256": "a63d0dce80760c7e16f36538a7eeaf78e4138f2919a1b1d0ea1698dd3cc98067"
+    },
+    {
+      "from": "hm2-65-E-two-instances-draft-2026-10-28.png",
+      "to": "hm2-65-E-two-instances-draft-2026-10-28.jpg",
+      "sha256": "ef86aeb14e53ac96599df23fd49dacfafffd3f35d35838300293cd410f75c4ca"
+    },
+    {
+      "from": "hm2-66-E-formal-success-2026-10-28.png",
+      "to": "hm2-66-E-formal-success-2026-10-28.jpg",
+      "sha256": "b7012452d7d5fbc0258138867e02f3f40c87ab7499593851bac555759dd87c3a"
+    },
+    {
+      "from": "hm2-66-E-two-answers-review-2026-10-28.png",
+      "to": "hm2-66-E-two-answers-review-2026-10-28.jpg",
+      "sha256": "12bc4e2f599885d6dd711c6127e67442b5179cae6a2a2b73f1f41b8f1b1a05cf"
+    },
+    {
+      "from": "hm2-67-E-double-instance-summary-2026-10-28.png",
+      "to": "hm2-67-E-double-instance-summary-2026-10-28.jpg",
+      "sha256": "ebc26afe1e0eec04a3321b812229d29b90c05cfa18c8f18a4317300752dfb52b"
+    },
+    {
+      "from": "hm2-69-stale-B-input-before-save-2026-10-28.png",
+      "to": "hm2-69-stale-B-input-before-save-2026-10-28.jpg",
+      "sha256": "1c153b7b18d15ae8c886478988af98e32f585289abfd0d245dbb1e8eabb019a7"
+    },
+    {
+      "from": "hm2-70-A-saved-v2-max16-2026-10-28.png",
+      "to": "hm2-70-A-saved-v2-max16-2026-10-28.jpg",
+      "sha256": "134d867558826bf135b066fde2b4dffa1632065dc95de7c5c1e7bd90065e5cce"
+    },
+    {
+      "from": "hm2-71-stale-save-conflict-input-preserved-2026-10-28.png",
+      "to": "hm2-71-stale-save-conflict-input-preserved-2026-10-28.jpg",
+      "sha256": "052ae3d9e52e11f1a95b96efa77543e79c6d67a2a4c3cb0a59a633ae93a6953e"
+    },
+    {
+      "from": "hm2-72-E-still-v1-max24-2026-10-28.png",
+      "to": "hm2-72-E-still-v1-max24-2026-10-28.jpg",
+      "sha256": "cbbdfd5e9c9c01939e9f4975c2d7cefd2d9191e976f3cffc4aebc4125058a380"
+    },
+    {
+      "from": "hm2-72-copy-v1-summary-preserved-2026-10-28.png",
+      "to": "hm2-72-copy-v1-summary-preserved-2026-10-28.jpg",
+      "sha256": "7c16d955ff1ccf72833350bb48e3ca17a25430ce431bef1cbc84c634bf15e2a1"
+    },
+    {
+      "from": "hm2-72-copy-v2-empty-summary-2026-10-28.png",
+      "to": "hm2-72-copy-v2-empty-summary-2026-10-28.jpg",
+      "sha256": "8454047d704c3a0de0abb2b3e1ce5392251db3b9a5125abc3d342485ef3fced2"
+    },
+    {
+      "from": "hm2-72-original-owner-v1-still4-2026-10-28.png",
+      "to": "hm2-72-original-owner-v1-still4-2026-10-28.jpg",
+      "sha256": "8aa6c51aa3429494639e3b538cff9d33ac0d828652363dc5e1d186ce4a6a9cf1"
+    },
+    {
+      "from": "hm2-72-owner-historical-count-still1-2026-10-28.png",
+      "to": "hm2-72-owner-historical-count-still1-2026-10-28.jpg",
+      "sha256": "b3e63e8577e579721c19156075e8891d398277f4877aa9456768da10c2310169"
+    }
+  ],
+  "updatedReferenceFiles": [
+    "docs/stage2/manual-acceptance.md"
+  ]
+}

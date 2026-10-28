@@ -1,0 +1,77 @@
+...........F............................................................ [ 32%]
+........................................................................ [ 64%]
+........................................................................ [ 96%]
+........                                                                 [100%]
+=================================== FAILURES ===================================
+______ test_actual_backup_restores_extra_collections_and_non_seed_results ______
+
+app = <fastapi.applications.FastAPI object at 0x105338920>
+real_db = Database(MongoClient(host=['localhost:27018'], document_class=dict, tz_aware=True, connect=True, replicaset='survey-rs', serverselectiontimeoutms=2500), 'survey_project1_test_6aacefc7b4624be7ac6014b18a6a6d1a')
+api_factory = <function api_factory.<locals>.factory at 0x10562d940>
+survey_factory = <function survey_factory.<locals>.factory at 0x10562ca40>
+submit_response = <function submit_response.<locals>.submit at 0x10562cae0>
+tmp_path = PosixPath('/private/var/folders/yw/kgt4zj591k7c41b_3z2p08500000gn/T/pytest-of-guoyuhang/pytest-3/test_actual_backup_restores_ex0')
+
+    def test_actual_backup_restores_extra_collections_and_non_seed_results(
+        app, real_db, api_factory, survey_factory, submit_response, tmp_path,
+    ):
+        author = api_factory()
+        survey = survey_factory(author, allowMultipleSubmissions=True)
+        for _ in range(5):
+            assert submit_response(author, survey).status_code == 201
+        current = real_db.surveys.find_one({"_id": ObjectId(survey["id"])})
+        historical = copy.deepcopy(current)
+        historical.update({"_id": ObjectId(), "surveyId": current["_id"], "definitionVersion": 2})
+        real_db.survey_versions.insert_one(historical)
+>       real_db.question_versions.insert_one({"_id": "future-version", "content": {"title": "keep"}})
+
+tests/integration/test_baseline_tools.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/pymongo/synchronous/collection.py:875: in insert_one
+    self._insert_one(
+.venv/lib/python3.12/site-packages/pymongo/synchronous/collection.py:815: in _insert_one
+    self._database.client._retryable_write(
+.venv/lib/python3.12/site-packages/pymongo/synchronous/mongo_client.py:2099: in _retryable_write
+    return self._retry_with_session(retryable, func, s, bulk, operation, operation_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/pymongo/synchronous/mongo_client.py:1969: in _retry_with_session
+    return self._retry_internal(
+.venv/lib/python3.12/site-packages/pymongo/_csot.py:126: in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/pymongo/synchronous/mongo_client.py:2022: in _retry_internal
+    ).run()
+      ^^^^^
+.venv/lib/python3.12/site-packages/pymongo/synchronous/mongo_client.py:2890: in run
+    res = self._read() if self._is_read else self._write()
+                                             ^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/pymongo/synchronous/mongo_client.py:3103: in _write
+    return self._func(self._session, conn, self._retryable)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/pymongo/synchronous/collection.py:813: in _insert_command
+    _check_write_command_response(result)
+.venv/lib/python3.12/site-packages/pymongo/helpers_shared.py:365: in _check_write_command_response
+    _raise_last_write_error(write_errors)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+write_errors = [{'index': 0, 'code': 121, 'errmsg': 'Document failed validation', 'errInfo': {'failingDocumentId': 'future-version', ...chema', 'schemaRulesNotSatisfied': [{'operatorName': 'required', 'specifiedAs': {...}, 'missingProperties': [...]}]}}}]
+
+    def _raise_last_write_error(write_errors: list[Any]) -> NoReturn:
+        # If the last batch had multiple errors only report
+        # the last error to emulate continue_on_error.
+        error = write_errors[-1]
+        if error.get("code") == 11000:
+            raise DuplicateKeyError(error.get("errmsg"), 11000, error)
+>       raise WriteError(error.get("errmsg"), error.get("code"), error)
+E       pymongo.errors.WriteError: Document failed validation, full error: {'index': 0, 'code': 121, 'errmsg': 'Document failed validation', 'errInfo': {'failingDocumentId': 'future-version', 'details': {'operatorName': '$jsonSchema', 'schemaRulesNotSatisfied': [{'operatorName': 'required', 'specifiedAs': {'required': ['questionId', 'versionNumber', 'content', 'contentHash']}, 'missingProperties': ['contentHash', 'questionId', 'versionNumber']}]}}}
+
+.venv/lib/python3.12/site-packages/pymongo/helpers_shared.py:336: WriteError
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /Users/guoyuhang/Desktop/26年秋季学期/当代数据管理系统/project1/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/integration/test_baseline_tools.py::test_actual_backup_restores_extra_collections_and_non_seed_results
+1 failed, 223 passed, 1 warning in 46.10s

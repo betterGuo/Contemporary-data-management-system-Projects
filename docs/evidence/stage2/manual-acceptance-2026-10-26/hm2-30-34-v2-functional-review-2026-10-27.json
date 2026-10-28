@@ -1,0 +1,24 @@
+{
+  "clientDate": "2026-10-27",
+  "sourceEvidence": "hm2-30-34-v2-old-survey-protection-feedback-2026-10-27.json",
+  "plannedReason": "学习时长上限改为12小时",
+  "actualReason": "",
+  "reasonMatchesPlan": false,
+  "functionalChecks": {
+    "twoVersionsOneAndTwo": true,
+    "latestNumberTwo": true,
+    "latestPointerV2": true,
+    "v1BsonUnchanged": true,
+    "v1Maximum24": true,
+    "v2ExpectedContent": true,
+    "publishedUsePermanent": true,
+    "BPublishedDefinitionUnchanged": true,
+    "BStillV1": true,
+    "BMaximumStill24": true,
+    "BOnlyOneFormalResponse": true,
+    "BResponseBsonUnchanged": true
+  },
+  "functionalResult": "passed; optional change-description input differs from the planned text",
+  "interpretation": "Raw evidence retains the literal reason mismatch. Actual v2 content, v1 immutability, old B definition and response preservation all match. Do not rewrite immutable history to fit planned wording.",
+  "businessWritesByReview": 0
+}

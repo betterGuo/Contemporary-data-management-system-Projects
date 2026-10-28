@@ -1,0 +1,58 @@
+{
+  "status": "failed",
+  "startedAt": "2026-10-26T15:07:40.402Z",
+  "baseUrl": "http://127.0.0.1:8001",
+  "scope": "Isolated survey_project1_recheck_363f82 database only",
+  "username": "qa_owner_mvpe2zy8",
+  "methods": "Real UI login, create form, persistent draft save and formal version actions. No API writes used for fixtures.",
+  "cases": [
+    {
+      "kind": "single",
+      "status": "passed",
+      "questionId": "6adf6cbf75c60f1373fd1d22",
+      "versionId": "6adf6cbf75c60f1373fd1d25",
+      "versionNumber": 1,
+      "content": {
+        "type": "single",
+        "title": "三题型表单验收 single mvpe4y9b",
+        "required": true,
+        "options": [
+          {
+            "id": "21a0e1a1-e6b8-4ea0-81c2-ef471fa84901",
+            "label": "校园图书馆"
+          },
+          {
+            "id": "9e6ec7eb-664c-481c-8e84-390d2ee8b385",
+            "label": "安静的自习室"
+          }
+        ],
+        "validation": {}
+      },
+      "optionIdsPreservedAcrossDraftAndVersion": true,
+      "note": "Created and saved through visible UI controls."
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 409 (Conflict)"
+  ],
+  "httpErrors": [
+    {
+      "url": "http://127.0.0.1:8001/api/auth/me",
+      "status": 401,
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/library-questions/6adf6cc075c60f1373fd1d28/versions",
+      "status": 409,
+      "method": "POST"
+    }
+  ],
+  "screenshots": [
+    "forms-single-v1.png",
+    "forms-failure.png"
+  ],
+  "error": "AssertionError [ERR_ASSERTION]: {\"error\":{\"code\":\"REVISION_CONFLICT\",\"message\":\"题目已被修改，请重新加载后比较，当前输入不会自动覆盖。\",\"details\":[]}}\n    at /Users/guoyuhang/Desktop/26年秋季学期/当代数据管理系统/project1/scripts/browser_stage2_forms.cjs:19:192\n    at async post (/Users/guoyuhang/Desktop/26年秋季学期/当代数据管理系统/project1/scripts/browser_stage2_forms.cjs:19:266)\n    at async /Users/guoyuhang/Desktop/26年秋季学期/当代数据管理系统/project1/scripts/browser_stage2_forms.cjs:61:18",
+  "completedAt": "2026-10-26T15:07:45.123Z"
+}

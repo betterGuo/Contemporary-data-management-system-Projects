@@ -1,0 +1,254 @@
+{
+  "startedAt": "2026-10-26T15:07:36.926668+00:00",
+  "executedAt": "2026-10-26T15:07:46.510057+00:00",
+  "durationSeconds": 9.583,
+  "invocation": "pytest.main(args, plugins=[Evidence()])",
+  "args": [
+    "-ra",
+    "tests",
+    "-q",
+    "--junitxml=/Users/guoyuhang/Desktop/26年秋季学期/当代数据管理系统/project1/docs/evidence/stage2/recheck-2026-10-26-363f82/edge-boundary-before-fix/pytest.xml",
+    "-k",
+    "test_stage2_recheck and boundary"
+  ],
+  "exitCode": 1,
+  "collectedTests": 15,
+  "summary": {
+    "passed": 0,
+    "failed": 15,
+    "skipped": 0
+  },
+  "collectionErrors": [],
+  "coveredCases": [],
+  "uncoveredCases": [
+    "E01",
+    "E02",
+    "E03",
+    "E04",
+    "T01",
+    "T02",
+    "T03",
+    "T04",
+    "T05",
+    "T06",
+    "T07",
+    "T08",
+    "T09",
+    "T10",
+    "T11",
+    "T12",
+    "T13",
+    "T14",
+    "T15",
+    "T16",
+    "T17",
+    "T18",
+    "T19",
+    "T20",
+    "T21",
+    "T22",
+    "T23",
+    "T24",
+    "T25",
+    "T26",
+    "T27",
+    "T28",
+    "T29",
+    "T30",
+    "T31",
+    "T32",
+    "T33",
+    "T34",
+    "T35",
+    "T36",
+    "T37",
+    "T38",
+    "T39",
+    "T40",
+    "T41",
+    "T42",
+    "T43",
+    "T44",
+    "T45",
+    "T46",
+    "T47",
+    "T48",
+    "T49",
+    "T50",
+    "T51",
+    "T52",
+    "T53",
+    "T54",
+    "T55",
+    "T56",
+    "T57",
+    "T58",
+    "T59",
+    "T60",
+    "T61",
+    "T62",
+    "T63",
+    "T64",
+    "T65",
+    "T66",
+    "T67",
+    "T68",
+    "T69",
+    "T70",
+    "T71",
+    "T72",
+    "T73",
+    "T74",
+    "T75",
+    "T76",
+    "T77",
+    "T78",
+    "T79",
+    "T80",
+    "T81",
+    "T82",
+    "T83",
+    "T84",
+    "T85",
+    "T86",
+    "T87",
+    "T88"
+  ],
+  "results": [
+    {
+      "nodeid": "tests/integration/test_stage2_recheck.py::test_boundary_escaped_lone_surrogate_is_rejected_without_server_error[question-title]",
+      "phase": "call",
+      "outcome": "failed",
+      "durationSeconds": 0.360268,
+      "cases": [
+        "S2-22"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_stage2_recheck.py::test_boundary_escaped_lone_surrogate_is_rejected_without_server_error[option-label]",
+      "phase": "call",
+      "outcome": "failed",
+      "durationSeconds": 0.350532,
+      "cases": [
+        "S2-22"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_stage2_recheck.py::test_boundary_escaped_lone_surrogate_is_rejected_without_server_error[answer-text]",
+      "phase": "call",
+      "outcome": "failed",
+      "durationSeconds": 0.638286,
+      "cases": [
+        "S2-22"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[archive]",
+      "phase": "call",
+      "outcome": "failed",
+      "durationSeconds": 0.435704,
+      "cases": [
+        "S2-22"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[grant]",
+      "phase": "call",
+      "outcome": "failed",
+      "durationSeconds": 0.498112,
+      "cases": [
+        "S2-22"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[revoke]",
+      "phase": "call",
+      "outcome": "failed",
+      "durationSeconds": 0.804151,
+      "cases": [
+        "S2-22"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[availability]",
+      "phase": "call",
+      "outcome": "failed",
+      "durationSeconds": 0.602892,
+      "cases": [
+        "S2-22"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[survey-patch]",
+      "phase": "call",
+      "outcome": "failed",
+      "durationSeconds": 0.517361,
+      "cases": [
+        "S2-22"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[question-add]",
+      "phase": "call",
+      "outcome": "failed",
+      "durationSeconds": 0.559864,
+      "cases": [
+        "S2-22"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[question-edit]",
+      "phase": "call",
+      "outcome": "failed",
+      "durationSeconds": 0.552363,
+      "cases": [
+        "S2-22"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[question-delete]",
+      "phase": "call",
+      "outcome": "failed",
+      "durationSeconds": 0.577366,
+      "cases": [
+        "S2-22"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[question-order]",
+      "phase": "call",
+      "outcome": "failed",
+      "durationSeconds": 0.523458,
+      "cases": [
+        "S2-22"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[survey-publish]",
+      "phase": "call",
+      "outcome": "failed",
+      "durationSeconds": 0.691649,
+      "cases": [
+        "S2-22"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_stage2_recheck.py::test_boundary_number_distribution_page_larger_than_bson_integer_returns_422[overview]",
+      "phase": "call",
+      "outcome": "failed",
+      "durationSeconds": 0.439552,
+      "cases": [
+        "S2-49"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_stage2_recheck.py::test_boundary_number_distribution_page_larger_than_bson_integer_returns_422[question]",
+      "phase": "call",
+      "outcome": "failed",
+      "durationSeconds": 0.328168,
+      "cases": [
+        "S2-49"
+      ]
+    }
+  ]
+}

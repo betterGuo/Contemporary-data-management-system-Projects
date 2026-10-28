@@ -3,7 +3,7 @@ from bson.decimal128 import Decimal128
 from decimal import Decimal, localcontext
 
 from app.services.definition_service import load_definition
-from app.services.storage_adapters import DomainError
+from app.services.storage_adapters import DomainError, validate_pagination
 
 
 def totals(db, survey_id, version, response_filter=None):
@@ -109,6 +109,7 @@ def question_statistics(db, survey, question, submission_count, page=1, page_siz
 
 
 def statistics(db, survey, question_id=None, page=1, page_size=20):
+    validate_pagination(page, page_size)
     definition = load_definition(db, survey["_id"], survey["definitionVersion"])
     # Standalone MongoDB has no multi-query snapshot transaction. Freeze the
     # membership once; successful response documents are immutable. A maximum

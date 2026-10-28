@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-27",
+  "actor": "AI via cua_repl, authorized takeover",
+  "businessWritesByAi": 0,
+  "observations": {
+    "DAlreadyPublishedWithOneAnswer6": true,
+    "peerV1": {
+      "answerCount": 1,
+      "responseCount": 1,
+      "surveyCount": 1,
+      "average": "6",
+      "onlyD": true
+    },
+    "authorV1": {
+      "answerCount": 1,
+      "responseCount": 1,
+      "surveyCount": 1,
+      "average": "4",
+      "onlyB": true
+    },
+    "ownerUsage": {
+      "scope": "question",
+      "ownTitles": [
+        "第二阶段手测_1026_版本问卷C",
+        "第二阶段手测_1026_复用问卷B"
+      ],
+      "otherSurveyCount": 1,
+      "noDDetails": true
+    },
+    "peerUsage": {
+      "scope": "question",
+      "ownTitles": [
+        "第二阶段手测_1026_共享问卷D"
+      ],
+      "noOtherSurveyCount": true
+    }
+  },
+  "notes": [
+    "D publication/submission existed before takeover; AI did not repeat them.",
+    "Owner session restored in IAB; peer restored in Chrome. No credentials changed."
+  ]
+}

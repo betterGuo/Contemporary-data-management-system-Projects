@@ -1,0 +1,259 @@
+{
+  "startedAt": "2026-10-26T15:08:33.146826+00:00",
+  "executedAt": "2026-10-26T15:08:40.151012+00:00",
+  "durationSeconds": 7.004,
+  "invocation": "pytest.main(args, plugins=[Evidence()])",
+  "args": [
+    "-ra",
+    "tests",
+    "-q",
+    "--junitxml=/Users/guoyuhang/Desktop/26年秋季学期/当代数据管理系统/project1/docs/evidence/stage2/recheck-2026-10-26-363f82/edge-combinations/pytest.xml",
+    "-k",
+    "test_stage2_recheck and not boundary"
+  ],
+  "exitCode": 0,
+  "collectedTests": 13,
+  "summary": {
+    "passed": 13,
+    "failed": 0,
+    "skipped": 0
+  },
+  "collectionErrors": [],
+  "coveredCases": [
+    "S2-06",
+    "S2-10",
+    "S2-15",
+    "S2-16",
+    "S2-18",
+    "S2-22",
+    "S2-49",
+    "S2-61",
+    "S2-66",
+    "S2-67",
+    "S2-70",
+    "S2-75",
+    "S2-76"
+  ],
+  "uncoveredCases": [
+    "E01",
+    "E02",
+    "E03",
+    "E04",
+    "T01",
+    "T02",
+    "T03",
+    "T04",
+    "T05",
+    "T06",
+    "T07",
+    "T08",
+    "T09",
+    "T10",
+    "T11",
+    "T12",
+    "T13",
+    "T14",
+    "T15",
+    "T16",
+    "T17",
+    "T18",
+    "T19",
+    "T20",
+    "T21",
+    "T22",
+    "T23",
+    "T24",
+    "T25",
+    "T26",
+    "T27",
+    "T28",
+    "T29",
+    "T30",
+    "T31",
+    "T32",
+    "T33",
+    "T34",
+    "T35",
+    "T36",
+    "T37",
+    "T38",
+    "T39",
+    "T40",
+    "T41",
+    "T42",
+    "T43",
+    "T44",
+    "T45",
+    "T46",
+    "T47",
+    "T48",
+    "T49",
+    "T50",
+    "T51",
+    "T52",
+    "T53",
+    "T54",
+    "T55",
+    "T56",
+    "T57",
+    "T58",
+    "T59",
+    "T60",
+    "T61",
+    "T62",
+    "T63",
+    "T64",
+    "T65",
+    "T66",
+    "T67",
+    "T68",
+    "T69",
+    "T70",
+    "T71",
+    "T72",
+    "T73",
+    "T74",
+    "T75",
+    "T76",
+    "T77",
+    "T78",
+    "T79",
+    "T80",
+    "T81",
+    "T82",
+    "T83",
+    "T84",
+    "T85",
+    "T86",
+    "T87",
+    "T88"
+  ],
+  "results": [
+    {
+      "nodeid": "tests/integration/test_stage2_recheck.py::test_two_generation_derivation_keeps_root_and_exact_parent_without_reverse_access",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.524438,
+      "cases": [
+        "S2-06",
+        "S2-66"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_stage2_recheck.py::test_reorder_linked_instances_keeps_bindings_and_answer_interpretation",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.391908,
+      "cases": [
+        "S2-15"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_stage2_recheck.py::test_publication_second_local_registration_failure_rolls_back_entire_definition",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.41357,
+      "cases": [
+        "S2-16"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_stage2_recheck.py::test_client_cannot_inject_identity_or_snapshot_fields[register-role]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.306013,
+      "cases": [
+        "S2-10",
+        "S2-18",
+        "S2-22"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_stage2_recheck.py::test_client_cannot_inject_identity_or_snapshot_fields[create-owner]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.40779,
+      "cases": [
+        "S2-10",
+        "S2-18",
+        "S2-22"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_stage2_recheck.py::test_client_cannot_inject_identity_or_snapshot_fields[create-root]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.325502,
+      "cases": [
+        "S2-10",
+        "S2-18",
+        "S2-22"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_stage2_recheck.py::test_client_cannot_inject_identity_or_snapshot_fields[select-snapshot]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.315384,
+      "cases": [
+        "S2-10",
+        "S2-18",
+        "S2-22"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_stage2_recheck.py::test_cross_statistics_excludes_optional_blank_and_branch_skip_but_includes_zero",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.392,
+      "cases": [
+        "S2-49"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_stage2_recheck.py::test_identical_instance_strings_in_different_surveys_do_not_cross_match_versions",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.380303,
+      "cases": [
+        "S2-61"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_stage2_recheck.py::test_other_usage_count_is_one_after_double_use_upgrade_remove_and_reselect",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.516379,
+      "cases": [
+        "S2-67"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_stage2_recheck.py::test_five_valid_snapshot_instances_batch_success_is_atomic_deduplicated_and_replayable",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.40049,
+      "cases": [
+        "S2-70"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_stage2_recheck.py::test_closing_published_survey_and_removing_draft_use_does_not_unlock_working_content",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.347392,
+      "cases": [
+        "S2-76"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_stage2_recheck.py::test_three_users_personal_tags_are_independent_of_source_and_each_other",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.592535,
+      "cases": [
+        "S2-75"
+      ]
+    }
+  ]
+}

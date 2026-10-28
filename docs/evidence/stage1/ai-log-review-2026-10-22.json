@@ -1,0 +1,390 @@
+{
+  "reviewDate": "2026-10-22",
+  "reviewer": "Codex; independent read-only requirements and source review by same-session collaboration agents",
+  "method": "Documentation review, AST function lookup, exact final-code excerpt matching, Git release file comparison and prior passed-node lookup; not a new pytest run",
+  "sourceRequirements": {
+    "path": "大作业一第一阶段.docx",
+    "sha256": "88af590b01a4265c31b5da1f2d44f0bb833f4d8fa8c0852478963420b9d685ec",
+    "section5_1": [
+      "使用了什么工具",
+      "使用了什么提示词",
+      "得到了什么代码",
+      "是否修改",
+      "修改了什么"
+    ],
+    "section5_2": [
+      "AI帮了什么",
+      "AI做错了什么",
+      "自己改了什么",
+      "自己设计了什么"
+    ],
+    "truthfulRecordRequired": true
+  },
+  "aiTool": "Codex current conversation and same-conversation collaboration agents",
+  "otherAiToolsOrConversations": "none, as confirmed by user",
+  "studentManualCodeEdits": "none, as confirmed by user",
+  "studentIndependentTechnicalDesign": "none, as confirmed by user",
+  "studentActualParticipation": [
+    "task and two-stage constraints",
+    "visual direction selection",
+    "web configuration and operation",
+    "problem feedback",
+    "manual retesting",
+    "requested project-process narrative and revision of AI documentation"
+  ],
+  "promptProvenance": {
+    "AI-001": "visible_user_verbatim_prompt",
+    "AI-002": "visible_user_verbatim_prompt",
+    "AI-003": "visible_user_verbatim_prompt",
+    "AI-004": "visible_user_verbatim_prompt",
+    "AI-005": "visible_user_prompt_and_ui_selection",
+    "AI-006": "visible_user_verbatim_prompt",
+    "AI-007": "internal_task_summary_or_debug_record",
+    "AI-008": "internal_task_summary_or_debug_record",
+    "AI-009": "internal_task_summary_or_debug_record",
+    "AI-010": "internal_task_summary_or_debug_record",
+    "AI-011": "internal_verbatim_prompt",
+    "AI-012": "internal_verbatim_prompt",
+    "AI-013": "internal_verbatim_prompt",
+    "AI-014": "visible_user_verbatim_prompt",
+    "AI-015": "visible_user_verbatim_prompt",
+    "AI-016": "visible_user_verbatim_prompt",
+    "AI-017": "visible_user_verbatim_prompt",
+    "AI-018": "visible_user_verbatim_prompt",
+    "AI-019": "visible_user_verbatim_prompt",
+    "AI-020": "visible_user_verbatim_prompt",
+    "AI-021": "visible_user_verbatim_prompt"
+  },
+  "codeProvenance": {
+    "foundationCommit": "0333abb",
+    "mainImplementationCommit": "9aa0ae4",
+    "boundaryRevisionCommit": "65aa339",
+    "releaseRef": "stage1-v1.0.1",
+    "headAtReview": "176fd5b7a8eca826bf8433e13d79dec52ab15b62",
+    "scope": "Final multi-turn collaboration outputs; not per-prompt original generated-code snapshots",
+    "historyBoundary": "Positive minimum, exact mean, idempotent path and fixed-member safeguards already exist at first related-code commit 9aa0ae4; no separately committed pre-fix code is asserted"
+  },
+  "codeMappings": [
+    {
+      "topic": "mongo-schema-indexes",
+      "logIds": [
+        "AI-006"
+      ],
+      "sourceFunctions": [
+        {
+          "path": "app/database.py",
+          "function": "initialize_database",
+          "line": 14,
+          "sha256": "48a882f6d3b8d9aa386fc629420c4bb103021069f8e0edfeeeb40c8e437d1024",
+          "matchesStage1Release": true
+        }
+      ],
+      "previouslyPassedNodeids": [
+        "tests/integration/test_auth_and_surveys.py::test_database_validators_reject_invalid_bson_and_api_rejects_server_fields",
+        "tests/integration/test_responses_and_concurrency.py::test_actual_index_definitions_and_duplicate_inserts[False]",
+        "tests/integration/test_responses_and_concurrency.py::test_actual_index_definitions_and_duplicate_inserts[True]"
+      ],
+      "validationRun": "2026-10-20 baseline; not rerun during this documentation review"
+    },
+    {
+      "topic": "rules-path-version",
+      "logIds": [
+        "AI-003",
+        "AI-006"
+      ],
+      "sourceFunctions": [
+        {
+          "path": "app/services/rule_operators.py",
+          "function": "register_rule_operator",
+          "line": 21,
+          "sha256": "41b04349ab98745a27031681ab21f1ef69c2f9004abd1ab56c35a0a989fcfc0e",
+          "matchesStage1Release": true
+        },
+        {
+          "path": "app/services/jump_engine.py",
+          "function": "validate_answers_path",
+          "line": 35,
+          "sha256": "069a7032ca1f851344021e732532d75c6c26b3958e5de4fd1e89062ffc7faedb",
+          "matchesStage1Release": true
+        },
+        {
+          "path": "app/services/definition_service.py",
+          "function": "load_definition",
+          "line": 4,
+          "sha256": "e47b5dd147dc6c69bdca021fbcbdc30c6d9b8bbfeed0613ef9d1b5e0b5608a30",
+          "matchesStage1Release": true
+        }
+      ],
+      "previouslyPassedNodeids": [
+        "tests/integration/test_statistics_and_versions.py::test_explicit_versions_historical_replay_and_retired_version_new_submission",
+        "tests/unit/test_paths.py::test_registration_can_add_operator_without_changing_traversal"
+      ],
+      "validationRun": "2026-10-20 baseline; not rerun during this documentation review"
+    },
+    {
+      "topic": "positive-limits-decimals",
+      "logIds": [
+        "AI-004",
+        "AI-006"
+      ],
+      "sourceFunctions": [
+        {
+          "path": "app/services/question_types.py",
+          "function": "_multiple_answer",
+          "line": 171,
+          "sha256": "f7901abcdd183cd6f05296c7481650090a6878e5b93655916f14d8c235e00bb8",
+          "matchesStage1Release": true
+        },
+        {
+          "path": "app/services/question_types.py",
+          "function": "_text_answer",
+          "line": 187,
+          "sha256": "f7901abcdd183cd6f05296c7481650090a6878e5b93655916f14d8c235e00bb8",
+          "matchesStage1Release": true
+        },
+        {
+          "path": "app/services/storage_adapters.py",
+          "function": "parse_decimal128",
+          "line": 55,
+          "sha256": "d0aa1027d3aebece5d45b39094ff28ddc837092ae969bcf401e4f240fd3b4b0b",
+          "matchesStage1Release": true
+        }
+      ],
+      "previouslyPassedNodeids": [
+        "tests/unit/test_numbers.py::test_decimal128_extremes_and_subnormal_are_preserved_exactly",
+        "tests/unit/test_numbers.py::test_normalization_is_independent_of_default_decimal_precision",
+        "tests/unit/test_questions.py::test_multiple_limits_also_apply_when_required_is_false[validation0-None]",
+        "tests/unit/test_questions.py::test_multiple_limits_also_apply_when_required_is_false[validation1-value1]",
+        "tests/unit/test_questions.py::test_multiple_limits_also_apply_when_required_is_false[validation2-value2]",
+        "tests/unit/test_questions.py::test_multiple_limits_also_apply_when_required_is_false[validation3-value3]",
+        "tests/unit/test_questions.py::test_multiple_limits_also_apply_when_required_is_false[validation4-value4]",
+        "tests/unit/test_questions.py::test_multiple_limits_also_apply_when_required_is_false[validation5-value5]",
+        "tests/unit/test_questions.py::test_multiple_limits_also_apply_when_required_is_false[validation6-value6]",
+        "tests/unit/test_questions.py::test_multiple_limits_also_apply_when_required_is_false[validation7-a]",
+        "tests/unit/test_questions.py::test_multiple_limits_also_apply_when_required_is_false[validation8-value8]",
+        "tests/unit/test_questions.py::test_positive_text_minimum_cannot_be_disabled_by_required_false[  ]",
+        "tests/unit/test_questions.py::test_positive_text_minimum_cannot_be_disabled_by_required_false[None]",
+        "tests/unit/test_questions.py::test_positive_text_minimum_cannot_be_disabled_by_required_false[\\u7532]",
+        "tests/unit/test_questions.py::test_positive_text_minimum_cannot_be_disabled_by_required_false[]"
+      ],
+      "validationRun": "2026-10-20 baseline; not rerun during this documentation review"
+    },
+    {
+      "topic": "extreme-average",
+      "logIds": [
+        "AI-008"
+      ],
+      "sourceFunctions": [
+        {
+          "path": "app/services/statistics_service.py",
+          "function": "exact_numeric_average",
+          "line": 22,
+          "sha256": "33f0379c45fe974a221655e7fa07562376400c396433e24cb4d3e733f3daf7e4",
+          "matchesStage1Release": true
+        }
+      ],
+      "previouslyPassedNodeids": [
+        "tests/integration/test_statistics_and_versions.py::test_average_retains_small_residual_after_large_positive_negative_cancellation",
+        "tests/integration/test_statistics_and_versions.py::test_mean_of_two_maximum_decimal128_values_stays_finite"
+      ],
+      "validationRun": "2026-10-20 baseline; not rerun during this documentation review"
+    },
+    {
+      "topic": "idempotency-path",
+      "logIds": [
+        "AI-008"
+      ],
+      "sourceFunctions": [
+        {
+          "path": "app/services/response_service.py",
+          "function": "submit",
+          "line": 51,
+          "sha256": "5855b5471fc10c47a1f4e99575cb8904805408cb7c31f62f8697c5bc970ea1ff",
+          "matchesStage1Release": true
+        }
+      ],
+      "previouslyPassedNodeids": [
+        "tests/integration/test_responses_and_concurrency.py::test_idempotent_retry_cannot_add_a_hidden_blank_answer"
+      ],
+      "validationRun": "2026-10-20 baseline; not rerun during this documentation review"
+    },
+    {
+      "topic": "statistics-members",
+      "logIds": [
+        "AI-009"
+      ],
+      "sourceFunctions": [
+        {
+          "path": "app/services/statistics_service.py",
+          "function": "statistics",
+          "line": 111,
+          "sha256": "33f0379c45fe974a221655e7fa07562376400c396433e24cb4d3e733f3daf7e4",
+          "matchesStage1Release": true
+        }
+      ],
+      "previouslyPassedNodeids": [
+        "tests/integration/test_statistics_and_versions.py::test_numeric_average_uses_same_members_as_question_count_and_page_when_new_response_arrives",
+        "tests/integration/test_statistics_and_versions.py::test_statistics_freeze_response_members_before_totals_then_include_new_submission_on_next_request[age]",
+        "tests/integration/test_statistics_and_versions.py::test_statistics_freeze_response_members_before_totals_then_include_new_submission_on_next_request[comment]",
+        "tests/integration/test_statistics_and_versions.py::test_statistics_freeze_response_members_before_totals_then_include_new_submission_on_next_request[overview]"
+      ],
+      "validationRun": "2026-10-20 baseline; not rerun during this documentation review"
+    },
+    {
+      "topic": "configuration-api-bson",
+      "logIds": [
+        "AI-012"
+      ],
+      "sourceFunctions": [
+        {
+          "path": "tests/integration/test_configuration_extension.py",
+          "function": "test_api_configuration_changes_options_threshold_and_target_without_mutating_published_baseline",
+          "line": 33,
+          "sha256": "5974db72a12ab30889b2f9c810f4fa948e2aaaae499c17c1c28d0e6a5376fcf2",
+          "matchesStage1Release": true
+        }
+      ],
+      "previouslyPassedNodeids": [
+        "tests/integration/test_configuration_extension.py::test_api_configuration_changes_options_threshold_and_target_without_mutating_published_baseline"
+      ],
+      "validationRun": "2026-10-20 baseline; not rerun during this documentation review"
+    }
+  ],
+  "codeExamples": [
+    {
+      "path": "app/services/question_types.py",
+      "startLine": 180,
+      "code": "config = question[\"validation\"]\nminimum = max(config[\"minSelections\"], 1 if question[\"required\"] else 0)\nif not minimum <= len(value) <= config[\"maxSelections\"]:\n    _fail(question, f\"请选择 {minimum} 至 {config['maxSelections']} 个选项\", \"value\", answer=True)",
+      "exactFinalSourceExcerpt": true,
+      "notClaimedAsOriginalSingleReply": true
+    },
+    {
+      "path": "app/services/response_service.py",
+      "startLine": 61,
+      "code": "result = validate_answers_path(definition[\"questions\"], payload[\"answers\"])\nexisting = repository.find_submission(db, survey[\"_id\"], key, payload[\"submissionKey\"])",
+      "exactFinalSourceExcerpt": true,
+      "notClaimedAsOriginalSingleReply": true
+    }
+  ],
+  "priorTestEvidence": {
+    "path": "docs/evidence/stage1/test-results.json",
+    "sha256": "e09f90a97b2a60d2481e6935724cfae682f47b9366a55a69d4a8199cd1225b59",
+    "executedAt": "2026-10-20T14:17:48.513116+00:00",
+    "summary": {
+      "passed": 197,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rerunToday": false
+  },
+  "historicalLogCopy": {
+    "path": "docs/evidence/stage1/ai-log-before-structured-review-2026-10-22.md",
+    "sha256": "1d5d47ef410353131a7c255056d3c3d20d18b7c2af89e876c179704f648598c5"
+  },
+  "manualEvidence": "docs/evidence/stage1/manual-acceptance-2026-10-22-results.json",
+  "manualAverageDiscrepancy": "User reported 19; recorded database and current browser observation were 1 response with numeric answer and mean 110. Retained as unresolved source discrepancy, not labelled as an AI arithmetic defect.",
+  "checks": {
+    "fourRequiredSummaryQuestionsPresent": true,
+    "allMappedFunctionsPresent": true,
+    "allMappedCodeMatchesRelease": true,
+    "allMappedTestsPreviouslyPassed": true,
+    "codeExcerptsMatchFinalSource": true,
+    "ambiguousFirstPersonAgentLabelRemoved": true,
+    "expectedLogIdCount": 21,
+    "allExpectedLogIdsPresent": true
+  },
+  "documentReview": {
+    "status": "passed_document_review",
+    "documents": [
+      {
+        "path": "docs/ai-use.md",
+        "sha256": "70bf46adf1efdcdc9107ad70722d5b8d8a424c54e5832aa397191409a5f76de8",
+        "stageCopy": "docs/submissions/stage1/ai-use.md",
+        "stageCopySha256": "c61b68eb31d83de1a194a721805b1a4d37aa4cb3c3c683f5d8feeb073f7945ef"
+      },
+      {
+        "path": "docs/ai-log.md",
+        "sha256": "f377942d739e9e305e670e140f6c8489d9cf291f754b170945d15912c9f4843a",
+        "stageCopy": "docs/submissions/stage1/ai-log.md",
+        "stageCopySha256": "1070c77e3f6a5dbfe17ab1910240e32f5bc0b5332141bce9fa606525178aa201"
+      },
+      {
+        "path": "docs/report.md",
+        "sha256": "f837dd3a5ca7184443eb1a79131abce7825104f2350e1aa20ed643c75539bcd9",
+        "stageCopy": "docs/submissions/stage1/report.md",
+        "stageCopySha256": "f837dd3a5ca7184443eb1a79131abce7825104f2350e1aa20ed643c75539bcd9"
+      }
+    ],
+    "stageCopiesIdentical": false,
+    "stageCopiesContentEquivalentExceptRebasedLocalLinks": true,
+    "stageLinkAdjustment": "Project source and plan links rebased; links to sibling stage documents retained; recheck.md links to primary docs",
+    "scope": "Process narrative, authorship, user prompt provenance, existing technical evidence and manual discrepancy; not a fresh application test",
+    "independentReview": "Same-conversation process_narrative_review agent: process structure and authorship verified; one overbroad quotation claim corrected and repeated attribution prose shortened; report feedback wording made precise",
+    "localMarkdownLinksResolve": true,
+    "localLinkCheckScope": "AI process statement, AI log and report in both primary docs and stage1 snapshot",
+    "verification": {
+      "stageDocumentCount": 12,
+      "allStageContentsMatchWithLinkAdaptation": true,
+      "verifiedLocalLinks": 72,
+      "fourSummaryQuestionsPresentInBoth": true,
+      "all21LogIdsPresent": true,
+      "frontendDescriptionMatchesInspectedCode": true,
+      "historicalTestEvidenceAndLogCopyUnchanged": true
+    }
+  },
+  "previousDocumentReviews": [
+    {
+      "status": "passed_document_review",
+      "independentReview": "Same-conversation requirements review agent; no required factual revisions found",
+      "documents": [
+        {
+          "path": "docs/ai-use.md",
+          "sha256": "73f04b55738905b4ef7a7932a3a609a5adc2e5833aa7ca3613cfbb9b4480f923",
+          "stageCopy": "docs/submissions/stage1/ai-use.md"
+        },
+        {
+          "path": "docs/ai-log.md",
+          "sha256": "5f342761b1b20005e24e7093eec76dd03fcca412f5d2021a376045095f7e99c9",
+          "stageCopy": "docs/submissions/stage1/ai-log.md"
+        },
+        {
+          "path": "docs/report.md",
+          "sha256": "ffbb45e51861b2fb9745f0ded0ae4d2aa0e580eca690016c5df6652dcae7afcc",
+          "stageCopy": "docs/submissions/stage1/report.md"
+        }
+      ],
+      "stageCopiesIdentical": true,
+      "localMarkdownLinksResolve": true,
+      "scope": "AI requirement coverage, authorship, prompt provenance, code-output links and retained manual discrepancy; not a fresh application test"
+    }
+  ],
+  "processNarrativeRevision": {
+    "date": "2026-10-22",
+    "requestedBy": "AI-021; visible user request",
+    "structure": [
+      "requirements and two-stage planning",
+      "architecture and MongoDB design",
+      "visual choice and frontend/API connection",
+      "implementation and plan corrections",
+      "code and evidence review",
+      "student manual testing and retest",
+      "submission-document revision",
+      "four required summary questions"
+    ],
+    "verbatimUserPromptsRetained": true,
+    "newHistoricalTechnicalDialogueInvented": false,
+    "frontendConnectionInspection": {
+      "type": "read-only final source inspection",
+      "files": [
+        "app/static/editor.js",
+        "app/static/common.js",
+        "app/api/surveys.py",
+        "app/static/fill.js",
+        "app/static/statistics.js"
+      ],
+      "description": "Question editing uses PATCH with revision through common.api; same-origin fetch and CSRF; backend survey update delegates to survey service; filling and statistics call their APIs."
+    },
+    "businessCodeChanged": false,
+    "newApplicationTestRun": false
+  }
+}

@@ -1,0 +1,368 @@
+{
+  "clientDate": "2026-10-28",
+  "verifiedAtUtc": "2026-10-27T16:20:22.164325+00:00",
+  "operator": "AI read-only verification after parent UI publish and one 6/10 submission",
+  "businessWritesByThisInspection": 0,
+  "checks": {
+    "EIsPublished": true,
+    "EOwnedByPeer": true,
+    "ETwoInstancesUnchangedSinceDraft": true,
+    "EReferencesUnchangedSinceDraft": true,
+    "EExactlyOneFormalResponse": true,
+    "EExpectedReceipt": true,
+    "EAnswerInstanceIdsMatch": true,
+    "EAnswersExactly6And10InOrder": true,
+    "EVisitedBothInstances": true,
+    "copyV1Counts2Answers1Response1Survey": true,
+    "copyV1Average8Min6Max10": true,
+    "copyV1SourceOnlyE": true,
+    "copyV1SourceAnswer2Response1Respondent1": true,
+    "ownerSourceV1Still4": true,
+    "peerSourceV1Still6": true,
+    "ownerSourceV2Still8": true,
+    "protectedBcdResponsesAndOriginalVersionsUnchanged": true,
+    "copyV1BsonUnchanged": true,
+    "peerCopyBookmarkRemoved": true,
+    "copyStillExistsInMine": true
+  },
+  "allMatch": true,
+  "E": {
+    "_id": "6ae0ce570dc4b0dea63867b7",
+    "ownerId": "6ae0be0c0dc4b0dea63867a7",
+    "title": "第二阶段手测_1028_双实例问卷E",
+    "publicId": "MG01KlA_tcVbQvKa",
+    "status": "published",
+    "revision": 4,
+    "definitionVersion": 1,
+    "questions": [
+      {
+        "id": "4680af53-8483-42a6-8d86-751ab585b8db",
+        "type": "number",
+        "title": "第二阶段手测_1026_学习时长(小时）",
+        "required": true,
+        "options": [],
+        "validation": {
+          "minValue": "0",
+          "maxValue": "24",
+          "integerOnly": true
+        },
+        "jumpRules": []
+      },
+      {
+        "id": "10b04622-5944-4739-883d-2edfdd9588c6",
+        "type": "number",
+        "title": "第二阶段手测_1026_学习时长(小时）",
+        "required": true,
+        "options": [],
+        "validation": {
+          "minValue": "0",
+          "maxValue": "24",
+          "integerOnly": true
+        },
+        "jumpRules": []
+      }
+    ],
+    "questionRefs": [
+      {
+        "instanceId": "4680af53-8483-42a6-8d86-751ab585b8db",
+        "questionId": "6ae0cc750dc4b0dea63867b2",
+        "questionVersionId": "6ae0cc750dc4b0dea63867b3",
+        "rootQuestionId": "6ae0680b0dc4b0dea6386792",
+        "contentHash": "1ba7ba4d052872a0d7a8538a1bfa8ada80cd0e0c5525fe95fef436a0c83f03e8"
+      },
+      {
+        "instanceId": "10b04622-5944-4739-883d-2edfdd9588c6",
+        "questionId": "6ae0cc750dc4b0dea63867b2",
+        "questionVersionId": "6ae0cc750dc4b0dea63867b3",
+        "rootQuestionId": "6ae0680b0dc4b0dea6386792",
+        "contentHash": "1ba7ba4d052872a0d7a8538a1bfa8ada80cd0e0c5525fe95fef436a0c83f03e8"
+      }
+    ],
+    "allowAnonymous": false,
+    "allowMultipleSubmissions": false
+  },
+  "EBsonSha256": "8c293c7776681f404f1cd8c12c8420fd14e1c3c2f349e96a692519200c8a2f05",
+  "EPublishedDefinitionBsonSha256": "eb239e58fcb0f494404ab6a370029d4c21887910c93a7b7ac9dfe9814295dafa",
+  "EResponses": [
+    {
+      "id": "6ae0cefd0dc4b0dea63867ba",
+      "submittedAt": "2026-10-27T16:19:09.421000+00:00",
+      "surveyDefinitionVersion": 1,
+      "isAnonymous": false,
+      "answers": [
+        {
+          "questionId": "4680af53-8483-42a6-8d86-751ab585b8db",
+          "type": "number",
+          "value": "6"
+        },
+        {
+          "questionId": "10b04622-5944-4739-883d-2edfdd9588c6",
+          "type": "number",
+          "value": "10"
+        }
+      ],
+      "visitedQuestionIds": [
+        "4680af53-8483-42a6-8d86-751ab585b8db",
+        "10b04622-5944-4739-883d-2edfdd9588c6"
+      ],
+      "bsonSha256": "ca9756f53369a6cb5ba3850ec99b61baae86aa48e5904b4c552f68b611cb5258"
+    }
+  ],
+  "EStatistics": {
+    "surveyId": "6ae0ce570dc4b0dea63867b7",
+    "title": "第二阶段手测_1028_双实例问卷E",
+    "definitionVersion": 1,
+    "submissionCount": 1,
+    "respondentCount": 1,
+    "questions": [
+      {
+        "questionId": "4680af53-8483-42a6-8d86-751ab585b8db",
+        "title": "第二阶段手测_1026_学习时长(小时）",
+        "type": "number",
+        "answerCount": 1,
+        "respondentCount": 1,
+        "unansweredCount": 0,
+        "totalValues": 1,
+        "page": 1,
+        "pageSize": 20,
+        "average": "6",
+        "values": [
+          {
+            "submittedAt": "2026-10-27T16:19:09.421000+00:00",
+            "responseId": "6ae0cefd0dc4b0dea63867ba",
+            "value": "6"
+          }
+        ]
+      },
+      {
+        "questionId": "10b04622-5944-4739-883d-2edfdd9588c6",
+        "title": "第二阶段手测_1026_学习时长(小时）",
+        "type": "number",
+        "answerCount": 1,
+        "respondentCount": 1,
+        "unansweredCount": 0,
+        "totalValues": 1,
+        "page": 1,
+        "pageSize": 20,
+        "average": "10",
+        "values": [
+          {
+            "submittedAt": "2026-10-27T16:19:09.421000+00:00",
+            "responseId": "6ae0cefd0dc4b0dea63867ba",
+            "value": "10"
+          }
+        ]
+      }
+    ]
+  },
+  "copyQuestionManagement": {
+    "_id": "6ae0cc750dc4b0dea63867b2",
+    "ownerId": "6ae0be0c0dc4b0dea63867a7",
+    "rootQuestionId": "6ae0680b0dc4b0dea6386792",
+    "revision": 2,
+    "latestVersionId": "6ae0cc750dc4b0dea63867b3",
+    "latestVersionNumber": 1,
+    "hasPublishedUsage": true
+  },
+  "copyV1": {
+    "id": "6ae0cc750dc4b0dea63867b3",
+    "bsonSha256": "9e7de26a1d291ee175f1e6d5d74742a4205dc44a766bb0ad22965347b60bd44a"
+  },
+  "copyV1CrossStatistics": {
+    "questionId": "6ae0cc750dc4b0dea63867b2",
+    "versionId": "6ae0cc750dc4b0dea63867b3",
+    "versionNumber": 1,
+    "title": "第二阶段手测_1026_学习时长(小时）",
+    "type": "number",
+    "answerCount": 2,
+    "responseCount": 1,
+    "surveyCount": 1,
+    "average": "8",
+    "min": "6",
+    "max": "10",
+    "distinctValueCount": 2,
+    "options": [],
+    "distribution": [
+      {
+        "value": "6",
+        "count": 1
+      },
+      {
+        "value": "10",
+        "count": 1
+      }
+    ],
+    "bySurvey": [
+      {
+        "surveyId": "6ae0ce570dc4b0dea63867b7",
+        "title": "第二阶段手测_1028_双实例问卷E",
+        "answerCount": 2,
+        "responseCount": 1,
+        "respondentCount": 1
+      }
+    ],
+    "scope": "my-surveys",
+    "respondentLabel": "本卷去重填写账号数",
+    "page": 1,
+    "pageSize": 20
+  },
+  "originalStatistics": {
+    "ownerV1": {
+      "questionId": "6ae0680b0dc4b0dea6386792",
+      "versionId": "6ae0696e0dc4b0dea6386795",
+      "versionNumber": 1,
+      "title": "第二阶段手测_1026_学习时长(小时）",
+      "type": "number",
+      "answerCount": 1,
+      "responseCount": 1,
+      "surveyCount": 1,
+      "average": "4",
+      "min": "4",
+      "max": "4",
+      "distinctValueCount": 1,
+      "options": [],
+      "distribution": [
+        {
+          "value": "4",
+          "count": 1
+        }
+      ],
+      "bySurvey": [
+        {
+          "surveyId": "6ae06ae50dc4b0dea6386798",
+          "title": "第二阶段手测_1026_复用问卷B",
+          "answerCount": 1,
+          "responseCount": 1,
+          "respondentCount": 1
+        }
+      ],
+      "scope": "my-surveys",
+      "respondentLabel": "本卷去重填写账号数",
+      "page": 1,
+      "pageSize": 20
+    },
+    "peerV1": {
+      "questionId": "6ae0680b0dc4b0dea6386792",
+      "versionId": "6ae0696e0dc4b0dea6386795",
+      "versionNumber": 1,
+      "title": "第二阶段手测_1026_学习时长(小时）",
+      "type": "number",
+      "answerCount": 1,
+      "responseCount": 1,
+      "surveyCount": 1,
+      "average": "6",
+      "min": "6",
+      "max": "6",
+      "distinctValueCount": 1,
+      "options": [],
+      "distribution": [
+        {
+          "value": "6",
+          "count": 1
+        }
+      ],
+      "bySurvey": [
+        {
+          "surveyId": "6ae0c1b90dc4b0dea63867ae",
+          "title": "第二阶段手测_1026_共享问卷D",
+          "answerCount": 1,
+          "responseCount": 1,
+          "respondentCount": 1
+        }
+      ],
+      "scope": "my-surveys",
+      "respondentLabel": "本卷去重填写账号数",
+      "page": 1,
+      "pageSize": 20
+    },
+    "ownerV2": {
+      "questionId": "6ae0680b0dc4b0dea6386792",
+      "versionId": "6ae06f580dc4b0dea638679c",
+      "versionNumber": 2,
+      "title": "第二阶段手测_1026_学习时长(小时）",
+      "type": "number",
+      "answerCount": 1,
+      "responseCount": 1,
+      "surveyCount": 1,
+      "average": "8",
+      "min": "8",
+      "max": "8",
+      "distinctValueCount": 1,
+      "options": [],
+      "distribution": [
+        {
+          "value": "8",
+          "count": 1
+        }
+      ],
+      "bySurvey": [
+        {
+          "surveyId": "6ae0b5550dc4b0dea638679f",
+          "title": "第二阶段手测_1026_版本问卷C",
+          "answerCount": 1,
+          "responseCount": 1,
+          "respondentCount": 1
+        }
+      ],
+      "scope": "my-surveys",
+      "respondentLabel": "本卷去重填写账号数",
+      "page": 1,
+      "pageSize": 20
+    }
+  },
+  "protectedFingerprints": {
+    "question_versions": {
+      "6ae0696e0dc4b0dea6386795": "e0a43b51141889e5ad008ab122fd9d84a6bb3cc1d77991929e9febf07a68d329",
+      "6ae06f580dc4b0dea638679c": "68dfd1232f17e61b541675bfef3f22207f8d4396d0cdb1dcdf69d371d4ca1860",
+      "6ae0b9790dc4b0dea63867a4": "39f53eb82a765283640300746858c4fcbafaa720ba7e9f9801ce9a9b0717e451"
+    },
+    "surveys": {
+      "6ae06ae50dc4b0dea6386798": "91fdac1e184c8b2498a8c2087a5e14557e507c42d2dbb4f5af1e4e98ac730877",
+      "6ae0b5550dc4b0dea638679f": "663e1ee8f0b9a32688b17560442d0bbd5e9748fdb0cafca7d10a6e336e36fa65",
+      "6ae0c1b90dc4b0dea63867ae": "34edea9f76be758bee4c9a03e31e1550097320eb11cd33feeed37b9337c08b51"
+    },
+    "responses": {
+      "6ae06d070dc4b0dea638679b": "2960cf1ea760cd8800a6cc28a0ee15c676c190e05e9e8e2cc07eb52844b5c794",
+      "6ae0b7100dc4b0dea63867a2": "8d4f569cfbe35529bfcab044c7da830552c909ab6e2065f46bc8f58a5638c36a",
+      "6ae0c5b20dc4b0dea63867b0": "18fecb0915febf3a37b65dc778470c335c64eed684b8b22c0460cafb3c40569e"
+    }
+  },
+  "peerCopyBookmarkExists": false,
+  "authorBookmarksNow": [
+    {
+      "id": "6ae0617e0dc4b0dea6386783",
+      "questionId": "6ae0617e0dc4b0dea6386780",
+      "tags": [],
+      "bsonSha256": "ac72552fd8d9c1eaa698b68b05757b5e78ae7c17b4ae56df03e45375145789d1"
+    },
+    {
+      "id": "6ae0617e0dc4b0dea6386787",
+      "questionId": "6ae0617e0dc4b0dea6386784",
+      "tags": [],
+      "bsonSha256": "768f2b7ed31cbf2b9417eb285925eefa78b35a8267b55df97d40074eaf6e36cb"
+    },
+    {
+      "id": "6ae0617e0dc4b0dea638678b",
+      "questionId": "6ae0617e0dc4b0dea6386788",
+      "tags": [],
+      "bsonSha256": "19db53fc2e0ef6db16545f988f7fddad8e9b1aa49801b395c6d425bf940c8a78"
+    },
+    {
+      "id": "6ae0617e0dc4b0dea638678f",
+      "questionId": "6ae0617e0dc4b0dea638678c",
+      "tags": [],
+      "bsonSha256": "e1997757e69912c4b1cdfd7f0b932319d37e5d4b6c0f53b46b6bc67f81ee103d"
+    },
+    {
+      "id": "6ae0680b0dc4b0dea6386793",
+      "questionId": "6ae0680b0dc4b0dea6386792",
+      "tags": [],
+      "bsonSha256": "f9cf848153a0b1fe08e40e59274a6b5434887fccc683e44dc5c135815d8867b2"
+    }
+  ],
+  "authorBookmarkHistoricalComparison": {
+    "hm2_61RecordedUnchanged": true,
+    "independentlyRecomputedAgainst61": false,
+    "reason": "HM2-61 JSON records unchanged boolean but does not include historical BSON fingerprints/content; current baseline preserved without inventing comparison."
+  }
+}

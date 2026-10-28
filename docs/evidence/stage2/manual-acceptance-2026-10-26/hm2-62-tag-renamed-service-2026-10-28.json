@@ -1,0 +1,18 @@
+{
+  "clientDate": "2026-10-28",
+  "operator": "AI application-service tag-rename test",
+  "oldTag": "手测1028",
+  "newTag": "验收1028",
+  "modified": 1,
+  "beforeTags": [
+    "手测1028",
+    "派生题"
+  ],
+  "afterTags": [
+    "派生题",
+    "验收1028"
+  ],
+  "versionBsonUnchanged": true,
+  "businessOperationsByAi": 1,
+  "uiOldNewFilterChecks": "pending"
+}

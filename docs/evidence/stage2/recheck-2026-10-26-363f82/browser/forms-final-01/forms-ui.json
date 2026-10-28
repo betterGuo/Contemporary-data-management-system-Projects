@@ -1,0 +1,112 @@
+{
+  "status": "passed",
+  "startedAt": "2026-10-26T15:15:18.078Z",
+  "baseUrl": "http://127.0.0.1:8001",
+  "scope": "Isolated survey_project1_recheck_363f82 database only",
+  "username": "qa_owner_mvpecsd2",
+  "methods": "Real UI login, create form, persistent draft save and formal version actions. No API writes used for fixtures.",
+  "cases": [
+    {
+      "kind": "single",
+      "status": "passed",
+      "questionId": "6adf6e87bf215d7a4a3efbf3",
+      "versionId": "6adf6e87bf215d7a4a3efbf6",
+      "versionNumber": 1,
+      "content": {
+        "type": "single",
+        "title": "三题型表单验收 single mvpeeqsz",
+        "required": true,
+        "options": [
+          {
+            "id": "2bbb74d7-31a2-4567-803b-d30619138b99",
+            "label": "校园图书馆"
+          },
+          {
+            "id": "1293c6fd-e6cf-4313-9418-fa375c40a61c",
+            "label": "安静的自习室"
+          }
+        ],
+        "validation": {}
+      },
+      "optionIdsPreservedAcrossDraftAndVersion": true,
+      "note": "Created and saved through visible UI controls."
+    },
+    {
+      "kind": "multiple",
+      "status": "passed",
+      "questionId": "6adf6e88bf215d7a4a3efbf9",
+      "versionId": "6adf6e88bf215d7a4a3efbfc",
+      "versionNumber": 1,
+      "content": {
+        "type": "multiple",
+        "title": "三题型表单验收 multiple mvpeerkf",
+        "required": true,
+        "options": [
+          {
+            "id": "1e3a69a1-5a90-4458-8c47-a59eb9a92c24",
+            "label": "校园图书馆"
+          },
+          {
+            "id": "de2b8426-dc9f-40f6-9d65-c23a5373c9a6",
+            "label": "安静的自习室"
+          },
+          {
+            "id": "5b645a5b-12f9-4c13-a374-06b7109100f9",
+            "label": "宿舍"
+          }
+        ],
+        "validation": {
+          "minSelections": 1,
+          "maxSelections": 2
+        }
+      },
+      "optionIdsPreservedAcrossDraftAndVersion": true,
+      "note": "Created and saved through visible UI controls."
+    },
+    {
+      "kind": "text",
+      "status": "passed",
+      "questionId": "6adf6e89bf215d7a4a3efbff",
+      "versionId": "6adf6e89bf215d7a4a3efc02",
+      "versionNumber": 1,
+      "content": {
+        "type": "text",
+        "title": "三题型表单验收 text mvpeesh7",
+        "required": false,
+        "options": [],
+        "validation": {
+          "minLength": 2,
+          "maxLength": 100
+        }
+      },
+      "optionIdsPreservedAcrossDraftAndVersion": null,
+      "note": "Created and saved through visible UI controls."
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "httpErrors": [
+    {
+      "url": "http://127.0.0.1:8001/api/auth/me",
+      "status": 401,
+      "method": "GET"
+    }
+  ],
+  "screenshots": [
+    "forms-single-v1.png",
+    "forms-multiple-v1.png",
+    "forms-text-v1.png"
+  ],
+  "expectedHttpErrors": [
+    {
+      "url": "http://127.0.0.1:8001/api/auth/me",
+      "status": 401,
+      "method": "GET"
+    }
+  ],
+  "unexpectedHttpErrors": [],
+  "unexpectedConsoleErrors": [],
+  "completedAt": "2026-10-26T15:15:22.326Z"
+}

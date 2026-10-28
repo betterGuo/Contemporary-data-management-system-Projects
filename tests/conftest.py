@@ -54,7 +54,7 @@ class ApiSession:
 @pytest.fixture(scope="session")
 def mongo_client():
     client = MongoClient(
-        os.environ.get("TEST_MONGODB_URI", "mongodb://localhost:27017/"),
+        os.environ.get("TEST_MONGODB_URI") or os.environ.get("MONGODB_URI") or Settings().mongodb_uri,
         tz_aware=True, serverSelectionTimeoutMS=2500,
     )
     try:
@@ -90,6 +90,7 @@ def app(real_db, clock, monkeypatch):
 
     settings = Settings(
         _env_file=None, respondent_hmac_secret="test" * 16,
+        mongodb_uri=os.environ.get("TEST_MONGODB_URI") or os.environ.get("MONGODB_URI") or Settings().mongodb_uri,
         testing=True, mongodb_db=real_db.name, app_origin=ORIGIN,
     )
     return create_app(settings, database=real_db, clock=clock)

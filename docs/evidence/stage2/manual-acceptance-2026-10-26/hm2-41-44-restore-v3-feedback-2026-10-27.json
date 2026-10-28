@@ -1,0 +1,116 @@
+{
+  "clientDate": "2026-10-27",
+  "userFeedback": "恢复后v1、v2、v3都保留了，B仍是v1上限24，C仍是v2上限12，v3三项计数都为0、平均值显示—，继续测试。",
+  "operator": "user",
+  "checks": {
+    "versionsExactly123": true,
+    "latestIsThree": true,
+    "v3ContentExactlyV1": true,
+    "v3DerivedFromV1": true,
+    "v3Maximum24": true,
+    "v2Maximum12": true,
+    "oldVersionsBsonUnchanged": true,
+    "BDefinitionUnchanged": true,
+    "CDefinitionUnchanged": true,
+    "BResponseUnchanged": true,
+    "CResponseUnchanged": true,
+    "BStillV1": true,
+    "CStillV2": true,
+    "v3NoAnswers": true
+  },
+  "allMatch": true,
+  "question": {
+    "id": "6ae0680b0dc4b0dea6386792",
+    "revision": 7,
+    "latestVersionNumber": 3,
+    "latestVersionId": "6ae0b9790dc4b0dea63867a4",
+    "ownerId": "6adf77430dc4b0dea638677b",
+    "visibility": "private"
+  },
+  "versions": [
+    {
+      "id": "6ae0696e0dc4b0dea6386795",
+      "versionNumber": 1,
+      "content": {
+        "type": "number",
+        "title": "第二阶段手测_1026_学习时长(小时）",
+        "required": true,
+        "options": [],
+        "validation": {
+          "minValue": "0",
+          "maxValue": "24",
+          "integerOnly": true
+        }
+      },
+      "reason": "首次正式版本",
+      "derivedFromVersionId": null,
+      "bsonSha256": "e0a43b51141889e5ad008ab122fd9d84a6bb3cc1d77991929e9febf07a68d329"
+    },
+    {
+      "id": "6ae06f580dc4b0dea638679c",
+      "versionNumber": 2,
+      "content": {
+        "type": "number",
+        "title": "第二阶段手测_1026_学习时长(小时）",
+        "required": true,
+        "options": [],
+        "validation": {
+          "minValue": "0",
+          "maxValue": "12",
+          "integerOnly": true
+        }
+      },
+      "reason": "",
+      "derivedFromVersionId": "6ae0696e0dc4b0dea6386795",
+      "bsonSha256": "68dfd1232f17e61b541675bfef3f22207f8d4396d0cdb1dcdf69d371d4ca1860"
+    },
+    {
+      "id": "6ae0b9790dc4b0dea63867a4",
+      "versionNumber": 3,
+      "content": {
+        "type": "number",
+        "title": "第二阶段手测_1026_学习时长(小时）",
+        "required": true,
+        "options": [],
+        "validation": {
+          "minValue": "0",
+          "maxValue": "24",
+          "integerOnly": true
+        }
+      },
+      "reason": "恢复旧版",
+      "derivedFromVersionId": "6ae0696e0dc4b0dea6386795",
+      "bsonSha256": "39f53eb82a765283640300746858c4fcbafaa720ba7e9f9801ce9a9b0717e451"
+    }
+  ],
+  "v3Statistics": {
+    "questionId": "6ae0680b0dc4b0dea6386792",
+    "versionId": "6ae0b9790dc4b0dea63867a4",
+    "versionNumber": 3,
+    "title": "第二阶段手测_1026_学习时长(小时）",
+    "type": "number",
+    "answerCount": 0,
+    "responseCount": 0,
+    "surveyCount": 0,
+    "average": null,
+    "min": null,
+    "max": null,
+    "distinctValueCount": 0,
+    "options": [],
+    "distribution": [],
+    "bySurvey": [],
+    "scope": "my-surveys",
+    "respondentLabel": "本卷去重填写账号数",
+    "page": 1,
+    "pageSize": 20
+  },
+  "preparedAccounts": {
+    "peerUsername": "accept2_peer_1026",
+    "peerAlreadyExists": false,
+    "peerId": null,
+    "outsiderUsername": "accept2_outsider_1026",
+    "outsiderAlreadyExists": false
+  },
+  "evidenceScope": "User explicitly confirms all three editions, B/C frozen references/ranges and empty v3 summary. Database verifies immutable pointers/content and old BSON. No new screenshot supplied.",
+  "businessWritesByAi": 0
+}

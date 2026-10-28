@@ -1,0 +1,261 @@
+{
+  "clientDate": "2026-10-28",
+  "verifiedAtUtc": "2026-10-27T16:23:23.044207+00:00",
+  "operator": "AI read-only verification after parent two-tab stale-revision UI test",
+  "businessWritesByThisInspection": 0,
+  "checks": {
+    "copyVersionsExactly1And2": true,
+    "copyLatestV2": true,
+    "copyV1BsonUnchanged": true,
+    "copyV2Upper16": true,
+    "copyV2ReasonA": true,
+    "copyV2ContentFromV1ExceptUpper": true,
+    "copyNoVersion3": true,
+    "originalVersionsStill3": true,
+    "protectedBcdResponsesAndOriginalVersionsUnchanged": true,
+    "EFullBsonUnchanged": true,
+    "EDefinitionUnchanged": true,
+    "EResponsesUnchanged": true,
+    "copyV1Still2_1_1Mean8": true,
+    "copyV2NoAnswers": true,
+    "originalOwnerV1Still4": true,
+    "originalOwnerV2Still8": true,
+    "originalPeerV1Still6": true,
+    "browserStaleInput8ReasonBPreserved": true,
+    "browserConflictMessageRecorded": true
+  },
+  "allMatch": true,
+  "scope": "A saved first, B submitted stale revision; browser visibly showed conflict and retained input. No claim of simultaneous transaction commits or directly observed browser HTTP409.",
+  "copyManagement": {
+    "_id": "6ae0cc750dc4b0dea63867b2",
+    "ownerId": "6ae0be0c0dc4b0dea63867a7",
+    "rootQuestionId": "6ae0680b0dc4b0dea6386792",
+    "revision": 3,
+    "latestVersionId": "6ae0cf800dc4b0dea63867bb",
+    "latestVersionNumber": 2,
+    "hasPublishedUsage": true
+  },
+  "copyVersions": [
+    {
+      "id": "6ae0cc750dc4b0dea63867b3",
+      "versionNumber": 1,
+      "content": {
+        "type": "number",
+        "title": "第二阶段手测_1026_学习时长(小时）",
+        "required": true,
+        "options": [],
+        "validation": {
+          "minValue": "0",
+          "maxValue": "24",
+          "integerOnly": true
+        }
+      },
+      "changeReason": "创建首版",
+      "derivedFromVersionId": "6ae0696e0dc4b0dea6386795",
+      "bsonSha256": "9e7de26a1d291ee175f1e6d5d74742a4205dc44a766bb0ad22965347b60bd44a"
+    },
+    {
+      "id": "6ae0cf800dc4b0dea63867bb",
+      "versionNumber": 2,
+      "content": {
+        "type": "number",
+        "title": "第二阶段手测_1026_学习时长(小时）",
+        "required": true,
+        "options": [],
+        "validation": {
+          "minValue": "0",
+          "maxValue": "16",
+          "integerOnly": true
+        }
+      },
+      "changeReason": "并发测试A：上限改为16",
+      "derivedFromVersionId": "6ae0cc750dc4b0dea63867b3",
+      "bsonSha256": "452f8579dec955ec79269f5951c19f287c2ec973fa5f64f7edb1ff381c44e6c3"
+    }
+  ],
+  "copyV1CrossStatistics": {
+    "questionId": "6ae0cc750dc4b0dea63867b2",
+    "versionId": "6ae0cc750dc4b0dea63867b3",
+    "versionNumber": 1,
+    "title": "第二阶段手测_1026_学习时长(小时）",
+    "type": "number",
+    "answerCount": 2,
+    "responseCount": 1,
+    "surveyCount": 1,
+    "average": "8",
+    "min": "6",
+    "max": "10",
+    "distinctValueCount": 2,
+    "options": [],
+    "distribution": [
+      {
+        "value": "6",
+        "count": 1
+      },
+      {
+        "value": "10",
+        "count": 1
+      }
+    ],
+    "bySurvey": [
+      {
+        "surveyId": "6ae0ce570dc4b0dea63867b7",
+        "title": "第二阶段手测_1028_双实例问卷E",
+        "answerCount": 2,
+        "responseCount": 1,
+        "respondentCount": 1
+      }
+    ],
+    "scope": "my-surveys",
+    "respondentLabel": "本卷去重填写账号数",
+    "page": 1,
+    "pageSize": 20
+  },
+  "copyV2CrossStatistics": {
+    "questionId": "6ae0cc750dc4b0dea63867b2",
+    "versionId": "6ae0cf800dc4b0dea63867bb",
+    "versionNumber": 2,
+    "title": "第二阶段手测_1026_学习时长(小时）",
+    "type": "number",
+    "answerCount": 0,
+    "responseCount": 0,
+    "surveyCount": 0,
+    "average": null,
+    "min": null,
+    "max": null,
+    "distinctValueCount": 0,
+    "options": [],
+    "distribution": [],
+    "bySurvey": [],
+    "scope": "my-surveys",
+    "respondentLabel": "本卷去重填写账号数",
+    "page": 1,
+    "pageSize": 20
+  },
+  "originalStatistics": {
+    "ownerV1": {
+      "questionId": "6ae0680b0dc4b0dea6386792",
+      "versionId": "6ae0696e0dc4b0dea6386795",
+      "versionNumber": 1,
+      "title": "第二阶段手测_1026_学习时长(小时）",
+      "type": "number",
+      "answerCount": 1,
+      "responseCount": 1,
+      "surveyCount": 1,
+      "average": "4",
+      "min": "4",
+      "max": "4",
+      "distinctValueCount": 1,
+      "options": [],
+      "distribution": [
+        {
+          "value": "4",
+          "count": 1
+        }
+      ],
+      "bySurvey": [
+        {
+          "surveyId": "6ae06ae50dc4b0dea6386798",
+          "title": "第二阶段手测_1026_复用问卷B",
+          "answerCount": 1,
+          "responseCount": 1,
+          "respondentCount": 1
+        }
+      ],
+      "scope": "my-surveys",
+      "respondentLabel": "本卷去重填写账号数",
+      "page": 1,
+      "pageSize": 20
+    },
+    "ownerV2": {
+      "questionId": "6ae0680b0dc4b0dea6386792",
+      "versionId": "6ae06f580dc4b0dea638679c",
+      "versionNumber": 2,
+      "title": "第二阶段手测_1026_学习时长(小时）",
+      "type": "number",
+      "answerCount": 1,
+      "responseCount": 1,
+      "surveyCount": 1,
+      "average": "8",
+      "min": "8",
+      "max": "8",
+      "distinctValueCount": 1,
+      "options": [],
+      "distribution": [
+        {
+          "value": "8",
+          "count": 1
+        }
+      ],
+      "bySurvey": [
+        {
+          "surveyId": "6ae0b5550dc4b0dea638679f",
+          "title": "第二阶段手测_1026_版本问卷C",
+          "answerCount": 1,
+          "responseCount": 1,
+          "respondentCount": 1
+        }
+      ],
+      "scope": "my-surveys",
+      "respondentLabel": "本卷去重填写账号数",
+      "page": 1,
+      "pageSize": 20
+    },
+    "peerV1": {
+      "questionId": "6ae0680b0dc4b0dea6386792",
+      "versionId": "6ae0696e0dc4b0dea6386795",
+      "versionNumber": 1,
+      "title": "第二阶段手测_1026_学习时长(小时）",
+      "type": "number",
+      "answerCount": 1,
+      "responseCount": 1,
+      "surveyCount": 1,
+      "average": "6",
+      "min": "6",
+      "max": "6",
+      "distinctValueCount": 1,
+      "options": [],
+      "distribution": [
+        {
+          "value": "6",
+          "count": 1
+        }
+      ],
+      "bySurvey": [
+        {
+          "surveyId": "6ae0c1b90dc4b0dea63867ae",
+          "title": "第二阶段手测_1026_共享问卷D",
+          "answerCount": 1,
+          "responseCount": 1,
+          "respondentCount": 1
+        }
+      ],
+      "scope": "my-surveys",
+      "respondentLabel": "本卷去重填写账号数",
+      "page": 1,
+      "pageSize": 20
+    }
+  },
+  "EFullBsonSha256": "8c293c7776681f404f1cd8c12c8420fd14e1c3c2f349e96a692519200c8a2f05",
+  "EPublishedDefinitionBsonSha256": "eb239e58fcb0f494404ab6a370029d4c21887910c93a7b7ac9dfe9814295dafa",
+  "EResponseFingerprints": {
+    "6ae0cefd0dc4b0dea63867ba": "ca9756f53369a6cb5ba3850ec99b61baae86aa48e5904b4c552f68b611cb5258"
+  },
+  "protectedFingerprints": {
+    "question_versions": {
+      "6ae0696e0dc4b0dea6386795": "e0a43b51141889e5ad008ab122fd9d84a6bb3cc1d77991929e9febf07a68d329",
+      "6ae06f580dc4b0dea638679c": "68dfd1232f17e61b541675bfef3f22207f8d4396d0cdb1dcdf69d371d4ca1860",
+      "6ae0b9790dc4b0dea63867a4": "39f53eb82a765283640300746858c4fcbafaa720ba7e9f9801ce9a9b0717e451"
+    },
+    "surveys": {
+      "6ae06ae50dc4b0dea6386798": "91fdac1e184c8b2498a8c2087a5e14557e507c42d2dbb4f5af1e4e98ac730877",
+      "6ae0b5550dc4b0dea638679f": "663e1ee8f0b9a32688b17560442d0bbd5e9748fdb0cafca7d10a6e336e36fa65",
+      "6ae0c1b90dc4b0dea63867ae": "34edea9f76be758bee4c9a03e31e1550097320eb11cd33feeed37b9337c08b51"
+    },
+    "responses": {
+      "6ae06d070dc4b0dea638679b": "2960cf1ea760cd8800a6cc28a0ee15c676c190e05e9e8e2cc07eb52844b5c794",
+      "6ae0b7100dc4b0dea63867a2": "8d4f569cfbe35529bfcab044c7da830552c909ab6e2065f46bc8f58a5638c36a",
+      "6ae0c5b20dc4b0dea63867b0": "18fecb0915febf3a37b65dc778470c335c64eed684b8b22c0460cafb3c40569e"
+    }
+  }
+}

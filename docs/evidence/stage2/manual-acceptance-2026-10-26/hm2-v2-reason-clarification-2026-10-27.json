@@ -1,0 +1,13 @@
+{
+  "clientDate": "2026-10-27",
+  "question": "后台发现学习时长v2的修改说明为空；当时是否填写、保存前是否切换版本或标签？",
+  "userClarification": "忘记填写",
+  "storedV2Reason": "",
+  "interpretation": "User confirms optional change reason was omitted. Empty stored reason matches actual input; no evidence of lost field content or product failure. Core version, old-B and response checks passed independently.",
+  "preserveImmutableV2": true,
+  "businessWritesByAi": 0,
+  "relatedEvidence": [
+    "hm2-30-34-v2-old-survey-protection-feedback-2026-10-27.json",
+    "hm2-30-34-v2-functional-review-2026-10-27.json"
+  ]
+}

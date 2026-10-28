@@ -1,0 +1,34 @@
+{
+  "executedAt": "2026-10-22T13:39:21.504509+00:00",
+  "userInstruction": "压缩包要删除 不需要你整理成提交包 其余的整理 报告和文档等都以md格式呈现",
+  "removedFiles": [
+    {
+      "path": "dist/project1-stage1-v1.0.zip",
+      "bytes": 1827437,
+      "sha256": "f5a55986cfe55ccd74d2224ef114eca94b52da88fddb68676e0a0c44f7107d81"
+    },
+    {
+      "path": "dist/project1-stage1-v1.0.1.zip",
+      "bytes": 2540059,
+      "sha256": "f60f701b3a5fc64ae9b33a9c0765e94739f2cbf21b9cef2551444059923de5c3"
+    },
+    {
+      "path": "dist/package-manifest.json",
+      "bytes": 295,
+      "sha256": "d35698501d1685369746bc52bb276a90b080531e67aaf904d545a4e046ec7e4f"
+    },
+    {
+      "path": "dist/project1-stage1-v1.0.1.manifest.json",
+      "bytes": 354,
+      "sha256": "095659fec2ff0f5bf73cee66a16bee88c4b5db0edbfa3662973b996edac8d5ab"
+    }
+  ],
+  "archiveCreated": false,
+  "remainingDistFiles": [],
+  "protectedFileHashesBefore": {
+    "artifacts/stage1/baseline.archive.gz": "87a683db98a51be11d0c11de57bb978c78493e9388dab78b6781a9dce12d036f",
+    "docs/evidence/stage1/test-results.json": "e09f90a97b2a60d2481e6935724cfae682f47b9366a55a69d4a8199cd1225b59",
+    "docs/evidence/stage1/pytest.xml": "1fb22588c249315e3ad317c9c7f55a8b85963689a8c162a841484ae4cfb1e7a1",
+    "docs/evidence/stage1/ai-use-finalization-2026-10-22.json": "47097d967731f55a9ccdfde2ba356094bb67c72334bdcdcc38cf25e3dc4f66a0"
+  }
+}

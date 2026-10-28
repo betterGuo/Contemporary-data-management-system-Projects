@@ -1,0 +1,166 @@
+{
+  "startedAt": "2026-10-26T15:13:48.182Z",
+  "baseUrl": "http://127.0.0.1:8001",
+  "scope": "Isolated survey_project1_recheck_363f82 only; no original or final database access.",
+  "fixturePreparation": [
+    {
+      "method": "Real registration UI",
+      "users": [
+        "qa_owner_mvpecsd2",
+        "qa_receiver_mvpecsd2"
+      ],
+      "database": "preview only"
+    }
+  ],
+  "uiSteps": [
+    {
+      "label": "Existing account sees migrated question library",
+      "status": "passed"
+    },
+    {
+      "label": "Create persistent number draft through form",
+      "status": "passed"
+    },
+    {
+      "label": "Explicitly create immutable v1",
+      "status": "passed"
+    },
+    {
+      "label": "Personal bookmark tags use real prompt interaction",
+      "status": "passed"
+    },
+    {
+      "label": "Select v1 into draft A and publish via editor",
+      "status": "passed"
+    },
+    {
+      "label": "Published use locks ordinary working-content save",
+      "status": "passed"
+    },
+    {
+      "label": "Second own questionnaire reuses the same v1",
+      "status": "passed"
+    },
+    {
+      "label": "Real questionnaire filling saves two answers",
+      "status": "passed"
+    },
+    {
+      "label": "Create v2 without altering published v1 questionnaires",
+      "status": "passed"
+    },
+    {
+      "label": "Cross-survey v1 summary is two answers and exact mean 30",
+      "status": "passed"
+    },
+    {
+      "label": "Share through UI and recipient selects its own instance",
+      "status": "passed"
+    },
+    {
+      "label": "Revoke preserves recipient snapshot and blocks source access",
+      "status": "passed"
+    },
+    {
+      "label": "Revoked snapshot can create a real personal copy through UI",
+      "status": "passed"
+    },
+    {
+      "label": "Version history restoration creates v3 then version availability changes",
+      "status": "passed"
+    },
+    {
+      "label": "360px library and editor have no horizontal overflow",
+      "status": "passed"
+    }
+  ],
+  "screenshots": [
+    "01-migrated-library.png",
+    "02-persistent-draft.png",
+    "03-formal-v1.png",
+    "04-personal-tags.png",
+    "05-referenced-editor.png",
+    "06-published-lock.png",
+    "07-real-response.png",
+    "08-v2-old-survey-preserved.png",
+    "09-cross-survey-summary.png",
+    "10-shared-instance.png",
+    "11-sharing-management.png",
+    "12-revoked-source-keeps-snapshot.png",
+    "12b-revoked-snapshot-personal-copy.png",
+    "13-history-restore-and-retire.png",
+    "14-mobile-library.png",
+    "15-mobile-editor.png"
+  ],
+  "pageErrors": [],
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "httpErrors": [
+    {
+      "url": "http://127.0.0.1:8001/api/auth/me",
+      "status": 401,
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/auth/me",
+      "status": 401,
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/auth/me",
+      "status": 401,
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/library-questions/6adf6e2fbf215d7a4a3efbc9/versions",
+      "status": 404,
+      "method": "GET"
+    }
+  ],
+  "status": "passed",
+  "recipientSurveyId": "6adf6e39bf215d7a4a3efbe8",
+  "questionId": "6adf6e2fbf215d7a4a3efbc9",
+  "versionIds": {
+    "v1": "6adf6e30bf215d7a4a3efbcc",
+    "v2": "6adf6e38bf215d7a4a3efbe5"
+  },
+  "surveyIds": [
+    "6adf6e30bf215d7a4a3efbd0",
+    "6adf6e34bf215d7a4a3efbd8"
+  ],
+  "expectedNetworkDenials": [
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "unexpectedConsoleErrors": [],
+  "expectedHttpErrors": [
+    {
+      "url": "http://127.0.0.1:8001/api/auth/me",
+      "status": 401,
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/auth/me",
+      "status": 401,
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/auth/me",
+      "status": 401,
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/library-questions/6adf6e2fbf215d7a4a3efbc9/versions",
+      "status": 404,
+      "method": "GET"
+    }
+  ],
+  "unexpectedHttpErrors": [],
+  "completedAt": "2026-10-26T15:14:06.498Z"
+}

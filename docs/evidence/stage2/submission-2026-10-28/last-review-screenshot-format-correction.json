@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-28T10:09:58+08:00",
+  "status": "corrected",
+  "scope": "Five screenshots only renamed from .png to .jpg to match their existing JPEG file bytes. Current Markdown links updated; historical JSON records unchanged.",
+  "reviewedPreviousZipSha256": "21d50112a426803c38c932b31a97b62546c5b720e10c0b8a3ed02ef31aa3b3eb",
+  "corrections": [
+    {
+      "oldPath": "docs/evidence/stage2/manual-acceptance-2026-10-26/hm2-52-D-existing-submission-ai-observed-2026-10-27.png",
+      "newPath": "docs/evidence/stage2/manual-acceptance-2026-10-26/hm2-52-D-existing-submission-ai-observed-2026-10-27.jpg",
+      "detectedMimeType": "image/jpeg",
+      "sha256BeforeAndAfter": "85df99c1b8ddd380ca17ae74df4fef5580c63fe0d96e4fcfd3dc35ff9a99d41e",
+      "imageBytesUnchanged": true,
+      "pixelContentEdited": false
+    },
+    {
+      "oldPath": "docs/evidence/stage2/manual-acceptance-2026-10-26/hm2-53-peer-v1-summary-ai-observed-2026-10-27.png",
+      "newPath": "docs/evidence/stage2/manual-acceptance-2026-10-26/hm2-53-peer-v1-summary-ai-observed-2026-10-27.jpg",
+      "detectedMimeType": "image/jpeg",
+      "sha256BeforeAndAfter": "86ec3d568d5d834ae063766477e8dcc491f31543ddcc773cf1b73ff5ae67e2fe",
+      "imageBytesUnchanged": true,
+      "pixelContentEdited": false
+    },
+    {
+      "oldPath": "docs/evidence/stage2/manual-acceptance-2026-10-26/hm2-54-owner-v1-summary-ai-observed-2026-10-27.png",
+      "newPath": "docs/evidence/stage2/manual-acceptance-2026-10-26/hm2-54-owner-v1-summary-ai-observed-2026-10-27.jpg",
+      "detectedMimeType": "image/jpeg",
+      "sha256BeforeAndAfter": "cfff4f4bba4143b2ef12c59ac458dbc55ecb443ab26b5908916243fb5eb6779c",
+      "imageBytesUnchanged": true,
+      "pixelContentEdited": false
+    },
+    {
+      "oldPath": "docs/evidence/stage2/manual-acceptance-2026-10-26/hm2-55-owner-other-count-ai-observed-2026-10-27.png",
+      "newPath": "docs/evidence/stage2/manual-acceptance-2026-10-26/hm2-55-owner-other-count-ai-observed-2026-10-27.jpg",
+      "detectedMimeType": "image/jpeg",
+      "sha256BeforeAndAfter": "b295118b4550a67a86baf47a3af8b9482127273284c06872b98ef9424df99a4a",
+      "imageBytesUnchanged": true,
+      "pixelContentEdited": false
+    },
+    {
+      "oldPath": "docs/evidence/stage2/manual-acceptance-2026-10-26/hm2-56-peer-own-usage-ai-observed-2026-10-27.png",
+      "newPath": "docs/evidence/stage2/manual-acceptance-2026-10-26/hm2-56-peer-own-usage-ai-observed-2026-10-27.jpg",
+      "detectedMimeType": "image/jpeg",
+      "sha256BeforeAndAfter": "979f579e244bb35c309d1df82c2fd6b3f3843a641c7aa514f06afc92a1bc7249",
+      "imageBytesUnchanged": true,
+      "pixelContentEdited": false
+    }
+  ],
+  "applicationOrDatabaseModified": false
+}

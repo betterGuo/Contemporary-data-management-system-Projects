@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "checkedAt": "2026-10-20T14:19:14.111635+00:00",
+  "comparison": "Live users/surveys/responses/schema_migrations BSON, counts, indexes and validators versus immutable stage1 archive manifest",
+  "businessBaselineUnchanged": true,
+  "counts": {
+    "users": 7,
+    "surveys": 6,
+    "responses": 29,
+    "schema_migrations": 1
+  },
+  "bsonSha256": {
+    "users": "7f1323394ef7cdeb304bc82f9d2531d556ba1df6193a3b306d33d992968c1031",
+    "surveys": "dafe7dd73edb1e5aca11160e63ffd3959d70b47b15a33b3a859fe9da2da949e7",
+    "responses": "2a8d981cdd3cb4ac16fd5395ca13195174dbfe0fb9e394e229e8ceba4a724ffa",
+    "schema_migrations": "398cb5519959887f27bc68bd4c7744c75836752e981b8970997d3d91f9c7bf89"
+  },
+  "sessionsExcluded": "Normal authentication sessions are intentionally excluded; no business data changed."
+}

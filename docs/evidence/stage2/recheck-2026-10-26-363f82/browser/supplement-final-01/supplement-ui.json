@@ -1,0 +1,115 @@
+{
+  "status": "failed",
+  "startedAt": "2026-10-26T15:15:20.991Z",
+  "baseUrl": "http://127.0.0.1:8001",
+  "database": "survey_project1_recheck_363f82",
+  "coreReport": "/Users/guoyuhang/Desktop/26年秋季学期/当代数据管理系统/project1/docs/evidence/stage2/recheck-2026-10-26-363f82/browser/core-final-01/browser-results.json",
+  "methods": "Fixtures and positive mutations use actual visible UI. API GETs verify stored state; two explicitly labeled negative POST probes verify public-maintenance authorization.",
+  "steps": [
+    {
+      "label": "Administrator creates public draft and immutable v1 through UI",
+      "status": "passed"
+    },
+    {
+      "label": "Ordinary user sees public content without maintenance controls",
+      "status": "passed"
+    },
+    {
+      "label": "Ordinary public-create attempt through UI is rejected with 403",
+      "status": "passed"
+    },
+    {
+      "label": "Direct ordinary public-edit/version negative probes are rejected",
+      "status": "passed"
+    },
+    {
+      "label": "Ordinary user selects public v1 into a published survey",
+      "status": "passed"
+    },
+    {
+      "label": "Administrator publishes public v2 while existing public v1 snapshot stays fixed",
+      "status": "passed"
+    },
+    {
+      "label": "Draft explicit v1-to-v2 upgrade preserves instance identity and old published snapshots",
+      "status": "passed"
+    },
+    {
+      "label": "Personal tag rename uses both real prompts and filter UI",
+      "status": "passed"
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+  ],
+  "httpErrors": [
+    {
+      "url": "http://127.0.0.1:8001/api/auth/me",
+      "status": 401,
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/auth/me",
+      "status": 401,
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/auth/me",
+      "status": 401,
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/library-questions",
+      "status": 403,
+      "method": "POST"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/library-questions/6adf6e8dbf215d7a4a3efc0c/working-content",
+      "status": 403,
+      "method": "POST"
+    },
+    {
+      "url": "http://127.0.0.1:8001/api/library-questions/6adf6e8dbf215d7a4a3efc0c/versions",
+      "status": 403,
+      "method": "POST"
+    }
+  ],
+  "expectedDenials": [
+    {
+      "status": 403,
+      "method": "POST",
+      "path": "/api/library-questions",
+      "reason": "UI negative test: ordinary public create"
+    },
+    {
+      "status": 403,
+      "method": "POST",
+      "path": "/api/library-questions/6adf6e8dbf215d7a4a3efc0c/working-content",
+      "reason": "Explicit API negative authorization probe; no fixture mutation"
+    },
+    {
+      "status": 403,
+      "method": "POST",
+      "path": "/api/library-questions/6adf6e8dbf215d7a4a3efc0c/versions",
+      "reason": "Explicit API negative authorization probe; no fixture mutation"
+    }
+  ],
+  "screenshots": [
+    "01-admin-public-v1.png",
+    "02-public-ordinary-readonly.png",
+    "03-public-create-rejected.png",
+    "04-admin-public-v2.png",
+    "05-explicit-draft-upgrade.png",
+    "06-personal-tag-rename.png",
+    "failure.png"
+  ],
+  "fixtures": {},
+  "error": "AssertionError [ERR_ASSERTION]: {\"questions\":[{\"id\":\"6adf6e95bf215d7a4a3efc26\",\"ownerId\":\"6adf6e2ebf215d7a4a3efbc7\",\"authorName\":\"qa_receiver_mvpecsd2\",\"title\":\"浏览器验收年龄 mvpecsd2 新版\",\"type\":\"number\",\"latestVersionId\":\"6adf6e95bf215d7a4a3efc27\",\"latestVersionNumber\":1,\"latestSelectableVersionId\":\"6adf6e95bf215d7a4a3efc27\",\"latestSelectableVersionNumber\":1,\"revision\":1,\"visibility\":\"private\",\"status\":\"active\",\"rootQuestionId\":\"6adf6e2fbf215d7a4a3efbc9\",\"hasPublishedUsage\":false,\"canManage\":true,\"bookmarkTags\":[],\"selectedVersionId\":\"6adf6e95bf215d7a4a3efc27\",\"bookmarkRevision\":1,\"hasUpdate\":false,\"content\":{\"type\":\"number\",\"title\":\"浏览器验收年龄 mvpecsd2 新版\",\"required\":false,\"options\":[],\"validation\":{\"minValue\":\"0\",\"maxValue\":\"80\",\"integerOnly\":true}},\"updatedAt\":\"2026-10-26T15:15:33.727000+00:00\",\"workingContent\":{\"type\":\"number\",\"title\":\"浏览器验收年龄 mvpecsd2 新版\",\"required\":false,\"options\":[],\"validation\":{\"minValue\":\"0\",\"maxValue\":\"80\",\"integerOnly\":true}},\"workingBaseVersionId\":\"6adf6e95bf215d7a4a3efc27\"}],\"mappings\":[{\"surveyId\":\"6adf6e39bf215d7a4a3efbe8\",\"definitionVersion\":1,\"instanceId\":\"df1bc385-220c-4d1e-a492-0f4bcedc1cf2\",\"questionId\":\"6adf6e95bf215d7a4a3efc26\",\"questionVersionId\":\"6adf6e95bf215d7a4a3efc27\"}]}\n\n201 !== 200\n\n    at post (/Users/guoyuhang/Desktop/26年秋季学期/当代数据管理系统/project1/scripts/browser_stage2_recheck.cjs:21:246)\n    at async /Users/guoyuhang/Desktop/26年秋季学期/当代数据管理系统/project1/scripts/browser_stage2_recheck.cjs:41:576\n    at async step (/Users/guoyuhang/Desktop/26年秋季学期/当代数据管理系统/project1/scripts/browser_stage2_recheck.cjs:19:31)\n    at async /Users/guoyuhang/Desktop/26年秋季学期/当代数据管理系统/project1/scripts/browser_stage2_recheck.cjs:41:3",
+  "completedAt": "2026-10-26T15:15:33.749Z"
+}

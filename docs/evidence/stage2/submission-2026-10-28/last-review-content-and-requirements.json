@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-28T10:13:35+08:00",
+  "reviewedPreviousZipSha256": "21d50112a426803c38c932b31a97b62546c5b720e10c0b8a3ed02ef31aa3b3eb",
+  "method": "Independent review directly from previous release ZIP, fresh safe extraction, original teacher DOCX full text, submitted documentation and raw evidence, all-image format/metadata/OCR and authentication screenshot inspection. Findings corrected before final reassembly.",
+  "status": "passed_after_two_material_corrections",
+  "requiredSubmissionCategories": {
+    "runnableCodeSchemaAndConfig": true,
+    "systemDatabaseApiAndKeyLogicDocumentation": true,
+    "testStepsInputsOutputsAndResults": true,
+    "completeReport": true
+  },
+  "contentCoverage": {
+    "eightRequirementChanges": true,
+    "nineReportTopics": true,
+    "eightEvolutionExplanations": true,
+    "threeMongoDBDesignExplanations": true,
+    "fiveAiLogItems": true,
+    "fourAiReportQuestions": true
+  },
+  "dataConsistency": {
+    "originalBusinessCounts": [
+      9,
+      8,
+      33
+    ],
+    "initialStage2Counts": [
+      12,
+      10,
+      36
+    ],
+    "afterFixedSamplesCounts": [
+      15,
+      15,
+      42
+    ],
+    "independentQuestions": 33,
+    "formalVersions": 36,
+    "aToEInputsVersionsAndStatisticsConsistent": true
+  },
+  "testEvidenceBoundaries": {
+    "initialRegressionPassed": 260,
+    "freshVenvRegressionPassed": 260,
+    "laterRegressionPassed": 309,
+    "browserScenarios": 33,
+    "browserRealUi": 32,
+    "browserApiNegativeGroup": 1,
+    "existingVenvExtractedPackageSmokeChecks": 30,
+    "acceptanceRows": 76,
+    "coreVerifiedRows": 68,
+    "partiallyVerifiedDetailedCombinations": 8,
+    "historicalRunsNotRerunInThisReview": true,
+    "userAiAndServiceOperationAttributionPreserved": true
+  },
+  "renderedDocumentConsistency": {
+    "reportSourceParagraphsAndTableCellsMatched": 250,
+    "testSourceParagraphsAndTableCellsMatched": 187,
+    "reportPages": 17,
+    "testPages": 7,
+    "fourRenderSourcesAndFourFinalDocumentsUnchanged": true
+  },
+  "privacyAndFileAudit": {
+    "textAndExtractedDocumentItemsScanned": 341,
+    "imagesFormatMetadataAndOcrChecked": 218,
+    "realCredentialFindings": 0,
+    "imagePersonalSensitivePatternFindings": 0,
+    "loginScreenshotFieldsManuallyConfirmedEmpty": true,
+    "docxMacroOrEmbeddedObjectFindings": 0,
+    "pdfActiveContentOrEmbeddedAttachmentFindings": 0,
+    "forbiddenFileFindings": 0,
+    "historicalPathsAndRunStartMarkersDocumented": true
+  },
+  "corrections": [
+    {
+      "path": "docs/stage2/acceptance.md",
+      "issue": "Initial 260-run paragraph wording covered later Q nodes too broadly.",
+      "resolution": "Explicitly limited initial nodes to the 260-run and assigned Q nodes to the 309-run."
+    },
+    {
+      "record": "docs/evidence/stage2/submission-2026-10-28/last-review-screenshot-format-correction.json",
+      "issue": "Five JPEG screenshots had .png extensions.",
+      "resolution": "Only renamed to .jpg and updated current Markdown links. Image bytes and historical JSON unchanged."
+    }
+  ],
+  "runtimeSourceModified": false,
+  "productionDatabaseModified": false,
+  "finalZipShaLocation": "External .zip.sha256 and .validation.json beside the final ZIP; not embedded here to avoid self-hash recursion."
+}

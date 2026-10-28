@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-28T11:14:10+08:00",
+  "status": "passed",
+  "scope": "Report updated for Git branch delivery; testing documents remain identical to previous reviewed exports. This is artifact QA, not a new application regression or browser run.",
+  "repository": "https://github.com/betterGuo/Contemporary-data-management-system-Projects",
+  "stage1Branch": "P1",
+  "stage2Branch": "P1-stage2",
+  "renderer": "Bundled render_docx.py and bundled LibreOffice, explicit Songti SC/Heiti SC fontconfig, dpi120",
+  "visualReview": {
+    "reportPages": 17,
+    "changedPagesViewed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10,
+      11,
+      14,
+      17
+    ],
+    "identicalPagesComparedByPngSha256": [
+      9,
+      12,
+      13,
+      15,
+      16
+    ],
+    "result": "Chinese glyphs, tables, pagination and footer passed on every page.",
+    "reportSourceUnitsMatchedInDocx": 267,
+    "reportSection6Preserved": true
+  },
+  "testFilesUnchanged": true,
+  "sourceSha256": {
+    "docs/stage2/report.md": "b3307eecf8baff91d72b715cbb6fbcf6244e9ceada2355a4a37898bb369de9c7",
+    "docs/stage2/ai-use.md": "94ec58bbc2b4322709ce93353dc3ceaec2ddcaccd64719b9412d50fe88f84b94",
+    "docs/stage2/data.md": "dec957cd07bb7ba32af32ceeba1caef85aa7956d7921421da1a3c11c7a177dd1",
+    "docs/stage2/tests.md": "206043a64244d435761aeea7466e9c0b6d8bf7e20e678919638597ef1f1782ee"
+  },
+  "files": [
+    {
+      "path": "output/stage2/第二阶段测试用例与结果.docx",
+      "sha256": "bbef820e559cccdb75f174b2d89d23e6c15fe2c1145185e0be8b7800edf55b28",
+      "bytes": 49040
+    },
+    {
+      "path": "output/stage2/第二阶段测试用例与结果.pdf",
+      "sha256": "e53d3d1a841e56567538dc246a2c3278655a3778aeaf5419ce93a6b1377c7481",
+      "bytes": 504886,
+      "pages": 7
+    },
+    {
+      "path": "output/stage2/第二阶段项目完成报告.docx",
+      "sha256": "6f3a232362dd7196c1c41ec59732d037b8ad8502aff485c3b8301b1b9012a628",
+      "bytes": 61882
+    },
+    {
+      "path": "output/stage2/第二阶段项目完成报告.pdf",
+      "sha256": "07ef39c9cc20286eff16affda3e3ea00c998f64a130fdddc11d4df8503b372be",
+      "bytes": 729706,
+      "pages": 17
+    }
+  ]
+}

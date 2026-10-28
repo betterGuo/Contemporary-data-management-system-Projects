@@ -1,0 +1,1205 @@
+{
+  "startedAt": "2026-10-22T13:10:43.746501+00:00",
+  "finishedAt": "2026-10-22T13:10:45.971353+00:00",
+  "scope": "Existing question-definition and answer validation tests, reference integrity and question identity through APIs; no implementation changes or browser UI tests",
+  "databaseScope": "Pure unit tests plus generated survey_project1_test_<uuid> databases; main database not modified",
+  "targets": [
+    "tests/unit/test_questions.py",
+    "tests/unit/test_numbers.py",
+    "tests/unit/test_paths.py::test_reordering_or_deleting_a_referenced_question_cannot_damage_definition",
+    "tests/unit/test_paths.py::test_single_branch_skips_required_question_and_reaches_explicit_end",
+    "tests/integration/test_review_boundaries.py::test_encoded_question_ids_keep_identity_through_edit_delete_publish_fill_and_single_statistics"
+  ],
+  "exitCode": 0,
+  "summary": {
+    "passed": 107,
+    "failed": 0,
+    "skipped": 0
+  },
+  "sourceSha256": {
+    "app/services/question_types.py": "f7901abcdd183cd6f05296c7481650090a6878e5b93655916f14d8c235e00bb8",
+    "app/services/answer_validator.py": "cea618d41658e3c3da6a5135ecbf107b013d2779dfafe01dd4bd6fcc85dc3ac7",
+    "app/services/storage_adapters.py": "d0aa1027d3aebece5d45b39094ff28ddc837092ae969bcf401e4f240fd3b4b0b",
+    "app/services/jump_engine.py": "069a7032ca1f851344021e732532d75c6c26b3958e5de4fd1e89062ffc7faedb",
+    "app/api/surveys.py": "22c413648a7935f0f9dace1ea78ecee091fcc4d5cbc94131f79ff6af208b3123",
+    "tests/unit/test_questions.py": "7da5b9f8315efa1c857053264658e78c2712673bd91630c5b8e4a2496183a9d9",
+    "tests/unit/test_numbers.py": "2187578668d534893156c0d3f738802f00662baa554bc9ee3d84eceeb0086d03",
+    "tests/unit/test_paths.py": "5325abb2262d9914dd859bd1625214438917d25433490a836c3b198db1a79474",
+    "tests/integration/test_review_boundaries.py": "eaa6d6b0edb6a114fe70d42682c3199b77b66577089e6f93d6cc372924592f81"
+  },
+  "results": [
+    {
+      "nodeid": "tests/unit/test_questions.py::test_question_definitions_have_explicit_defaults_and_do_not_mutate[single]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 9.6e-05,
+      "cases": [
+        "T19",
+        "T85"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_question_definitions_have_explicit_defaults_and_do_not_mutate[multiple]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 6.9e-05,
+      "cases": [
+        "T19",
+        "T85"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_question_definitions_have_explicit_defaults_and_do_not_mutate[text]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 8.4e-05,
+      "cases": [
+        "T19",
+        "T85"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_question_definitions_have_explicit_defaults_and_do_not_mutate[number]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 6.5e-05,
+      "cases": [
+        "T19",
+        "T85"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_single_option_is_valid_and_required_single_requires_selection",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.00013,
+      "cases": [
+        "T19",
+        "T24"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_duplicate_question_ids_and_duplicate_option_ids_are_rejected",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.000232,
+      "cases": [
+        "T20"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_invalid_definition_constraints[q0]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 8.3e-05,
+      "cases": [
+        "T23"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_invalid_definition_constraints[q1]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 5.9e-05,
+      "cases": [
+        "T23"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_invalid_definition_constraints[q2]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 8.4e-05,
+      "cases": [
+        "T23"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_invalid_definition_constraints[q3]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 5.1e-05,
+      "cases": [
+        "T23"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_invalid_definition_constraints[q4]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 4.8e-05,
+      "cases": [
+        "T23"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_invalid_definition_constraints[q5]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 4.7e-05,
+      "cases": [
+        "T23"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_invalid_definition_constraints[q6]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 5.2e-05,
+      "cases": [
+        "T23"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_invalid_definition_constraints[q7]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.000255,
+      "cases": [
+        "T23"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_invalid_definition_constraints[q8]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.000219,
+      "cases": [
+        "T23"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_invalid_definition_constraints[q9]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 8.6e-05,
+      "cases": [
+        "T23"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_invalid_definition_constraints[q10]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 9.2e-05,
+      "cases": [
+        "T23"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_invalid_definition_constraints[q11]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 7.8e-05,
+      "cases": [
+        "T23"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_invalid_definition_constraints[q12]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 5.2e-05,
+      "cases": [
+        "T23"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_invalid_definition_constraints[q13]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 4.9e-05,
+      "cases": [
+        "T23"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_invalid_definition_constraints[q14]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 6.4e-05,
+      "cases": [
+        "T23"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_invalid_definition_constraints[q15]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 5.4e-05,
+      "cases": [
+        "T23"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_independent_and_exact_multiple_bounds[validation0-value0-expected0]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 6.5e-05,
+      "cases": [
+        "T25",
+        "T26",
+        "T27",
+        "T37",
+        "T85"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_independent_and_exact_multiple_bounds[validation1-value1-expected1]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 5.9e-05,
+      "cases": [
+        "T25",
+        "T26",
+        "T27",
+        "T37",
+        "T85"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_independent_and_exact_multiple_bounds[validation2-value2-expected2]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 6.6e-05,
+      "cases": [
+        "T25",
+        "T26",
+        "T27",
+        "T37",
+        "T85"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_independent_and_exact_multiple_bounds[validation3-value3-None]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 5.7e-05,
+      "cases": [
+        "T25",
+        "T26",
+        "T27",
+        "T37",
+        "T85"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_independent_and_exact_multiple_bounds[validation4-None-None]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 5.8e-05,
+      "cases": [
+        "T25",
+        "T26",
+        "T27",
+        "T37",
+        "T85"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_multiple_limits_also_apply_when_required_is_false[validation0-None]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 6.3e-05,
+      "cases": [
+        "T25",
+        "T26",
+        "T27",
+        "T28",
+        "T37"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_multiple_limits_also_apply_when_required_is_false[validation1-value1]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 6.2e-05,
+      "cases": [
+        "T25",
+        "T26",
+        "T27",
+        "T28",
+        "T37"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_multiple_limits_also_apply_when_required_is_false[validation2-value2]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 5.8e-05,
+      "cases": [
+        "T25",
+        "T26",
+        "T27",
+        "T28",
+        "T37"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_multiple_limits_also_apply_when_required_is_false[validation3-value3]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 5.9e-05,
+      "cases": [
+        "T25",
+        "T26",
+        "T27",
+        "T28",
+        "T37"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_multiple_limits_also_apply_when_required_is_false[validation4-value4]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 6.2e-05,
+      "cases": [
+        "T25",
+        "T26",
+        "T27",
+        "T28",
+        "T37"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_multiple_limits_also_apply_when_required_is_false[validation5-value5]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 5.9e-05,
+      "cases": [
+        "T25",
+        "T26",
+        "T27",
+        "T28",
+        "T37"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_multiple_limits_also_apply_when_required_is_false[validation6-value6]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 7.1e-05,
+      "cases": [
+        "T25",
+        "T26",
+        "T27",
+        "T28",
+        "T37"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_multiple_limits_also_apply_when_required_is_false[validation7-a]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 5.8e-05,
+      "cases": [
+        "T25",
+        "T26",
+        "T27",
+        "T28",
+        "T37"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_multiple_limits_also_apply_when_required_is_false[validation8-value8]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 5.7e-05,
+      "cases": [
+        "T25",
+        "T26",
+        "T27",
+        "T28",
+        "T37"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_text_nfc_trimming_and_codepoint_boundaries[validation0-\\u7532\\u4e59-\\u7532\\u4e59]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 5.2e-05,
+      "cases": [
+        "T29",
+        "T30",
+        "T31",
+        "T85"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_text_nfc_trimming_and_codepoint_boundaries[validation1-  \\u7532\\u4e59  -\\u7532\\u4e59]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 4.9e-05,
+      "cases": [
+        "T29",
+        "T30",
+        "T31",
+        "T85"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_text_nfc_trimming_and_codepoint_boundaries[validation2- e\\u0301 -\\xe9]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.000967,
+      "cases": [
+        "T29",
+        "T30",
+        "T31",
+        "T85"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_text_nfc_trimming_and_codepoint_boundaries[validation3-\\U0001f469\\u200d\\U0001f4bb-\\U0001f469\\u200d\\U0001f4bb]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 8.6e-05,
+      "cases": [
+        "T29",
+        "T30",
+        "T31",
+        "T85"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_text_nfc_trimming_and_codepoint_boundaries[validation4-  -None]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 4.8e-05,
+      "cases": [
+        "T29",
+        "T30",
+        "T31",
+        "T85"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_text_nfc_trimming_and_codepoint_boundaries[validation5-None-None]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 4.9e-05,
+      "cases": [
+        "T29",
+        "T30",
+        "T31",
+        "T85"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_positive_text_minimum_cannot_be_disabled_by_required_false[None]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 5.8e-05,
+      "cases": [
+        "T29",
+        "T31"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_positive_text_minimum_cannot_be_disabled_by_required_false[]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 5.2e-05,
+      "cases": [
+        "T29",
+        "T31"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_positive_text_minimum_cannot_be_disabled_by_required_false[  ]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 5.5e-05,
+      "cases": [
+        "T29",
+        "T31"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_positive_text_minimum_cannot_be_disabled_by_required_false[\\u7532]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 5.3e-05,
+      "cases": [
+        "T29",
+        "T31"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_required_text_rejects_blank_and_text_rejects_wrong_types",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 7.1e-05,
+      "cases": [
+        "T31"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_empty_draft_and_empty_published_definition_have_different_rules",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 4.6e-05,
+      "cases": [
+        "T12",
+        "T19"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_resource_limits_are_explicit",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.000182,
+      "cases": [
+        "T23"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_storage_defaults_are_read_only_and_preserve_explicit_nulls",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 4.1e-05,
+      "cases": []
+    },
+    {
+      "nodeid": "tests/unit/test_questions.py::test_domain_error_exposes_safe_http_contract",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 4.6e-05,
+      "cases": []
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_exact_number_canonicalization[18-18]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 9.5e-05,
+      "cases": [
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_exact_number_canonicalization[18.0-18]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 9.1e-05,
+      "cases": [
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_exact_number_canonicalization[+18.000-18]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 8.2e-05,
+      "cases": [
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_exact_number_canonicalization[-0-0]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 8.4e-05,
+      "cases": [
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_exact_number_canonicalization[-0.000e+100-0]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 6.8e-05,
+      "cases": [
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_exact_number_canonicalization[1e3-1000]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.00021,
+      "cases": [
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_exact_number_canonicalization[1e-7-0.0000001]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 8.8e-05,
+      "cases": [
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_exact_number_canonicalization[.5-0.5]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 7.5e-05,
+      "cases": [
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_exact_number_canonicalization[-12.500--12.5]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 7.7e-05,
+      "cases": [
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_exact_number_canonicalization[ 18 -18]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 7e-05,
+      "cases": [
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_exact_number_canonicalization[0018-18]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 6.7e-05,
+      "cases": [
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_exact_number_canonicalization[9007199254740992-9007199254740992]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 9.9e-05,
+      "cases": [
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_exact_number_canonicalization[9007199254740993-9007199254740993]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 9.4e-05,
+      "cases": [
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_exact_number_canonicalization[1234567890123456789012345678901234-1234567890123456789012345678901234]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.000292,
+      "cases": [
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_invalid_or_inexact_numbers_rejected_without_binary_float_coercion[True]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 7e-05,
+      "cases": [
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_invalid_or_inexact_numbers_rejected_without_binary_float_coercion[False]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 5.5e-05,
+      "cases": [
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_invalid_or_inexact_numbers_rejected_without_binary_float_coercion[18]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 5e-05,
+      "cases": [
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_invalid_or_inexact_numbers_rejected_without_binary_float_coercion[18.0]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 4.2e-05,
+      "cases": [
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_invalid_or_inexact_numbers_rejected_without_binary_float_coercion[value4]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 4.2e-05,
+      "cases": [
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_invalid_or_inexact_numbers_rejected_without_binary_float_coercion[None]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.000118,
+      "cases": [
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_invalid_or_inexact_numbers_rejected_without_binary_float_coercion[NaN]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 6.3e-05,
+      "cases": [
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_invalid_or_inexact_numbers_rejected_without_binary_float_coercion[Infinity]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 4.2e-05,
+      "cases": [
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_invalid_or_inexact_numbers_rejected_without_binary_float_coercion[-Infinity]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 4.7e-05,
+      "cases": [
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_invalid_or_inexact_numbers_rejected_without_binary_float_coercion[sNaN]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 4.5e-05,
+      "cases": [
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_invalid_or_inexact_numbers_rejected_without_binary_float_coercion[]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 4e-05,
+      "cases": [
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_invalid_or_inexact_numbers_rejected_without_binary_float_coercion[ ]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 5.2e-05,
+      "cases": [
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_invalid_or_inexact_numbers_rejected_without_binary_float_coercion[abc]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 4.8e-05,
+      "cases": [
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_invalid_or_inexact_numbers_rejected_without_binary_float_coercion[.]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 4.1e-05,
+      "cases": [
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_invalid_or_inexact_numbers_rejected_without_binary_float_coercion[1e]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 3.9e-05,
+      "cases": [
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_invalid_or_inexact_numbers_rejected_without_binary_float_coercion[1e--3]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 4.2e-05,
+      "cases": [
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_invalid_or_inexact_numbers_rejected_without_binary_float_coercion[1_000]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 5.5e-05,
+      "cases": [
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_invalid_or_inexact_numbers_rejected_without_binary_float_coercion[\\uff10]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 9.5e-05,
+      "cases": [
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_invalid_or_inexact_numbers_rejected_without_binary_float_coercion[1,000]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 5.3e-05,
+      "cases": [
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_invalid_or_inexact_numbers_rejected_without_binary_float_coercion[12345678901234567890123456789012345]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 6.4e-05,
+      "cases": [
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_invalid_or_inexact_numbers_rejected_without_binary_float_coercion[1e6145]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 6.2e-05,
+      "cases": [
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_invalid_or_inexact_numbers_rejected_without_binary_float_coercion[1e-6177]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 6.2e-05,
+      "cases": [
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_invalid_or_inexact_numbers_rejected_without_binary_float_coercion[1e99999999999999999999999999999999999999999]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 4.1e-05,
+      "cases": [
+        "T35",
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_decimal128_extremes_and_subnormal_are_preserved_exactly",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.000238,
+      "cases": [
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_input_length_and_exponent_are_bounded_before_expansion",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.000142,
+      "cases": [
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_normalization_is_independent_of_default_decimal_precision",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.000129,
+      "cases": [
+        "T33",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_age_integer_bounds_include_endpoints[0-0]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 8.4e-05,
+      "cases": [
+        "T32",
+        "T33"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_age_integer_bounds_include_endpoints[120-120]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.000266,
+      "cases": [
+        "T32",
+        "T33"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_age_integer_bounds_include_endpoints[18.0-18]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.000108,
+      "cases": [
+        "T32",
+        "T33"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_age_integer_bounds_include_endpoints[-0-0]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 9.2e-05,
+      "cases": [
+        "T32",
+        "T33"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_age_integer_bounds_reject_outside_values[-1]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.000104,
+      "cases": [
+        "T32",
+        "T33"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_age_integer_bounds_reject_outside_values[121]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 7.9e-05,
+      "cases": [
+        "T32",
+        "T33"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_age_integer_bounds_reject_outside_values[18.5]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 7.6e-05,
+      "cases": [
+        "T32",
+        "T33"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_one_sided_bounds_and_unrestricted_fractional_answers",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.000179,
+      "cases": [
+        "T34",
+        "T85"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_numeric_minimum_does_not_turn_optional_number_into_required_text",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.000221,
+      "cases": [
+        "T31",
+        "T32",
+        "T85"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_numeric_definition_bounds_are_also_canonical_and_exact",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.0001,
+      "cases": [
+        "T23",
+        "T85",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_numbers.py::test_storage_boundary_uses_decimal128_and_never_changes_json_input",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.000126,
+      "cases": [
+        "T36",
+        "T88"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_paths.py::test_reordering_or_deleting_a_referenced_question_cannot_damage_definition",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.000152,
+      "cases": [
+        "T21",
+        "T22",
+        "T47",
+        "T52"
+      ]
+    },
+    {
+      "nodeid": "tests/unit/test_paths.py::test_single_branch_skips_required_question_and_reaches_explicit_end",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.000116,
+      "cases": [
+        "T39",
+        "T46",
+        "T48"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_review_boundaries.py::test_encoded_question_ids_keep_identity_through_edit_delete_publish_fill_and_single_statistics[group/item]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.370101,
+      "cases": [
+        "T19",
+        "T21",
+        "T53",
+        "T76"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_review_boundaries.py::test_encoded_question_ids_keep_identity_through_edit_delete_publish_fill_and_single_statistics[\\u9898\\u76ee/\\u5e74\\u9f84]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.368764,
+      "cases": [
+        "T19",
+        "T21",
+        "T53",
+        "T76"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_review_boundaries.py::test_encoded_question_ids_keep_identity_through_edit_delete_publish_fill_and_single_statistics[literal%2Fitem]",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.371014,
+      "cases": [
+        "T19",
+        "T21",
+        "T53",
+        "T76"
+      ]
+    }
+  ]
+}

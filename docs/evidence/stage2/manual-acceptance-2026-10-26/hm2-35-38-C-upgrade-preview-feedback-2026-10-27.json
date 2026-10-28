@@ -1,0 +1,77 @@
+{
+  "clientDate": "2026-10-27",
+  "userFeedback": "问卷C升级到v2后仍然只有1道题，20被拦截了，8能通过，也完成预览了，继续测试。",
+  "operator": "user",
+  "cases": [
+    "HM2-35",
+    "HM2-36",
+    "HM2-37",
+    "HM2-38a",
+    "HM2-38b"
+  ],
+  "checks": {
+    "CIsDraft": true,
+    "COneQuestionOneReference": true,
+    "sourceIsLearningV2": true,
+    "snapshotMatchesV2": true,
+    "maximumTwelve": true,
+    "CNoFormalResponse": true,
+    "historicalV1UsageRetained": true,
+    "currentV2Usage": true,
+    "sameInstanceBeforeAfterUpgrade": true,
+    "BDefinitionUnchanged": true,
+    "BResponseUnchanged": true,
+    "formalVersionsUnchanged": true
+  },
+  "allMatch": true,
+  "C": {
+    "id": "6ae0b5550dc4b0dea638679f",
+    "title": "第二阶段手测_1026_版本问卷C",
+    "description": "用于验证手动升级和不同版本隔离",
+    "publicId": "hJ8vN48pH1Psj39u",
+    "status": "draft",
+    "revision": 3,
+    "definitionVersion": 1,
+    "questions": [
+      {
+        "id": "91f814a2-b65c-401b-a315-7bea810e78af",
+        "type": "number",
+        "title": "第二阶段手测_1026_学习时长(小时）",
+        "required": true,
+        "options": [],
+        "validation": {
+          "minValue": "0",
+          "maxValue": "12",
+          "integerOnly": true
+        },
+        "jumpRules": []
+      }
+    ],
+    "questionRefs": [
+      {
+        "instanceId": "91f814a2-b65c-401b-a315-7bea810e78af",
+        "questionId": "6ae0680b0dc4b0dea6386792",
+        "questionVersionId": "6ae06f580dc4b0dea638679c",
+        "rootQuestionId": "6ae0680b0dc4b0dea6386792",
+        "contentHash": "6dccf7bff2d9aaa7cd591f6b4e1d3f062ad18c0c132294d2d41bff5cefcecbc5"
+      }
+    ],
+    "formalResponseCount": 0
+  },
+  "usageEvidence": [
+    {
+      "instanceId": "91f814a2-b65c-401b-a315-7bea810e78af",
+      "versionId": "6ae0696e0dc4b0dea6386795",
+      "isCurrent": false,
+      "definitionVersion": 1
+    },
+    {
+      "instanceId": "91f814a2-b65c-401b-a315-7bea810e78af",
+      "versionId": "6ae06f580dc4b0dea638679c",
+      "isCurrent": true,
+      "definitionVersion": 1
+    }
+  ],
+  "evidenceScope": "User explicitly confirms one instance after upgrade,20 rejected,8 accepted and preview completed. Database verifies same instance across historical-v1/current-v2 usage, current snapshot and zero formal responses; no screenshot supplied.",
+  "businessWritesByAi": 0
+}

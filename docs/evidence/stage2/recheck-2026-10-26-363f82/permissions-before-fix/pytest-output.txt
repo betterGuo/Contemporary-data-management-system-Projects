@@ -1,0 +1,157 @@
+........................................................................ [ 24%]
+.............................................FFFFFFFFFFFFFFFFFFFF....... [ 48%]
+........................................................................ [ 73%]
+........................................................................ [ 97%]
+......                                                                   [100%]
+=================================== FAILURES ===================================
+_ test_boundary_escaped_lone_surrogate_is_rejected_without_server_error[question-title] _
+tests/integration/test_stage2_recheck.py:322: in test_boundary_escaped_lone_surrogate_is_rejected_without_server_error
+    question["jumpRules"] = [{"id": "\ud800", "operator": "eq", "value": "a", "targetQuestionId": "END"}]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: question-title: HTTP 500: Internal Server Error
+E   assert 500 == 422
+E    +  where 500 = <Response [500 Internal Server Error]>.status_code
+_ test_boundary_escaped_lone_surrogate_is_rejected_without_server_error[option-label] _
+tests/integration/test_stage2_recheck.py:322: in test_boundary_escaped_lone_surrogate_is_rejected_without_server_error
+    question["jumpRules"] = [{"id": "\ud800", "operator": "eq", "value": "a", "targetQuestionId": "END"}]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: option-label: HTTP 500: Internal Server Error
+E   assert 500 == 422
+E    +  where 500 = <Response [500 Internal Server Error]>.status_code
+_ test_boundary_escaped_lone_surrogate_is_rejected_without_server_error[answer-text] _
+tests/integration/test_stage2_recheck.py:322: in test_boundary_escaped_lone_surrogate_is_rejected_without_server_error
+    question["jumpRules"] = [{"id": "\ud800", "operator": "eq", "value": "a", "targetQuestionId": "END"}]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: answer-text: HTTP 500: Internal Server Error
+E   assert 500 == 422
+E    +  where 500 = <Response [500 Internal Server Error]>.status_code
+_ test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[archive] _
+tests/integration/test_stage2_recheck.py:368: in test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes
+    payload["questionIds"] = ["q1"]
+E   AssertionError: archive: HTTP 500: Internal Server Error
+E   assert 500 == 422
+E    +  where 500 = <Response [500 Internal Server Error]>.status_code
+_ test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[grant] _
+tests/integration/test_stage2_recheck.py:368: in test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes
+    payload["questionIds"] = ["q1"]
+E   AssertionError: grant: HTTP 500: Internal Server Error
+E   assert 500 == 422
+E    +  where 500 = <Response [500 Internal Server Error]>.status_code
+_ test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[revoke] _
+tests/integration/test_stage2_recheck.py:368: in test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes
+    payload["questionIds"] = ["q1"]
+E   AssertionError: revoke: HTTP 500: Internal Server Error
+E   assert 500 == 422
+E    +  where 500 = <Response [500 Internal Server Error]>.status_code
+_ test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[availability] _
+tests/integration/test_stage2_recheck.py:368: in test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes
+    payload["questionIds"] = ["q1"]
+E   AssertionError: availability: HTTP 500: Internal Server Error
+E   assert 500 == 422
+E    +  where 500 = <Response [500 Internal Server Error]>.status_code
+_ test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[survey-patch] _
+tests/integration/test_stage2_recheck.py:368: in test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes
+    payload["questionIds"] = ["q1"]
+E   AssertionError: survey-patch: HTTP 409: {"error":{"code":"REVISION_CONFLICT","message":"问卷已被修改，请重新加载。","details":[]}}
+E   assert 409 == 422
+E    +  where 409 = <Response [409 Conflict]>.status_code
+_ test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[question-add] _
+tests/integration/test_stage2_recheck.py:368: in test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes
+    payload["questionIds"] = ["q1"]
+E   AssertionError: question-add: HTTP 409: {"error":{"code":"REVISION_CONFLICT","message":"问卷已被修改，请重新加载。","details":[]}}
+E   assert 409 == 422
+E    +  where 409 = <Response [409 Conflict]>.status_code
+_ test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[question-edit] _
+tests/integration/test_stage2_recheck.py:368: in test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes
+    payload["questionIds"] = ["q1"]
+E   AssertionError: question-edit: HTTP 409: {"error":{"code":"REVISION_CONFLICT","message":"问卷已被修改，请重新加载。","details":[]}}
+E   assert 409 == 422
+E    +  where 409 = <Response [409 Conflict]>.status_code
+_ test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[question-delete] _
+tests/integration/test_stage2_recheck.py:368: in test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes
+    payload["questionIds"] = ["q1"]
+E   AssertionError: question-delete: HTTP 409: {"error":{"code":"REVISION_CONFLICT","message":"问卷已被修改，请重新加载。","details":[]}}
+E   assert 409 == 422
+E    +  where 409 = <Response [409 Conflict]>.status_code
+_ test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[question-order] _
+tests/integration/test_stage2_recheck.py:368: in test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes
+    payload["questionIds"] = ["q1"]
+E   AssertionError: question-order: HTTP 409: {"error":{"code":"REVISION_CONFLICT","message":"问卷已被修改，请重新加载。","details":[]}}
+E   assert 409 == 422
+E    +  where 409 = <Response [409 Conflict]>.status_code
+_ test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[survey-publish] _
+tests/integration/test_stage2_recheck.py:368: in test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes
+    payload["questionIds"] = ["q1"]
+E   AssertionError: survey-publish: HTTP 409: {"error":{"code":"REVISION_CONFLICT","message":"问卷已修改或已发布，请重新加载。","details":[]}}
+E   assert 409 == 422
+E    +  where 409 = <Response [409 Conflict]>.status_code
+_ test_boundary_number_distribution_page_larger_than_bson_integer_returns_422[overview] _
+tests/integration/test_stage2_recheck.py:385: in test_boundary_number_distribution_page_larger_than_bson_integer_returns_422
+    actor = api_factory()
+E   AssertionError: overview: HTTP 500: Internal Server Error
+E   assert 500 == 422
+E    +  where 500 = <Response [500 Internal Server Error]>.status_code
+_ test_boundary_number_distribution_page_larger_than_bson_integer_returns_422[question] _
+tests/integration/test_stage2_recheck.py:385: in test_boundary_number_distribution_page_larger_than_bson_integer_returns_422
+    actor = api_factory()
+E   AssertionError: question: HTTP 500: Internal Server Error
+E   assert 500 == 422
+E    +  where 500 = <Response [500 Internal Server Error]>.status_code
+_ test_stopped_version_statistics_require_maintenance_or_an_owned_snapshot[private] _
+tests/integration/test_stage2_review_permissions.py:87: in test_stopped_version_statistics_require_maintenance_or_an_owned_snapshot
+    assert denied.status_code == 404, denied.text
+E   AssertionError: {"statistics":{"questionId":"6adf6d74e4e75a045ca20b64","versionId":"6adf6d74e4e75a045ca20b67","versionNumber":1,"title":"停用旧版的标题","type":"single","answerCount":0,"responseCount":0,"surveyCount":0,"average":null,"min":null,"max":null,"distinctValueCount":0,"options":[{"id":"a","label":"停用旧版的选项","count":0}],"distribution":[],"bySurvey":[],"scope":"my-surveys","respondentLabel":"本卷去重填写账号数","page":1,"pageSize":20}}
+E   assert 200 == 404
+E    +  where 200 = <Response [200 OK]>.status_code
+_ test_stopped_version_statistics_require_maintenance_or_an_owned_snapshot[public] _
+tests/integration/test_stage2_review_permissions.py:87: in test_stopped_version_statistics_require_maintenance_or_an_owned_snapshot
+    assert denied.status_code == 404, denied.text
+E   AssertionError: {"statistics":{"questionId":"6adf6d75e4e75a045ca20b76","versionId":"6adf6d75e4e75a045ca20b79","versionNumber":1,"title":"停用旧版的标题","type":"single","answerCount":0,"responseCount":0,"surveyCount":0,"average":null,"min":null,"max":null,"distinctValueCount":0,"options":[{"id":"a","label":"停用旧版的选项","count":0}],"distribution":[],"bySurvey":[],"scope":"my-surveys","respondentLabel":"本卷去重填写账号数","page":1,"pageSize":20}}
+E   assert 200 == 404
+E    +  where 200 = <Response [200 OK]>.status_code
+_ test_existing_owner_bookmark_can_change_only_its_tags_after_source_stops[archive] _
+tests/integration/test_stage2_review_permissions.py:106: in test_existing_owner_bookmark_can_change_only_its_tags_after_source_stops
+    assert changed.status_code == 200, changed.text
+E   AssertionError: {"error":{"code":"SOURCE_UNAVAILABLE","message":"来源题目已归档，不能新增选用。","details":[]}}
+E   assert 409 == 200
+E    +  where 409 = <Response [409 Conflict]>.status_code
+_ test_existing_owner_bookmark_can_change_only_its_tags_after_source_stops[version] _
+tests/integration/test_stage2_review_permissions.py:106: in test_existing_owner_bookmark_can_change_only_its_tags_after_source_stops
+    assert changed.status_code == 200, changed.text
+E   AssertionError: {"error":{"code":"SOURCE_UNAVAILABLE","message":"该版本已经停止新增选用。","details":[]}}
+E   assert 409 == 200
+E    +  where 409 = <Response [409 Conflict]>.status_code
+_ test_archived_question_rejects_new_bookmark_but_keeps_old_organization[False] _
+tests/integration/test_stage2_review_permissions.py:127: in test_archived_question_rejects_new_bookmark_but_keeps_old_organization
+    assert rejected.status_code == 409, rejected.text
+E   AssertionError: {"question":{"id":"6adf6d76e4e75a045ca20b94","ownerId":"6adf6d76e4e75a045ca20b92","authorName":"user_d9e1d8ce8830","title":"停用旧版的标题","type":"single","latestVersionId":"6adf6d76e4e75a045ca20b97","latestVersionNumber":1,"latestSelectableVersionId":"6adf6d76e4e75a045ca20b97","latestSelectableVersionNumber":1,"revision":3,"visibility":"private","status":"archived","rootQuestionId":"6adf6d76e4e75a045ca20b94","hasPublishedUsage":false,"canManage":true,"bookmarkTags":["新收藏"],"selectedVersionId":null,"bookmarkRevision":1,"hasUpdate":false,"content":{"type":"single","title":"停用旧版的标题","required":false,"options":[{"id":"a","label":"停用旧版的选项"}],"validation":{}},"updatedAt":"2026-10-26T15:10:46+00:00","workingContent":{"type":"single","title":"停用旧版的标题","required":false,"options":[{"id":"a","label":"停用旧版的选项"}],"validation":{}},"workingBaseVersionId":"6adf6d76e4e75a045ca20b97"}}
+E   assert 200 == 409
+E    +  where 200 = <Response [200 OK]>.status_code
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /Users/guoyuhang/Desktop/26年秋季学期/当代数据管理系统/project1/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_escaped_lone_surrogate_is_rejected_without_server_error[question-title]
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_escaped_lone_surrogate_is_rejected_without_server_error[option-label]
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_escaped_lone_surrogate_is_rejected_without_server_error[answer-text]
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[archive]
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[grant]
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[revoke]
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[availability]
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[survey-patch]
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[question-add]
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[question-edit]
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[question-delete]
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[question-order]
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[survey-publish]
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_number_distribution_page_larger_than_bson_integer_returns_422[overview]
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_number_distribution_page_larger_than_bson_integer_returns_422[question]
+FAILED tests/integration/test_stage2_review_permissions.py::test_stopped_version_statistics_require_maintenance_or_an_owned_snapshot[private]
+FAILED tests/integration/test_stage2_review_permissions.py::test_stopped_version_statistics_require_maintenance_or_an_owned_snapshot[public]
+FAILED tests/integration/test_stage2_review_permissions.py::test_existing_owner_bookmark_can_change_only_its_tags_after_source_stops[archive]
+FAILED tests/integration/test_stage2_review_permissions.py::test_existing_owner_bookmark_can_change_only_its_tags_after_source_stops[version]
+FAILED tests/integration/test_stage2_review_permissions.py::test_archived_question_rejects_new_bookmark_but_keeps_old_organization[False]
+20 failed, 274 passed, 1 warning in 84.18s (0:01:24)

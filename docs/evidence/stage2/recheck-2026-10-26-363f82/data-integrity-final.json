@@ -1,0 +1,24 @@
+{
+  "executedAt": "2026-10-26T15:21:46.226823+00:00",
+  "businessBsonIndexesValidatorsUnchanged": true,
+  "actualStatisticsUnchanged": true,
+  "businessCounts": {
+    "admin_audit": 1,
+    "operation_receipts": 4,
+    "question_bookmarks": 27,
+    "question_grants": 1,
+    "question_usage": 29,
+    "question_version_state": 27,
+    "question_versions": 27,
+    "questions": 27,
+    "responses": 36,
+    "schema_migrations": 2,
+    "surveys": 10,
+    "users": 12
+  },
+  "temporaryTestDatabases": [],
+  "ownRecheckServerStopped": true,
+  "ownRecheckDatabaseRemoved": true,
+  "formalService": "http://127.0.0.1:8000",
+  "sessionsExcluded": true
+}

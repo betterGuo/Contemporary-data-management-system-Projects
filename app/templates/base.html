@@ -7,6 +7,7 @@
   <title>{% block title %}问卷工坊{% endblock %}</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%234f46e5'/%3E%3Cpath d='M18 20h28M18 32h20M18 44h14' stroke='white' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="/static/app.css">
+  <link rel="stylesheet" href="/static/library.css">
   {% block head %}{% endblock %}
 </head>
 <body data-page="{{ page|default('') }}" data-survey-id="{{ survey_id|default('') }}" data-public-id="{{ public_id|default('') }}">
@@ -14,7 +15,7 @@
   <header class="site-header">
     <div class="header-inner">
       <a href="/dashboard" class="brand" aria-label="问卷工坊首页"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 6h12M6 12h9M6 18h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span>问卷工坊</span></a>
-      <nav aria-label="主导航" class="header-nav"><a href="/dashboard" data-auth-only hidden>我的问卷</a><span class="user-name" id="nav-user" hidden></span><button type="button" class="btn btn-quiet btn-small" id="logout" hidden>退出登录</button><a class="btn btn-small" id="nav-login" href="/login" hidden>登录</a></nav>
+      <nav aria-label="主导航" class="header-nav"><a href="/dashboard" data-auth-only hidden>我的问卷</a><a href="/library" class="library-nav-link" data-auth-only hidden>题目库</a><span class="user-name" id="nav-user" hidden></span><button type="button" class="btn btn-quiet btn-small" id="logout" hidden>退出登录</button><a class="btn btn-small" id="nav-login" href="/login" hidden>登录</a></nav>
     </div>
   </header>
   <main id="main" {% block main_attrs %}class="page-container"{% endblock %}>{% block content %}{% endblock %}</main>

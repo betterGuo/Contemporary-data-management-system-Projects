@@ -1,0 +1,25 @@
+{
+  "clientDate": "2026-10-26",
+  "userFeedback": "都成功了 继续测试",
+  "operator": "user",
+  "cases": {
+    "HM2-01a": {
+      "status": "passed",
+      "evidenceSource": "user feedback; no screenshot supplied"
+    },
+    "HM2-01b": {
+      "status": "passed",
+      "evidenceSource": "user feedback",
+      "databaseEvidence": "Expected account exists; this does not independently prove the browser redirect or wrong-confirmation prompt."
+    }
+  },
+  "readOnlyDatabaseCheck": {
+    "expectedUsernameFound": true,
+    "account": {
+      "id": "6adf77430dc4b0dea638677b",
+      "username": "accept2_owner_1026"
+    }
+  },
+  "businessWritesByAi": 0,
+  "passwordStored": false
+}

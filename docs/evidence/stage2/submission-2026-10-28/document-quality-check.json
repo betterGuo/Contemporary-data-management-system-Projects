@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-28T01:21:30+08:00",
+  "result": "passed",
+  "scope": "Final DOCX/PDF artifact QA only; not a new application regression run.",
+  "renderer": "Packaged documents/render_docx.py, emit_pdf, dpi120; packaged LibreOffice with explicit Songti SC / Heiti SC fontconfig.",
+  "formatFixes": [
+    "Removed inherited title border and theme font attributes after initial preview showed missing Chinese glyphs.",
+    "Prevented individual table rows splitting across pages."
+  ],
+  "sources": [
+    "docs/stage2/report.md",
+    "docs/stage2/ai-use.md",
+    "docs/stage2/data.md",
+    "docs/stage2/tests.md"
+  ],
+  "files": [
+    {
+      "path": "output/stage2/第二阶段测试用例与结果.docx",
+      "bytes": 49040,
+      "sha256": "bbef820e559cccdb75f174b2d89d23e6c15fe2c1145185e0be8b7800edf55b28",
+      "zipReadable": true,
+      "tables": 6,
+      "allTableRowsKeepTogether": true,
+      "localHyperlinks": 51,
+      "missingLocalHyperlinks": [],
+      "inheritedParagraphBordersRemoved": true
+    },
+    {
+      "path": "output/stage2/第二阶段测试用例与结果.pdf",
+      "bytes": 504886,
+      "sha256": "e53d3d1a841e56567538dc246a2c3278655a3778aeaf5419ce93a6b1377c7481",
+      "pages": 7,
+      "charactersPerPage": [
+        1090,
+        1049,
+        1067,
+        1083,
+        834,
+        662,
+        817
+      ],
+      "chineseTextPresentOnEveryPage": true,
+      "noAbsoluteLocalFileUris": true,
+      "visualInspection": "Every final page reviewed for Chinese glyphs, clipping, table wrapping, pagination and footer. Final report render identical byte-for-byte (PNG) to the reviewed 17-page render; final seven test pages reviewed with unchanged page 3 compared by PNG SHA."
+    },
+    {
+      "path": "output/stage2/第二阶段项目完成报告.docx",
+      "bytes": 61615,
+      "sha256": "b3e2be89cd665943a93563c0e1a04ba024d195e0257ec85722eb33dc99f77899",
+      "zipReadable": true,
+      "tables": 8,
+      "allTableRowsKeepTogether": true,
+      "localHyperlinks": 29,
+      "missingLocalHyperlinks": [],
+      "inheritedParagraphBordersRemoved": true
+    },
+    {
+      "path": "output/stage2/第二阶段项目完成报告.pdf",
+      "bytes": 725207,
+      "sha256": "4786926e392a212e6d6b6e6d653aacd0b88c54884434ec3fe0f01031a663023a",
+      "pages": 17,
+      "charactersPerPage": [
+        1075,
+        1049,
+        1020,
+        1203,
+        816,
+        945,
+        881,
+        706,
+        971,
+        1040,
+        1089,
+        1004,
+        880,
+        1021,
+        679,
+        1321,
+        1225
+      ],
+      "chineseTextPresentOnEveryPage": true,
+      "noAbsoluteLocalFileUris": true,
+      "visualInspection": "Every final page reviewed for Chinese glyphs, clipping, table wrapping, pagination and footer. Final report render identical byte-for-byte (PNG) to the reviewed 17-page render; final seven test pages reviewed with unchanged page 3 compared by PNG SHA."
+    }
+  ],
+  "sourceSha256": {
+    "docs/stage2/report.md": "a66334b8e6bee537288d03e4982caa9e850e21a6fa74d7af78cdf2b784868ce5",
+    "docs/stage2/ai-use.md": "94ec58bbc2b4322709ce93353dc3ceaec2ddcaccd64719b9412d50fe88f84b94",
+    "docs/stage2/data.md": "dec957cd07bb7ba32af32ceeba1caef85aa7956d7921421da1a3c11c7a177dd1",
+    "docs/stage2/tests.md": "206043a64244d435761aeea7466e9c0b6d8bf7e20e678919638597ef1f1782ee"
+  }
+}

@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=ROOT / ".env", extra="ignore")
 
-    mongodb_uri: str = "mongodb://localhost:27017/"
+    mongodb_uri: str = "mongodb://localhost:27018/?replicaSet=survey-rs"
     mongodb_db: str = "survey_project1"
     app_host: str = "127.0.0.1"
     app_port: int = 8000

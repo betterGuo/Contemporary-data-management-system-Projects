@@ -1,0 +1,176 @@
+{
+  "status": "passed",
+  "generatedAt": "2026-10-26T15:21:12.404Z",
+  "baseUrl": "http://127.0.0.1:8001",
+  "isolatedDatabase": "survey_project1_recheck_363f82",
+  "scope": "Only the restored isolated recheck database was used. No browser fixtures were written to the final 8000 service or its database.",
+  "reports": [
+    {
+      "file": "core-final-01/browser-results.json",
+      "status": "passed",
+      "caseCount": 15,
+      "screenshotCount": 16,
+      "pageErrorCount": 0,
+      "expectedHttpErrors": [
+        {
+          "url": "http://127.0.0.1:8001/api/auth/me",
+          "status": 401,
+          "method": "GET"
+        },
+        {
+          "url": "http://127.0.0.1:8001/api/auth/me",
+          "status": 401,
+          "method": "GET"
+        },
+        {
+          "url": "http://127.0.0.1:8001/api/auth/me",
+          "status": 401,
+          "method": "GET"
+        },
+        {
+          "url": "http://127.0.0.1:8001/api/library-questions/6adf6e2fbf215d7a4a3efbc9/versions",
+          "status": 404,
+          "method": "GET"
+        }
+      ],
+      "unexpectedHttpErrors": [],
+      "unexpectedConsoleErrors": [],
+      "startedAt": "2026-10-26T15:13:48.182Z",
+      "completedAt": "2026-10-26T15:14:06.498Z"
+    },
+    {
+      "file": "forms-final-01/forms-ui.json",
+      "status": "passed",
+      "caseCount": 3,
+      "screenshotCount": 3,
+      "pageErrorCount": 0,
+      "expectedHttpErrors": [
+        {
+          "url": "http://127.0.0.1:8001/api/auth/me",
+          "status": 401,
+          "method": "GET"
+        }
+      ],
+      "unexpectedHttpErrors": [],
+      "unexpectedConsoleErrors": [],
+      "startedAt": "2026-10-26T15:15:18.078Z",
+      "completedAt": "2026-10-26T15:15:22.326Z"
+    },
+    {
+      "file": "supplement-final-04/supplement-ui.json",
+      "status": "passed",
+      "caseCount": 11,
+      "screenshotCount": 9,
+      "pageErrorCount": 0,
+      "expectedHttpErrors": [
+        {
+          "url": "http://127.0.0.1:8001/api/auth/me",
+          "status": 401,
+          "method": "GET"
+        },
+        {
+          "url": "http://127.0.0.1:8001/api/auth/me",
+          "status": 401,
+          "method": "GET"
+        },
+        {
+          "url": "http://127.0.0.1:8001/api/auth/me",
+          "status": 401,
+          "method": "GET"
+        },
+        {
+          "url": "http://127.0.0.1:8001/api/library-questions",
+          "status": 403,
+          "method": "POST"
+        },
+        {
+          "url": "http://127.0.0.1:8001/api/library-questions/6adf6f5c7bf0ebf12198c5ca/working-content",
+          "status": 403,
+          "method": "POST"
+        },
+        {
+          "url": "http://127.0.0.1:8001/api/library-questions/6adf6f5c7bf0ebf12198c5ca/versions",
+          "status": 403,
+          "method": "POST"
+        },
+        {
+          "url": "http://127.0.0.1:8001/api/library-questions/6adf6f5c7bf0ebf12198c5ca/versions",
+          "status": 404,
+          "method": "GET"
+        }
+      ],
+      "unexpectedHttpErrors": [],
+      "unexpectedConsoleErrors": [],
+      "startedAt": "2026-10-26T15:18:49.072Z",
+      "completedAt": "2026-10-26T15:19:04.722Z"
+    },
+    {
+      "file": "race-after-final-03/save-race-ui.json",
+      "status": "passed",
+      "caseCount": 4,
+      "screenshotCount": 7,
+      "pageErrorCount": 0,
+      "expectedHttpErrors": [
+        {
+          "url": "http://127.0.0.1:8001/api/auth/me",
+          "status": 401
+        },
+        {
+          "url": "http://127.0.0.1:8001/api/library-questions/6adf6f5f7bf0ebf12198c5d4/working-content",
+          "status": 409
+        }
+      ],
+      "unexpectedHttpErrors": [],
+      "unexpectedConsoleErrors": [],
+      "startedAt": "2026-10-26T15:18:46.807Z",
+      "completedAt": "2026-10-26T15:18:55.540Z"
+    }
+  ],
+  "totals": {
+    "scenarioUnits": 33,
+    "realUiScenarioUnits": 32,
+    "explicitApiNegativeScenarioUnits": 1,
+    "explicitApiNegativeRequests": 2,
+    "screenshots": 35,
+    "pageErrors": 0,
+    "unexpectedHttpErrors": 0,
+    "unexpectedConsoleErrors": 0
+  },
+  "revisionTiming": "Core and forms final reports were produced after the saveBusy fix and the prior backend corrections. The final bookmark DTO-in-transaction correction was loaded before supplement-final-04 and race-after-final-03; both were rerun against that final backend.",
+  "realDefectBeforeFix": {
+    "endpoint": "working-content",
+    "result": "New input typed while a save request was pending was overwritten by the successful server reload.",
+    "evidence": [
+      "race-before-02/save-race-ui.json",
+      "race-before-02/working-content-request-paused.png",
+      "race-before-02/working-content-after-success.png"
+    ],
+    "qualification": "The before-fix working-content case is complete; before-fix versions evidence is partial because an interception-script bug aborted its report. It is not counted as a fully reproduced versions defect."
+  },
+  "fixedBehavior": [
+    "Actual mouse interaction is blocked by inert while working-content, versions, and create requests are delayed.",
+    "Escape cannot dismiss a pending create dialog.",
+    "A real second-window revision conflict returns 409, preserves the local unsaved title, and releases the UI lock.",
+    "An auto-created bookmark with selectedVersionId null can change personal tags after v1 and archive while keeping the null version selection."
+  ],
+  "visualReview": {
+    "method": "Images were opened with view_image and inspected after generation.",
+    "reviewedFiles": [
+      "core-final-01/14-mobile-library.png",
+      "core-final-01/15-mobile-editor.png",
+      "forms-final-01/forms-multiple-v1.png",
+      "supplement-final-04/08-archived-auto-bookmark-tags.png",
+      "supplement-final-04/08-public-archive-snapshot.png",
+      "race-after-final-03/versions-request-paused.png",
+      "race-after-final-03/create-request-paused.png",
+      "race-after-final-03/failure-preserves-local-input.png",
+      "race-before-02/working-content-request-paused.png",
+      "race-before-02/working-content-after-success.png"
+    ],
+    "result": "Reviewed mobile pages fit the viewport; archived snapshots, personal tags, save locks, and conflict text remain readable.",
+    "screenshotQualification": "supplement-final-04/04-admin-public-v2.png captures the save before asynchronous UI readback completes. The v2 success is proven by POST versionNumber=2 and the original-survey GET assertion, not by claiming that screenshot shows the final v2 screen."
+  },
+  "earlierAttempts": "Earlier failed browser attempts remain preserved. They include asynchronous DOM waits, a 201-versus-200 test expectation, and a Playwright browser.newPage context restriction. They are not counted as successful final scenario units.",
+  "browserProcessesClosed": true,
+  "noFurtherDatabaseWrites": true
+}

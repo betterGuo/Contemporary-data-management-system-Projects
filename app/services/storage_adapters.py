@@ -17,6 +17,10 @@ from bson.decimal128 import Decimal128
 
 MAX_NUMERIC_INPUT_LENGTH = 8192
 MAX_INPUT_EXPONENT = 16384
+MAX_BSON_INT64 = (1 << 63) - 1
+# All list APIs permit at most 100 items per page. Keep MongoDB's skip
+# argument within its signed 64-bit range even at that largest page size.
+MAX_PAGE = MAX_BSON_INT64 // 100 + 1
 _NUMBER_PATTERN = re.compile(
     r"[+-]?(?:[0-9]+(?:\.[0-9]*)?|\.[0-9]+)(?:[eE]([+-]?[0-9]+))?\Z",
     re.ASCII,
@@ -43,6 +47,12 @@ class DomainError(ValueError):
 def normalize_text(value: str) -> str:
     """Trim outer whitespace and count/compare NFC-normalized Unicode text."""
     return unicodedata.normalize("NFC", value.strip())
+
+
+def validate_pagination(page: int, page_size: int) -> None:
+    if (type(page) is not int or type(page_size) is not int
+            or not 1 <= page <= MAX_PAGE or not 1 <= page_size <= 100):
+        raise DomainError("INVALID_PAGE", "分页参数超出支持范围。")
 
 
 def _number_error(message: str, question_id: str | None, field: str) -> DomainError:

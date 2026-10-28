@@ -1,0 +1,93 @@
+.F..                                                                     [100%]
+=================================== FAILURES ===================================
+______ test_backup_refuses_existing_restore_database_without_deleting_it _______
+
+app = <fastapi.applications.FastAPI object at 0x1085aadb0>
+client = <starlette.testclient.TestClient object at 0x1085864e0>
+real_db = Database(MongoClient(host=['localhost:27017'], document_class=dict, tz_aware=True, connect=True, serverselectiontimeoutms=2500), 'survey_project1_test_810bac7172614bd8b37148df860fb909')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1086240b0>
+tmp_path = PosixPath('/private/var/folders/yw/kgt4zj591k7c41b_3z2p08500000gn/T/pytest-of-guoyuhang/pytest-0/test_backup_refuses_existing_r0')
+
+    def test_backup_refuses_existing_restore_database_without_deleting_it(
+        app, client, real_db, monkeypatch, tmp_path,
+    ):
+        suffix = uuid4().hex
+        target_name = "survey_project1_test_restore_" + suffix
+        target = real_db.client[target_name]
+        target.keep.insert_one({"_id": "keep-existing-database"})
+        monkeypatch.setattr(backup_project.uuid, "uuid4", lambda: SimpleNamespace(hex=suffix))
+        output = tmp_path / "collision.archive.gz"
+        try:
+            with pytest.raises(ValueError, match="恢复目标不为空"):
+>               backup_project.backup(app.state.settings, output)
+
+tests/integration/test_baseline_tools.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/backup_project.py:72: in backup
+    before = manifest(source)
+             ^^^^^^^^^^^^^^^^
+scripts/backup_project.py:20: in manifest
+    collections = sorted(db.list_collections(), key=lambda entry: entry["name"])
+                         ^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/pymongo/synchronous/database.py:1189: in list_collections
+    return self._list_collections_helper(session, filter, comment, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/pymongo/synchronous/database.py:1150: in _list_collections_helper
+    return self._client._retryable_read(
+.venv/lib/python3.12/site-packages/pymongo/synchronous/mongo_client.py:2061: in _retryable_read
+    return self._retry_internal(
+.venv/lib/python3.12/site-packages/pymongo/_csot.py:126: in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/pymongo/synchronous/mongo_client.py:2022: in _retry_internal
+    ).run()
+      ^^^^^
+.venv/lib/python3.12/site-packages/pymongo/synchronous/mongo_client.py:2890: in run
+    res = self._read() if self._is_read else self._write()
+          ^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/pymongo/synchronous/mongo_client.py:3130: in _read
+    return self._func(self._session, self._server, conn, read_pref)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/pymongo/synchronous/database.py:1148: in _cmd
+    return self._list_collections(conn, session, read_preference=read_preference, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/pymongo/synchronous/database.py:1098: in _list_collections
+    self._command(conn, cmd, read_preference=read_preference, session=tmp_session)
+.venv/lib/python3.12/site-packages/pymongo/synchronous/database.py:773: in _command
+    return conn.command(
+.venv/lib/python3.12/site-packages/pymongo/synchronous/helpers.py:51: in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/pymongo/synchronous/pool.py:387: in command
+    session._apply_to(spec, retryable_write, read_preference, self)
+.venv/lib/python3.12/site-packages/pymongo/synchronous/client_session.py:881: in _apply_to
+    self._materialize(conn.logical_session_timeout_minutes)
+.venv/lib/python3.12/site-packages/pymongo/synchronous/client_session.py:859: in _materialize
+    self._server_session = self._client._topology.get_server_session(
+.venv/lib/python3.12/site-packages/pymongo/synchronous/topology.py:661: in get_server_session
+    return self._session_pool.get_server_session(session_timeout_minutes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/pymongo/client_session_shared.py:377: in get_server_session
+    return _ServerSession(self.generation)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <pymongo.client_session_shared._ServerSession object at 0x10864dd90>
+generation = 0
+
+    def __init__(self, generation: int):
+        # Ensure id is type 4, regardless of CodecOptions.uuid_representation.
+>       self.session_id = {"id": Binary(uuid.uuid4().bytes, 4)}
+                                        ^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'types.SimpleNamespace' object has no attribute 'bytes'
+
+.venv/lib/python3.12/site-packages/pymongo/client_session_shared.py:305: AttributeError
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /Users/guoyuhang/Desktop/26年秋季学期/当代数据管理系统/project1/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/integration/test_baseline_tools.py::test_backup_refuses_existing_restore_database_without_deleting_it
+1 failed, 3 passed, 200 deselected, 1 warning in 0.87s

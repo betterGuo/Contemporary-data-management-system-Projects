@@ -1,0 +1,53 @@
+{
+  "clientDate": "2026-10-27",
+  "userFeedback": "已保存",
+  "configurationChecks": {
+    "HM2-04": true,
+    "HM2-05a": true,
+    "oneQuestionSaved": true
+  },
+  "survey": {
+    "id": "6adf783d0dc4b0dea638677f",
+    "status": "draft",
+    "revision": 2,
+    "definitionVersion": 1,
+    "allowMultipleSubmissions": true,
+    "questions": [
+      {
+        "id": "64b60d1b-6c40-4cb1-8e59-e0737a1355a1",
+        "type": "single",
+        "title": "请选择填写方式",
+        "required": true,
+        "options": [
+          {
+            "id": "d68c2db9-b8be-4f41-9fbd-2505d079a860",
+            "label": "完整填写"
+          },
+          {
+            "id": "f5d1f062-cb3f-473e-93be-ee4526c80c1e",
+            "label": "直接填写年龄"
+          }
+        ],
+        "validation": {},
+        "jumpRules": []
+      }
+    ],
+    "formalResponseCount": 0
+  },
+  "evidenceScope": "User reports saved; screenshot shows one required single-choice question; database independently checks persistence. Four-question refresh and answer validation are not claimed complete.",
+  "businessWritesByAi": 0,
+  "screenshot": {
+    "path": "hm2-05a-single-saved-2026-10-27.png",
+    "sha256": "10472f7782e762df6ac7b07c8e4a5c51b7c943aed66a510d3655bbbe22d14a8e",
+    "observed": {
+      "questionCount": 1,
+      "type": "single",
+      "title": "请选择填写方式",
+      "optionLabels": [
+        "完整填写",
+        "直接填写年龄"
+      ],
+      "requiredChecked": true
+    }
+  }
+}

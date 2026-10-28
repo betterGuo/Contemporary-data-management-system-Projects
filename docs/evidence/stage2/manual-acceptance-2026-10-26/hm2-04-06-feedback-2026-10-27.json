@@ -1,0 +1,26 @@
+{
+  "clientDate": "2026-10-27",
+  "userFeedback": "正常",
+  "operator": "user",
+  "readOnlyConfigurationChecks": {
+    "HM2-04": false,
+    "HM2-06": false,
+    "HM2-05a": false,
+    "HM2-05b": false,
+    "HM2-05c": false,
+    "HM2-05d": false
+  },
+  "allPlannedConfigurationMatches": false,
+  "savedSurveyConfiguration": {
+    "surveyId": "6adf783d0dc4b0dea638677f",
+    "title": "第二阶段手测_1026_基础流程",
+    "status": "draft",
+    "revision": 1,
+    "definitionVersion": 1,
+    "allowMultipleSubmissions": false,
+    "questions": [],
+    "formalResponseCount": 0
+  },
+  "evidenceLimit": "User feedback confirms interaction and refresh; database verifies saved configuration only. No screenshots supplied. Answer rejection and jump behavior remain untested by the user.",
+  "businessWritesByAi": 0
+}

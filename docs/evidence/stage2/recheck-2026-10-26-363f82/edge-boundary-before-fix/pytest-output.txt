@@ -1,0 +1,761 @@
+FFFFFFFFFFFFFFF                                                          [100%]
+=================================== FAILURES ===================================
+_ test_boundary_escaped_lone_surrogate_is_rejected_without_server_error[question-title] _
+
+field = 'question-title'
+api_factory = <function api_factory.<locals>.factory at 0x107b61b20>
+survey_factory = <function survey_factory.<locals>.factory at 0x107b61c60>
+app = <fastapi.applications.FastAPI object at 0x107b49490>
+real_db = Database(MongoClient(host=['localhost:27018'], document_class=dict, tz_aware=True, connect=True, replicaset='survey-rs', serverselectiontimeoutms=2500), 'survey_project1_test_d5bfb4fbac354cb38f383b89da0b40e4')
+
+    @pytest.mark.parametrize("field", ["question-title", "option-label", "answer-text"])
+    @pytest.mark.case("S2-22")
+    def test_boundary_escaped_lone_surrogate_is_rejected_without_server_error(
+        field, api_factory, survey_factory, app, real_db,
+    ):
+        actor = api_factory()
+        text_question = {"id": "text", "type": "text", "title": "文字题", "required": True}
+        survey = survey_factory(actor, questions=[text_question], publish=field == "answer-text")
+        if field == "answer-text":
+            method, path = "POST", f"/api/participation/{survey['publicId']}/responses"
+            payload = {"definitionVersion": survey["definitionVersion"], "submissionKey": str(uuid4()),
+                       "isAnonymous": False, "answers": [{"questionId": "text", "value": "\ud800"}]}
+        else:
+            question = {**text_question, "title": "\ud800"} if field == "question-title" else {
+                "id": "choice", "type": "single", "title": "选项题", "required": True,
+                "options": [{"id": "a", "label": "\ud800"}, {"id": "b", "label": "B"}],
+            }
+            method, path = "PATCH", f"/api/surveys/{survey['id']}"
+            payload = {"revision": survey["revision"], "questions": [question]}
+        before = manifest(real_db)
+        result = raw_write_without_server_reraise(app, actor, method, path, payload)
+        assert manifest(real_db) == before, "Malformed Unicode must not write any business collection"
+>       assert result.status_code == 422, f"{field}: HTTP {result.status_code}: {result.text}"
+E       AssertionError: question-title: HTTP 500: Internal Server Error
+E       assert 500 == 422
+E        +  where 500 = <Response [500 Internal Server Error]>.status_code
+
+tests/integration/test_stage2_recheck.py:322: AssertionError
+_ test_boundary_escaped_lone_surrogate_is_rejected_without_server_error[option-label] _
+
+field = 'option-label'
+api_factory = <function api_factory.<locals>.factory at 0x107bfba60>
+survey_factory = <function survey_factory.<locals>.factory at 0x107bfbba0>
+app = <fastapi.applications.FastAPI object at 0x107b73980>
+real_db = Database(MongoClient(host=['localhost:27018'], document_class=dict, tz_aware=True, connect=True, replicaset='survey-rs', serverselectiontimeoutms=2500), 'survey_project1_test_e64605db23f7405fb81749e384270ef4')
+
+    @pytest.mark.parametrize("field", ["question-title", "option-label", "answer-text"])
+    @pytest.mark.case("S2-22")
+    def test_boundary_escaped_lone_surrogate_is_rejected_without_server_error(
+        field, api_factory, survey_factory, app, real_db,
+    ):
+        actor = api_factory()
+        text_question = {"id": "text", "type": "text", "title": "文字题", "required": True}
+        survey = survey_factory(actor, questions=[text_question], publish=field == "answer-text")
+        if field == "answer-text":
+            method, path = "POST", f"/api/participation/{survey['publicId']}/responses"
+            payload = {"definitionVersion": survey["definitionVersion"], "submissionKey": str(uuid4()),
+                       "isAnonymous": False, "answers": [{"questionId": "text", "value": "\ud800"}]}
+        else:
+            question = {**text_question, "title": "\ud800"} if field == "question-title" else {
+                "id": "choice", "type": "single", "title": "选项题", "required": True,
+                "options": [{"id": "a", "label": "\ud800"}, {"id": "b", "label": "B"}],
+            }
+            method, path = "PATCH", f"/api/surveys/{survey['id']}"
+            payload = {"revision": survey["revision"], "questions": [question]}
+        before = manifest(real_db)
+        result = raw_write_without_server_reraise(app, actor, method, path, payload)
+        assert manifest(real_db) == before, "Malformed Unicode must not write any business collection"
+>       assert result.status_code == 422, f"{field}: HTTP {result.status_code}: {result.text}"
+E       AssertionError: option-label: HTTP 500: Internal Server Error
+E       assert 500 == 422
+E        +  where 500 = <Response [500 Internal Server Error]>.status_code
+
+tests/integration/test_stage2_recheck.py:322: AssertionError
+_ test_boundary_escaped_lone_surrogate_is_rejected_without_server_error[answer-text] _
+
+field = 'answer-text'
+api_factory = <function api_factory.<locals>.factory at 0x107ca5c60>
+survey_factory = <function survey_factory.<locals>.factory at 0x107ca5da0>
+app = <fastapi.applications.FastAPI object at 0x107ce05c0>
+real_db = Database(MongoClient(host=['localhost:27018'], document_class=dict, tz_aware=True, connect=True, replicaset='survey-rs', serverselectiontimeoutms=2500), 'survey_project1_test_f07b7260ac3544b19af47952f40ba714')
+
+    @pytest.mark.parametrize("field", ["question-title", "option-label", "answer-text"])
+    @pytest.mark.case("S2-22")
+    def test_boundary_escaped_lone_surrogate_is_rejected_without_server_error(
+        field, api_factory, survey_factory, app, real_db,
+    ):
+        actor = api_factory()
+        text_question = {"id": "text", "type": "text", "title": "文字题", "required": True}
+        survey = survey_factory(actor, questions=[text_question], publish=field == "answer-text")
+        if field == "answer-text":
+            method, path = "POST", f"/api/participation/{survey['publicId']}/responses"
+            payload = {"definitionVersion": survey["definitionVersion"], "submissionKey": str(uuid4()),
+                       "isAnonymous": False, "answers": [{"questionId": "text", "value": "\ud800"}]}
+        else:
+            question = {**text_question, "title": "\ud800"} if field == "question-title" else {
+                "id": "choice", "type": "single", "title": "选项题", "required": True,
+                "options": [{"id": "a", "label": "\ud800"}, {"id": "b", "label": "B"}],
+            }
+            method, path = "PATCH", f"/api/surveys/{survey['id']}"
+            payload = {"revision": survey["revision"], "questions": [question]}
+        before = manifest(real_db)
+        result = raw_write_without_server_reraise(app, actor, method, path, payload)
+        assert manifest(real_db) == before, "Malformed Unicode must not write any business collection"
+>       assert result.status_code == 422, f"{field}: HTTP {result.status_code}: {result.text}"
+E       AssertionError: answer-text: HTTP 500: Internal Server Error
+E       assert 500 == 422
+E        +  where 500 = <Response [500 Internal Server Error]>.status_code
+
+tests/integration/test_stage2_recheck.py:322: AssertionError
+_ test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[archive] _
+
+operation = 'archive'
+api_factory = <function api_factory.<locals>.factory at 0x107d6bc40>
+survey_factory = <function survey_factory.<locals>.factory at 0x107d6bd80>
+app = <fastapi.applications.FastAPI object at 0x107ce24b0>
+real_db = Database(MongoClient(host=['localhost:27018'], document_class=dict, tz_aware=True, connect=True, replicaset='survey-rs', serverselectiontimeoutms=2500), 'survey_project1_test_24a58796d91c4212a9fec5197b79a630')
+
+    @pytest.mark.parametrize("operation", [
+        "archive", "grant", "revoke", "availability", "survey-patch", "question-add",
+        "question-edit", "question-delete", "question-order", "survey-publish",
+    ])
+    @pytest.mark.case("S2-22")
+    def test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes(
+        operation, api_factory, survey_factory, app, real_db,
+    ):
+        owner, receiver = api_factory(), api_factory()
+        q, version = source(owner)
+        survey = survey_factory(owner, publish=False)
+        revision = 2**63
+        payload = {"revision": revision}
+        method = "POST"
+        if operation == "archive":
+            path = f"/api/library-questions/{q['id']}/archive"
+        elif operation == "grant":
+            path = f"/api/library-questions/{q['id']}/grants"
+            payload["username"] = receiver.user["username"]
+        elif operation == "revoke":
+            grant(owner, q, receiver)
+            row = owner.get(f"/api/library-questions/{q['id']}/grants").json()["grants"][0]
+            method, path = "DELETE", f"/api/library-questions/{q['id']}/grants/{row['id']}"
+        elif operation == "availability":
+            path = f"/api/library-questions/{q['id']}/versions/{version['id']}/availability"
+            payload["selectable"] = False
+        elif operation == "survey-patch":
+            method, path = "PATCH", f"/api/surveys/{survey['id']}"
+            payload["title"] = "不得写入"
+        elif operation in {"question-add", "question-edit"}:
+            method = "POST" if operation == "question-add" else "PATCH"
+            path = f"/api/surveys/{survey['id']}/questions" + ("/q1" if method == "PATCH" else "")
+            payload["question"] = {"id": "new" if method == "POST" else "q1", **number()}
+        elif operation == "question-delete":
+            method, path = "DELETE", f"/api/surveys/{survey['id']}/questions/q1"
+        elif operation == "question-order":
+            method, path = "PUT", f"/api/surveys/{survey['id']}/question-order"
+            payload["questionIds"] = ["q1"]
+        else:
+            path = f"/api/surveys/{survey['id']}/publish"
+        before = manifest(real_db)
+        result = raw_write_without_server_reraise(app, owner, method, path, payload)
+        assert manifest(real_db) == before, "Out-of-range revision must not write any business collection"
+>       assert result.status_code == 422, f"{operation}: HTTP {result.status_code}: {result.text}"
+E       AssertionError: archive: HTTP 500: Internal Server Error
+E       assert 500 == 422
+E        +  where 500 = <Response [500 Internal Server Error]>.status_code
+
+tests/integration/test_stage2_recheck.py:368: AssertionError
+_ test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[grant] _
+
+operation = 'grant'
+api_factory = <function api_factory.<locals>.factory at 0x107d322a0>
+survey_factory = <function survey_factory.<locals>.factory at 0x107d32980>
+app = <fastapi.applications.FastAPI object at 0x107ce2420>
+real_db = Database(MongoClient(host=['localhost:27018'], document_class=dict, tz_aware=True, connect=True, replicaset='survey-rs', serverselectiontimeoutms=2500), 'survey_project1_test_911fe37ed6d94ca6918f1622c677ff7f')
+
+    @pytest.mark.parametrize("operation", [
+        "archive", "grant", "revoke", "availability", "survey-patch", "question-add",
+        "question-edit", "question-delete", "question-order", "survey-publish",
+    ])
+    @pytest.mark.case("S2-22")
+    def test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes(
+        operation, api_factory, survey_factory, app, real_db,
+    ):
+        owner, receiver = api_factory(), api_factory()
+        q, version = source(owner)
+        survey = survey_factory(owner, publish=False)
+        revision = 2**63
+        payload = {"revision": revision}
+        method = "POST"
+        if operation == "archive":
+            path = f"/api/library-questions/{q['id']}/archive"
+        elif operation == "grant":
+            path = f"/api/library-questions/{q['id']}/grants"
+            payload["username"] = receiver.user["username"]
+        elif operation == "revoke":
+            grant(owner, q, receiver)
+            row = owner.get(f"/api/library-questions/{q['id']}/grants").json()["grants"][0]
+            method, path = "DELETE", f"/api/library-questions/{q['id']}/grants/{row['id']}"
+        elif operation == "availability":
+            path = f"/api/library-questions/{q['id']}/versions/{version['id']}/availability"
+            payload["selectable"] = False
+        elif operation == "survey-patch":
+            method, path = "PATCH", f"/api/surveys/{survey['id']}"
+            payload["title"] = "不得写入"
+        elif operation in {"question-add", "question-edit"}:
+            method = "POST" if operation == "question-add" else "PATCH"
+            path = f"/api/surveys/{survey['id']}/questions" + ("/q1" if method == "PATCH" else "")
+            payload["question"] = {"id": "new" if method == "POST" else "q1", **number()}
+        elif operation == "question-delete":
+            method, path = "DELETE", f"/api/surveys/{survey['id']}/questions/q1"
+        elif operation == "question-order":
+            method, path = "PUT", f"/api/surveys/{survey['id']}/question-order"
+            payload["questionIds"] = ["q1"]
+        else:
+            path = f"/api/surveys/{survey['id']}/publish"
+        before = manifest(real_db)
+        result = raw_write_without_server_reraise(app, owner, method, path, payload)
+        assert manifest(real_db) == before, "Out-of-range revision must not write any business collection"
+>       assert result.status_code == 422, f"{operation}: HTTP {result.status_code}: {result.text}"
+E       AssertionError: grant: HTTP 500: Internal Server Error
+E       assert 500 == 422
+E        +  where 500 = <Response [500 Internal Server Error]>.status_code
+
+tests/integration/test_stage2_recheck.py:368: AssertionError
+_ test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[revoke] _
+
+operation = 'revoke'
+api_factory = <function api_factory.<locals>.factory at 0x107e2eca0>
+survey_factory = <function survey_factory.<locals>.factory at 0x107e2e980>
+app = <fastapi.applications.FastAPI object at 0x107e3fe60>
+real_db = Database(MongoClient(host=['localhost:27018'], document_class=dict, tz_aware=True, connect=True, replicaset='survey-rs', serverselectiontimeoutms=2500), 'survey_project1_test_851fa49e5a7149ac9d7310bcb64e57cd')
+
+    @pytest.mark.parametrize("operation", [
+        "archive", "grant", "revoke", "availability", "survey-patch", "question-add",
+        "question-edit", "question-delete", "question-order", "survey-publish",
+    ])
+    @pytest.mark.case("S2-22")
+    def test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes(
+        operation, api_factory, survey_factory, app, real_db,
+    ):
+        owner, receiver = api_factory(), api_factory()
+        q, version = source(owner)
+        survey = survey_factory(owner, publish=False)
+        revision = 2**63
+        payload = {"revision": revision}
+        method = "POST"
+        if operation == "archive":
+            path = f"/api/library-questions/{q['id']}/archive"
+        elif operation == "grant":
+            path = f"/api/library-questions/{q['id']}/grants"
+            payload["username"] = receiver.user["username"]
+        elif operation == "revoke":
+            grant(owner, q, receiver)
+            row = owner.get(f"/api/library-questions/{q['id']}/grants").json()["grants"][0]
+            method, path = "DELETE", f"/api/library-questions/{q['id']}/grants/{row['id']}"
+        elif operation == "availability":
+            path = f"/api/library-questions/{q['id']}/versions/{version['id']}/availability"
+            payload["selectable"] = False
+        elif operation == "survey-patch":
+            method, path = "PATCH", f"/api/surveys/{survey['id']}"
+            payload["title"] = "不得写入"
+        elif operation in {"question-add", "question-edit"}:
+            method = "POST" if operation == "question-add" else "PATCH"
+            path = f"/api/surveys/{survey['id']}/questions" + ("/q1" if method == "PATCH" else "")
+            payload["question"] = {"id": "new" if method == "POST" else "q1", **number()}
+        elif operation == "question-delete":
+            method, path = "DELETE", f"/api/surveys/{survey['id']}/questions/q1"
+        elif operation == "question-order":
+            method, path = "PUT", f"/api/surveys/{survey['id']}/question-order"
+            payload["questionIds"] = ["q1"]
+        else:
+            path = f"/api/surveys/{survey['id']}/publish"
+        before = manifest(real_db)
+        result = raw_write_without_server_reraise(app, owner, method, path, payload)
+        assert manifest(real_db) == before, "Out-of-range revision must not write any business collection"
+>       assert result.status_code == 422, f"{operation}: HTTP {result.status_code}: {result.text}"
+E       AssertionError: revoke: HTTP 500: Internal Server Error
+E       assert 500 == 422
+E        +  where 500 = <Response [500 Internal Server Error]>.status_code
+
+tests/integration/test_stage2_recheck.py:368: AssertionError
+_ test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[availability] _
+
+operation = 'availability'
+api_factory = <function api_factory.<locals>.factory at 0x107ec6980>
+survey_factory = <function survey_factory.<locals>.factory at 0x107ec7420>
+app = <fastapi.applications.FastAPI object at 0x107e21ee0>
+real_db = Database(MongoClient(host=['localhost:27018'], document_class=dict, tz_aware=True, connect=True, replicaset='survey-rs', serverselectiontimeoutms=2500), 'survey_project1_test_5345966af5224f2498ba2b0e242fb043')
+
+    @pytest.mark.parametrize("operation", [
+        "archive", "grant", "revoke", "availability", "survey-patch", "question-add",
+        "question-edit", "question-delete", "question-order", "survey-publish",
+    ])
+    @pytest.mark.case("S2-22")
+    def test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes(
+        operation, api_factory, survey_factory, app, real_db,
+    ):
+        owner, receiver = api_factory(), api_factory()
+        q, version = source(owner)
+        survey = survey_factory(owner, publish=False)
+        revision = 2**63
+        payload = {"revision": revision}
+        method = "POST"
+        if operation == "archive":
+            path = f"/api/library-questions/{q['id']}/archive"
+        elif operation == "grant":
+            path = f"/api/library-questions/{q['id']}/grants"
+            payload["username"] = receiver.user["username"]
+        elif operation == "revoke":
+            grant(owner, q, receiver)
+            row = owner.get(f"/api/library-questions/{q['id']}/grants").json()["grants"][0]
+            method, path = "DELETE", f"/api/library-questions/{q['id']}/grants/{row['id']}"
+        elif operation == "availability":
+            path = f"/api/library-questions/{q['id']}/versions/{version['id']}/availability"
+            payload["selectable"] = False
+        elif operation == "survey-patch":
+            method, path = "PATCH", f"/api/surveys/{survey['id']}"
+            payload["title"] = "不得写入"
+        elif operation in {"question-add", "question-edit"}:
+            method = "POST" if operation == "question-add" else "PATCH"
+            path = f"/api/surveys/{survey['id']}/questions" + ("/q1" if method == "PATCH" else "")
+            payload["question"] = {"id": "new" if method == "POST" else "q1", **number()}
+        elif operation == "question-delete":
+            method, path = "DELETE", f"/api/surveys/{survey['id']}/questions/q1"
+        elif operation == "question-order":
+            method, path = "PUT", f"/api/surveys/{survey['id']}/question-order"
+            payload["questionIds"] = ["q1"]
+        else:
+            path = f"/api/surveys/{survey['id']}/publish"
+        before = manifest(real_db)
+        result = raw_write_without_server_reraise(app, owner, method, path, payload)
+        assert manifest(real_db) == before, "Out-of-range revision must not write any business collection"
+>       assert result.status_code == 422, f"{operation}: HTTP {result.status_code}: {result.text}"
+E       AssertionError: availability: HTTP 500: Internal Server Error
+E       assert 500 == 422
+E        +  where 500 = <Response [500 Internal Server Error]>.status_code
+
+tests/integration/test_stage2_recheck.py:368: AssertionError
+_ test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[survey-patch] _
+
+operation = 'survey-patch'
+api_factory = <function api_factory.<locals>.factory at 0x107f6db20>
+survey_factory = <function survey_factory.<locals>.factory at 0x107f6dc60>
+app = <fastapi.applications.FastAPI object at 0x107f06540>
+real_db = Database(MongoClient(host=['localhost:27018'], document_class=dict, tz_aware=True, connect=True, replicaset='survey-rs', serverselectiontimeoutms=2500), 'survey_project1_test_538cc23bd6914b518a9c03299e6adb3b')
+
+    @pytest.mark.parametrize("operation", [
+        "archive", "grant", "revoke", "availability", "survey-patch", "question-add",
+        "question-edit", "question-delete", "question-order", "survey-publish",
+    ])
+    @pytest.mark.case("S2-22")
+    def test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes(
+        operation, api_factory, survey_factory, app, real_db,
+    ):
+        owner, receiver = api_factory(), api_factory()
+        q, version = source(owner)
+        survey = survey_factory(owner, publish=False)
+        revision = 2**63
+        payload = {"revision": revision}
+        method = "POST"
+        if operation == "archive":
+            path = f"/api/library-questions/{q['id']}/archive"
+        elif operation == "grant":
+            path = f"/api/library-questions/{q['id']}/grants"
+            payload["username"] = receiver.user["username"]
+        elif operation == "revoke":
+            grant(owner, q, receiver)
+            row = owner.get(f"/api/library-questions/{q['id']}/grants").json()["grants"][0]
+            method, path = "DELETE", f"/api/library-questions/{q['id']}/grants/{row['id']}"
+        elif operation == "availability":
+            path = f"/api/library-questions/{q['id']}/versions/{version['id']}/availability"
+            payload["selectable"] = False
+        elif operation == "survey-patch":
+            method, path = "PATCH", f"/api/surveys/{survey['id']}"
+            payload["title"] = "不得写入"
+        elif operation in {"question-add", "question-edit"}:
+            method = "POST" if operation == "question-add" else "PATCH"
+            path = f"/api/surveys/{survey['id']}/questions" + ("/q1" if method == "PATCH" else "")
+            payload["question"] = {"id": "new" if method == "POST" else "q1", **number()}
+        elif operation == "question-delete":
+            method, path = "DELETE", f"/api/surveys/{survey['id']}/questions/q1"
+        elif operation == "question-order":
+            method, path = "PUT", f"/api/surveys/{survey['id']}/question-order"
+            payload["questionIds"] = ["q1"]
+        else:
+            path = f"/api/surveys/{survey['id']}/publish"
+        before = manifest(real_db)
+        result = raw_write_without_server_reraise(app, owner, method, path, payload)
+        assert manifest(real_db) == before, "Out-of-range revision must not write any business collection"
+>       assert result.status_code == 422, f"{operation}: HTTP {result.status_code}: {result.text}"
+E       AssertionError: survey-patch: HTTP 409: {"error":{"code":"REVISION_CONFLICT","message":"问卷已被修改，请重新加载。","details":[]}}
+E       assert 409 == 422
+E        +  where 409 = <Response [409 Conflict]>.status_code
+
+tests/integration/test_stage2_recheck.py:368: AssertionError
+_ test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[question-add] _
+
+operation = 'question-add'
+api_factory = <function api_factory.<locals>.factory at 0x108063060>
+survey_factory = <function survey_factory.<locals>.factory at 0x108063600>
+app = <fastapi.applications.FastAPI object at 0x108057680>
+real_db = Database(MongoClient(host=['localhost:27018'], document_class=dict, tz_aware=True, connect=True, replicaset='survey-rs', serverselectiontimeoutms=2500), 'survey_project1_test_e1c9e8cf2aaa43659856091e7f76134c')
+
+    @pytest.mark.parametrize("operation", [
+        "archive", "grant", "revoke", "availability", "survey-patch", "question-add",
+        "question-edit", "question-delete", "question-order", "survey-publish",
+    ])
+    @pytest.mark.case("S2-22")
+    def test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes(
+        operation, api_factory, survey_factory, app, real_db,
+    ):
+        owner, receiver = api_factory(), api_factory()
+        q, version = source(owner)
+        survey = survey_factory(owner, publish=False)
+        revision = 2**63
+        payload = {"revision": revision}
+        method = "POST"
+        if operation == "archive":
+            path = f"/api/library-questions/{q['id']}/archive"
+        elif operation == "grant":
+            path = f"/api/library-questions/{q['id']}/grants"
+            payload["username"] = receiver.user["username"]
+        elif operation == "revoke":
+            grant(owner, q, receiver)
+            row = owner.get(f"/api/library-questions/{q['id']}/grants").json()["grants"][0]
+            method, path = "DELETE", f"/api/library-questions/{q['id']}/grants/{row['id']}"
+        elif operation == "availability":
+            path = f"/api/library-questions/{q['id']}/versions/{version['id']}/availability"
+            payload["selectable"] = False
+        elif operation == "survey-patch":
+            method, path = "PATCH", f"/api/surveys/{survey['id']}"
+            payload["title"] = "不得写入"
+        elif operation in {"question-add", "question-edit"}:
+            method = "POST" if operation == "question-add" else "PATCH"
+            path = f"/api/surveys/{survey['id']}/questions" + ("/q1" if method == "PATCH" else "")
+            payload["question"] = {"id": "new" if method == "POST" else "q1", **number()}
+        elif operation == "question-delete":
+            method, path = "DELETE", f"/api/surveys/{survey['id']}/questions/q1"
+        elif operation == "question-order":
+            method, path = "PUT", f"/api/surveys/{survey['id']}/question-order"
+            payload["questionIds"] = ["q1"]
+        else:
+            path = f"/api/surveys/{survey['id']}/publish"
+        before = manifest(real_db)
+        result = raw_write_without_server_reraise(app, owner, method, path, payload)
+        assert manifest(real_db) == before, "Out-of-range revision must not write any business collection"
+>       assert result.status_code == 422, f"{operation}: HTTP {result.status_code}: {result.text}"
+E       AssertionError: question-add: HTTP 409: {"error":{"code":"REVISION_CONFLICT","message":"问卷已被修改，请重新加载。","details":[]}}
+E       assert 409 == 422
+E        +  where 409 = <Response [409 Conflict]>.status_code
+
+tests/integration/test_stage2_recheck.py:368: AssertionError
+_ test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[question-edit] _
+
+operation = 'question-edit'
+api_factory = <function api_factory.<locals>.factory at 0x10801d800>
+survey_factory = <function survey_factory.<locals>.factory at 0x10801d4e0>
+app = <fastapi.applications.FastAPI object at 0x108034230>
+real_db = Database(MongoClient(host=['localhost:27018'], document_class=dict, tz_aware=True, connect=True, replicaset='survey-rs', serverselectiontimeoutms=2500), 'survey_project1_test_df44f2b936a34b858522625000f51a69')
+
+    @pytest.mark.parametrize("operation", [
+        "archive", "grant", "revoke", "availability", "survey-patch", "question-add",
+        "question-edit", "question-delete", "question-order", "survey-publish",
+    ])
+    @pytest.mark.case("S2-22")
+    def test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes(
+        operation, api_factory, survey_factory, app, real_db,
+    ):
+        owner, receiver = api_factory(), api_factory()
+        q, version = source(owner)
+        survey = survey_factory(owner, publish=False)
+        revision = 2**63
+        payload = {"revision": revision}
+        method = "POST"
+        if operation == "archive":
+            path = f"/api/library-questions/{q['id']}/archive"
+        elif operation == "grant":
+            path = f"/api/library-questions/{q['id']}/grants"
+            payload["username"] = receiver.user["username"]
+        elif operation == "revoke":
+            grant(owner, q, receiver)
+            row = owner.get(f"/api/library-questions/{q['id']}/grants").json()["grants"][0]
+            method, path = "DELETE", f"/api/library-questions/{q['id']}/grants/{row['id']}"
+        elif operation == "availability":
+            path = f"/api/library-questions/{q['id']}/versions/{version['id']}/availability"
+            payload["selectable"] = False
+        elif operation == "survey-patch":
+            method, path = "PATCH", f"/api/surveys/{survey['id']}"
+            payload["title"] = "不得写入"
+        elif operation in {"question-add", "question-edit"}:
+            method = "POST" if operation == "question-add" else "PATCH"
+            path = f"/api/surveys/{survey['id']}/questions" + ("/q1" if method == "PATCH" else "")
+            payload["question"] = {"id": "new" if method == "POST" else "q1", **number()}
+        elif operation == "question-delete":
+            method, path = "DELETE", f"/api/surveys/{survey['id']}/questions/q1"
+        elif operation == "question-order":
+            method, path = "PUT", f"/api/surveys/{survey['id']}/question-order"
+            payload["questionIds"] = ["q1"]
+        else:
+            path = f"/api/surveys/{survey['id']}/publish"
+        before = manifest(real_db)
+        result = raw_write_without_server_reraise(app, owner, method, path, payload)
+        assert manifest(real_db) == before, "Out-of-range revision must not write any business collection"
+>       assert result.status_code == 422, f"{operation}: HTTP {result.status_code}: {result.text}"
+E       AssertionError: question-edit: HTTP 409: {"error":{"code":"REVISION_CONFLICT","message":"问卷已被修改，请重新加载。","details":[]}}
+E       assert 409 == 422
+E        +  where 409 = <Response [409 Conflict]>.status_code
+
+tests/integration/test_stage2_recheck.py:368: AssertionError
+_ test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[question-delete] _
+
+operation = 'question-delete'
+api_factory = <function api_factory.<locals>.factory at 0x107d33240>
+survey_factory = <function survey_factory.<locals>.factory at 0x107d33060>
+app = <fastapi.applications.FastAPI object at 0x107f11910>
+real_db = Database(MongoClient(host=['localhost:27018'], document_class=dict, tz_aware=True, connect=True, replicaset='survey-rs', serverselectiontimeoutms=2500), 'survey_project1_test_0310db4da1694273be9498edb13c6b84')
+
+    @pytest.mark.parametrize("operation", [
+        "archive", "grant", "revoke", "availability", "survey-patch", "question-add",
+        "question-edit", "question-delete", "question-order", "survey-publish",
+    ])
+    @pytest.mark.case("S2-22")
+    def test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes(
+        operation, api_factory, survey_factory, app, real_db,
+    ):
+        owner, receiver = api_factory(), api_factory()
+        q, version = source(owner)
+        survey = survey_factory(owner, publish=False)
+        revision = 2**63
+        payload = {"revision": revision}
+        method = "POST"
+        if operation == "archive":
+            path = f"/api/library-questions/{q['id']}/archive"
+        elif operation == "grant":
+            path = f"/api/library-questions/{q['id']}/grants"
+            payload["username"] = receiver.user["username"]
+        elif operation == "revoke":
+            grant(owner, q, receiver)
+            row = owner.get(f"/api/library-questions/{q['id']}/grants").json()["grants"][0]
+            method, path = "DELETE", f"/api/library-questions/{q['id']}/grants/{row['id']}"
+        elif operation == "availability":
+            path = f"/api/library-questions/{q['id']}/versions/{version['id']}/availability"
+            payload["selectable"] = False
+        elif operation == "survey-patch":
+            method, path = "PATCH", f"/api/surveys/{survey['id']}"
+            payload["title"] = "不得写入"
+        elif operation in {"question-add", "question-edit"}:
+            method = "POST" if operation == "question-add" else "PATCH"
+            path = f"/api/surveys/{survey['id']}/questions" + ("/q1" if method == "PATCH" else "")
+            payload["question"] = {"id": "new" if method == "POST" else "q1", **number()}
+        elif operation == "question-delete":
+            method, path = "DELETE", f"/api/surveys/{survey['id']}/questions/q1"
+        elif operation == "question-order":
+            method, path = "PUT", f"/api/surveys/{survey['id']}/question-order"
+            payload["questionIds"] = ["q1"]
+        else:
+            path = f"/api/surveys/{survey['id']}/publish"
+        before = manifest(real_db)
+        result = raw_write_without_server_reraise(app, owner, method, path, payload)
+        assert manifest(real_db) == before, "Out-of-range revision must not write any business collection"
+>       assert result.status_code == 422, f"{operation}: HTTP {result.status_code}: {result.text}"
+E       AssertionError: question-delete: HTTP 409: {"error":{"code":"REVISION_CONFLICT","message":"问卷已被修改，请重新加载。","details":[]}}
+E       assert 409 == 422
+E        +  where 409 = <Response [409 Conflict]>.status_code
+
+tests/integration/test_stage2_recheck.py:368: AssertionError
+_ test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[question-order] _
+
+operation = 'question-order'
+api_factory = <function api_factory.<locals>.factory at 0x107ca65c0>
+survey_factory = <function survey_factory.<locals>.factory at 0x107ca6f20>
+app = <fastapi.applications.FastAPI object at 0x107f063f0>
+real_db = Database(MongoClient(host=['localhost:27018'], document_class=dict, tz_aware=True, connect=True, replicaset='survey-rs', serverselectiontimeoutms=2500), 'survey_project1_test_8982f0f7b1c549b4844c7789c58b6079')
+
+    @pytest.mark.parametrize("operation", [
+        "archive", "grant", "revoke", "availability", "survey-patch", "question-add",
+        "question-edit", "question-delete", "question-order", "survey-publish",
+    ])
+    @pytest.mark.case("S2-22")
+    def test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes(
+        operation, api_factory, survey_factory, app, real_db,
+    ):
+        owner, receiver = api_factory(), api_factory()
+        q, version = source(owner)
+        survey = survey_factory(owner, publish=False)
+        revision = 2**63
+        payload = {"revision": revision}
+        method = "POST"
+        if operation == "archive":
+            path = f"/api/library-questions/{q['id']}/archive"
+        elif operation == "grant":
+            path = f"/api/library-questions/{q['id']}/grants"
+            payload["username"] = receiver.user["username"]
+        elif operation == "revoke":
+            grant(owner, q, receiver)
+            row = owner.get(f"/api/library-questions/{q['id']}/grants").json()["grants"][0]
+            method, path = "DELETE", f"/api/library-questions/{q['id']}/grants/{row['id']}"
+        elif operation == "availability":
+            path = f"/api/library-questions/{q['id']}/versions/{version['id']}/availability"
+            payload["selectable"] = False
+        elif operation == "survey-patch":
+            method, path = "PATCH", f"/api/surveys/{survey['id']}"
+            payload["title"] = "不得写入"
+        elif operation in {"question-add", "question-edit"}:
+            method = "POST" if operation == "question-add" else "PATCH"
+            path = f"/api/surveys/{survey['id']}/questions" + ("/q1" if method == "PATCH" else "")
+            payload["question"] = {"id": "new" if method == "POST" else "q1", **number()}
+        elif operation == "question-delete":
+            method, path = "DELETE", f"/api/surveys/{survey['id']}/questions/q1"
+        elif operation == "question-order":
+            method, path = "PUT", f"/api/surveys/{survey['id']}/question-order"
+            payload["questionIds"] = ["q1"]
+        else:
+            path = f"/api/surveys/{survey['id']}/publish"
+        before = manifest(real_db)
+        result = raw_write_without_server_reraise(app, owner, method, path, payload)
+        assert manifest(real_db) == before, "Out-of-range revision must not write any business collection"
+>       assert result.status_code == 422, f"{operation}: HTTP {result.status_code}: {result.text}"
+E       AssertionError: question-order: HTTP 409: {"error":{"code":"REVISION_CONFLICT","message":"问卷已被修改，请重新加载。","details":[]}}
+E       assert 409 == 422
+E        +  where 409 = <Response [409 Conflict]>.status_code
+
+tests/integration/test_stage2_recheck.py:368: AssertionError
+_ test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[survey-publish] _
+
+operation = 'survey-publish'
+api_factory = <function api_factory.<locals>.factory at 0x1080656c0>
+survey_factory = <function survey_factory.<locals>.factory at 0x108064400>
+app = <fastapi.applications.FastAPI object at 0x107e22150>
+real_db = Database(MongoClient(host=['localhost:27018'], document_class=dict, tz_aware=True, connect=True, replicaset='survey-rs', serverselectiontimeoutms=2500), 'survey_project1_test_05ebf6f3edb545b6ae968f49ff9b4d6b')
+
+    @pytest.mark.parametrize("operation", [
+        "archive", "grant", "revoke", "availability", "survey-patch", "question-add",
+        "question-edit", "question-delete", "question-order", "survey-publish",
+    ])
+    @pytest.mark.case("S2-22")
+    def test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes(
+        operation, api_factory, survey_factory, app, real_db,
+    ):
+        owner, receiver = api_factory(), api_factory()
+        q, version = source(owner)
+        survey = survey_factory(owner, publish=False)
+        revision = 2**63
+        payload = {"revision": revision}
+        method = "POST"
+        if operation == "archive":
+            path = f"/api/library-questions/{q['id']}/archive"
+        elif operation == "grant":
+            path = f"/api/library-questions/{q['id']}/grants"
+            payload["username"] = receiver.user["username"]
+        elif operation == "revoke":
+            grant(owner, q, receiver)
+            row = owner.get(f"/api/library-questions/{q['id']}/grants").json()["grants"][0]
+            method, path = "DELETE", f"/api/library-questions/{q['id']}/grants/{row['id']}"
+        elif operation == "availability":
+            path = f"/api/library-questions/{q['id']}/versions/{version['id']}/availability"
+            payload["selectable"] = False
+        elif operation == "survey-patch":
+            method, path = "PATCH", f"/api/surveys/{survey['id']}"
+            payload["title"] = "不得写入"
+        elif operation in {"question-add", "question-edit"}:
+            method = "POST" if operation == "question-add" else "PATCH"
+            path = f"/api/surveys/{survey['id']}/questions" + ("/q1" if method == "PATCH" else "")
+            payload["question"] = {"id": "new" if method == "POST" else "q1", **number()}
+        elif operation == "question-delete":
+            method, path = "DELETE", f"/api/surveys/{survey['id']}/questions/q1"
+        elif operation == "question-order":
+            method, path = "PUT", f"/api/surveys/{survey['id']}/question-order"
+            payload["questionIds"] = ["q1"]
+        else:
+            path = f"/api/surveys/{survey['id']}/publish"
+        before = manifest(real_db)
+        result = raw_write_without_server_reraise(app, owner, method, path, payload)
+        assert manifest(real_db) == before, "Out-of-range revision must not write any business collection"
+>       assert result.status_code == 422, f"{operation}: HTTP {result.status_code}: {result.text}"
+E       AssertionError: survey-publish: HTTP 409: {"error":{"code":"REVISION_CONFLICT","message":"问卷已修改或已发布，请重新加载。","details":[]}}
+E       assert 409 == 422
+E        +  where 409 = <Response [409 Conflict]>.status_code
+
+tests/integration/test_stage2_recheck.py:368: AssertionError
+_ test_boundary_number_distribution_page_larger_than_bson_integer_returns_422[overview] _
+
+scope = 'overview'
+api_factory = <function api_factory.<locals>.factory at 0x107f6eb60>
+survey_factory = <function survey_factory.<locals>.factory at 0x107f825c0>
+submit_response = <function submit_response.<locals>.submit at 0x107f81d00>
+app = <fastapi.applications.FastAPI object at 0x107edca10>
+real_db = Database(MongoClient(host=['localhost:27018'], document_class=dict, tz_aware=True, connect=True, replicaset='survey-rs', serverselectiontimeoutms=2500), 'survey_project1_test_a96795d2c5a345f98844556c2b449412')
+
+    @pytest.mark.parametrize("scope", ["overview", "question"])
+    @pytest.mark.case("S2-49")
+    def test_boundary_number_distribution_page_larger_than_bson_integer_returns_422(
+        scope, api_factory, survey_factory, submit_response, app, real_db,
+    ):
+        actor = api_factory()
+        survey = survey_factory(actor, questions=[{"id": "age", **number()}])
+        assert submit_response(actor, survey, {"age": "0"}).status_code == 201
+        path = f"/api/surveys/{survey['id']}" + ("/questions/age" if scope == "question" else "") + "/statistics"
+        before = manifest(real_db)
+        with TestClient(app, raise_server_exceptions=False) as client:
+            client.cookies.update(actor.client.cookies)
+            result = client.get(path, params={"page": 2**63})
+        assert manifest(real_db) == before
+>       assert result.status_code == 422, f"{scope}: HTTP {result.status_code}: {result.text}"
+E       AssertionError: overview: HTTP 500: Internal Server Error
+E       assert 500 == 422
+E        +  where 500 = <Response [500 Internal Server Error]>.status_code
+
+tests/integration/test_stage2_recheck.py:385: AssertionError
+_ test_boundary_number_distribution_page_larger_than_bson_integer_returns_422[question] _
+
+scope = 'question'
+api_factory = <function api_factory.<locals>.factory at 0x107e2d120>
+survey_factory = <function survey_factory.<locals>.factory at 0x107e2fec0>
+submit_response = <function submit_response.<locals>.submit at 0x107e2f240>
+app = <fastapi.applications.FastAPI object at 0x107d22360>
+real_db = Database(MongoClient(host=['localhost:27018'], document_class=dict, tz_aware=True, connect=True, replicaset='survey-rs', serverselectiontimeoutms=2500), 'survey_project1_test_9c393da76a1c4af1a84183c3147926de')
+
+    @pytest.mark.parametrize("scope", ["overview", "question"])
+    @pytest.mark.case("S2-49")
+    def test_boundary_number_distribution_page_larger_than_bson_integer_returns_422(
+        scope, api_factory, survey_factory, submit_response, app, real_db,
+    ):
+        actor = api_factory()
+        survey = survey_factory(actor, questions=[{"id": "age", **number()}])
+        assert submit_response(actor, survey, {"age": "0"}).status_code == 201
+        path = f"/api/surveys/{survey['id']}" + ("/questions/age" if scope == "question" else "") + "/statistics"
+        before = manifest(real_db)
+        with TestClient(app, raise_server_exceptions=False) as client:
+            client.cookies.update(actor.client.cookies)
+            result = client.get(path, params={"page": 2**63})
+        assert manifest(real_db) == before
+>       assert result.status_code == 422, f"{scope}: HTTP {result.status_code}: {result.text}"
+E       AssertionError: question: HTTP 500: Internal Server Error
+E       assert 500 == 422
+E        +  where 500 = <Response [500 Internal Server Error]>.status_code
+
+tests/integration/test_stage2_recheck.py:385: AssertionError
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /Users/guoyuhang/Desktop/26年秋季学期/当代数据管理系统/project1/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_escaped_lone_surrogate_is_rejected_without_server_error[question-title]
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_escaped_lone_surrogate_is_rejected_without_server_error[option-label]
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_escaped_lone_surrogate_is_rejected_without_server_error[answer-text]
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[archive]
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[grant]
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[revoke]
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[availability]
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[survey-patch]
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[question-add]
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[question-edit]
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[question-delete]
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[question-order]
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_revision_larger_than_bson_integer_is_rejected_before_writes[survey-publish]
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_number_distribution_page_larger_than_bson_integer_returns_422[overview]
+FAILED tests/integration/test_stage2_recheck.py::test_boundary_number_distribution_page_larger_than_bson_integer_returns_422[question]
+15 failed, 279 deselected, 1 warning in 9.34s

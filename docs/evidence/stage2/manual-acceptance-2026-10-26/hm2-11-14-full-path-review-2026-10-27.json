@@ -1,0 +1,59 @@
+{
+  "clientDate": "2026-10-27",
+  "userMessage": "Screenshot only; no accompanying text",
+  "operator": "user",
+  "screenshotObservations": {
+    "mode": "preview; answers not formally saved",
+    "reviewQuestionCount": 4,
+    "answers": [
+      {
+        "title": "请选择填写方式",
+        "displayValue": "完整填写"
+      },
+      {
+        "title": "你希望改进哪些方面",
+        "displayValue": "课程内容、课程互动"
+      },
+      {
+        "title": "请填写你的建议",
+        "displayValue": "一二三四五六",
+        "characterCount": 6
+      },
+      {
+        "title": "你的年龄是",
+        "displayValue": "0"
+      }
+    ],
+    "visibleAction": "完成预览"
+  },
+  "supportedCases": {
+    "HM2-11": "Full path reached a four-question review",
+    "HM2-12d": "Two chosen options accepted in preview",
+    "HM2-13d": "Six-character upper boundary accepted in preview",
+    "HM2-14": "Four-answer review is visible; completion action remains unconfirmed"
+  },
+  "unconfirmedCases": [
+    "HM2-12a",
+    "HM2-12b",
+    "HM2-12c",
+    "HM2-13a",
+    "HM2-13b",
+    "HM2-13c",
+    "HM2-14 preview completion"
+  ],
+  "readOnlyChecks": {
+    "surveyStillDraft": true,
+    "definitionUnchanged": true,
+    "formalResponseCount": 0
+  },
+  "survey": {
+    "id": "6adf783d0dc4b0dea638677f",
+    "status": "draft",
+    "revision": 6
+  },
+  "businessWritesByAi": 0,
+  "screenshot": {
+    "path": "hm2-14-full-path-review-2026-10-27.png",
+    "sha256": "09e4cc3c57a844fad208d821daae775f2a1efe23dcc144a889de3428700967bb"
+  }
+}

@@ -6,7 +6,7 @@
     "-ra",
     "tests",
     "-q",
-    "--junitxml=<LOCAL_PROJECT_ROOT>/docs/evidence/stage1/final-review-2026-10-22/pytest.xml"
+    "--junitxml=/Users/guoyuhang/Desktop/26年秋季学期/当代数据管理系统/project1/docs/evidence/stage1/final-review-2026-10-22/pytest.xml"
   ],
   "exitCode": 0,
   "durationSeconds": 13.466,

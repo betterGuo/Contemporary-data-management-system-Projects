@@ -1,0 +1,24 @@
+{
+  "clientDate": "2026-10-27",
+  "userFeedback": "没找到回答效验",
+  "source": "user supplied screenshot",
+  "screenshot": "hm2-05b-type-selection-2026-10-27.png",
+  "sha256": "07baa1dedb86dd2a20bed506d33f963926c1fd01da93cc7e3eebcba0d406e898",
+  "observed": {
+    "currentQuestionNumber": 2,
+    "currentQuestionTypeLabel": "单选题",
+    "newQuestionTypeSelector": "多选题",
+    "title": "你希望改进哪些方面",
+    "optionLabels": [
+      "课程内容",
+      "课程互动",
+      "作业反馈"
+    ],
+    "requiredChecked": true,
+    "saveStatus": "有未保存的修改",
+    "visibleValidationSection": false
+  },
+  "interpretation": "Existing question is single choice. The left type selector controls subsequent addition, not conversion of the existing instance. Single choice intentionally has no selection-count validation. The screenshot does not establish the exact prior click order. HM2-05b remains incomplete.",
+  "nextUserStep": "Delete only the current second question using the question-card upper-right delete control; choose multiple then add, verify 02/多选题, fill planned labels and exact2, save and refresh.",
+  "businessWritesByAi": 0
+}

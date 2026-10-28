@@ -1,0 +1,31 @@
+{
+  "executedAt": "2026-10-26T15:18:07.609501+00:00",
+  "database": "survey_project1",
+  "businessBsonIndexesValidatorsUnchanged": true,
+  "actualStatisticsUnchanged": true,
+  "collections": {
+    "admin_audit": 1,
+    "operation_receipts": 4,
+    "question_bookmarks": 27,
+    "question_grants": 1,
+    "question_usage": 29,
+    "question_version_state": 27,
+    "question_versions": 27,
+    "questions": 27,
+    "responses": 36,
+    "schema_migrations": 2,
+    "surveys": 10,
+    "users": 12
+  },
+  "temporaryTestDatabases": [
+    "survey_project1_test_59b9b776e03b49118943bc6939acc881"
+  ],
+  "originalDatabaseCollections": {
+    "responses": 33,
+    "schema_migrations": 1,
+    "surveys": 8,
+    "users": 9
+  },
+  "originalArchiveUnchanged": true,
+  "sessionsExcluded": true
+}

@@ -1,0 +1,1257 @@
+{
+  "collections": {
+    "admin_audit": {
+      "count": 1,
+      "bsonSha256": "21846db7efe805f1b9efe0fc0233ba1210a8eb3622729e64f3bc3bf38cf00e63",
+      "indexes": [
+        {
+          "v": 2,
+          "key": {
+            "_id": 1
+          },
+          "name": "_id_"
+        }
+      ],
+      "options": {}
+    },
+    "operation_receipts": {
+      "count": 4,
+      "bsonSha256": "76f7d33b2a32a4b023f17b0dd93ff3bccf09ed037258ec49400b9db87fcf2d71",
+      "indexes": [
+        {
+          "v": 2,
+          "key": {
+            "_id": 1
+          },
+          "name": "_id_"
+        },
+        {
+          "v": 2,
+          "key": {
+            "actorId": 1,
+            "operation": 1,
+            "requestKey": 1
+          },
+          "name": "operation_idempotency",
+          "unique": true
+        }
+      ],
+      "options": {
+        "validator": {
+          "$jsonSchema": {
+            "bsonType": "object",
+            "properties": {
+              "actorId": {
+                "bsonType": "objectId"
+              },
+              "operation": {
+                "bsonType": "string"
+              },
+              "requestKey": {
+                "bsonType": "string"
+              },
+              "payloadHash": {
+                "bsonType": "string"
+              },
+              "result": {
+                "bsonType": "object"
+              }
+            },
+            "required": [
+              "actorId",
+              "operation",
+              "requestKey",
+              "payloadHash",
+              "result"
+            ]
+          }
+        },
+        "validationLevel": "strict",
+        "validationAction": "error"
+      }
+    },
+    "question_bookmarks": {
+      "count": 27,
+      "bsonSha256": "6c9cb90a207e13fe0107af38d5358106535a98f63016c1aeeeca1e6f018091c2",
+      "indexes": [
+        {
+          "v": 2,
+          "key": {
+            "_id": 1
+          },
+          "name": "_id_"
+        },
+        {
+          "v": 2,
+          "key": {
+            "userId": 1,
+            "questionId": 1
+          },
+          "name": "bookmark_unique",
+          "unique": true
+        },
+        {
+          "v": 2,
+          "key": {
+            "userId": 1,
+            "tags": 1
+          },
+          "name": "personal_tags"
+        }
+      ],
+      "options": {
+        "validator": {
+          "$jsonSchema": {
+            "bsonType": "object",
+            "properties": {
+              "userId": {
+                "bsonType": "objectId"
+              },
+              "questionId": {
+                "bsonType": "objectId"
+              },
+              "tags": {
+                "bsonType": "array",
+                "items": {
+                  "bsonType": "string"
+                }
+              }
+            },
+            "required": [
+              "userId",
+              "questionId",
+              "tags"
+            ]
+          }
+        },
+        "validationLevel": "strict",
+        "validationAction": "error"
+      }
+    },
+    "question_grants": {
+      "count": 1,
+      "bsonSha256": "5482cf30e3abb744081603396f885697b8242546ec7292a6ff367da47d51f3dc",
+      "indexes": [
+        {
+          "v": 2,
+          "key": {
+            "_id": 1
+          },
+          "name": "_id_"
+        },
+        {
+          "v": 2,
+          "key": {
+            "questionId": 1,
+            "granteeId": 1
+          },
+          "name": "grant_unique",
+          "unique": true
+        },
+        {
+          "v": 2,
+          "key": {
+            "granteeId": 1,
+            "active": 1
+          },
+          "name": "received_grants"
+        }
+      ],
+      "options": {
+        "validator": {
+          "$jsonSchema": {
+            "bsonType": "object",
+            "properties": {
+              "questionId": {
+                "bsonType": "objectId"
+              },
+              "granteeId": {
+                "bsonType": "objectId"
+              },
+              "active": {
+                "bsonType": "bool"
+              },
+              "revision": {
+                "bsonType": [
+                  "int",
+                  "long"
+                ]
+              }
+            },
+            "required": [
+              "questionId",
+              "granteeId",
+              "active",
+              "revision"
+            ]
+          }
+        },
+        "validationLevel": "strict",
+        "validationAction": "error"
+      }
+    },
+    "question_usage": {
+      "count": 29,
+      "bsonSha256": "a4ab419218c37532b8e71a98072ce7347af2ceaa222b3e2dc62e3858830cd23b",
+      "indexes": [
+        {
+          "v": 2,
+          "key": {
+            "_id": 1
+          },
+          "name": "_id_"
+        },
+        {
+          "v": 2,
+          "key": {
+            "questionId": 1,
+            "surveyOwnerId": 1,
+            "surveyId": 1
+          },
+          "name": "question_usage_counts"
+        },
+        {
+          "v": 2,
+          "key": {
+            "surveyId": 1,
+            "surveyDefinitionVersion": 1,
+            "instanceId": 1,
+            "versionId": 1
+          },
+          "name": "usage_unique",
+          "unique": true
+        },
+        {
+          "v": 2,
+          "key": {
+            "versionId": 1,
+            "surveyId": 1
+          },
+          "name": "version_usage"
+        }
+      ],
+      "options": {
+        "validator": {
+          "$jsonSchema": {
+            "bsonType": "object",
+            "properties": {
+              "surveyId": {
+                "bsonType": "objectId"
+              },
+              "surveyDefinitionVersion": {
+                "bsonType": [
+                  "int",
+                  "long"
+                ]
+              },
+              "instanceId": {
+                "bsonType": "string"
+              },
+              "questionId": {
+                "bsonType": "objectId"
+              },
+              "versionId": {
+                "bsonType": "objectId"
+              },
+              "rootQuestionId": {
+                "bsonType": "objectId"
+              },
+              "surveyOwnerId": {
+                "bsonType": "objectId"
+              },
+              "isCurrent": {
+                "bsonType": "bool"
+              }
+            },
+            "required": [
+              "surveyId",
+              "surveyDefinitionVersion",
+              "instanceId",
+              "questionId",
+              "versionId",
+              "rootQuestionId",
+              "surveyOwnerId",
+              "isCurrent"
+            ]
+          }
+        },
+        "validationLevel": "strict",
+        "validationAction": "error"
+      }
+    },
+    "question_version_state": {
+      "count": 27,
+      "bsonSha256": "4a089fb82fc2bbc78520d38e28a48f8556956773f792c1a3c5757c767d995ca4",
+      "indexes": [
+        {
+          "v": 2,
+          "key": {
+            "_id": 1
+          },
+          "name": "_id_"
+        },
+        {
+          "v": 2,
+          "key": {
+            "versionId": 1
+          },
+          "name": "version_state_unique",
+          "unique": true
+        }
+      ],
+      "options": {
+        "validator": {
+          "$jsonSchema": {
+            "bsonType": "object",
+            "properties": {
+              "versionId": {
+                "bsonType": "objectId"
+              },
+              "selectable": {
+                "bsonType": "bool"
+              },
+              "revision": {
+                "bsonType": [
+                  "int",
+                  "long"
+                ]
+              }
+            },
+            "required": [
+              "versionId",
+              "selectable",
+              "revision"
+            ]
+          }
+        },
+        "validationLevel": "strict",
+        "validationAction": "error"
+      }
+    },
+    "question_versions": {
+      "count": 27,
+      "bsonSha256": "3b6777360d3dc02333ad38413ef15f00cf7bccbe2e23076175e8693985798940",
+      "indexes": [
+        {
+          "v": 2,
+          "key": {
+            "_id": 1
+          },
+          "name": "_id_"
+        },
+        {
+          "v": 2,
+          "key": {
+            "derivedFromVersionId": 1
+          },
+          "name": "direct_version_source"
+        },
+        {
+          "v": 2,
+          "key": {
+            "questionId": 1,
+            "versionNumber": 1
+          },
+          "name": "question_version_unique",
+          "unique": true
+        }
+      ],
+      "options": {
+        "validator": {
+          "$jsonSchema": {
+            "bsonType": "object",
+            "properties": {
+              "questionId": {
+                "bsonType": "objectId"
+              },
+              "versionNumber": {
+                "bsonType": [
+                  "int",
+                  "long"
+                ]
+              },
+              "content": {
+                "bsonType": "object"
+              },
+              "contentHash": {
+                "bsonType": "string"
+              }
+            },
+            "required": [
+              "questionId",
+              "versionNumber",
+              "content",
+              "contentHash"
+            ]
+          }
+        },
+        "validationLevel": "strict",
+        "validationAction": "error"
+      }
+    },
+    "questions": {
+      "count": 27,
+      "bsonSha256": "094f9fad4bbd72ca258e1a905d118221312646c47e809e82600aa25e57406ebc",
+      "indexes": [
+        {
+          "v": 2,
+          "key": {
+            "_id": 1
+          },
+          "name": "_id_"
+        },
+        {
+          "v": 2,
+          "key": {
+            "legacyOriginKey": 1
+          },
+          "name": "legacy_origin_unique",
+          "unique": true,
+          "partialFilterExpression": {
+            "legacyOriginKey": {
+              "$type": "string"
+            }
+          }
+        },
+        {
+          "v": 2,
+          "key": {
+            "ownerId": 1,
+            "status": 1,
+            "updatedAt": -1,
+            "_id": -1
+          },
+          "name": "owner_library"
+        },
+        {
+          "v": 2,
+          "key": {
+            "publicCode": 1
+          },
+          "name": "public_code_unique",
+          "unique": true,
+          "partialFilterExpression": {
+            "publicCode": {
+              "$type": "string"
+            }
+          }
+        },
+        {
+          "v": 2,
+          "key": {
+            "visibility": 1,
+            "status": 1,
+            "updatedAt": -1
+          },
+          "name": "public_library"
+        },
+        {
+          "v": 2,
+          "key": {
+            "rootQuestionId": 1
+          },
+          "name": "question_lineage"
+        }
+      ],
+      "options": {
+        "validator": {
+          "$jsonSchema": {
+            "bsonType": "object",
+            "properties": {
+              "ownerId": {
+                "bsonType": "objectId"
+              },
+              "rootQuestionId": {
+                "bsonType": "objectId"
+              },
+              "workingContent": {
+                "bsonType": "object"
+              },
+              "visibility": {
+                "enum": [
+                  "private",
+                  "public"
+                ]
+              },
+              "status": {
+                "enum": [
+                  "active",
+                  "archived"
+                ]
+              },
+              "revision": {
+                "bsonType": [
+                  "int",
+                  "long"
+                ]
+              },
+              "latestVersionNumber": {
+                "bsonType": [
+                  "int",
+                  "long"
+                ]
+              },
+              "hasPublishedUsage": {
+                "bsonType": "bool"
+              }
+            },
+            "required": [
+              "ownerId",
+              "rootQuestionId",
+              "workingContent",
+              "visibility",
+              "status",
+              "revision",
+              "latestVersionNumber",
+              "hasPublishedUsage"
+            ]
+          }
+        },
+        "validationLevel": "strict",
+        "validationAction": "error"
+      }
+    },
+    "responses": {
+      "count": 36,
+      "bsonSha256": "ac13b00c6e5528b72c7f44dbb8af17c1af3094f8aa6153298bfdf7259f34abe1",
+      "indexes": [
+        {
+          "v": 2,
+          "key": {
+            "_id": 1
+          },
+          "name": "_id_"
+        },
+        {
+          "v": 2,
+          "key": {
+            "surveyId": 1,
+            "surveyDefinitionVersion": 1,
+            "submittedAt": 1,
+            "_id": 1
+          },
+          "name": "definition_responses"
+        },
+        {
+          "v": 2,
+          "key": {
+            "surveyId": 1,
+            "respondentKey": 1
+          },
+          "name": "single_response_per_user",
+          "unique": true,
+          "partialFilterExpression": {
+            "repeatMode": "single"
+          }
+        },
+        {
+          "v": 2,
+          "key": {
+            "surveyId": 1,
+            "respondentKey": 1,
+            "submissionKey": 1
+          },
+          "name": "submission_idempotency",
+          "unique": true
+        },
+        {
+          "v": 2,
+          "key": {
+            "surveyId": 1,
+            "submittedAt": 1,
+            "_id": 1
+          },
+          "name": "survey_responses"
+        }
+      ],
+      "options": {
+        "validator": {
+          "$jsonSchema": {
+            "bsonType": "object",
+            "required": [
+              "surveyId",
+              "surveyDefinitionVersion",
+              "respondentKey",
+              "repeatMode",
+              "submissionKey",
+              "payloadHash",
+              "visitedQuestionIds",
+              "answers",
+              "submittedAt",
+              "admittedAt",
+              "schemaVersion"
+            ],
+            "properties": {
+              "surveyId": {
+                "bsonType": "objectId"
+              },
+              "surveyDefinitionVersion": {
+                "bsonType": "int"
+              },
+              "respondentKey": {
+                "bsonType": "string"
+              },
+              "repeatMode": {
+                "enum": [
+                  "single",
+                  "multiple"
+                ]
+              },
+              "submissionKey": {
+                "bsonType": "string"
+              },
+              "payloadHash": {
+                "bsonType": "string"
+              },
+              "answers": {
+                "bsonType": "array"
+              },
+              "visitedQuestionIds": {
+                "bsonType": "array"
+              },
+              "submittedAt": {
+                "bsonType": "date"
+              },
+              "admittedAt": {
+                "bsonType": "date"
+              },
+              "schemaVersion": {
+                "bsonType": "int"
+              }
+            }
+          }
+        },
+        "validationLevel": "strict",
+        "validationAction": "error"
+      }
+    },
+    "schema_migrations": {
+      "count": 2,
+      "bsonSha256": "d7d09eb784b58d99c0935bdaaffc84ec8928a13c8058d13d97fc441d6c359b4a",
+      "indexes": [
+        {
+          "v": 2,
+          "key": {
+            "_id": 1
+          },
+          "name": "_id_"
+        }
+      ],
+      "options": {}
+    },
+    "surveys": {
+      "count": 10,
+      "bsonSha256": "9139b4bb8b2606f284363f57fb153c6f4ad6adf85935dee3092308038f8eb2c1",
+      "indexes": [
+        {
+          "v": 2,
+          "key": {
+            "_id": 1
+          },
+          "name": "_id_"
+        },
+        {
+          "v": 2,
+          "key": {
+            "ownerId": 1,
+            "questionRefs.questionId": 1
+          },
+          "name": "owner_question_instances"
+        },
+        {
+          "v": 2,
+          "key": {
+            "ownerId": 1,
+            "createdAt": -1,
+            "_id": -1
+          },
+          "name": "owner_recent"
+        },
+        {
+          "v": 2,
+          "key": {
+            "ownerId": 1,
+            "questionRefs.questionVersionId": 1
+          },
+          "name": "owner_version_instances"
+        },
+        {
+          "v": 2,
+          "key": {
+            "publicId": 1
+          },
+          "name": "public_id_unique",
+          "unique": true
+        }
+      ],
+      "options": {
+        "validator": {
+          "$jsonSchema": {
+            "bsonType": "object",
+            "required": [
+              "ownerId",
+              "publicId",
+              "title",
+              "status",
+              "questions",
+              "revision",
+              "definitionVersion",
+              "schemaVersion"
+            ],
+            "properties": {
+              "ownerId": {
+                "bsonType": "objectId"
+              },
+              "publicId": {
+                "bsonType": "string"
+              },
+              "title": {
+                "bsonType": "string"
+              },
+              "status": {
+                "enum": [
+                  "draft",
+                  "published",
+                  "closed"
+                ]
+              },
+              "questions": {
+                "bsonType": "array"
+              },
+              "revision": {
+                "bsonType": "int"
+              },
+              "definitionVersion": {
+                "bsonType": "int"
+              },
+              "schemaVersion": {
+                "bsonType": "int"
+              },
+              "closesAt": {
+                "bsonType": [
+                  "date",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "validationLevel": "strict",
+        "validationAction": "error"
+      }
+    },
+    "users": {
+      "count": 12,
+      "bsonSha256": "40b872d14b2f6544a0415a7272f42680263507e8d3ae6a28b87f119cdf39624d",
+      "indexes": [
+        {
+          "v": 2,
+          "key": {
+            "_id": 1
+          },
+          "name": "_id_"
+        },
+        {
+          "v": 2,
+          "key": {
+            "usernameNormalized": 1
+          },
+          "name": "username_unique",
+          "unique": true
+        }
+      ],
+      "options": {
+        "validator": {
+          "$jsonSchema": {
+            "bsonType": "object",
+            "required": [
+              "username",
+              "usernameNormalized",
+              "passwordHash",
+              "createdAt",
+              "schemaVersion"
+            ],
+            "properties": {
+              "username": {
+                "bsonType": "string"
+              },
+              "usernameNormalized": {
+                "bsonType": "string"
+              },
+              "passwordHash": {
+                "bsonType": "string"
+              },
+              "createdAt": {
+                "bsonType": "date"
+              },
+              "schemaVersion": {
+                "bsonType": "int"
+              }
+            }
+          }
+        },
+        "validationLevel": "strict",
+        "validationAction": "error"
+      }
+    }
+  },
+  "statistics": [
+    {
+      "surveyId": "6ad707abb81ded364c246b7e",
+      "definitionVersion": 1,
+      "kind": "current",
+      "statisticsSha256": "12e37f6af15ba61e14c87e89b7a0ed2df089157b7a9bb4acdca7199e7f243569",
+      "submissionCount": 4,
+      "respondentCount": 4,
+      "questions": [
+        {
+          "instanceId": "stage",
+          "type": "single",
+          "answerCount": 4,
+          "average": null,
+          "optionCounts": [
+            {
+              "id": "A",
+              "count": 3
+            },
+            {
+              "id": "B",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "instanceId": "places",
+          "type": "multiple",
+          "answerCount": 4,
+          "average": null,
+          "optionCounts": [
+            {
+              "id": "X",
+              "count": 2
+            },
+            {
+              "id": "Y",
+              "count": 4
+            },
+            {
+              "id": "Z",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "instanceId": "age",
+          "type": "number",
+          "answerCount": 4,
+          "average": "60",
+          "optionCounts": []
+        },
+        {
+          "instanceId": "comment",
+          "type": "text",
+          "answerCount": 4,
+          "average": null,
+          "optionCounts": []
+        }
+      ]
+    },
+    {
+      "surveyId": "6ad707abb81ded364c246b83",
+      "definitionVersion": 1,
+      "kind": "current",
+      "statisticsSha256": "8b068a9895d4b4f017eb7ade077bee3189d3f31cf9c00753e0844d380e48b71b",
+      "submissionCount": 0,
+      "respondentCount": 0,
+      "questions": [
+        {
+          "instanceId": "q1",
+          "type": "single",
+          "answerCount": 0,
+          "average": null,
+          "optionCounts": [
+            {
+              "id": "yes",
+              "count": 0
+            },
+            {
+              "id": "no",
+              "count": 0
+            }
+          ]
+        },
+        {
+          "instanceId": "q2",
+          "type": "multiple",
+          "answerCount": 0,
+          "average": null,
+          "optionCounts": [
+            {
+              "id": "tech",
+              "count": 0
+            },
+            {
+              "id": "art",
+              "count": 0
+            },
+            {
+              "id": "sport",
+              "count": 0
+            }
+          ]
+        },
+        {
+          "instanceId": "q3",
+          "type": "text",
+          "answerCount": 0,
+          "average": null,
+          "optionCounts": []
+        },
+        {
+          "instanceId": "q4",
+          "type": "number",
+          "answerCount": 0,
+          "average": null,
+          "optionCounts": []
+        },
+        {
+          "instanceId": "q5",
+          "type": "text",
+          "answerCount": 0,
+          "average": null,
+          "optionCounts": []
+        },
+        {
+          "instanceId": "q6",
+          "type": "single",
+          "answerCount": 0,
+          "average": null,
+          "optionCounts": [
+            {
+              "id": "ok",
+              "count": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surveyId": "6ad707abb81ded364c246b84",
+      "definitionVersion": 1,
+      "kind": "current",
+      "statisticsSha256": "bc707df64f80b5f6144b3281ac46b92e061269c8cae9ba6ff4236da5be1ade43",
+      "submissionCount": 0,
+      "respondentCount": 0,
+      "questions": [
+        {
+          "instanceId": "answer",
+          "type": "single",
+          "answerCount": 0,
+          "average": null,
+          "optionCounts": [
+            {
+              "id": "A",
+              "count": 0
+            },
+            {
+              "id": "B",
+              "count": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surveyId": "6ad707abb81ded364c246b85",
+      "definitionVersion": 1,
+      "kind": "current",
+      "statisticsSha256": "3495d844e39178a54dc61cdcf3884eac4b4205e2259f068f5fc8b5037adb1c98",
+      "submissionCount": 2,
+      "respondentCount": 1,
+      "questions": [
+        {
+          "instanceId": "answer",
+          "type": "single",
+          "answerCount": 2,
+          "average": null,
+          "optionCounts": [
+            {
+              "id": "A",
+              "count": 1
+            },
+            {
+              "id": "B",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surveyId": "6ad7082776296ade1e15a0db",
+      "definitionVersion": 1,
+      "kind": "current",
+      "statisticsSha256": "6ef69e8a0e19708cbe21c5357097cb760259c24ae71e664bb788a621183bf446",
+      "submissionCount": 2,
+      "respondentCount": 1,
+      "questions": [
+        {
+          "instanceId": "875f8874-ac44-48ca-8553-e0d779a67ca4",
+          "type": "single",
+          "answerCount": 2,
+          "average": null,
+          "optionCounts": [
+            {
+              "id": "757aba42-6659-43e5-954c-5e1a178b5c79",
+              "count": 1
+            },
+            {
+              "id": "c66850de-efdf-437c-8a6d-3dec2a00bf36",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "instanceId": "deabcc68-a0af-435a-9a59-af2fd7f893ce",
+          "type": "multiple",
+          "answerCount": 1,
+          "average": null,
+          "optionCounts": [
+            {
+              "id": "6e7acb57-6d6e-4eea-8e98-e7adc349c534",
+              "count": 1
+            },
+            {
+              "id": "3320cf1e-81b9-4be3-a2df-852621eb5987",
+              "count": 1
+            },
+            {
+              "id": "6098d83b-b7ea-4ed4-b0c6-e27e702e20e0",
+              "count": 0
+            }
+          ]
+        },
+        {
+          "instanceId": "af4c11a4-fb8b-4f5c-bec1-074554744280",
+          "type": "number",
+          "answerCount": 1,
+          "average": "3",
+          "optionCounts": []
+        },
+        {
+          "instanceId": "8093858f-690f-431d-97f1-5ba5c710d7a1",
+          "type": "text",
+          "answerCount": 1,
+          "average": null,
+          "optionCounts": []
+        }
+      ]
+    },
+    {
+      "surveyId": "6ad708ee76296ade1e15a0e3",
+      "definitionVersion": 1,
+      "kind": "current",
+      "statisticsSha256": "23633bb192fd0423c8eb7e7e0081410f9be17ba5ba1589ad407b9bee9c431c9c",
+      "submissionCount": 21,
+      "respondentCount": 1,
+      "questions": [
+        {
+          "instanceId": "bc1460ff-0dd0-4c69-b07a-f33002478263",
+          "type": "text",
+          "answerCount": 21,
+          "average": null,
+          "optionCounts": []
+        }
+      ]
+    },
+    {
+      "surveyId": "6ad9e1187c4b0ea9d9a3c5f3",
+      "definitionVersion": 1,
+      "kind": "current",
+      "statisticsSha256": "32e4e4d4f802e4a2792a7f6747d396ba96635468b6e4552dbaa3d326e703edb9",
+      "submissionCount": 3,
+      "respondentCount": 1,
+      "questions": [
+        {
+          "instanceId": "0d268a19-86ca-489a-bb1d-6f77eaa15d66",
+          "type": "single",
+          "answerCount": 3,
+          "average": null,
+          "optionCounts": [
+            {
+              "id": "693d8a5c-30fe-404d-aa93-dad4f8741433",
+              "count": 2
+            },
+            {
+              "id": "a47743ca-b360-4481-b655-174c91f1ff73",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "instanceId": "a96e7700-6fd7-4973-8c4f-2de3e25fb84c",
+          "type": "multiple",
+          "answerCount": 2,
+          "average": null,
+          "optionCounts": [
+            {
+              "id": "36d1ca05-0f28-436d-8ae4-9679d8ce97f9",
+              "count": 1
+            },
+            {
+              "id": "1f6dfbac-39c6-4cb6-9220-fd56726bef22",
+              "count": 2
+            },
+            {
+              "id": "6f63771f-33bf-4033-b489-39fa35e86afb",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "instanceId": "88bc8c80-0134-4bd3-b75d-145c08173665",
+          "type": "text",
+          "answerCount": 2,
+          "average": null,
+          "optionCounts": []
+        },
+        {
+          "instanceId": "06e8e490-b7c0-44c0-b988-9cda4c45192a",
+          "type": "text",
+          "answerCount": 3,
+          "average": null,
+          "optionCounts": []
+        }
+      ]
+    },
+    {
+      "surveyId": "6ad9ee9526858a1e0ce1a370",
+      "definitionVersion": 1,
+      "kind": "current",
+      "statisticsSha256": "e54b63e7592b5b0b2ce58a9a7f2b2beee675aa17ba4a7fade06986e49d757e93",
+      "submissionCount": 1,
+      "respondentCount": 1,
+      "questions": [
+        {
+          "instanceId": "0d268a19-86ca-489a-bb1d-6f77eaa15d66",
+          "type": "single",
+          "answerCount": 1,
+          "average": null,
+          "optionCounts": [
+            {
+              "id": "693d8a5c-30fe-404d-aa93-dad4f8741433",
+              "count": 0
+            },
+            {
+              "id": "a47743ca-b360-4481-b655-174c91f1ff73",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "instanceId": "a96e7700-6fd7-4973-8c4f-2de3e25fb84c",
+          "type": "multiple",
+          "answerCount": 0,
+          "average": null,
+          "optionCounts": [
+            {
+              "id": "36d1ca05-0f28-436d-8ae4-9679d8ce97f9",
+              "count": 0
+            },
+            {
+              "id": "1f6dfbac-39c6-4cb6-9220-fd56726bef22",
+              "count": 0
+            },
+            {
+              "id": "6f63771f-33bf-4033-b489-39fa35e86afb",
+              "count": 0
+            }
+          ]
+        },
+        {
+          "instanceId": "88bc8c80-0134-4bd3-b75d-145c08173665",
+          "type": "text",
+          "answerCount": 0,
+          "average": null,
+          "optionCounts": []
+        },
+        {
+          "instanceId": "06e8e490-b7c0-44c0-b988-9cda4c45192a",
+          "type": "number",
+          "answerCount": 1,
+          "average": "110",
+          "optionCounts": []
+        }
+      ]
+    },
+    {
+      "surveyId": "6adf63f4fe2ea037bcd08e5d",
+      "definitionVersion": 1,
+      "kind": "current",
+      "statisticsSha256": "436fba506980395ea34dc69ee3a02c6b8f184ea13f4e4492aa32362dc19e61f1",
+      "submissionCount": 2,
+      "respondentCount": 2,
+      "questions": [
+        {
+          "instanceId": "ec86be97-31f3-4198-9903-2223bd5ce7e0",
+          "type": "number",
+          "answerCount": 2,
+          "average": "10",
+          "optionCounts": []
+        },
+        {
+          "instanceId": "7a8e5366-a13e-470b-928a-4bee1611ed55",
+          "type": "single",
+          "answerCount": 2,
+          "average": null,
+          "optionCounts": [
+            {
+              "id": "yes",
+              "count": 1
+            },
+            {
+              "id": "no",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "surveyId": "6adf63f4fe2ea037bcd08e60",
+      "definitionVersion": 1,
+      "kind": "current",
+      "statisticsSha256": "d6d1c2baa2b24f29ec73472c0c5c534c70a41c61361e5f1ec2fcf62106dcff8c",
+      "submissionCount": 1,
+      "respondentCount": 1,
+      "questions": [
+        {
+          "instanceId": "2d17c8af-22d0-43e2-9fb0-eb2a559a4b60",
+          "type": "number",
+          "answerCount": 1,
+          "average": "40",
+          "optionCounts": []
+        },
+        {
+          "instanceId": "15b47855-8aa0-4ac2-95dd-beff4196e1c3",
+          "type": "single",
+          "answerCount": 1,
+          "average": null,
+          "optionCounts": [
+            {
+              "id": "yes",
+              "count": 1
+            },
+            {
+              "id": "no",
+              "count": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sessionsExcluded": true,
+  "database": "survey_project1",
+  "topology": "survey-rs"
+}

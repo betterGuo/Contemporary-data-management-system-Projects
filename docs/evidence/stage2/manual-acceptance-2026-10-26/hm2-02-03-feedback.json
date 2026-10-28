@@ -1,0 +1,35 @@
+{
+  "clientDate": "2026-10-26",
+  "userFeedback": "均成功",
+  "operator": "user",
+  "cases": {
+    "HM2-02a": {
+      "status": "passed",
+      "evidenceSource": "user feedback; no screenshot supplied"
+    },
+    "HM2-02b": {
+      "status": "passed",
+      "evidenceSource": "user feedback; no screenshot supplied"
+    },
+    "HM2-03": {
+      "status": "passed",
+      "evidenceSource": "user feedback; no screenshot supplied"
+    }
+  },
+  "readOnlyDraftCheck": [
+    {
+      "surveyId": "6adf783d0dc4b0dea638677f",
+      "title": "第二阶段手测_1026_基础流程",
+      "description": "用于验证四种题型、跳转、校验、提交与统计",
+      "status": "draft",
+      "questionCount": 0,
+      "revision": 1,
+      "definitionVersion": 1,
+      "allowMultipleSubmissions": false
+    }
+  ],
+  "matchingDraftCount": 1,
+  "businessWritesByAi": 0,
+  "passwordStored": false,
+  "readOnlyDraftConfigurationMatches": true
+}

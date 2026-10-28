@@ -1,0 +1,102 @@
+{
+  "startedAt": "2026-10-22T13:02:08.408059+00:00",
+  "finishedAt": "2026-10-22T13:02:10.184903+00:00",
+  "scope": "Existing questionnaire lifecycle, deadline and optimistic concurrency checks; no implementation changes",
+  "databaseScope": "Generated survey_project1_test_<uuid> databases; main database not modified",
+  "targets": [
+    "tests/integration/test_auth_and_surveys.py::test_create_add_four_question_types_and_independent_constraints",
+    "tests/integration/test_auth_and_surveys.py::test_lifecycle_empty_publish_draft_visibility_frozen_content_and_idempotent_close",
+    "tests/integration/test_auth_and_surveys.py::test_deadline_already_passed_prevents_publication",
+    "tests/integration/test_auth_and_surveys.py::test_two_writers_with_same_revision_cannot_silently_overwrite",
+    "tests/integration/test_responses_and_concurrency.py::test_deadline_before_at_after_and_open_page_does_not_reserve_submission",
+    "tests/integration/test_responses_and_concurrency.py::test_page_opened_before_manual_close_cannot_create_new_submission",
+    "tests/integration/test_responses_and_concurrency.py::test_close_allows_an_already_admitted_inflight_insert_to_finish"
+  ],
+  "exitCode": 0,
+  "summary": {
+    "passed": 7,
+    "failed": 0,
+    "skipped": 0
+  },
+  "sourceSha256": {
+    "app/services/survey_service.py": "0019f5ec7e9bce18f33b50848975f09ba24029edd805cf458a51778ffefc0ae2",
+    "app/api/surveys.py": "22c413648a7935f0f9dace1ea78ecee091fcc4d5cbc94131f79ff6af208b3123",
+    "app/repositories/surveys.py": "24983a344ac748f10791871243cc4eb905ecc0441415f4295d7b841053064fc2",
+    "app/services/response_service.py": "5855b5471fc10c47a1f4e99575cb8904805408cb7c31f62f8697c5bc970ea1ff",
+    "app/static/editor.js": "b3dc16658c27395ced24caa962fc0210414d6e7bfbe8bb73fbbc3bba7de18240",
+    "app/static/dashboard.js": "1df20f68adb89b4d7d94bebe71ca373125c67783fdebcb431eeb39b9237d015a",
+    "tests/integration/test_auth_and_surveys.py": "ef69bfc68605b5d4ce63f4e85ab1c76d5e31a7b63ce2109edb2ccc4ef67be89b",
+    "tests/integration/test_responses_and_concurrency.py": "914335ca00e3b8477b381dca5a6a7f05ebca6861de9f1b58905569eea9bb93a7"
+  },
+  "results": [
+    {
+      "nodeid": "tests/integration/test_auth_and_surveys.py::test_create_add_four_question_types_and_independent_constraints",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.155552,
+      "cases": [
+        "T11",
+        "T19",
+        "T85"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_auth_and_surveys.py::test_lifecycle_empty_publish_draft_visibility_frozen_content_and_idempotent_close",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.240706,
+      "cases": [
+        "T12",
+        "T13",
+        "T14",
+        "T15"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_auth_and_surveys.py::test_deadline_already_passed_prevents_publication",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.131038,
+      "cases": [
+        "T12"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_auth_and_surveys.py::test_two_writers_with_same_revision_cannot_silently_overwrite",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.137555,
+      "cases": [
+        "T18"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_responses_and_concurrency.py::test_deadline_before_at_after_and_open_page_does_not_reserve_submission",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.217298,
+      "cases": [
+        "T16",
+        "T17"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_responses_and_concurrency.py::test_page_opened_before_manual_close_cannot_create_new_submission",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.210815,
+      "cases": [
+        "T17"
+      ]
+    },
+    {
+      "nodeid": "tests/integration/test_responses_and_concurrency.py::test_close_allows_an_already_admitted_inflight_insert_to_finish",
+      "phase": "call",
+      "outcome": "passed",
+      "durationSeconds": 0.2327,
+      "cases": [
+        "T66"
+      ]
+    }
+  ]
+}

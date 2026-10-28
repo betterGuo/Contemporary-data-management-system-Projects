@@ -1,6 +1,7 @@
 # MongoDB 数据库设计
 
-> 第一阶段正式文档。2026-10-22完整测试为200项通过、0失败、0跳过；复测方法、历史结果及证据范围见[测试说明](tests.md)和[关键验证证据](evidence/README.md)。
+> 第一阶段复核修订文档，stage1-v1.0.1，2026-10-20。修订代码基线65aa339；本轮主环境197项与全新环境197项均通过。原stage1-v1.0/a74cf92、原183项结果和原BSON保留；证据结论仅限实际检查。
+
 
 ## 为什么这样设计
 
@@ -20,7 +21,7 @@
 
 ## 集合及字段契约
 
-下表是当前实现的字段契约，实际validator/索引与运行已对照app/database.py、baseline-verification.json及本机恢复manifest。日期为 UTC BSON date，内部引用用 ObjectId，外部 JSON ID 用字符串。
+下表是最终计划中的设计契约，实际validator/索引与运行已对照app/database.py、baseline-verification.json及恢复manifest。日期为 UTC BSON date，内部引用用 ObjectId，外部 JSON ID 用字符串。
 
 ### users
 
@@ -115,7 +116,7 @@ scripts/migrate.py 默认 dry-run；--apply 运行明确迁移；--example 仅�
 
 schemaVersion、definitionVersion、revision分工不同。第二阶段先保留代码标签、依赖、BSON归档和统计基线；新字段兼容默认读取，迁移须dry-run、可重复、隔离恢复后核对数量和统计；旧答案不凭空补造新必答内容。新增集合允许合理扩展，禁止清库重建。
 
-实际schema与索引见app/database.py；列表explain和各题聚合结果见[数据库基准](evidence/stage1/baseline-verification.json)；并发、E03及版本回归见[200项测试结果](evidence/stage1/final-review-2026-10-22/test-results.json)，旧数据恢复与扩展结果见[历史演练](evidence/stage1/recheck-extension.json)。业务数据库与临时测试库隔离，测试只清理由本次运行生成且命名受保护的库。
+实际schema与索引见app/database.py及备份manifest，列表explain和各题聚合结果见baseline-verification.json；并发、E03及版本回归见test-results.json，BSON恢复结果见baseline.archive.gz.manifest.json。业务数据库与临时测试库隔离，测试只清理由本次运行生成且命名受保护的库。
 
 ## 已取得的真实数据库基准证据
 
@@ -123,18 +124,18 @@ schemaVersion、definitionVersion、revision分工不同。第二阶段先保留
 
 本人列表的MongoDB 8.0.32 explain实际采用FETCH→IXSCAN，索引owner_recent，键为ownerId升序、createdAt/_id降序，执行成功。扫描/返回数量见该JSON的executionStats；这是该小规模演示数据的一次结果，不能据此宣称大规模性能。索引和聚合代码在app/database.py及statistics_service.py，运行输出与代码可对应。
 
-此基准仅证明列出的检查，不代替并发、分页、迁移、恢复和全部T/E验收。完整测试结果已公开，恢复manifest与原数据库快照仅在本机保存。
+此基准仅证明列出的检查，不代替并发、分页、迁移、恢复和全部T/E验收。完整测试与恢复manifest已保存，分别核对对应证据。
 
 ## 请求成员固定与已恢复的基线
 
 每次统计先查询response IDs，给所有聚合、分页和精确平均传同一个response_filter，确保一个响应的数字与份数使用同一组不可变答卷；这不是MongoDB跨查询事务。ID内存O(n)，筛选BSON超过15MiB返回503/STATISTICS_TOO_LARGE，不截断冒充全部数据。未来规模增大时再评估副本集快照或分批归并。
 
-本机真实归档artifacts/stage1/baseline.archive.gz曾用mongodump生成并mongorestore到全新隔离库；manifest验证users7、surveys6、responses29、schema_migrations1的数量、BSON SHA、索引及验证器完全一致。sessions排除于基线；恢复后重新登录原账号、读取本人列表、health与固定统计均通过，恢复测试库已清理。HMAC密钥只在本机.secrets另存，不进入公开材料。
+真实归档artifacts/stage1/baseline.archive.gz已用mongodump生成并mongorestore到全新隔离库；manifest验证users7、surveys6、responses29、schema_migrations1的数量、BSON SHA、索引及验证器完全一致。sessions排除于基线；恢复后重新登录原账号、读取本人列表、health与固定统计均通过，恢复测试库已清理。HMAC密钥只在本机.secrets另存，不进入公开材料。
 
 ## 复核中的真实旧数据演练
 
-本机辅助脚本audit_stage1_extension.py从保留的原BSON归档恢复到新的survey_project1_test_recheck_库，先核对数量、BSON、索引与验证器，再对同一批6份真实旧问卷演练displayHint默认字段迁移：dry-run处理0、计划6；首次apply改6，第二次apply改0。原用户、29份原答卷BSON、问卷原有核心字段、固定统计均未改变。该脚本随后在同一个恢复库保存v1历史定义、模拟v2新增提交，旧29份答案逐字节不变；演练结束移除隔离库，不访问运行中的项目库。
+scripts/audit_stage1_extension.py从保留的原BSON归档恢复到新的survey_project1_test_recheck_库，先核对数量、BSON、索引与验证器，再对同一批6份真实旧问卷演练displayHint默认字段迁移：dry-run处理0、计划6；首次apply改6，第二次apply改0。原用户、29份原答卷BSON、问卷原有核心字段、固定统计均未改变。该脚本随后在同一个恢复库保存v1历史定义、模拟v2新增提交，旧29份答案逐字节不变；演练结束移除隔离库，不访问运行中的项目库。
 
-公开的[recheck-extension.json](evidence/stage1/recheck-extension.json)记录上述历史演练；无.git源目录重跑记录、备份和辅助脚本仅留本机，不是本公开仓库的运行依赖。无Git时不声称核验过标签，但始终核对原BSON SHA-256。原归档哈希87a683db98a51be11d0c11de57bb978c78493e9388dab78b6781a9dce12d036f未变。
+证据分别为recheck-extension.json与无.git源目录下重跑的recheck-extension-source-package.json。无Git时不声称核验过标签，但始终核对原BSON SHA-256。原归档哈希87a683db98a51be11d0c11de57bb978c78493e9388dab78b6781a9dce12d036f未变。
 
 生产读取另由from_storage_survey实际适配4个已知可选字段缺失，不仅提供未调用的工具函数；适配不回写BSON，显式null仍保留，不将未知业务字段任意补造。该契约与displayHint隔离迁移演练是两种不同证据。

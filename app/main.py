@@ -10,7 +10,7 @@ from pymongo.errors import PyMongoError
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 
 from app import __version__
-from app.api import auth, participation, statistics, surveys
+from app.api import auth, participation, statistics, surveys, library, library_statistics, library_instances
 from app.api.dependencies import identity, safe_next
 from app.config import ROOT, Settings
 from app.database import connect, initialize_database, utcnow
@@ -70,7 +70,7 @@ def create_app(settings=None, database=None, clock=None):
     async def database_error(request, error):
         return JSONResponse({"error": {"code": "DATABASE_UNAVAILABLE", "message": "数据库暂时不可用，请稍后重试。", "details": []}}, status_code=503)
 
-    for router in [auth.router, surveys.router, participation.router, statistics.router]:
+    for router in [auth.router, library_instances.router, library.router, library_statistics.router, surveys.router, participation.router, statistics.router]:
         application.include_router(router)
     application.mount("/static", StaticFiles(directory=ROOT / "app" / "static", check_dir=False), name="static")
     templates = Jinja2Templates(directory=ROOT / "app" / "templates")
@@ -102,6 +102,10 @@ def create_app(settings=None, database=None, clock=None):
     def dashboard_page(request: Request):
         return page(request, "dashboard", "dashboard.html")
 
+    @application.get("/library", include_in_schema=False)
+    def library_page(request: Request):
+        return page(request, "library", "library.html")
+
     @application.get("/surveys/{survey_id}/edit", include_in_schema=False)
     def editor_page(survey_id: str, request: Request):
         return page(request, "editor", "editor.html", survey_id=survey_id)
@@ -121,7 +125,9 @@ def create_app(settings=None, database=None, clock=None):
     @application.get("/health", tags=["运行状态"])
     def health(request: Request):
         request.app.state.db.command("ping")
-        return {"status": "ok", "database": "connected", "version": __version__}
+        hello = request.app.state.db.client.admin.command("hello")
+        return {"status": "ok", "database": "connected", "version": __version__,
+                "transactionsAvailable": bool(hello.get("setName") or hello.get("msg") == "isdbgrid")}
 
     return application
 

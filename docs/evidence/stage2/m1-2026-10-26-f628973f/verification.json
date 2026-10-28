@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "executedAt": "2026-10-26T13:47:36.380913+00:00",
+  "sourceDatabase": "survey_project1",
+  "counts": {
+    "responses": 33,
+    "schema_migrations": 1,
+    "surveys": 8,
+    "users": 9
+  },
+  "sourceBsonIndexesValidatorsUnchanged": true,
+  "sourceStatisticsUnchanged": true,
+  "existingIdentityConfigurationUnchanged": true,
+  "restoredDefinitionCount": 8,
+  "restoredApplication": {
+    "health": "passed",
+    "existingAccountLogin": "passed",
+    "ownSurveyList": "passed"
+  },
+  "temporaryTestDatabasesRemaining": 0,
+  "archive": "artifacts/stage2/m1-2026-10-26-f628973f.archive.gz",
+  "archiveSha256": "63b4009f6ce9515970230b3f8f325744ee7e8a556c804a3b0934cd8129c60a05",
+  "oldRegression": {
+    "passed": 200,
+    "failed": 0,
+    "skipped": 0
+  },
+  "finalRegression": {
+    "passed": 204,
+    "failed": 0,
+    "skipped": 0
+  },
+  "finalRegressionDurationSeconds": 14.25,
+  "note": "M1 only; no stage-two business schema or migration applied."
+}

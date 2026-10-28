@@ -1,0 +1,98 @@
+{
+  "clientDate": "2026-10-28",
+  "scope": "Authorized AI takeover: HM2-57 through HM2-72 supplemental fixed-sample testing",
+  "completedGroups": [
+    "revoke permission and retained snapshot",
+    "independent owned copy and access isolation",
+    "personal tags/filter/rename/bookmark removal",
+    "two instances in one survey with correct counting",
+    "stale revision conflict and retained input"
+  ],
+  "methods": {
+    "applicationServiceWrites": [
+      "question grant revocation after explicit user authorization",
+      "personal bookmark tag update",
+      "personal tag rename"
+    ],
+    "browserWrites": [
+      "derive private copy from owned D snapshot",
+      "remove own bookmark",
+      "create E",
+      "select same copy v1 twice",
+      "publish E",
+      "submit E once with 6 and 10",
+      "save copy v2 with max16",
+      "attempt stale save max8 rejected"
+    ]
+  },
+  "knownCoverageBoundary": "Native confirm/prompt completion was blocked by browser control and is not counted as UI success. Service tests and subsequent UI state checks are labeled separately. Stale forms were submitted sequentially after both were opened, not claimed as simultaneous transaction commits.",
+  "protectedExistingSamples": [
+    "B answer4 and original v1 max24",
+    "C answer8 and original v2 max12",
+    "D only one preexisting answer6 and original v1 max24",
+    "original learning v1/v2/v3 immutable documents",
+    "original business documents and statistics in baseline"
+  ],
+  "newSample": {
+    "surveyId": "6ae0ce570dc4b0dea63867b7",
+    "receipt": "6ae0cefd0dc4b0dea63867ba",
+    "answers": [
+      "6",
+      "10"
+    ],
+    "summary": {
+      "answerCount": 2,
+      "responseCount": 1,
+      "surveyCount": 1,
+      "average": "8"
+    },
+    "copyQuestionId": "6ae0cc750dc4b0dea63867b2",
+    "copyVersionCount": 2,
+    "copyV2Maximum": "16",
+    "failedStaleSaveInputRetained": "8"
+  },
+  "artifactChecks": {
+    "jpegFilesHeaderAndEndMarkerVerified": 23,
+    "datedFilesBeforeManifest": 35,
+    "sensitiveKeyFindings": [],
+    "screenshotFormatCorrection": "hm2-screenshot-format-correction-2026-10-28.json"
+  },
+  "evidenceSha256": {
+    "hm2-57-authentication-handoff-2026-10-28.json": "0e69605c75f038b412cfc63f0a64c290d9c6002256bf09ea3cf1dbd3ff3a9b40",
+    "hm2-57-service-revoke-before-2026-10-28.json": "9a969df7b81ad0044d11a95ca4223369d8a471cca26ef65edc8d15a064226ec2",
+    "hm2-57-service-revoke-result-2026-10-28.json": "53ab040e17e38f0152f32dbe968d55bd0c877168ef7ceaa24fc74d595af2569d",
+    "hm2-58-60-derived-copy-check-2026-10-28.json": "24917b82372bc86069a200fe14682fdf98203805743dfad6e52d0f528bb79d7c",
+    "hm2-58-D-snapshot-after-revoke-2026-10-28.jpg": "3a9c704e2375ca11f0d8ab24073e7a5491b89d51c57adc6000c3a6a9b8ca3cbb",
+    "hm2-58-D-statistics-after-revoke-2026-10-28.jpg": "1447e767cd77c2215c7abd405002237a79aa0de02c34cee8e02a54f9931d7f0f",
+    "hm2-58-peer-source-denied-2026-10-28.jpg": "d76e18e6c6aa80654319498bc4de69ca2750338bc6b64071356705e88b646b99",
+    "hm2-59-copy-created-after-revoke-2026-10-28.jpg": "1fbbc8d24c84457527c765925d2f618ffd3afdf39db7a5a7a724aee62e7b9177",
+    "hm2-60-copy-empty-summary-2026-10-28.jpg": "fff3cd0f4f0e60606ac449e0555b20d022860ecda7e70aba87c1c2056d8d43d0",
+    "hm2-60-original-owner-copy-denied-2026-10-28.jpg": "08298693c1e23285cb71567b7ed99e0398acccaf1e06eb178de4295b2504e49d",
+    "hm2-61-tag-filter-found-2026-10-28.jpg": "ffef188b8963ae88da157098a612833a71374d6767e441e56c33d840d13526b2",
+    "hm2-61-tags-added-service-2026-10-28.json": "d009b99bf9583f9491e07035872ac9d35c6310450f14c37a664bc46d99837062",
+    "hm2-62-new-tag-found-2026-10-28.jpg": "63dc3ad7408761fb6d690ecc014bef963545d4fcb027b6fe979bbfddfde5db0a",
+    "hm2-62-old-tag-empty-2026-10-28.jpg": "26fdca8e40b7e8a1919ec69e52825d471da0a1f98c1346b03652c31be9c1952f",
+    "hm2-62-tag-renamed-service-2026-10-28.json": "1599bbe5f816b4bf708fb9606b34778977c347d4977aecf1205c239b3277d6ab",
+    "hm2-63-bookmark-removed-2026-10-28.jpg": "c8ed6ab8d82b06af7295e1bfbb995501baa02db6ef72c4c7281e0a10e0c177b7",
+    "hm2-63-owned-question-preserved-2026-10-28.jpg": "a63d0dce80760c7e16f36538a7eeaf78e4138f2919a1b1d0ea1698dd3cc98067",
+    "hm2-65-68-E-formal-double-instance-check-2026-10-28.json": "c8c1e1537f0e0012cf085deacd5076053a0999d3fbadd829fc1253f09c48719d",
+    "hm2-65-E-double-instance-before-2026-10-28.json": "3c38476c090aeae71ffd799de8d842c508edaa4bf773a1ad607c39712761b290",
+    "hm2-65-E-two-instances-draft-2026-10-28.jpg": "ef86aeb14e53ac96599df23fd49dacfafffd3f35d35838300293cd410f75c4ca",
+    "hm2-66-E-formal-success-2026-10-28.jpg": "b7012452d7d5fbc0258138867e02f3f40c87ab7499593851bac555759dd87c3a",
+    "hm2-66-E-two-answers-review-2026-10-28.jpg": "12bc4e2f599885d6dd711c6127e67442b5179cae6a2a2b73f1f41b8f1b1a05cf",
+    "hm2-67-E-double-instance-summary-2026-10-28.jpg": "ebc26afe1e0eec04a3321b812229d29b90c05cfa18c8f18a4317300752dfb52b",
+    "hm2-69-71-two-tab-ui-conflict-2026-10-28.json": "2b3ab8aac18e3255ab6c866ac07aaf4d6916cb95e1c45651b7414af3cb4ab5f8",
+    "hm2-69-72-two-tab-conflict-final-check-2026-10-28.json": "85bc1efa3ea923ce2e5a1d588eae9e2b9cbacb1f21248107a95131d79dbf990a",
+    "hm2-69-stale-B-input-before-save-2026-10-28.jpg": "1c153b7b18d15ae8c886478988af98e32f585289abfd0d245dbb1e8eabb019a7",
+    "hm2-70-A-saved-v2-max16-2026-10-28.jpg": "134d867558826bf135b066fde2b4dffa1632065dc95de7c5c1e7bd90065e5cce",
+    "hm2-71-stale-save-conflict-input-preserved-2026-10-28.jpg": "052ae3d9e52e11f1a95b96efa77543e79c6d67a2a4c3cb0a59a633ae93a6953e",
+    "hm2-72-E-still-v1-max24-2026-10-28.jpg": "cbbdfd5e9c9c01939e9f4975c2d7cefd2d9191e976f3cffc4aebc4125058a380",
+    "hm2-72-copy-v1-summary-preserved-2026-10-28.jpg": "7c16d955ff1ccf72833350bb48e3ca17a25430ce431bef1cbc84c634bf15e2a1",
+    "hm2-72-copy-v2-empty-summary-2026-10-28.jpg": "8454047d704c3a0de0abb2b3e1ce5392251db3b9a5125abc3d342485ef3fced2",
+    "hm2-72-original-owner-v1-still4-2026-10-28.jpg": "8aa6c51aa3429494639e3b538cff9d33ac0d828652363dc5e1d186ce4a6a9cf1",
+    "hm2-72-owner-historical-count-still1-2026-10-28.jpg": "b3e63e8577e579721c19156075e8891d398277f4877aa9456768da10c2310169",
+    "hm2-post-cas-original-data-integrity-2026-10-28.json": "e66739d178d92f2023c1a3936611659117ff1340702aee0744c51f6289996272",
+    "hm2-screenshot-format-correction-2026-10-28.json": "29a3743b8439e630e1a6ce325d0f62b5ada22128d5eae3c3c8be028bef32aac8"
+  },
+  "regressionBoundary": "No application code changed during this supplemental test. Prior 309-test regression evidence retained; no rerun is claimed."
+}

@@ -1,0 +1,48 @@
+{
+  "surveyId": "6ad7082776296ade1e15a0db",
+  "publicId": "qUtK0zrC2CVwnW_b",
+  "checks": [
+    "注册并登录后返回原问卷",
+    "请至少选择 2 项。",
+    "请至少填写 2 个字。",
+    "多选 containsAll 跳过数字题进入文本题",
+    "请输入整数。",
+    "回退改答案后旧多选/文本分支已清除",
+    "匿名正式提交成功",
+    "同一用户按允许多次策略再次提交成功",
+    "整卷统计：2份答卷、1位填写者，数字平均3"
+  ],
+  "reviewTitles": [
+    "1. 请选择你的学习路径",
+    "2. 你每天学习多少小时？"
+  ],
+  "statistics": {
+    "submissions": 2,
+    "people": 1,
+    "answers": [
+      {
+        "type": "single",
+        "count": 2,
+        "average": null
+      },
+      {
+        "type": "multiple",
+        "count": 1,
+        "average": null
+      },
+      {
+        "type": "number",
+        "count": 1,
+        "average": "3"
+      },
+      {
+        "type": "text",
+        "count": 1,
+        "average": null
+      }
+    ]
+  },
+  "mobileOverflow": false,
+  "editorMobileOverflow": false,
+  "errors": []
+}

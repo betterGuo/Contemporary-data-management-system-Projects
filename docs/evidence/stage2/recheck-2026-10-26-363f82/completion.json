@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "executedAt": "2026-10-26T15:25:08.644018+00:00",
+  "automatedTests": {
+    "passed": 309,
+    "failed": 0,
+    "skipped": 0
+  },
+  "browserSummary": "browser/final-summary.json",
+  "browserScenarios": 33,
+  "realUiScenarios": 32,
+  "apiNegativeScenarioGroups": 1,
+  "businessDataUnchanged": true,
+  "actualStatisticsUnchanged": true,
+  "ownTestResourcesCleaned": true,
+  "codeFingerprintFiles": 92,
+  "verifiedSourceUnchanged": true,
+  "markdownFilesChecked": 19,
+  "localLinksAndFencesPassed": true,
+  "formalRuntime": "http://127.0.0.1:8000",
+  "report": "docs/stage2/recheck-2026-10-26.md",
+  "newCleanVenvRun": false
+}

@@ -1,0 +1,109 @@
+{
+  "status": "passed",
+  "executedAt": "2026-10-20T14:22:37.586147+00:00",
+  "stage1TagCommit": null,
+  "gitTagVerified": false,
+  "archive": "artifacts/stage1/baseline.archive.gz",
+  "archiveSha256": "87a683db98a51be11d0c11de57bb978c78493e9388dab78b6781a9dce12d036f",
+  "archiveHashMatchesManifest": true,
+  "databasePrefix": "survey_project1_test_recheck_",
+  "runningProjectDatabaseAccessed": false,
+  "temporaryDatabaseRemoved": true,
+  "restoration": {
+    "status": "passed",
+    "matchesBsonCountsIndexesValidators": true,
+    "counts": {
+      "users": 7,
+      "surveys": 6,
+      "responses": 29,
+      "schema_migrations": 1
+    }
+  },
+  "optionalFieldMigration": {
+    "status": "passed",
+    "source": "six real stage-one surveys",
+    "dryRun": {
+      "dryRun": true,
+      "wouldUpdate": 6,
+      "modified": 0
+    },
+    "firstApply": {
+      "dryRun": false,
+      "wouldUpdate": 6,
+      "modified": 6
+    },
+    "secondApply": {
+      "dryRun": false,
+      "wouldUpdate": 0,
+      "modified": 0
+    },
+    "usersBsonUnchanged": true,
+    "responsesBsonUnchanged": true,
+    "originalSurveyCoreBsonUnchanged": true,
+    "handCalculatedStatisticsUnchanged": true,
+    "migrationRecordUnchangedOnSecondApply": true,
+    "nonIsolatedDatabaseRejectedBeforeAnyDatabaseOperation": true,
+    "readOnlyDefaultHelperPreservesOriginalDocument": true
+  },
+  "definitionCompatibility": {
+    "status": "passed",
+    "existingSurveyIdPreserved": true,
+    "historicalV1QuestionAndOptionDefinitionsUnchanged": true,
+    "allOriginalV1AnswersByteForByteUnchanged": true,
+    "allOriginalResponsesVerified": 29,
+    "v1StatisticsExactlyMatchStageOne": true,
+    "v1SubmissionCount": 4,
+    "v2SubmissionCount": 1,
+    "newSubmissionStatus": 201,
+    "totalResponsesAfterAudit": 30,
+    "usersByteForByteUnchanged": true,
+    "productionMultiVersionEditingEnabled": false
+  },
+  "registries": {
+    "status": "passed",
+    "newQuestionTypeUsesExistingTraversal": true,
+    "newStatisticsHandlerDispatched": true,
+    "newOperatorUsesExistingTraversal": true,
+    "productionFeaturesAdded": false,
+    "registriesRestoredAfterExercise": true
+  },
+  "currentBoundaries": {
+    "statisticsApiUsesCurrentDefinitionVersionOnly": true,
+    "historicalStatisticsAvailableThroughServiceWithExplicitVersion": true,
+    "storageDefaultHelperProductionCalls": [
+      "app/services/storage_adapters.py:174"
+    ],
+    "storageDefaultHelperHasProductionCaller": true,
+    "surveyStorageAdapterProductionCalls": [
+      "app/repositories/surveys.py:8",
+      "app/services/definition_service.py:8",
+      "app/services/definition_service.py:11",
+      "app/services/response_service.py:55",
+      "app/services/response_service.py:71",
+      "app/web_utils.py:25"
+    ],
+    "newTypeEditorAndFillRendererRegistrationFunctionsPresent": true,
+    "newTypeStillRequiresItsEditorUiValidationAndStatisticsImplementation": true,
+    "unknownSecondStageRequirementsImplemented": false
+  },
+  "originalBaselineChecks": [
+    "four-sample counts",
+    "zero-included decimal average",
+    "all text contents",
+    "distinct respondents versus submissions",
+    "partial unique index",
+    "owner_recent query plan"
+  ],
+  "implementationFilesSha256": {
+    "app/services/storage_adapters.py": "d0aa1027d3aebece5d45b39094ff28ddc837092ae969bcf401e4f240fd3b4b0b",
+    "app/services/definition_service.py": "e47b5dd147dc6c69bdca021fbcbdc30c6d9b8bbfeed0613ef9d1b5e0b5608a30",
+    "app/services/response_service.py": "5855b5471fc10c47a1f4e99575cb8904805408cb7c31f62f8697c5bc970ea1ff",
+    "app/services/question_types.py": "f7901abcdd183cd6f05296c7481650090a6878e5b93655916f14d8c235e00bb8",
+    "app/services/rule_operators.py": "41b04349ab98745a27031681ab21f1ef69c2f9004abd1ab56c35a0a989fcfc0e",
+    "app/services/statistics_service.py": "33f0379c45fe974a221655e7fa07562376400c396433e24cb4d3e733f3daf7e4",
+    "app/services/jump_engine.py": "069a7032ca1f851344021e732532d75c6c26b3958e5de4fd1e89062ffc7faedb",
+    "app/repositories/surveys.py": "24983a344ac748f10791871243cc4eb905ecc0441415f4295d7b841053064fc2",
+    "app/web_utils.py": "0a1645c65e4ae75adb7584124f3c9977cc8be883169c2f06537a082e4981a0cf",
+    "scripts/migrate.py": "f176e02e7802b48e5a716c3e0401dae520b4c63ac54ae344b082ab54652a1762"
+  }
+}

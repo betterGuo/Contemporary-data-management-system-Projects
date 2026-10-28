@@ -1,0 +1,92 @@
+{
+  "clientDate": "2026-10-27",
+  "userFeedback": "这次成功了",
+  "configurationChecks": {
+    "questionCountTwo": true,
+    "secondTypeMultiple": true,
+    "secondTitleMatches": true,
+    "secondRequired": true,
+    "exactlyTwo": true,
+    "threeOptionsPresent": true,
+    "firstQuestionRetained": true,
+    "stillDraft": true,
+    "multipleSubmissionsEnabled": true
+  },
+  "configurationSaved": true,
+  "actualSecondOptionLabels": [
+    "课程内容",
+    "课程互动",
+    "作业反馈"
+  ],
+  "survey": {
+    "id": "6adf783d0dc4b0dea638677f",
+    "status": "draft",
+    "revision": 3,
+    "allowMultipleSubmissions": true,
+    "questions": [
+      {
+        "id": "64b60d1b-6c40-4cb1-8e59-e0737a1355a1",
+        "type": "single",
+        "title": "请选择填写方式",
+        "required": true,
+        "options": [
+          {
+            "id": "d68c2db9-b8be-4f41-9fbd-2505d079a860",
+            "label": "完整填写"
+          },
+          {
+            "id": "f5d1f062-cb3f-473e-93be-ee4526c80c1e",
+            "label": "直接填写年龄"
+          }
+        ],
+        "validation": {},
+        "jumpRules": []
+      },
+      {
+        "id": "6d4e7a3f-0dcd-498c-8ce1-e024ed045ae1",
+        "type": "multiple",
+        "title": "你希望改进哪些方面",
+        "required": true,
+        "options": [
+          {
+            "id": "9cd47526-b891-4cb9-8a4b-1ea82ee34697",
+            "label": "课程内容"
+          },
+          {
+            "id": "bf74dc30-d3d3-4d09-903a-7df880d019f7",
+            "label": "课程互动"
+          },
+          {
+            "id": "362d523f-90d6-4053-84bc-8ba27db37990",
+            "label": "作业反馈"
+          }
+        ],
+        "validation": {
+          "minSelections": 2,
+          "maxSelections": 2
+        },
+        "jumpRules": []
+      }
+    ],
+    "formalResponseCount": 0
+  },
+  "evidenceScope": "Screenshot verifies multiple-choice exact-count configuration; database verifies persisted state only. Rejecting one or three answers has not yet been manually tested.",
+  "businessWritesByAi": 0,
+  "screenshot": {
+    "path": "hm2-05b-multiple-config-2026-10-27.png",
+    "sha256": "7e642fc6dc88350e8da696591af2c0581fef3841efa40ea249f377274870d9e5",
+    "observed": {
+      "questionCount": 2,
+      "type": "multiple",
+      "title": "你希望改进哪些方面",
+      "optionLabels": [
+        "课程内容",
+        "课程互动",
+        "作业反馈"
+      ],
+      "requiredChecked": true,
+      "selectionMode": "恰好选择指定数量",
+      "selectionCount": 2
+    }
+  }
+}

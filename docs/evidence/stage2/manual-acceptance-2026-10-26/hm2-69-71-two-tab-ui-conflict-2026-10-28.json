@@ -1,0 +1,9 @@
+{
+  "clientDate": "2026-10-28",
+  "operator": "AI real browser two-tab save test",
+  "staleMax": "8",
+  "staleReason": "并发测试B：上限改为8",
+  "visibleConflictMessage": "题目已被修改，请重新加载后比较，当前输入不会自动覆盖。",
+  "console409": [],
+  "testBoundary": "Two pages were opened before saving. A saved first, B submitted its stale revision afterward; this is stale-write conflict testing, not a claim of simultaneous transaction commits."
+}

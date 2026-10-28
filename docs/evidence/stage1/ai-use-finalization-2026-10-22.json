@@ -1,0 +1,191 @@
+{
+  "reviewedAt": "2026-10-22T13:23:03.262061+00:00",
+  "scope": "AI use statement, log and report finalization; no application tests executed during this document edit",
+  "requestLogId": "AI-027",
+  "exactRequestedSummary": "早期方案存在空答绕过正下限、自加六位小数限制等问题；联调发现均值、幂等和统计一致性边界；部分测试说明曾超出已有证据。随后由AI修改并验证。",
+  "historicalReview": {
+    "path": "docs/evidence/stage1/ai-log-review-2026-10-22.json",
+    "sha256": "23acc0694f202554ae6c5d0975faee3c637a61cadfd267e84db83ecfa88fec78",
+    "note": "Preserved unchanged; its document hashes describe the earlier AI-021 revision. This record provides the current document hashes."
+  },
+  "requiredSummaryQuestions": [
+    "AI帮了什么",
+    "AI做错了什么",
+    "自己改了什么",
+    "自己设计了什么"
+  ],
+  "logIdCount": 27,
+  "newLogIds": [
+    "AI-022",
+    "AI-023",
+    "AI-024",
+    "AI-025",
+    "AI-026",
+    "AI-027"
+  ],
+  "promptProvenance": {
+    "AI-022": "visible_user_prompt_or_explicit_excerpt; later review of existing implementation",
+    "AI-023": "visible_user_prompt_or_explicit_excerpt; later review of existing implementation",
+    "AI-024": "visible_user_prompt_or_explicit_excerpt; later review of existing implementation",
+    "AI-025": "visible_user_prompt_or_explicit_excerpt; later review of existing implementation",
+    "AI-026": "visible_user_prompt_or_explicit_excerpt; later review of existing implementation",
+    "AI-027": "visible_user_prompt_or_explicit_excerpt; later review of existing implementation"
+  },
+  "studentContribution": [
+    "two-stage requirements",
+    "visual choice",
+    "manual web operations and feedback",
+    "later explicit choice of template pages with JavaScript",
+    "later usability feedback and design review"
+  ],
+  "studentManualSourceEdits": false,
+  "aiImplementedSourceAndFixes": true,
+  "newHistoricalDialogueInvented": false,
+  "pendingUiSuggestionsImplemented": false,
+  "manualMeanDiscrepancy": "User reported 19; recorded database and browser observation showed one numeric answer and mean 110. Still unresolved; not represented as an AI arithmetic bug.",
+  "historicalFullTestBaseline": {
+    "path": "docs/evidence/stage1/test-results.json",
+    "sha256": "e09f90a97b2a60d2481e6935724cfae682f47b9366a55a69d4a8199cd1225b59",
+    "executedAt": "2026-10-20T14:17:48.513116+00:00",
+    "summary": {
+      "passed": 197,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rerunToday": false
+  },
+  "focusedRunsFromEarlierQATurns": [
+    {
+      "path": "docs/evidence/stage1/database-initialization-2026-10-22.json",
+      "sha256": "44ae42adbac6123017fd6d444121a962d128f5b0b2d2a98d2a0bdf83a17b5466",
+      "startedAt": "2026-10-22T12:49:52.784012+00:00",
+      "finishedAt": "2026-10-22T12:49:54.782200+00:00",
+      "summary": {
+        "passed": 8,
+        "failed": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/evidence/stage1/auth-session-review-2026-10-22.json",
+      "sha256": "bc35697d7eb2397b19cade47b1ae83853b7de720c92d8b712a4511078a8c3258",
+      "startedAt": "2026-10-22T12:56:35.929778+00:00",
+      "finishedAt": "2026-10-22T12:56:37.234889+00:00",
+      "summary": {
+        "passed": 5,
+        "failed": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/evidence/stage1/survey-lifecycle-review-2026-10-22.json",
+      "sha256": "9a0fc1a1edd1d08fa1b7136f463e74c239bb3cba1c89d8e0764c9ba06aaa4662",
+      "startedAt": "2026-10-22T13:02:08.408059+00:00",
+      "finishedAt": "2026-10-22T13:02:10.184903+00:00",
+      "summary": {
+        "passed": 7,
+        "failed": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "path": "docs/evidence/stage1/question-management-review-2026-10-22.json",
+      "sha256": "47bc28d21c0dd6f8478683369b811e9f7e941e7865d41ce44e3b2d0c4e2acd49",
+      "startedAt": "2026-10-22T13:10:43.746501+00:00",
+      "finishedAt": "2026-10-22T13:10:45.971353+00:00",
+      "summary": {
+        "passed": 107,
+        "failed": 0,
+        "skipped": 0
+      }
+    }
+  ],
+  "testCountingRule": "The four focused runs overlap with each other and the historical baseline; counts are not added into a new full-suite total.",
+  "newInitializationTests": [
+    "test_repeated_initialization_preserves_documents_and_metadata",
+    "test_existing_duplicate_keys_fail_without_deleting_documents",
+    "test_conflicting_index_fails_without_replacing_index_or_documents"
+  ],
+  "fullSuiteRunAfterAddingInitializationTests": false,
+  "businessSourceDiffAgainstHeadEmpty": true,
+  "documents": [
+    {
+      "path": "docs/ai-use.md",
+      "sha256": "83ca8434ea7f4dc881e875494cba5513e85df32075b4f49bdadb5f490b694bf3",
+      "stageCopy": "docs/submissions/stage1/ai-use.md",
+      "stageCopySha256": "b91b934291a8fc1fcd356c15bea4f5c9b75292e16fa678fda1eb4c4c9b86c128"
+    },
+    {
+      "path": "docs/ai-log.md",
+      "sha256": "a2dc38d4313a10cd63feb7da6e8bb0b69e64237161bb8b38b5ad1e04bcb65cba",
+      "stageCopy": "docs/submissions/stage1/ai-log.md",
+      "stageCopySha256": "70cfc4261fe0188b215885dc0c92a36277ec669671f1fd6e298069e430681fc8"
+    },
+    {
+      "path": "docs/report.md",
+      "sha256": "873b9d3695b3dec9fdb5af912d3c1f92de795cb7874bc7a848ec4bb791761a0b",
+      "stageCopy": "docs/submissions/stage1/report.md",
+      "stageCopySha256": "873b9d3695b3dec9fdb5af912d3c1f92de795cb7874bc7a848ec4bb791761a0b"
+    }
+  ],
+  "stageDocumentChecks": [
+    {
+      "document": "ai-log.md",
+      "contentEquivalentWithRebasedLinks": true
+    },
+    {
+      "document": "ai-use.md",
+      "contentEquivalentWithRebasedLinks": true
+    },
+    {
+      "document": "api.md",
+      "contentEquivalentWithRebasedLinks": true
+    },
+    {
+      "document": "architecture.md",
+      "contentEquivalentWithRebasedLinks": true
+    },
+    {
+      "document": "database.md",
+      "contentEquivalentWithRebasedLinks": true
+    },
+    {
+      "document": "decisions.md",
+      "contentEquivalentWithRebasedLinks": true
+    },
+    {
+      "document": "demo.md",
+      "contentEquivalentWithRebasedLinks": true
+    },
+    {
+      "document": "manual-acceptance.md",
+      "contentEquivalentWithRebasedLinks": true
+    },
+    {
+      "document": "report.md",
+      "contentEquivalentWithRebasedLinks": true
+    },
+    {
+      "document": "requirements.md",
+      "contentEquivalentWithRebasedLinks": true
+    },
+    {
+      "document": "rules.md",
+      "contentEquivalentWithRebasedLinks": true
+    },
+    {
+      "document": "tests.md",
+      "contentEquivalentWithRebasedLinks": true
+    }
+  ],
+  "historicalRequirementsTestEvidenceAndLogCopyUnchanged": true,
+  "originalBsonArchiveUnchanged": true,
+  "submissionArchiveRebuilt": false,
+  "independentContentReview": "Same-conversation ai_use_claim_review agent: passed, no required changes; authorship, exact summary, later-QA timing, test-count boundaries and pending items verified.",
+  "status": "passed_document_review",
+  "localMarkdownLinkCheck": {
+    "verifiedLinks": 96,
+    "allResolve": true,
+    "scope": "AI statement, log and report in docs and stage1"
+  }
+}

@@ -1,0 +1,289 @@
+{
+  "clientDate": "2026-10-27",
+  "userMessage": "Formal submission success screenshot only",
+  "checks": {
+    "published": true,
+    "originalQuestionContentPreserved": true,
+    "exactlyOneFormalResponse": true,
+    "receiptMatchesSurvey": true,
+    "fourAnswers": true,
+    "q1FullPath": true,
+    "q2TwoPlannedOptions": true,
+    "q3TwoCharacterText": true,
+    "q4Zero": true,
+    "fourSourceReferences": true
+  },
+  "allMatch": true,
+  "survey": {
+    "id": "6adf783d0dc4b0dea638677f",
+    "status": "published",
+    "revision": 7,
+    "definitionVersion": 1,
+    "questions": [
+      {
+        "id": "64b60d1b-6c40-4cb1-8e59-e0737a1355a1",
+        "type": "single",
+        "title": "请选择填写方式",
+        "required": true,
+        "options": [
+          {
+            "id": "d68c2db9-b8be-4f41-9fbd-2505d079a860",
+            "label": "完整填写"
+          },
+          {
+            "id": "f5d1f062-cb3f-473e-93be-ee4526c80c1e",
+            "label": "直接填写年龄"
+          }
+        ],
+        "validation": {},
+        "jumpRules": [
+          {
+            "id": "e6c49f82-8cbb-4e8c-adf0-2554c3b18504",
+            "operator": "eq",
+            "value": "f5d1f062-cb3f-473e-93be-ee4526c80c1e",
+            "targetQuestionId": "6e1b44be-ec4c-4cde-aa23-042fe305b618"
+          }
+        ]
+      },
+      {
+        "id": "6d4e7a3f-0dcd-498c-8ce1-e024ed045ae1",
+        "type": "multiple",
+        "title": "你希望改进哪些方面",
+        "required": true,
+        "options": [
+          {
+            "id": "9cd47526-b891-4cb9-8a4b-1ea82ee34697",
+            "label": "课程内容"
+          },
+          {
+            "id": "bf74dc30-d3d3-4d09-903a-7df880d019f7",
+            "label": "课程互动"
+          },
+          {
+            "id": "362d523f-90d6-4053-84bc-8ba27db37990",
+            "label": "作业反馈"
+          }
+        ],
+        "validation": {
+          "minSelections": 2,
+          "maxSelections": 2
+        },
+        "jumpRules": []
+      },
+      {
+        "id": "a17f0136-ab39-4f00-a7f1-1df1aaf77372",
+        "type": "text",
+        "title": "请填写你的建议",
+        "required": true,
+        "options": [],
+        "validation": {
+          "minLength": 2,
+          "maxLength": 6
+        },
+        "jumpRules": []
+      },
+      {
+        "id": "6e1b44be-ec4c-4cde-aa23-042fe305b618",
+        "type": "number",
+        "title": "你的年龄是",
+        "required": true,
+        "options": [],
+        "validation": {
+          "minValue": "0",
+          "maxValue": "120",
+          "integerOnly": true
+        },
+        "jumpRules": []
+      }
+    ],
+    "questionRefs": [
+      {
+        "instanceId": "64b60d1b-6c40-4cb1-8e59-e0737a1355a1",
+        "questionId": "6ae0617e0dc4b0dea6386780",
+        "questionVersionId": "6ae0617e0dc4b0dea6386781",
+        "rootQuestionId": "6ae0617e0dc4b0dea6386780",
+        "contentHash": "3e9a7f167b34383cb3cce91fe2276cdc0a0e94324678d257d1d4bf436fe29726"
+      },
+      {
+        "instanceId": "6d4e7a3f-0dcd-498c-8ce1-e024ed045ae1",
+        "questionId": "6ae0617e0dc4b0dea6386784",
+        "questionVersionId": "6ae0617e0dc4b0dea6386785",
+        "rootQuestionId": "6ae0617e0dc4b0dea6386784",
+        "contentHash": "4095efd6c22fb6c590587a611acd7a4e62d2da0b1446e8058d459706d88b6fe9"
+      },
+      {
+        "instanceId": "a17f0136-ab39-4f00-a7f1-1df1aaf77372",
+        "questionId": "6ae0617e0dc4b0dea6386788",
+        "questionVersionId": "6ae0617e0dc4b0dea6386789",
+        "rootQuestionId": "6ae0617e0dc4b0dea6386788",
+        "contentHash": "165702773bc92a878c04c3af2f60b185bbe11237a25ed4f550a07e023499db32"
+      },
+      {
+        "instanceId": "6e1b44be-ec4c-4cde-aa23-042fe305b618",
+        "questionId": "6ae0617e0dc4b0dea638678c",
+        "questionVersionId": "6ae0617e0dc4b0dea638678d",
+        "rootQuestionId": "6ae0617e0dc4b0dea638678c",
+        "contentHash": "cc5d2a6cf7485bd3d1fed80ef28d82c527c660f703845b173926ebb29dca3e50"
+      }
+    ]
+  },
+  "response": {
+    "id": "6ae061ac0dc4b0dea6386790",
+    "surveyDefinitionVersion": 1,
+    "submittedAt": "2026-10-27T08:32:44.673000+00:00",
+    "isAnonymous": false,
+    "answers": [
+      {
+        "questionId": "64b60d1b-6c40-4cb1-8e59-e0737a1355a1",
+        "type": "single",
+        "value": "d68c2db9-b8be-4f41-9fbd-2505d079a860"
+      },
+      {
+        "questionId": "6d4e7a3f-0dcd-498c-8ce1-e024ed045ae1",
+        "type": "multiple",
+        "value": [
+          "9cd47526-b891-4cb9-8a4b-1ea82ee34697",
+          "bf74dc30-d3d3-4d09-903a-7df880d019f7"
+        ]
+      },
+      {
+        "questionId": "a17f0136-ab39-4f00-a7f1-1df1aaf77372",
+        "type": "text",
+        "value": "测试"
+      },
+      {
+        "questionId": "6e1b44be-ec4c-4cde-aa23-042fe305b618",
+        "type": "number",
+        "value": "0"
+      }
+    ],
+    "visitedQuestionIds": [
+      "64b60d1b-6c40-4cb1-8e59-e0737a1355a1",
+      "6d4e7a3f-0dcd-498c-8ce1-e024ed045ae1",
+      "a17f0136-ab39-4f00-a7f1-1df1aaf77372",
+      "6e1b44be-ec4c-4cde-aa23-042fe305b618"
+    ]
+  },
+  "responseBsonSha256": "e7b9e80ee69143b1ce596399471a490e644f2cfa11b01e81ecd6a39d3e92b4ef",
+  "statistics": {
+    "surveyId": "6adf783d0dc4b0dea638677f",
+    "title": "第二阶段手测_1026_基础流程",
+    "definitionVersion": 1,
+    "submissionCount": 1,
+    "respondentCount": 1,
+    "questions": [
+      {
+        "questionId": "64b60d1b-6c40-4cb1-8e59-e0737a1355a1",
+        "title": "请选择填写方式",
+        "type": "single",
+        "answerCount": 1,
+        "respondentCount": 1,
+        "unansweredCount": 0,
+        "totalValues": 1,
+        "page": 1,
+        "pageSize": 20,
+        "average": null,
+        "values": [],
+        "options": [
+          {
+            "id": "d68c2db9-b8be-4f41-9fbd-2505d079a860",
+            "label": "完整填写",
+            "count": 1,
+            "respondentCount": 1
+          },
+          {
+            "id": "f5d1f062-cb3f-473e-93be-ee4526c80c1e",
+            "label": "直接填写年龄",
+            "count": 0,
+            "respondentCount": 0
+          }
+        ]
+      },
+      {
+        "questionId": "6d4e7a3f-0dcd-498c-8ce1-e024ed045ae1",
+        "title": "你希望改进哪些方面",
+        "type": "multiple",
+        "answerCount": 1,
+        "respondentCount": 1,
+        "unansweredCount": 0,
+        "totalValues": 1,
+        "page": 1,
+        "pageSize": 20,
+        "average": null,
+        "values": [],
+        "options": [
+          {
+            "id": "9cd47526-b891-4cb9-8a4b-1ea82ee34697",
+            "label": "课程内容",
+            "count": 1,
+            "respondentCount": 1
+          },
+          {
+            "id": "bf74dc30-d3d3-4d09-903a-7df880d019f7",
+            "label": "课程互动",
+            "count": 1,
+            "respondentCount": 1
+          },
+          {
+            "id": "362d523f-90d6-4053-84bc-8ba27db37990",
+            "label": "作业反馈",
+            "count": 0,
+            "respondentCount": 0
+          }
+        ]
+      },
+      {
+        "questionId": "a17f0136-ab39-4f00-a7f1-1df1aaf77372",
+        "title": "请填写你的建议",
+        "type": "text",
+        "answerCount": 1,
+        "respondentCount": 1,
+        "unansweredCount": 0,
+        "totalValues": 1,
+        "page": 1,
+        "pageSize": 20,
+        "average": null,
+        "values": [
+          {
+            "submittedAt": "2026-10-27T08:32:44.673000+00:00",
+            "responseId": "6ae061ac0dc4b0dea6386790",
+            "value": "测试"
+          }
+        ]
+      },
+      {
+        "questionId": "6e1b44be-ec4c-4cde-aa23-042fe305b618",
+        "title": "你的年龄是",
+        "type": "number",
+        "answerCount": 1,
+        "respondentCount": 1,
+        "unansweredCount": 0,
+        "totalValues": 1,
+        "page": 1,
+        "pageSize": 20,
+        "average": "0",
+        "values": [
+          {
+            "submittedAt": "2026-10-27T08:32:44.673000+00:00",
+            "responseId": "6ae061ac0dc4b0dea6386790",
+            "value": "0"
+          }
+        ]
+      }
+    ]
+  },
+  "businessWritesByAi": 0,
+  "sensitiveFieldsExcluded": [
+    "respondentKey",
+    "userId",
+    "payloadHash",
+    "submissionKey",
+    "session credentials"
+  ],
+  "screenshot": {
+    "path": "hm2-16-first-formal-success-2026-10-27.png",
+    "sha256": "b43cf83eecb11ffad175cb40a841d6a3591ba8d40469abb19ae739423d5fb356",
+    "observedReceipt": "6ae061ac0dc4b0dea6386790",
+    "observedSuccess": "问卷提交成功"
+  }
+}

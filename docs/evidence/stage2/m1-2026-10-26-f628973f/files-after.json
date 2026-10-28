@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "executedAt": "2026-10-26T13:50:43.189328+00:00",
+  "comparedBaselineFiles": 162,
+  "changedExistingFiles": [
+    "scripts/backup_project.py",
+    "scripts/run_tests.py",
+    "tests/conftest.py",
+    "第二阶段执行计划.md"
+  ],
+  "missingBaselineFiles": [],
+  "applicationCodeUnchanged": true,
+  "firstStageEvidenceAndSubmissionFilesUnchanged": true,
+  "oldArchiveUnchanged": true,
+  "newTestFile": "tests/integration/test_baseline_tools.py",
+  "stage2Documents": [
+    "README.md",
+    "ai-log.md",
+    "baseline.md",
+    "decisions.md",
+    "requirements.md",
+    "status.md"
+  ],
+  "linkAndFenceChecksPassed": true
+}
