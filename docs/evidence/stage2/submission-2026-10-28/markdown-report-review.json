@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-28T12:03:50+08:00",
+  "status": "passed",
+  "format": "Markdown",
+  "primaryReport": "第二阶段完整实验报告.md",
+  "mainBody": "docs/stage2/report.md",
+  "appendixSources": [
+    "docs/stage2/ai-use.md",
+    "docs/stage2/data.md"
+  ],
+  "repository": "https://github.com/betterGuo/Contemporary-data-management-system-Projects",
+  "branch": "P1-stage2",
+  "sourceSha256": {
+    "docs/stage2/report.md": "2535b322bf15fd65ba473af4db70774ad89845fb21b8d307dacdfd2c67462154",
+    "docs/stage2/ai-use.md": "94ec58bbc2b4322709ce93353dc3ceaec2ddcaccd64719b9412d50fe88f84b94",
+    "docs/stage2/data.md": "dec957cd07bb7ba32af32ceeba1caef85aa7956d7921421da1a3c11c7a177dd1",
+    "第二阶段完整实验报告.md": "c58b2e9041cf7d0caa0c6d618b5997e2b1d019bc736e1c84efda88bc4188831a"
+  },
+  "review": {
+    "nineReportTopics": true,
+    "eightEvolutionExplanations": true,
+    "completeStudentDesignDiscussionAppendix": true,
+    "completeDataAppendix": true,
+    "naturalStudentFirstPerson": true,
+    "actualStudentAndAiContributionsKeptDistinct": true,
+    "aiSection6Preserved": true,
+    "allSourceLinesPresentInCompleteMarkdown": true,
+    "repositoryAndBothStageLinksIncluded": true,
+    "dataAndHistoricalTestCountsUnchanged": true
+  },
+  "exportBoundary": "Markdown is the current report. Existing report DOCX/PDF and their quality records describe prior exports and are explicitly labelled as such; testing documents are unchanged.",
+  "businessCodeOrDatabaseChanged": false,
+  "applicationTestsRerun": false
+}

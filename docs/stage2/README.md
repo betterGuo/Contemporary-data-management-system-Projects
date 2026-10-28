@@ -17,7 +17,7 @@
 | 统一测试结果 | [测试用例与结果](tests.md)、[逐项验收](acceptance.md) |
 | 用户执行与AI接手补测 | [真实操作测试记录](manual-acceptance.md) |
 | 数据节点及迁移恢复 | [数据说明](data.md)、[迁移记录](migration.md) |
-| 完整报告与演示 | [项目报告](report.md)、[演示步骤](demo.md) |
+| 完整报告与演示 | [完整Markdown报告（当前提交版）](../../第二阶段完整实验报告.md)、[九项正文](report.md)、[演示步骤](demo.md) |
 | 学生作用与真实AI过程 | [AI使用说明](ai-use.md)、[AI协作日志](ai-log.md) |
 | 第二阶段提交入口 | [材料索引](../submissions/stage2/README.md) |
 
@@ -25,4 +25,6 @@
 
 提交整理已补充两份最终报告的DOCX/PDF，共24页完成检查；候选ZIP解压源码在既有venv和独立空测试库下30/30冒烟检查通过，临时库及配置已清理。本轮证据见[解压包冒烟](../evidence/stage2/submission-2026-10-28/extracted-package-smoke.json)和[文档检查](../evidence/stage2/submission-2026-10-28/document-quality-check.json)；不改称重新执行309项回归或全新环境260项。
 
-当前按用户要求改为直接提交[仓库P1-stage2分支](https://github.com/betterGuo/Contemporary-data-management-system-Projects/tree/P1-stage2)，第一阶段P1保持。报告开头已注明仓库及分支，DOCX/PDF已同步重新导出，当前四份文档见[Git版质量记录](../evidence/stage2/submission-2026-10-28/git-branch-document-quality-check.json)。上述ZIP及冒烟描述仅保留已执行历史，不作为当前交付步骤。
+前次按用户要求改为直接提交[仓库P1-stage2分支](https://github.com/betterGuo/Contemporary-data-management-system-Projects/tree/P1-stage2)，第一阶段P1保持。报告开头已注明仓库及分支，DOCX/PDF已同步重新导出，当时四份文档见[Git版质量记录](../evidence/stage2/submission-2026-10-28/git-branch-document-quality-check.json)。上述ZIP及冒烟描述仅保留已执行历史，不作为当前交付步骤。
+
+随后按用户要求提供[学生口吻的完整Markdown报告](../../第二阶段完整实验报告.md)，将九项正文、完整设计讨论和数据附录合为一份；报告Word/PDF停留在此前导出节点，不作为最新文字版本。当前Markdown内容与链接见[复核记录](../evidence/stage2/submission-2026-10-28/markdown-report-review.json)。

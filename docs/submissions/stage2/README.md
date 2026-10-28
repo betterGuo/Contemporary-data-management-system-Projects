@@ -4,11 +4,11 @@
 
 ## 阅读顺序与最终文档
 
-先阅读项目报告和测试结果，再按技术文档及证据链接核查。PDF用于直接阅读，DOCX用于编辑，Markdown保留源码及相对证据链接。
+按用户要求，当前报告以单文件Markdown为准，包含九项正文、完整学生设计讨论和数据附录；报告的Word/PDF是此前导出的版本，保留供参考，本轮没有重新导出。测试用例与结果的Markdown、PDF、DOCX保持原有内容。
 
-| 文档 | PDF | 可编辑DOCX | Markdown来源 |
+| 文档 | PDF | 可编辑DOCX | Markdown |
 | --- | --- | --- | --- |
-| 项目完成报告 | [阅读报告](../../../output/stage2/第二阶段项目完成报告.pdf) | [编辑报告](../../../output/stage2/第二阶段项目完成报告.docx) | [报告源文档](../../stage2/report.md) |
+| 项目完成报告 | [此前导出PDF](../../../output/stage2/第二阶段项目完成报告.pdf) | [此前导出DOCX](../../../output/stage2/第二阶段项目完成报告.docx) | **[完整实验报告（当前提交版）](../../../第二阶段完整实验报告.md)**；[九项正文](../../stage2/report.md) |
 | 测试用例与结果 | [阅读测试材料](../../../output/stage2/第二阶段测试用例与结果.pdf) | [编辑测试材料](../../../output/stage2/第二阶段测试用例与结果.docx) | [测试总览](../../stage2/tests.md)、[真实操作记录](../../stage2/manual-acceptance.md) |
 
 最终报告覆盖原文九项主题及第二阶段八点演进说明；AI部分采用学生第一人称，写清学生提出的问题、方案取舍、修订意见及实际验收，与AI编码和自动测试的分工分别记录。
@@ -60,9 +60,9 @@
 
 这些批次分别保留，不能相加为新的用例总数，也不能把原生弹窗受阻部分或AI自动操作写成用户完整亲测。30项提交包冒烟由TestClient及真实MongoDB执行，未重新安装依赖或重跑完整回归，不能称为新一轮浏览器测试。
 
-报告与测试材料均有PDF和DOCX版本。此前[文档质量检查](../../evidence/stage2/submission-2026-10-28/document-quality-check.json)作为历史记录保留；本次报告补充仓库与分支说明并重新导出，当前四份文件的哈希、中文、表格、分页、页码、相对链接及DOCX结构见[Git分支版文档检查](../../evidence/stage2/submission-2026-10-28/git-branch-document-quality-check.json)。
+此前[文档质量检查](../../evidence/stage2/submission-2026-10-28/document-quality-check.json)与[Git分支版导出检查](../../evidence/stage2/submission-2026-10-28/git-branch-document-quality-check.json)分别对应当时的Word/PDF及原稿，保留为历史记录。当前学生口吻Markdown报告的组成、来源哈希、链接和内容复核见[Markdown报告检查](../../evidence/stage2/submission-2026-10-28/markdown-report-review.json)，不把旧导出哈希当作新Markdown版本的校验值。
 
-最后一轮从实际ZIP重新核对教师原文、报告/测试/数据一致性与全部218张图片；修正验收矩阵初次260项证据说明的范围，以及五张实际JPEG截图的扩展名。必交内容齐全，未发现私密或不应提交的文件，详见[最终内容复核](../../evidence/stage2/submission-2026-10-28/last-review-content-and-requirements.json)及[截图更正映射](../../evidence/stage2/submission-2026-10-28/last-review-screenshot-format-correction.json)。该次审计保留了当时四份DOCX/PDF的字节一致性；本次报告增加分支说明，业务源码、原始测试结果及截图字节继续保持。
+最后一轮从实际ZIP重新核对教师原文、报告/测试/数据一致性与全部218张图片；修正验收矩阵初次260项证据说明的范围，以及五张实际JPEG截图的扩展名。必交内容齐全，未发现私密或不应提交的文件，详见[最终内容复核](../../evidence/stage2/submission-2026-10-28/last-review-content-and-requirements.json)及[截图更正映射](../../evidence/stage2/submission-2026-10-28/last-review-screenshot-format-correction.json)。该次审计保留了当时四份DOCX/PDF的字节一致性；之后报告曾增加分支说明并重新导出；本轮再按要求更新Markdown文字，业务源码、原始测试结果及截图字节继续保持。
 
 ## AI使用过程与原阶段对照
 
@@ -74,6 +74,6 @@
 
 ## 分支提交与核对方式
 
-第二阶段分支`P1-stage2`直接包含源码、技术文档、证据，以及`output/stage2/`中的四份Word/PDF文件，不推送ZIP或`dist/`目录。按[根README](../../../README.md)安装锁定依赖并运行演示；核对实际提交内容时以该分支的文件树和Git提交记录为准。
+第二阶段分支`P1-stage2`直接包含源码、技术文档、证据、根目录的完整Markdown报告及既有Word/PDF文件，不推送ZIP或`dist/`目录。按[根README](../../../README.md)安装锁定依赖并运行演示；核对实际提交内容时以该分支的文件树和Git提交记录为准。
 
 本次分支提交保留第一阶段远端`P1`，不改写其历史。本机私密配置、原始业务库BSON、会话、虚拟环境、缓存、临时测试目录和QA渲染图不提交。此前ZIP构建器及相关审计日志仅记录已经执行的整理过程，不是当前提交的必需步骤，也不代表本轮再次运行309项回归或33个浏览器场景。

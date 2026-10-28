@@ -108,7 +108,7 @@ MONGODB_URI='mongodb://localhost:27018/?replicaSet=survey-rs' TEST_MONGODB_URI='
 ## 材料
 
 - [第二阶段材料索引](docs/submissions/stage2/README.md)
-- [项目完成报告PDF](output/stage2/第二阶段项目完成报告.pdf)、[可编辑DOCX](output/stage2/第二阶段项目完成报告.docx)
+- [第二阶段完整实验报告（Markdown，当前提交版）](第二阶段完整实验报告.md)
 - [测试用例与结果PDF](output/stage2/第二阶段测试用例与结果.pdf)、[可编辑DOCX](output/stage2/第二阶段测试用例与结果.docx)
 - [第二阶段入口与进度](docs/stage2/README.md)
 - [完整执行计划](第二阶段执行计划.md)
@@ -118,11 +118,11 @@ MONGODB_URI='mongodb://localhost:27018/?replicaSet=survey-rs' TEST_MONGODB_URI='
 - [完成报告源文档](docs/stage2/report.md)、[演示步骤](docs/stage2/demo.md)、[AI使用说明](docs/stage2/ai-use.md)、[真实AI日志](docs/stage2/ai-log.md)
 - [第一阶段原提交材料](docs/submissions/stage1/README.md)
 
-第一阶段材料、教师原始要求和本地旧归档继续保留。第二阶段分支按原目录提供可运行源码、配置示例、技术文档、四份最终文档及测试证据；本地旧BSON归档及真实配置不推送到远端。
+第一阶段材料、教师原始要求和本地旧归档继续保留。第二阶段分支按原目录提供可运行源码、配置示例、技术文档、完整Markdown报告、既有导出文档及测试证据；本地旧BSON归档及真实配置不推送到远端。
 
 ## Git提交与材料核对
 
-以本仓库的第二阶段分支`P1-stage2`作为本次提交入口，报告与测试的PDF/DOCX保存在`output/stage2/`，材料逐项位置见[第二阶段材料索引](docs/submissions/stage2/README.md)。查看或克隆该分支后，直接按上面的新环境步骤运行，无需解压ZIP。
+以本仓库的第二阶段分支`P1-stage2`作为本次提交入口。当前报告使用[完整Markdown版本](第二阶段完整实验报告.md)，包含九项正文、学生设计讨论与数据附录；报告先前的Word/PDF导出版保留在`output/stage2/`供参考，测试材料维持原有版本。材料逐项位置见[第二阶段材料索引](docs/submissions/stage2/README.md)。查看或克隆该分支后，直接按上面的新环境步骤运行，无需解压ZIP。
 
 推送范围包括源码、脚本、测试、部署配置、依赖锁、教师要求、第二阶段计划、技术说明、报告和真实证据。私密`.env`、密钥、会话、原始BSON归档、`tmp/`、`dist/`、虚拟环境、缓存及文档渲染预览图不随分支提交。历史恢复清单仍公开，用于说明原数据迁移与保护结果。
 
